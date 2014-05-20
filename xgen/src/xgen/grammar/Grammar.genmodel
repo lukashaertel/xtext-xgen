@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/xgen/src" modelPluginID="xgen" runtimeJar="true"
+    modelName="Grammar" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" importerID="org.eclipse.emf.ecore.xcore.importer" containmentProxies="true"
+    complianceLevel="7.0" language="en" usedGenPackages="../../../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true" decoration="Live">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter.xmi">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="EcoreXMI.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>Grammar.xcore</foreignModel>
+  <modelPluginVariables>org.eclipse.xtext.xbase.lib</modelPluginVariables>
+  <modelPluginVariables>org.eclipse.emf.ecore.xcore.lib</modelPluginVariables>
+  <genPackages prefix="Grammar" basePackage="xgen" disposableProviderFactory="true"
+      ecorePackage="grammar.ecore#/">
+    <genClasses ecoreClass="grammar.ecore#//Grammar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Grammar/definitions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grammar.ecore#//Element"/>
+    <genClasses ecoreClass="grammar.ecore#//Definition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Definition/lhs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Definition/lexical"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Definition/rhs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grammar.ecore#//Construct"/>
+    <genClasses image="false" ecoreClass="grammar.ecore#//Terminal"/>
+    <genClasses image="false" ecoreClass="grammar.ecore#//Unary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Unary/operand"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grammar.ecore#//NAry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//NAry/operands"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//Any"/>
+    <genClasses ecoreClass="grammar.ecore#//Keyword">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Keyword/value"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//Range">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Range/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Range/max"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//Reference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grammar.ecore#//Reference/target"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//Alternative"/>
+    <genClasses ecoreClass="grammar.ecore#//Sequence"/>
+    <genClasses ecoreClass="grammar.ecore#//Not"/>
+    <genClasses ecoreClass="grammar.ecore#//Multiplicity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Multiplicity/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Multiplicity/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Multiplicity/upperBounded"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
