@@ -16,15 +16,13 @@ import xgen.grammar.Sequence;
  *
  * @generated
  */
-public class SequenceImpl extends NAryImpl implements Sequence
-{
+public class SequenceImpl extends NAryImpl implements Sequence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SequenceImpl()
-	{
+	protected SequenceImpl() {
 		super();
 	}
 
@@ -34,8 +32,7 @@ public class SequenceImpl extends NAryImpl implements Sequence
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.SEQUENCE;
 	}
 

@@ -16,15 +16,13 @@ import xgen.grammar.Terminal;
  *
  * @generated
  */
-public abstract class TerminalImpl extends ConstructImpl implements Terminal
-{
+public abstract class TerminalImpl extends ConstructImpl implements Terminal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TerminalImpl()
-	{
+	protected TerminalImpl() {
 		super();
 	}
 
@@ -34,8 +32,7 @@ public abstract class TerminalImpl extends ConstructImpl implements Terminal
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.TERMINAL;
 	}
 

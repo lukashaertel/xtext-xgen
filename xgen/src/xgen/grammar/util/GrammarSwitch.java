@@ -22,8 +22,7 @@ import xgen.grammar.*;
  * @see xgen.grammar.GrammarPackage
  * @generated
  */
-public class GrammarSwitch<T> extends Switch<T>
-{
+public class GrammarSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -38,10 +37,8 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GrammarSwitch()
-	{
-		if (modelPackage == null)
-		{
+	public GrammarSwitch() {
+		if (modelPackage == null) {
 			modelPackage = GrammarPackage.eINSTANCE;
 		}
 	}
@@ -55,8 +52,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	@Override
-	protected boolean isSwitchFor(EPackage ePackage)
-	{
+	protected boolean isSwitchFor(EPackage ePackage) {
 		return ePackage == modelPackage;
 	}
 
@@ -68,42 +64,35 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	@Override
-	protected T doSwitch(int classifierID, EObject theEObject)
-	{
-		switch (classifierID)
-		{
-			case GrammarPackage.GRAMMAR:
-			{
+	protected T doSwitch(int classifierID, EObject theEObject) {
+		switch (classifierID) {
+			case GrammarPackage.GRAMMAR: {
 				Grammar grammar = (Grammar)theEObject;
 				T result = caseGrammar(grammar);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.ELEMENT:
-			{
+			case GrammarPackage.ELEMENT: {
 				Element element = (Element)theEObject;
 				T result = caseElement(element);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.DEFINITION:
-			{
+			case GrammarPackage.DEFINITION: {
 				Definition definition = (Definition)theEObject;
 				T result = caseDefinition(definition);
 				if (result == null) result = caseElement(definition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.CONSTRUCT:
-			{
+			case GrammarPackage.CONSTRUCT: {
 				Construct construct = (Construct)theEObject;
 				T result = caseConstruct(construct);
 				if (result == null) result = caseElement(construct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.TERMINAL:
-			{
+			case GrammarPackage.TERMINAL: {
 				Terminal terminal = (Terminal)theEObject;
 				T result = caseTerminal(terminal);
 				if (result == null) result = caseConstruct(terminal);
@@ -111,8 +100,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.UNARY:
-			{
+			case GrammarPackage.UNARY: {
 				Unary unary = (Unary)theEObject;
 				T result = caseUnary(unary);
 				if (result == null) result = caseConstruct(unary);
@@ -120,8 +108,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.NARY:
-			{
+			case GrammarPackage.NARY: {
 				NAry nAry = (NAry)theEObject;
 				T result = caseNAry(nAry);
 				if (result == null) result = caseConstruct(nAry);
@@ -129,8 +116,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.ANY:
-			{
+			case GrammarPackage.ANY: {
 				Any any = (Any)theEObject;
 				T result = caseAny(any);
 				if (result == null) result = caseTerminal(any);
@@ -139,8 +125,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.KEYWORD:
-			{
+			case GrammarPackage.KEYWORD: {
 				Keyword keyword = (Keyword)theEObject;
 				T result = caseKeyword(keyword);
 				if (result == null) result = caseTerminal(keyword);
@@ -149,8 +134,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.RANGE:
-			{
+			case GrammarPackage.RANGE: {
 				Range range = (Range)theEObject;
 				T result = caseRange(range);
 				if (result == null) result = caseTerminal(range);
@@ -159,8 +143,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.REFERENCE:
-			{
+			case GrammarPackage.REFERENCE: {
 				Reference reference = (Reference)theEObject;
 				T result = caseReference(reference);
 				if (result == null) result = caseTerminal(reference);
@@ -169,8 +152,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.ALTERNATIVE:
-			{
+			case GrammarPackage.ALTERNATIVE: {
 				Alternative alternative = (Alternative)theEObject;
 				T result = caseAlternative(alternative);
 				if (result == null) result = caseNAry(alternative);
@@ -179,8 +161,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.SEQUENCE:
-			{
+			case GrammarPackage.SEQUENCE: {
 				Sequence sequence = (Sequence)theEObject;
 				T result = caseSequence(sequence);
 				if (result == null) result = caseNAry(sequence);
@@ -189,8 +170,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.NOT:
-			{
+			case GrammarPackage.NOT: {
 				Not not = (Not)theEObject;
 				T result = caseNot(not);
 				if (result == null) result = caseUnary(not);
@@ -199,8 +179,7 @@ public class GrammarSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.MULTIPLICITY:
-			{
+			case GrammarPackage.MULTIPLICITY: {
 				Multiplicity multiplicity = (Multiplicity)theEObject;
 				T result = caseMultiplicity(multiplicity);
 				if (result == null) result = caseUnary(multiplicity);
@@ -224,8 +203,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGrammar(Grammar object)
-	{
+	public T caseGrammar(Grammar object) {
 		return null;
 	}
 
@@ -240,8 +218,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseElement(Element object)
-	{
+	public T caseElement(Element object) {
 		return null;
 	}
 
@@ -256,8 +233,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDefinition(Definition object)
-	{
+	public T caseDefinition(Definition object) {
 		return null;
 	}
 
@@ -272,8 +248,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstruct(Construct object)
-	{
+	public T caseConstruct(Construct object) {
 		return null;
 	}
 
@@ -288,8 +263,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTerminal(Terminal object)
-	{
+	public T caseTerminal(Terminal object) {
 		return null;
 	}
 
@@ -304,8 +278,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnary(Unary object)
-	{
+	public T caseUnary(Unary object) {
 		return null;
 	}
 
@@ -320,8 +293,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNAry(NAry object)
-	{
+	public T caseNAry(NAry object) {
 		return null;
 	}
 
@@ -336,8 +308,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAny(Any object)
-	{
+	public T caseAny(Any object) {
 		return null;
 	}
 
@@ -352,8 +323,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseKeyword(Keyword object)
-	{
+	public T caseKeyword(Keyword object) {
 		return null;
 	}
 
@@ -368,8 +338,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRange(Range object)
-	{
+	public T caseRange(Range object) {
 		return null;
 	}
 
@@ -384,8 +353,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseReference(Reference object)
-	{
+	public T caseReference(Reference object) {
 		return null;
 	}
 
@@ -400,8 +368,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAlternative(Alternative object)
-	{
+	public T caseAlternative(Alternative object) {
 		return null;
 	}
 
@@ -416,8 +383,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSequence(Sequence object)
-	{
+	public T caseSequence(Sequence object) {
 		return null;
 	}
 
@@ -432,8 +398,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNot(Not object)
-	{
+	public T caseNot(Not object) {
 		return null;
 	}
 
@@ -448,8 +413,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMultiplicity(Multiplicity object)
-	{
+	public T caseMultiplicity(Multiplicity object) {
 		return null;
 	}
 
@@ -465,8 +429,7 @@ public class GrammarSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	@Override
-	public T defaultCase(EObject object)
-	{
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

@@ -34,8 +34,7 @@ import xgen.grammar.Unary;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
-{
+public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,8 +155,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * @see #init()
 	 * @generated
 	 */
-	private GrammarPackageImpl()
-	{
+	private GrammarPackageImpl() {
 		super(eNS_URI, GrammarFactory.eINSTANCE);
 	}
 
@@ -180,8 +178,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static GrammarPackage init()
-	{
+	public static GrammarPackage init() {
 		if (isInited) return (GrammarPackage)EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI);
 
 		// Obtain or create and register package
@@ -212,8 +209,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGrammar()
-	{
+	public EClass getGrammar() {
 		return grammarEClass;
 	}
 
@@ -222,8 +218,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGrammar_Definitions()
-	{
+	public EReference getGrammar_Definitions() {
 		return (EReference)grammarEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -232,8 +227,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getElement()
-	{
+	public EClass getElement() {
 		return elementEClass;
 	}
 
@@ -242,8 +236,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDefinition()
-	{
+	public EClass getDefinition() {
 		return definitionEClass;
 	}
 
@@ -252,8 +245,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDefinition_Lhs()
-	{
+	public EAttribute getDefinition_Lhs() {
 		return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -262,8 +254,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDefinition_Lexical()
-	{
+	public EAttribute getDefinition_Lexical() {
 		return (EAttribute)definitionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -272,8 +263,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDefinition_Rhs()
-	{
+	public EReference getDefinition_Rhs() {
 		return (EReference)definitionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -282,8 +272,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConstruct()
-	{
+	public EClass getConstruct() {
 		return constructEClass;
 	}
 
@@ -292,8 +281,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTerminal()
-	{
+	public EClass getTerminal() {
 		return terminalEClass;
 	}
 
@@ -302,8 +290,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUnary()
-	{
+	public EClass getUnary() {
 		return unaryEClass;
 	}
 
@@ -312,8 +299,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnary_Operand()
-	{
+	public EReference getUnary_Operand() {
 		return (EReference)unaryEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -322,8 +308,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNAry()
-	{
+	public EClass getNAry() {
 		return nAryEClass;
 	}
 
@@ -332,8 +317,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNAry_Operands()
-	{
+	public EReference getNAry_Operands() {
 		return (EReference)nAryEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -342,8 +326,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAny()
-	{
+	public EClass getAny() {
 		return anyEClass;
 	}
 
@@ -352,8 +335,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getKeyword()
-	{
+	public EClass getKeyword() {
 		return keywordEClass;
 	}
 
@@ -362,8 +344,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getKeyword_Value()
-	{
+	public EAttribute getKeyword_Value() {
 		return (EAttribute)keywordEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -372,8 +353,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRange()
-	{
+	public EClass getRange() {
 		return rangeEClass;
 	}
 
@@ -382,8 +362,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRange_Min()
-	{
+	public EAttribute getRange_Min() {
 		return (EAttribute)rangeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -392,8 +371,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRange_Max()
-	{
+	public EAttribute getRange_Max() {
 		return (EAttribute)rangeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -402,8 +380,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getReference()
-	{
+	public EClass getReference() {
 		return referenceEClass;
 	}
 
@@ -412,8 +389,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReference_Target()
-	{
+	public EReference getReference_Target() {
 		return (EReference)referenceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -422,8 +398,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAlternative()
-	{
+	public EClass getAlternative() {
 		return alternativeEClass;
 	}
 
@@ -432,8 +407,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSequence()
-	{
+	public EClass getSequence() {
 		return sequenceEClass;
 	}
 
@@ -442,8 +416,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNot()
-	{
+	public EClass getNot() {
 		return notEClass;
 	}
 
@@ -452,8 +425,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMultiplicity()
-	{
+	public EClass getMultiplicity() {
 		return multiplicityEClass;
 	}
 
@@ -462,8 +434,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMultiplicity_Min()
-	{
+	public EAttribute getMultiplicity_Min() {
 		return (EAttribute)multiplicityEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -472,8 +443,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMultiplicity_Max()
-	{
+	public EAttribute getMultiplicity_Max() {
 		return (EAttribute)multiplicityEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -482,8 +452,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMultiplicity_UpperBounded()
-	{
+	public EAttribute getMultiplicity_UpperBounded() {
 		return (EAttribute)multiplicityEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -492,8 +461,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GrammarFactory getGrammarFactory()
-	{
+	public GrammarFactory getGrammarFactory() {
 		return (GrammarFactory)getEFactoryInstance();
 	}
 
@@ -511,8 +479,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents()
-	{
+	public void createPackageContents() {
 		if (isCreated) return;
 		isCreated = true;
 
@@ -575,8 +542,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void initializePackageContents()
-	{
+	public void initializePackageContents() {
 		if (isInitialized) return;
 		isInitialized = true;
 

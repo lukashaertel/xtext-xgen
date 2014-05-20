@@ -16,15 +16,13 @@ import xgen.grammar.Not;
  *
  * @generated
  */
-public class NotImpl extends UnaryImpl implements Not
-{
+public class NotImpl extends UnaryImpl implements Not {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NotImpl()
-	{
+	protected NotImpl() {
 		super();
 	}
 
@@ -34,8 +32,7 @@ public class NotImpl extends UnaryImpl implements Not
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.NOT;
 	}
 

@@ -18,26 +18,21 @@ import xgen.grammar.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
-{
+public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static GrammarFactory init()
-	{
-		try
-		{
+	public static GrammarFactory init() {
+		try {
 			GrammarFactory theGrammarFactory = (GrammarFactory)EPackage.Registry.INSTANCE.getEFactory(GrammarPackage.eNS_URI);
-			if (theGrammarFactory != null)
-			{
+			if (theGrammarFactory != null) {
 				return theGrammarFactory;
 			}
 		}
-		catch (Exception exception)
-		{
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GrammarFactoryImpl();
@@ -49,8 +44,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GrammarFactoryImpl()
-	{
+	public GrammarFactoryImpl() {
 		super();
 	}
 
@@ -60,10 +54,8 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * @generated
 	 */
 	@Override
-	public EObject create(EClass eClass)
-	{
-		switch (eClass.getClassifierID())
-		{
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
 			case GrammarPackage.GRAMMAR: return createGrammar();
 			case GrammarPackage.DEFINITION: return createDefinition();
 			case GrammarPackage.ANY: return createAny();
@@ -84,8 +76,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Grammar createGrammar()
-	{
+	public Grammar createGrammar() {
 		GrammarImpl grammar = new GrammarImpl();
 		return grammar;
 	}
@@ -95,8 +86,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Definition createDefinition()
-	{
+	public Definition createDefinition() {
 		DefinitionImpl definition = new DefinitionImpl();
 		return definition;
 	}
@@ -106,8 +96,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Any createAny()
-	{
+	public Any createAny() {
 		AnyImpl any = new AnyImpl();
 		return any;
 	}
@@ -117,8 +106,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Keyword createKeyword()
-	{
+	public Keyword createKeyword() {
 		KeywordImpl keyword = new KeywordImpl();
 		return keyword;
 	}
@@ -128,8 +116,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Range createRange()
-	{
+	public Range createRange() {
 		RangeImpl range = new RangeImpl();
 		return range;
 	}
@@ -139,8 +126,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference createReference()
-	{
+	public Reference createReference() {
 		ReferenceImpl reference = new ReferenceImpl();
 		return reference;
 	}
@@ -150,8 +136,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Alternative createAlternative()
-	{
+	public Alternative createAlternative() {
 		AlternativeImpl alternative = new AlternativeImpl();
 		return alternative;
 	}
@@ -161,8 +146,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sequence createSequence()
-	{
+	public Sequence createSequence() {
 		SequenceImpl sequence = new SequenceImpl();
 		return sequence;
 	}
@@ -172,8 +156,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Not createNot()
-	{
+	public Not createNot() {
 		NotImpl not = new NotImpl();
 		return not;
 	}
@@ -183,8 +166,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Multiplicity createMultiplicity()
-	{
+	public Multiplicity createMultiplicity() {
 		MultiplicityImpl multiplicity = new MultiplicityImpl();
 		return multiplicity;
 	}
@@ -194,8 +176,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GrammarPackage getGrammarPackage()
-	{
+	public GrammarPackage getGrammarPackage() {
 		return (GrammarPackage)getEPackage();
 	}
 
@@ -206,8 +187,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory
 	 * @generated
 	 */
 	@Deprecated
-	public static GrammarPackage getPackage()
-	{
+	public static GrammarPackage getPackage() {
 		return GrammarPackage.eINSTANCE;
 	}
 

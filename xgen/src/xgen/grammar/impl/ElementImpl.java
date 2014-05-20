@@ -18,15 +18,13 @@ import xgen.grammar.GrammarPackage;
  *
  * @generated
  */
-public abstract class ElementImpl extends MinimalEObjectImpl.Container implements Element
-{
+public abstract class ElementImpl extends MinimalEObjectImpl.Container implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ElementImpl()
-	{
+	protected ElementImpl() {
 		super();
 	}
 
@@ -36,8 +34,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.ELEMENT;
 	}
 

@@ -8,11 +8,6 @@ package xgen.grammar;
  * A representation of the model object '<em><b>Keyword</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * A single keyword
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -24,16 +19,15 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Keyword extends Terminal
-{
+public interface Keyword extends Terminal {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The key word
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see xgen.grammar.GrammarPackage#getKeyword_Value()

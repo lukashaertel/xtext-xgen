@@ -5,21 +5,11 @@
 -->
 
 <plugin>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CFG -->
+      <!-- @generated Grammar -->
       <package
-            uri="xgen.grammar"
+            uri="http://xgen/Grammar/1.0"
             class="xgen.grammar.GrammarPackage"
-            genModel="src/xgen/grammar/CFG.xcore"/>
+            genModel="src/xgen/grammar/Grammar.genmodel"/>
    </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated Parsetree -->
-      <package
-            uri="xgen.parsetree"
-            class="xgen.parsetree.ParsetreePackage"
-            genModel="src/xgen/parsetree/Parsetree.xcore"/>
-   </extension>
-
 </plugin>

@@ -31,8 +31,7 @@ import xgen.grammar.NAry;
  *
  * @generated
  */
-public abstract class NAryImpl extends ConstructImpl implements NAry
-{
+public abstract class NAryImpl extends ConstructImpl implements NAry {
 	/**
 	 * The cached value of the '{@link #getOperands() <em>Operands</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -48,8 +47,7 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NAryImpl()
-	{
+	protected NAryImpl() {
 		super();
 	}
 
@@ -59,8 +57,7 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.NARY;
 	}
 
@@ -69,10 +66,8 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Construct> getOperands()
-	{
-		if (operands == null)
-		{
+	public EList<Construct> getOperands() {
+		if (operands == null) {
 			operands = new EObjectContainmentEList<Construct>(Construct.class, this, GrammarPackage.NARY__OPERANDS);
 		}
 		return operands;
@@ -84,10 +79,8 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-	{
-		switch (featureID)
-		{
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
 			case GrammarPackage.NARY__OPERANDS:
 				return ((InternalEList<?>)getOperands()).basicRemove(otherEnd, msgs);
 		}
@@ -100,10 +93,8 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType)
-	{
-		switch (featureID)
-		{
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case GrammarPackage.NARY__OPERANDS:
 				return getOperands();
 		}
@@ -117,10 +108,8 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue)
-	{
-		switch (featureID)
-		{
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
 			case GrammarPackage.NARY__OPERANDS:
 				getOperands().clear();
 				getOperands().addAll((Collection<? extends Construct>)newValue);
@@ -135,10 +124,8 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID)
-	{
-		switch (featureID)
-		{
+	public void eUnset(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.NARY__OPERANDS:
 				getOperands().clear();
 				return;
@@ -152,10 +139,8 @@ public abstract class NAryImpl extends ConstructImpl implements NAry
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID)
-	{
-		switch (featureID)
-		{
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.NARY__OPERANDS:
 				return operands != null && !operands.isEmpty();
 		}

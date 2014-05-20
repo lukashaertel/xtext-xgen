@@ -11,11 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Grammar</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * Container of all grammar definitions
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -27,17 +22,16 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Grammar extends EObject
-{
+public interface Grammar extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Definitions</b></em>' containment reference list.
 	 * The list contents are of type {@link xgen.grammar.Definition}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Definitions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The definitions this grammar composes
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Definitions</em>' containment reference list.
 	 * @see xgen.grammar.GrammarPackage#getGrammar_Definitions()
 	 * @model containment="true"

@@ -16,15 +16,13 @@ import xgen.grammar.GrammarPackage;
  *
  * @generated
  */
-public class AlternativeImpl extends NAryImpl implements Alternative
-{
+public class AlternativeImpl extends NAryImpl implements Alternative {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AlternativeImpl()
-	{
+	protected AlternativeImpl() {
 		super();
 	}
 
@@ -34,8 +32,7 @@ public class AlternativeImpl extends NAryImpl implements Alternative
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.ALTERNATIVE;
 	}
 

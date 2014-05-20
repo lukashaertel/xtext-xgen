@@ -1,0 +1,51 @@
+grammar xgen.Grammar hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://xgen/Grammar/1.0"
+
+Grammar returns Grammar:
+	{Grammar} definitions+=Definition*;
+
+Definition returns Definition:
+	{Definition} (lexical?='lexical')? lhs=ID ':' rhs=Construct0 ';';
+
+Construct0 returns Construct:
+	Construct1 ({Alternative.operands+=current} '|' operands+=Construct1 ('|' operands+=Construct1)*)?;
+
+Construct1 returns Construct:
+	Construct2 ({Sequence.operands+=current} operands+=Construct2 (operands+=Construct2)*)?;
+
+Construct2 returns Construct:
+	{Not} '!' operand=Construct2 |
+	Construct3;
+
+Construct3 returns Construct:
+	Construct4 ({Multiplicity.operand=current} '{' min=INT (upperBounded?=',' max=INT)? '}')*;
+
+Construct4 returns Construct:
+	{Reference} target=[Definition] |
+	{Range} min=CHAR max=CHAR |
+	{Keyword} value=STRING |
+	{Any} '.' |
+	'(' Construct0 ')';
+
+terminal ID:
+	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+terminal INT returns ecore::EInt:
+	('0'..'9')+;
+
+terminal STRING:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"';
+
+terminal CHAR returns ecore::EChar:
+	"'" '\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'") "'";
+
+terminal ML_COMMENT:
+	'/*'->'*/';
+
+terminal SL_COMMENT:
+	'//' !('\n' | '\r')* ('\r'? '\n')?;
+
+terminal WS:
+	(' ' | '\t' | '\r' | '\n')+;

@@ -16,15 +16,13 @@ import xgen.grammar.GrammarPackage;
  *
  * @generated
  */
-public abstract class ConstructImpl extends ElementImpl implements Construct
-{
+public abstract class ConstructImpl extends ElementImpl implements Construct {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConstructImpl()
-	{
+	protected ConstructImpl() {
 		super();
 	}
 
@@ -34,8 +32,7 @@ public abstract class ConstructImpl extends ElementImpl implements Construct
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.CONSTRUCT;
 	}
 

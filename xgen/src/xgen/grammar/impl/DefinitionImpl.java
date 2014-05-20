@@ -29,8 +29,7 @@ import xgen.grammar.GrammarPackage;
  *
  * @generated
  */
-public class DefinitionImpl extends ElementImpl implements Definition
-{
+public class DefinitionImpl extends ElementImpl implements Definition {
 	/**
 	 * The default value of the '{@link #getLhs() <em>Lhs</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,8 +85,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DefinitionImpl()
-	{
+	protected DefinitionImpl() {
 		super();
 	}
 
@@ -97,8 +95,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.DEFINITION;
 	}
 
@@ -107,8 +104,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLhs()
-	{
+	public String getLhs() {
 		return lhs;
 	}
 
@@ -117,8 +113,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLhs(String newLhs)
-	{
+	public void setLhs(String newLhs) {
 		String oldLhs = lhs;
 		lhs = newLhs;
 		if (eNotificationRequired())
@@ -130,8 +125,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isLexical()
-	{
+	public boolean isLexical() {
 		return lexical;
 	}
 
@@ -140,8 +134,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLexical(boolean newLexical)
-	{
+	public void setLexical(boolean newLexical) {
 		boolean oldLexical = lexical;
 		lexical = newLexical;
 		if (eNotificationRequired())
@@ -153,8 +146,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Construct getRhs()
-	{
+	public Construct getRhs() {
 		return rhs;
 	}
 
@@ -163,12 +155,10 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRhs(Construct newRhs, NotificationChain msgs)
-	{
+	public NotificationChain basicSetRhs(Construct newRhs, NotificationChain msgs) {
 		Construct oldRhs = rhs;
 		rhs = newRhs;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GrammarPackage.DEFINITION__RHS, oldRhs, newRhs);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -180,10 +170,8 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRhs(Construct newRhs)
-	{
-		if (newRhs != rhs)
-		{
+	public void setRhs(Construct newRhs) {
+		if (newRhs != rhs) {
 			NotificationChain msgs = null;
 			if (rhs != null)
 				msgs = ((InternalEObject)rhs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GrammarPackage.DEFINITION__RHS, null, msgs);
@@ -202,10 +190,8 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-	{
-		switch (featureID)
-		{
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
 			case GrammarPackage.DEFINITION__RHS:
 				return basicSetRhs(null, msgs);
 		}
@@ -218,10 +204,8 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType)
-	{
-		switch (featureID)
-		{
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case GrammarPackage.DEFINITION__LHS:
 				return getLhs();
 			case GrammarPackage.DEFINITION__LEXICAL:
@@ -238,10 +222,8 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue)
-	{
-		switch (featureID)
-		{
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
 			case GrammarPackage.DEFINITION__LHS:
 				setLhs((String)newValue);
 				return;
@@ -261,10 +243,8 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID)
-	{
-		switch (featureID)
-		{
+	public void eUnset(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.DEFINITION__LHS:
 				setLhs(LHS_EDEFAULT);
 				return;
@@ -284,10 +264,8 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID)
-	{
-		switch (featureID)
-		{
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.DEFINITION__LHS:
 				return LHS_EDEFAULT == null ? lhs != null : !LHS_EDEFAULT.equals(lhs);
 			case GrammarPackage.DEFINITION__LEXICAL:
@@ -304,8 +282,7 @@ public class DefinitionImpl extends ElementImpl implements Definition
 	 * @generated
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

@@ -25,8 +25,7 @@ import xgen.grammar.Range;
  *
  * @generated
  */
-public class RangeImpl extends TerminalImpl implements Range
-{
+public class RangeImpl extends TerminalImpl implements Range {
 	/**
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,8 +71,7 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RangeImpl()
-	{
+	protected RangeImpl() {
 		super();
 	}
 
@@ -83,8 +81,7 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.RANGE;
 	}
 
@@ -93,8 +90,7 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public char getMin()
-	{
+	public char getMin() {
 		return min;
 	}
 
@@ -103,8 +99,7 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMin(char newMin)
-	{
+	public void setMin(char newMin) {
 		char oldMin = min;
 		min = newMin;
 		if (eNotificationRequired())
@@ -116,8 +111,7 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public char getMax()
-	{
+	public char getMax() {
 		return max;
 	}
 
@@ -126,8 +120,7 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMax(char newMax)
-	{
+	public void setMax(char newMax) {
 		char oldMax = max;
 		max = newMax;
 		if (eNotificationRequired())
@@ -140,10 +133,8 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType)
-	{
-		switch (featureID)
-		{
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case GrammarPackage.RANGE__MIN:
 				return getMin();
 			case GrammarPackage.RANGE__MAX:
@@ -158,10 +149,8 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue)
-	{
-		switch (featureID)
-		{
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
 			case GrammarPackage.RANGE__MIN:
 				setMin((Character)newValue);
 				return;
@@ -178,10 +167,8 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID)
-	{
-		switch (featureID)
-		{
+	public void eUnset(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.RANGE__MIN:
 				setMin(MIN_EDEFAULT);
 				return;
@@ -198,10 +185,8 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID)
-	{
-		switch (featureID)
-		{
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.RANGE__MIN:
 				return min != MIN_EDEFAULT;
 			case GrammarPackage.RANGE__MAX:
@@ -216,8 +201,7 @@ public class RangeImpl extends TerminalImpl implements Range
 	 * @generated
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

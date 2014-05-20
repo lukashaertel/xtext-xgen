@@ -8,11 +8,6 @@ package xgen.grammar;
  * A representation of the model object '<em><b>Reference</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * A reference of a defined element
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -24,16 +19,15 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Reference extends Terminal
-{
+public interface Reference extends Terminal {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The definition to use
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Definition)
 	 * @see xgen.grammar.GrammarPackage#getReference_Target()

@@ -16,15 +16,13 @@ import xgen.grammar.GrammarPackage;
  *
  * @generated
  */
-public class AnyImpl extends TerminalImpl implements Any
-{
+public class AnyImpl extends TerminalImpl implements Any {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AnyImpl()
-	{
+	protected AnyImpl() {
 		super();
 	}
 
@@ -34,8 +32,7 @@ public class AnyImpl extends TerminalImpl implements Any
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.ANY;
 	}
 

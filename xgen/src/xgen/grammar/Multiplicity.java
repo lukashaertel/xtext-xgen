@@ -8,11 +8,6 @@ package xgen.grammar;
  * A representation of the model object '<em><b>Multiplicity</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * Multiplicity of an element with optional upper bound
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -26,16 +21,15 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Multiplicity extends Unary
-{
+public interface Multiplicity extends Unary {
 	/**
 	 * Returns the value of the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The minimum required amount
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min</em>' attribute.
 	 * @see #setMin(int)
 	 * @see xgen.grammar.GrammarPackage#getMultiplicity_Min()
@@ -57,11 +51,11 @@ public interface Multiplicity extends Unary
 	/**
 	 * Returns the value of the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The maximum allowed amount
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max</em>' attribute.
 	 * @see #setMax(int)
 	 * @see xgen.grammar.GrammarPackage#getMultiplicity_Max()
@@ -83,11 +77,11 @@ public interface Multiplicity extends Unary
 	/**
 	 * Returns the value of the '<em><b>Upper Bounded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Upper Bounded</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * True if bound is not to be used
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Upper Bounded</em>' attribute.
 	 * @see #setUpperBounded(boolean)
 	 * @see xgen.grammar.GrammarPackage#getMultiplicity_UpperBounded()

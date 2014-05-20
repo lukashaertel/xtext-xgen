@@ -26,8 +26,7 @@ import xgen.grammar.Multiplicity;
  *
  * @generated
  */
-public class MultiplicityImpl extends UnaryImpl implements Multiplicity
-{
+public class MultiplicityImpl extends UnaryImpl implements Multiplicity {
 	/**
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,8 +92,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MultiplicityImpl()
-	{
+	protected MultiplicityImpl() {
 		super();
 	}
 
@@ -104,8 +102,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.MULTIPLICITY;
 	}
 
@@ -114,8 +111,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getMin()
-	{
+	public int getMin() {
 		return min;
 	}
 
@@ -124,8 +120,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMin(int newMin)
-	{
+	public void setMin(int newMin) {
 		int oldMin = min;
 		min = newMin;
 		if (eNotificationRequired())
@@ -137,8 +132,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getMax()
-	{
+	public int getMax() {
 		return max;
 	}
 
@@ -147,8 +141,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMax(int newMax)
-	{
+	public void setMax(int newMax) {
 		int oldMax = max;
 		max = newMax;
 		if (eNotificationRequired())
@@ -160,8 +153,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isUpperBounded()
-	{
+	public boolean isUpperBounded() {
 		return upperBounded;
 	}
 
@@ -170,8 +162,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUpperBounded(boolean newUpperBounded)
-	{
+	public void setUpperBounded(boolean newUpperBounded) {
 		boolean oldUpperBounded = upperBounded;
 		upperBounded = newUpperBounded;
 		if (eNotificationRequired())
@@ -184,10 +175,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType)
-	{
-		switch (featureID)
-		{
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case GrammarPackage.MULTIPLICITY__MIN:
 				return getMin();
 			case GrammarPackage.MULTIPLICITY__MAX:
@@ -204,10 +193,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue)
-	{
-		switch (featureID)
-		{
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
 			case GrammarPackage.MULTIPLICITY__MIN:
 				setMin((Integer)newValue);
 				return;
@@ -227,10 +214,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID)
-	{
-		switch (featureID)
-		{
+	public void eUnset(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.MULTIPLICITY__MIN:
 				setMin(MIN_EDEFAULT);
 				return;
@@ -250,10 +235,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID)
-	{
-		switch (featureID)
-		{
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.MULTIPLICITY__MIN:
 				return min != MIN_EDEFAULT;
 			case GrammarPackage.MULTIPLICITY__MAX:
@@ -270,8 +253,7 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity
 	 * @generated
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

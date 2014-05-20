@@ -8,11 +8,6 @@ package xgen.grammar;
  * A representation of the model object '<em><b>Definition</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * A definition of a non-terminal
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -26,16 +21,15 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Definition extends Element
-{
+public interface Definition extends Element {
 	/**
 	 * Returns the value of the '<em><b>Lhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lhs</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The left hand side of the definition i.e. the name
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Lhs</em>' attribute.
 	 * @see #setLhs(String)
 	 * @see xgen.grammar.GrammarPackage#getDefinition_Lhs()
@@ -83,11 +77,11 @@ public interface Definition extends Element
 	/**
 	 * Returns the value of the '<em><b>Rhs</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rhs</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The right hand side of the definition which is the element that defines its production
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Rhs</em>' containment reference.
 	 * @see #setRhs(Construct)
 	 * @see xgen.grammar.GrammarPackage#getDefinition_Rhs()

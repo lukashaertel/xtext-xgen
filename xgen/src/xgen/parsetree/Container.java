@@ -7,62 +7,67 @@ import com.google.common.collect.Iterables;
 
 import xgen.grammar.Element;
 
-public class Container extends Node
-{
+public class Container extends Node {
 	public final Element label;
 
 	public final Node[] children;
 
-	public Container(Element label, Node... children)
-	{
+	public Container(Element label, Node... children) {
 		this.label = label;
 		this.children = children;
+
+		for (Node c : children)
+			c.parent = this;
 	}
 
-	public static Container fromIterable(Element label, Iterable<Node> children)
-	{
+	public static Node fromIterable(Element label, Iterable<Node> children) {
 		return new Container(label, Iterables.toArray(children, Node.class));
 	}
 
-	public Container transformLabel(Function<Element, Element> f)
-	{
+	@Override
+	public Container transformLabel(Function<Element, Element> f) {
 		return new Container(f.apply(label), children);
 	}
 
-	public Container transformAllLabels(Function<Element, Element> f)
-	{
-		Node[] r = new Node[children.length];
+	@Override
+	public Container transformChildren(Function<Node[], Node[]> f) {
+		return new Container(label, f.apply(children));
+	}
 
+	@Override
+	public Container transformValue(Function<Object, Object> f) {
+		return this;
+	}
+
+	@Override
+	public Container transformAllLabels(Function<Element, Element> f) {
+		Node[] r = new Node[children.length];
 		for (int i = 0; i < children.length; i++)
-			if (children[i] instanceof Container)
-				r[i] = ((Container) children[i]).transformAllLabels(f);
-			else
-				r[i] = children[i];
+			r[i] = children[i].transformAllLabels(f);
 
 		return new Container(f.apply(label), r);
 	}
 
-	public Container transformChildren(Function<Node[], Node[]> f)
-	{
-		return new Container(label, f.apply(children));
-	}
-
-	public Container transformAllChildren(Function<Node[], Node[]> f)
-	{
+	@Override
+	public Container transformAllChildren(Function<Node[], Node[]> f) {
 		Node[] r = new Node[children.length];
-
 		for (int i = 0; i < children.length; i++)
-			if (children[i] instanceof Container)
-				r[i] = ((Container) children[i]).transformAllChildren(f);
-			else
-				r[i] = children[i];
+			r[i] = children[i].transformAllChildren(f);
 
 		return new Container(label, f.apply(r));
 	}
 
 	@Override
-	public int hashCode()
-	{
+	public Container transformAllValues(Function<Object, Object> f) {
+		Node[] r = new Node[children.length];
+		for (int i = 0; i < children.length; i++)
+			r[i] = children[i].transformAllValues(f);
+
+		return new Container(label, r);
+	}
+
+	@Override
+	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Arrays.hashCode(children);
@@ -71,41 +76,27 @@ public class Container extends Node
 	}
 
 	@Override
-	public boolean equals(Object obj)
-	{
+	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
-		if (!(obj instanceof Container))
+		if (getClass() != obj.getClass())
 			return false;
 		Container other = (Container) obj;
 		if (!Arrays.equals(children, other.children))
 			return false;
-		if (label == null)
-		{
+		if (label == null) {
 			if (other.label != null)
 				return false;
-		}
-		else if (!label.equals(other.label))
+		} else if (!label.equals(other.label))
 			return false;
 		return true;
 	}
 
 	@Override
-	public String toString()
-	{
-		if (children.length == 0)
-			return "";
-
-		StringBuilder b = new StringBuilder();
-		b.append(children[0]);
-		for (int i = 1; i < children.length; i++)
-		{
-			b.append(" ");
-			b.append(children[i]);
-		}
-
-		return b.toString();
+	public String toString() {
+		return Arrays.toString(children);
 	}
+
 }

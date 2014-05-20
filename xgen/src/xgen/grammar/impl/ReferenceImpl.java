@@ -26,8 +26,7 @@ import xgen.grammar.Reference;
  *
  * @generated
  */
-public class ReferenceImpl extends TerminalImpl implements Reference
-{
+public class ReferenceImpl extends TerminalImpl implements Reference {
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -43,8 +42,7 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReferenceImpl()
-	{
+	protected ReferenceImpl() {
 		super();
 	}
 
@@ -54,8 +52,7 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.REFERENCE;
 	}
 
@@ -64,14 +61,11 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Definition getTarget()
-	{
-		if (target != null && target.eIsProxy())
-		{
+	public Definition getTarget() {
+		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
 			target = (Definition)eResolveProxy(oldTarget);
-			if (target != oldTarget)
-			{
+			if (target != oldTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GrammarPackage.REFERENCE__TARGET, oldTarget, target));
 			}
@@ -84,8 +78,7 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Definition basicGetTarget()
-	{
+	public Definition basicGetTarget() {
 		return target;
 	}
 
@@ -94,8 +87,7 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(Definition newTarget)
-	{
+	public void setTarget(Definition newTarget) {
 		Definition oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
@@ -108,10 +100,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType)
-	{
-		switch (featureID)
-		{
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case GrammarPackage.REFERENCE__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
@@ -125,10 +115,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue)
-	{
-		switch (featureID)
-		{
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
 			case GrammarPackage.REFERENCE__TARGET:
 				setTarget((Definition)newValue);
 				return;
@@ -142,10 +130,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID)
-	{
-		switch (featureID)
-		{
+	public void eUnset(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.REFERENCE__TARGET:
 				setTarget((Definition)null);
 				return;
@@ -159,10 +145,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID)
-	{
-		switch (featureID)
-		{
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.REFERENCE__TARGET:
 				return target != null;
 		}

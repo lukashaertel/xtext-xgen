@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="grammar" nsURI="http://xgen/Grammar/1.0" nsPrefix="g">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="basePackage" value="xgen"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Grammar">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
+        eType="#//Definition" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lhs" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lexical" unique="false"
+        eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//Construct"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Construct" abstract="true" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Terminal" abstract="true" eSuperTypes="#//Construct"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Unary" abstract="true" eSuperTypes="#//Construct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//Construct"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NAry" abstract="true" eSuperTypes="#//Construct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//Construct" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Any" eSuperTypes="#//Terminal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Keyword" eSuperTypes="#//Terminal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Range" eSuperTypes="#//Terminal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EChar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EChar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//Terminal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Definition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alternative" eSuperTypes="#//NAry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sequence" eSuperTypes="#//NAry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//Unary"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Multiplicity" eSuperTypes="#//Unary">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBounded" unique="false"
+        eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+</ecore:EPackage>

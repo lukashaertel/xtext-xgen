@@ -12,8 +12,7 @@ import org.eclipse.emf.ecore.EFactory;
  * @see xgen.grammar.GrammarPackage
  * @generated
  */
-public interface GrammarFactory extends EFactory
-{
+public interface GrammarFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->

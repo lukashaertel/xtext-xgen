@@ -8,11 +8,6 @@ package xgen.grammar;
  * A representation of the model object '<em><b>Range</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * A character in the given range
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -25,16 +20,15 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Range extends Terminal
-{
+public interface Range extends Terminal {
 	/**
 	 * Returns the value of the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The inclusive minimum character
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min</em>' attribute.
 	 * @see #setMin(char)
 	 * @see xgen.grammar.GrammarPackage#getRange_Min()
@@ -56,11 +50,11 @@ public interface Range extends Terminal
 	/**
 	 * Returns the value of the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The inclusive maximum character
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max</em>' attribute.
 	 * @see #setMax(char)
 	 * @see xgen.grammar.GrammarPackage#getRange_Max()

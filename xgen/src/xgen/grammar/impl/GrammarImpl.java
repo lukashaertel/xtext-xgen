@@ -33,8 +33,7 @@ import xgen.grammar.GrammarPackage;
  *
  * @generated
  */
-public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
-{
+public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar {
 	/**
 	 * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -50,8 +49,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GrammarImpl()
-	{
+	protected GrammarImpl() {
 		super();
 	}
 
@@ -61,8 +59,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass()
-	{
+	protected EClass eStaticClass() {
 		return GrammarPackage.Literals.GRAMMAR;
 	}
 
@@ -71,10 +68,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Definition> getDefinitions()
-	{
-		if (definitions == null)
-		{
+	public EList<Definition> getDefinitions() {
+		if (definitions == null) {
 			definitions = new EObjectContainmentEList<Definition>(Definition.class, this, GrammarPackage.GRAMMAR__DEFINITIONS);
 		}
 		return definitions;
@@ -86,10 +81,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-	{
-		switch (featureID)
-		{
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
 			case GrammarPackage.GRAMMAR__DEFINITIONS:
 				return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
 		}
@@ -102,10 +95,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType)
-	{
-		switch (featureID)
-		{
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case GrammarPackage.GRAMMAR__DEFINITIONS:
 				return getDefinitions();
 		}
@@ -119,10 +110,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue)
-	{
-		switch (featureID)
-		{
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
 			case GrammarPackage.GRAMMAR__DEFINITIONS:
 				getDefinitions().clear();
 				getDefinitions().addAll((Collection<? extends Definition>)newValue);
@@ -137,10 +126,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID)
-	{
-		switch (featureID)
-		{
+	public void eUnset(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.GRAMMAR__DEFINITIONS:
 				getDefinitions().clear();
 				return;
@@ -154,10 +141,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID)
-	{
-		switch (featureID)
-		{
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
 			case GrammarPackage.GRAMMAR__DEFINITIONS:
 				return definitions != null && !definitions.isEmpty();
 		}

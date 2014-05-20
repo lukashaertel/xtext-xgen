@@ -24,8 +24,7 @@ import org.eclipse.emf.ecore.EReference;
  *        annotation="http://www.eclipse.org/emf/2002/GenModel basePackage='xgen'"
  * @generated
  */
-public interface GrammarPackage extends EPackage
-{
+public interface GrammarPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -40,7 +39,7 @@ public interface GrammarPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "xgen.grammar";
+	String eNS_URI = "http://xgen/Grammar/1.0";
 
 	/**
 	 * The package namespace name.
@@ -48,7 +47,7 @@ public interface GrammarPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "grammar";
+	String eNS_PREFIX = "g";
 
 	/**
 	 * The singleton instance of the package.
@@ -947,8 +946,7 @@ public interface GrammarPackage extends EPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	interface Literals
-	{
+	interface Literals {
 		/**
 		 * The meta object literal for the '{@link xgen.grammar.impl.GrammarImpl <em>Grammar</em>}' class.
 		 * <!-- begin-user-doc -->

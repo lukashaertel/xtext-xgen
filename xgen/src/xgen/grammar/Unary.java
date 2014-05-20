@@ -8,11 +8,6 @@ package xgen.grammar;
  * A representation of the model object '<em><b>Unary</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * Abstract base for elements manipulating a single inner element
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -24,16 +19,15 @@ package xgen.grammar;
  * @model abstract="true"
  * @generated
  */
-public interface Unary extends Construct
-{
+public interface Unary extends Construct {
 	/**
 	 * Returns the value of the '<em><b>Operand</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operand</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The operand element
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operand</em>' containment reference.
 	 * @see #setOperand(Construct)
 	 * @see xgen.grammar.GrammarPackage#getUnary_Operand()

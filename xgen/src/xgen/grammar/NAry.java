@@ -9,11 +9,6 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>NAry</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * *
- * Abstract base for elements manipulating a sequence of inner element
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -25,17 +20,16 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface NAry extends Construct
-{
+public interface NAry extends Construct {
 	/**
 	 * Returns the value of the '<em><b>Operands</b></em>' containment reference list.
 	 * The list contents are of type {@link xgen.grammar.Construct}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operands</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * *
-	 * The left operand element
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operands</em>' containment reference list.
 	 * @see xgen.grammar.GrammarPackage#getNAry_Operands()
 	 * @model containment="true"
