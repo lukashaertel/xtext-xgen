@@ -632,6 +632,44 @@ public interface GrammarPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.UntilImpl <em>Until</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.UntilImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getUntil()
+	 * @generated
+	 */
+	int UNTIL = 15;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL__OPERAND = UNARY__OPERAND;
+
+	/**
+	 * The number of structural features of the '<em>Until</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_FEATURE_COUNT = UNARY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Until</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_OPERATION_COUNT = UNARY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link xgen.grammar.Grammar <em>Grammar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -925,6 +963,16 @@ public interface GrammarPackage extends EPackage {
 	EAttribute getMultiplicity_UpperBounded();
 
 	/**
+	 * Returns the meta object for class '{@link xgen.grammar.Until <em>Until</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Until</em>'.
+	 * @see xgen.grammar.Until
+	 * @generated
+	 */
+	EClass getUntil();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1200,6 +1248,16 @@ public interface GrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MULTIPLICITY__UPPER_BOUNDED = eINSTANCE.getMultiplicity_UpperBounded();
+
+		/**
+		 * The meta object literal for the '{@link xgen.grammar.impl.UntilImpl <em>Until</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xgen.grammar.impl.UntilImpl
+		 * @see xgen.grammar.impl.GrammarPackageImpl#getUntil()
+		 * @generated
+		 */
+		EClass UNTIL = eINSTANCE.getUntil();
 
 	}
 

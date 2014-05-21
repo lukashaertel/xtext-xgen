@@ -24,6 +24,7 @@ import xgen.grammar.Not;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
+import xgen.grammar.Until;
 import xgen.services.GrammarGrammarAccess;
 
 @SuppressWarnings("all")
@@ -150,6 +151,19 @@ public abstract class AbstractGrammarSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
+			case GrammarPackage.UNTIL:
+				if(context == grammarAccess.getConstruct0Rule() ||
+				   context == grammarAccess.getConstruct0Access().getAlternativeOperandsAction_1_0() ||
+				   context == grammarAccess.getConstruct1Rule() ||
+				   context == grammarAccess.getConstruct1Access().getSequenceOperandsAction_1_0() ||
+				   context == grammarAccess.getConstruct2Rule() ||
+				   context == grammarAccess.getConstruct3Rule() ||
+				   context == grammarAccess.getConstruct3Access().getMultiplicityOperandAction_1_0() ||
+				   context == grammarAccess.getConstruct4Rule()) {
+					sequence_Construct2(context, (Until) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -184,6 +198,22 @@ public abstract class AbstractGrammarSemanticSequencer extends AbstractDelegatin
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_0_2_0(), semanticObject.getOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     operand=Construct2
+	 */
+	protected void sequence_Construct2(EObject context, Until semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, GrammarPackage.Literals.UNARY__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GrammarPackage.Literals.UNARY__OPERAND));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_1_2_0(), semanticObject.getOperand());
 		feeder.finish();
 	}
 	

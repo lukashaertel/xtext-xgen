@@ -8,6 +8,93 @@ import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import xgen.grammar.Grammar
 import xgen.generate.Iteration
+import xgen.postprocess.ReplaceOne
+import xgen.postprocess.RemoveAll
+import xgen.postprocess.ReplaceAll
+import xgen.postprocess.Processor
+import java.util.Collection
+import java.util.List
+import java.util.Random
+import xgen.parsetree.Leaf
+
+class ReplaceInitial extends ReplaceOne {
+
+	override protected candidate(Leaf it) {
+		value == "<INITIAL>"
+	}
+
+	override protected replace(Leaf it) {
+		new Leaf("initial")
+	}
+}
+
+class RemoveRemainingInitial extends RemoveAll {
+
+	override protected candidate(Leaf it) {
+		value == "<initial>"
+	}
+}
+
+class ReplaceInputValue extends ReplaceAll {
+	var i = 0
+	var j = #["SomeInput", "MoreInput", "SlightlyDifferentInput", "EvenMore"]
+
+	override protected candidate(Leaf it) {
+		value == "<input value>"
+	}
+
+	override protected replace(Leaf it) {
+		val r = j.get(i % j.size)
+
+		i = i + 1
+
+		return new Leaf(r)
+	}
+}
+
+class ReplaceStateName extends ReplaceAll {
+	var i = 0
+	val Collection<String> exchange
+
+	new(Collection<String> exchange) {
+		this.exchange = exchange
+	}
+
+	override protected resetOne() {
+		i = 0
+		exchange.clear
+	}
+
+	override protected candidate(Leaf it) {
+		value == "<state name>"
+	}
+
+	override protected replace(Leaf it) {
+		val r = "State" + i
+
+		i = i + 1
+
+		exchange += r
+		return new Leaf(r)
+	}
+}
+
+class ReplaceStateRef extends ReplaceAll {
+	val random = new Random
+	val List<String> exchange
+
+	new(List<String> exchange) {
+		this.exchange = exchange
+	}
+
+	override protected candidate(Leaf it) {
+		value == "<state ref>"
+	}
+
+	override protected replace(Leaf it) {
+		new Leaf(exchange.get(random.nextInt(exchange.size)))
+	}
+}
 
 /**
  * Generates code from your model files on save.
@@ -17,16 +104,24 @@ import xgen.generate.Iteration
 class GrammarGenerator implements IGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+		val s = newArrayList()
+		val t = Processor.compose(new ReplaceInitial, new RemoveRemainingInitial, new ReplaceInputValue,
+			new ReplaceStateName(s), new ReplaceStateRef(s))
+
 		for (g : resource.allContents.filter(Grammar).toIterable) {
+
+			// Make iteration from g
 			val i = new Iteration(g)
+
+			// Iterate the first rule
 			val x = i.iterate(g.definitions.get(0))
 
-			for (p : 0 .. 10000) {
-				val b = new StringBuilder
+			// Post-process
+			val y = t.postProcess(x)
 
-				x.get(p).ifPresent[flatten(b, false)]
-
-				println(b)
+			// Print some items
+			for (p : 0 .. 1000) {
+				y.get(p).ifPresent[println(flatten(false))]
 			}
 		}
 	}

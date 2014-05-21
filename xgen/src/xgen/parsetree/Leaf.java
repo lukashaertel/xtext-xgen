@@ -1,9 +1,8 @@
 package xgen.parsetree;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.function.Function;
-
-import xgen.grammar.Element;
 
 public class Leaf extends Node
 {
@@ -15,39 +14,27 @@ public class Leaf extends Node
 	}
 
 	@Override
-	public Leaf transformLabel(Function<Element, Element> f)
+	public Node transform(boolean recursive, Function<Node, Node> f)
+	{
+		return f.apply(this);
+	}
+
+	@Override
+	public Node transformContainer(boolean recursive, Function<Container, Node> f)
 	{
 		return this;
 	}
 
 	@Override
-	public Leaf transformChildren(Function<Node[], Node[]> f)
+	public Node transformLeaf(boolean recursive, Function<Leaf, Node> f)
 	{
-		return this;
+		return f.apply(this);
 	}
 
 	@Override
-	public Leaf transformValue(Function<Object, Object> f)
+	public void visit(Consumer<? super Node> f)
 	{
-		return new Leaf(f.apply(value));
-	}
-
-	@Override
-	public Leaf transformAllLabels(Function<Element, Element> f)
-	{
-		return this;
-	}
-
-	@Override
-	public Leaf transformAllChildren(Function<Node[], Node[]> f)
-	{
-		return this;
-	}
-
-	@Override
-	public Leaf transformAllValues(Function<Object, Object> f)
-	{
-		return new Leaf(f.apply(value));
+		f.accept(this);
 	}
 
 	@Override

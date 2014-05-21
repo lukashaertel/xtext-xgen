@@ -1,8 +1,7 @@
 package xgen.parsetree;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
-
-import xgen.grammar.Element;
 
 public abstract class Node
 {
@@ -18,17 +17,22 @@ public abstract class Node
 		return parent;
 	}
 
-	public abstract Node transformLabel(Function<Element, Element> f);
+	public abstract Node transform(boolean recursive, Function<Node, Node> f);
 
-	public abstract Node transformChildren(Function<Node[], Node[]> f);
+	public abstract Node transformContainer(boolean recursive, Function<Container, Node> f);
 
-	public abstract Node transformValue(Function<Object, Object> f);
+	public abstract Node transformLeaf(boolean recursive, Function<Leaf, Node> f);
 
-	public abstract Node transformAllLabels(Function<Element, Element> f);
+	public abstract void visit(Consumer<? super Node> f);
 
-	public abstract Node transformAllChildren(Function<Node[], Node[]> f);
+	public String flatten(boolean lexical)
+	{
+		StringBuilder b = new StringBuilder();
 
-	public abstract Node transformAllValues(Function<Object, Object> f);
+		flatten(b, lexical);
+
+		return b.toString();
+	}
 
 	public abstract void flatten(StringBuilder target, boolean lexical);
 }

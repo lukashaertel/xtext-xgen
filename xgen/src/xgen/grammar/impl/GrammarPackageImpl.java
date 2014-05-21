@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import xgen.grammar.Alternative;
@@ -27,6 +26,7 @@ import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
 import xgen.grammar.Terminal;
 import xgen.grammar.Unary;
+import xgen.grammar.Until;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,6 +139,13 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * @generated
 	 */
 	private EClass multiplicityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass untilEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -462,6 +469,16 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUntil()
+	{
+		return untilEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GrammarFactory getGrammarFactory() {
 		return (GrammarFactory)getEFactoryInstance();
 	}
@@ -527,6 +544,8 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		createEAttribute(multiplicityEClass, MULTIPLICITY__MIN);
 		createEAttribute(multiplicityEClass, MULTIPLICITY__MAX);
 		createEAttribute(multiplicityEClass, MULTIPLICITY__UPPER_BOUNDED);
+
+		untilEClass = createEClass(UNTIL);
 	}
 
 	/**
@@ -573,6 +592,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		sequenceEClass.getESuperTypes().add(this.getNAry());
 		notEClass.getESuperTypes().add(this.getUnary());
 		multiplicityEClass.getESuperTypes().add(this.getUnary());
+		untilEClass.getESuperTypes().add(this.getUnary());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(grammarEClass, Grammar.class, "Grammar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -617,6 +637,8 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		initEAttribute(getMultiplicity_Min(), theEcorePackage.getEInt(), "min", null, 0, 1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiplicity_Max(), theEcorePackage.getEInt(), "max", null, 0, 1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiplicity_UpperBounded(), theEcorePackage.getEBoolean(), "upperBounded", null, 0, 1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(untilEClass, Until.class, "Until", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

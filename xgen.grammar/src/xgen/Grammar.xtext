@@ -17,6 +17,7 @@ Construct1 returns Construct:
 
 Construct2 returns Construct:
 	{Not} '!' operand=Construct2 |
+	{Until} '->' operand=Construct2 |
 	Construct3;
 
 Construct3 returns Construct:

@@ -1,23 +1,38 @@
 package xgen.generate;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.OptionalLong;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EObject;
 
-import com.google.common.collect.Iterables;
-
 import xgen.accept.Acceptor;
-import xgen.grammar.*;
+import xgen.grammar.Alternative;
+import xgen.grammar.Any;
+import xgen.grammar.Definition;
+import xgen.grammar.Element;
+import xgen.grammar.Grammar;
+import xgen.grammar.Keyword;
+import xgen.grammar.Multiplicity;
+import xgen.grammar.Not;
+import xgen.grammar.Range;
+import xgen.grammar.Reference;
+import xgen.grammar.Sequence;
+import xgen.grammar.Until;
 import xgen.grammar.util.GrammarSwitch;
 import xgen.grammar.util.GrammarUtil;
 import xgen.index.Index;
-import xgen.parsetree.*;
+import xgen.parsetree.Container;
+import xgen.parsetree.Leaf;
+import xgen.parsetree.Node;
 import xgen.util.StringUtil;
+
+import com.google.common.collect.Iterables;
 
 public class Iteration
 {
-	protected static final long INNER_PER_OUTER = 100;
+	private static final long INNER_PER_OUTER = 100;
 
 	public final Grammar grammar;
 
@@ -73,6 +88,27 @@ public class Iteration
 				{
 					depth.addDepth(object, 1);
 
+					if (object.isLexical())
+					{
+						Collection<Element> higher = GrammarUtil.getLexicalHigherPrecedence(object);
+
+						Predicate<Node> f = n -> {
+
+							// Make a flat representation on lexical level
+							String s = n.flatten(true);
+
+							// If any higher matches, don't use this parse-tree
+							for (Element e : higher)
+								if (Acceptor.accepts(e, s))
+									return false;
+
+							return true;
+						};
+
+						return iterate(object.getRhs(), depth).filter(f).mapPresent(x -> new Container(object, x));
+					}
+
+					// Else return plain iterated
 					return iterate(object.getRhs(), depth).mapPresent(x -> new Container(object, x));
 				}
 				finally
@@ -100,7 +136,15 @@ public class Iteration
 			@Override
 			public Index<Node> caseNot(Not object)
 			{
-				return getStrings().filter(i -> !Acceptor.INSTANCE.acceptsAnySuffix(object.getOperand(), i)).mapPresent(x -> new Container(object, new Leaf(x)));
+				return getStrings().filter(i -> !Acceptor.acceptsAnySuffix(object.getOperand(), i)).mapPresent(x -> new Container(object, new Leaf(x)));
+			}
+
+			public Index<Node> caseUntil(Until object)
+			{
+				Index<String> head = getStrings().filter(i -> !Acceptor.acceptsAnySubstring(object.getOperand(), i));
+				Index<String> tail = iterate(object.getOperand(), depth).mapPresent(n -> n.flatten(true));
+
+				return head.productPresent(tail, (a, b) -> new Container(object, new Leaf(a + b)));
 			}
 
 			@Override

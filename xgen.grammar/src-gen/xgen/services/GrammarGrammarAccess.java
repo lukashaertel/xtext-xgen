@@ -189,13 +189,18 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cExclamationMarkKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cOperandAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cOperandConstruct2ParserRuleCall_0_2_0 = (RuleCall)cOperandAssignment_0_2.eContents().get(0);
-		private final RuleCall cConstruct3ParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cUntilAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cOperandConstruct2ParserRuleCall_1_2_0 = (RuleCall)cOperandAssignment_1_2.eContents().get(0);
+		private final RuleCall cConstruct3ParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Construct2 returns Construct:
-		//	{Not} "!" operand=Construct2 | Construct3;
+		//	{Not} "!" operand=Construct2 | {Until} "->" operand=Construct2 | Construct3;
 		public ParserRule getRule() { return rule; }
 
-		//{Not} "!" operand=Construct2 | Construct3
+		//{Not} "!" operand=Construct2 | {Until} "->" operand=Construct2 | Construct3
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{Not} "!" operand=Construct2
@@ -213,8 +218,23 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		//Construct2
 		public RuleCall getOperandConstruct2ParserRuleCall_0_2_0() { return cOperandConstruct2ParserRuleCall_0_2_0; }
 
+		//{Until} "->" operand=Construct2
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{Until}
+		public Action getUntilAction_1_0() { return cUntilAction_1_0; }
+
+		//"->"
+		public Keyword getHyphenMinusGreaterThanSignKeyword_1_1() { return cHyphenMinusGreaterThanSignKeyword_1_1; }
+
+		//operand=Construct2
+		public Assignment getOperandAssignment_1_2() { return cOperandAssignment_1_2; }
+
+		//Construct2
+		public RuleCall getOperandConstruct2ParserRuleCall_1_2_0() { return cOperandConstruct2ParserRuleCall_1_2_0; }
+
 		//Construct3
-		public RuleCall getConstruct3ParserRuleCall_1() { return cConstruct3ParserRuleCall_1; }
+		public RuleCall getConstruct3ParserRuleCall_2() { return cConstruct3ParserRuleCall_2; }
 	}
 
 	public class Construct3Elements extends AbstractParserRuleElementFinder {
@@ -470,7 +490,7 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Construct2 returns Construct:
-	//	{Not} "!" operand=Construct2 | Construct3;
+	//	{Not} "!" operand=Construct2 | {Until} "->" operand=Construct2 | Construct3;
 	public Construct2Elements getConstruct2Access() {
 		return (pConstruct2 != null) ? pConstruct2 : (pConstruct2 = new Construct2Elements());
 	}

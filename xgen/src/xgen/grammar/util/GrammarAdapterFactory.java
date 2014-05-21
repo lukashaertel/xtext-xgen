@@ -4,12 +4,26 @@ package xgen.grammar.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
-import xgen.grammar.*;
+import xgen.grammar.Alternative;
+import xgen.grammar.Any;
+import xgen.grammar.Construct;
+import xgen.grammar.Definition;
+import xgen.grammar.Element;
+import xgen.grammar.Grammar;
+import xgen.grammar.GrammarPackage;
+import xgen.grammar.Keyword;
+import xgen.grammar.Multiplicity;
+import xgen.grammar.NAry;
+import xgen.grammar.Not;
+import xgen.grammar.Range;
+import xgen.grammar.Reference;
+import xgen.grammar.Sequence;
+import xgen.grammar.Terminal;
+import xgen.grammar.Unary;
+import xgen.grammar.Until;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,6 +159,11 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 			public Adapter caseMultiplicity(Multiplicity object)
 			{
 				return createMultiplicityAdapter();
+			}
+			@Override
+			public Adapter caseUntil(Until object)
+			{
+				return createUntilAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -374,6 +393,21 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMultiplicityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xgen.grammar.Until <em>Until</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xgen.grammar.Until
+	 * @generated
+	 */
+	public Adapter createUntilAdapter()
+	{
 		return null;
 	}
 

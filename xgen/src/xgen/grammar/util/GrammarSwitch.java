@@ -4,10 +4,25 @@ package xgen.grammar.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
-import xgen.grammar.*;
+import xgen.grammar.Alternative;
+import xgen.grammar.Any;
+import xgen.grammar.Construct;
+import xgen.grammar.Definition;
+import xgen.grammar.Element;
+import xgen.grammar.Grammar;
+import xgen.grammar.GrammarPackage;
+import xgen.grammar.Keyword;
+import xgen.grammar.Multiplicity;
+import xgen.grammar.NAry;
+import xgen.grammar.Not;
+import xgen.grammar.Range;
+import xgen.grammar.Reference;
+import xgen.grammar.Sequence;
+import xgen.grammar.Terminal;
+import xgen.grammar.Unary;
+import xgen.grammar.Until;
 
 /**
  * <!-- begin-user-doc -->
@@ -202,6 +217,16 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = caseUnary(multiplicity);
 				if (result == null) result = caseConstruct(multiplicity);
 				if (result == null) result = caseElement(multiplicity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrammarPackage.UNTIL:
+			{
+				Until until = (Until)theEObject;
+				T result = caseUntil(until);
+				if (result == null) result = caseUnary(until);
+				if (result == null) result = caseConstruct(until);
+				if (result == null) result = caseElement(until);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -431,6 +456,22 @@ public class GrammarSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMultiplicity(Multiplicity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Until</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Until</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUntil(Until object)
+	{
 		return null;
 	}
 

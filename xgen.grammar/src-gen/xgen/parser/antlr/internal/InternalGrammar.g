@@ -389,13 +389,42 @@ ruleConstruct2 returns [EObject current=null]
 
 )
 ))
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getConstruct2Access().getUntilAction_1_0(),
+            $current);
+    }
+)	otherlv_4='->' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getConstruct2Access().getHyphenMinusGreaterThanSignKeyword_1_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_1_2_0()); 
+	    }
+		lv_operand_5_0=ruleConstruct2		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getConstruct2Rule());
+	        }
+       		set(
+       			$current, 
+       			"operand",
+        		lv_operand_5_0, 
+        		"Construct2");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
     |
     { 
-        newCompositeNode(grammarAccess.getConstruct2Access().getConstruct3ParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getConstruct2Access().getConstruct3ParserRuleCall_2()); 
     }
-    this_Construct3_3=ruleConstruct3
+    this_Construct3_6=ruleConstruct3
     { 
-        $current = $this_Construct3_3.current; 
+        $current = $this_Construct3_6.current; 
         afterParserOrEnumRuleCall();
     }
 )

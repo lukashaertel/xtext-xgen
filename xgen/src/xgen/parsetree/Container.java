@@ -2,12 +2,13 @@ package xgen.parsetree;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.function.Function;
-
-import com.google.common.collect.Iterables;
 
 import xgen.grammar.Definition;
 import xgen.grammar.Element;
+
+import com.google.common.collect.Iterables;
 
 public class Container extends Node
 {
@@ -35,51 +36,50 @@ public class Container extends Node
 	}
 
 	@Override
-	public Container transformLabel(Function<Element, Element> f)
+	public Node transform(boolean recursive, Function<Node, Node> f)
 	{
-		return new Container(f.apply(label), children);
-	}
+		if (!recursive)
+			return f.apply(this);
 
-	@Override
-	public Container transformChildren(Function<Node[], Node[]> f)
-	{
-		return new Container(label, f.apply(children));
-	}
-
-	@Override
-	public Container transformValue(Function<Object, Object> f)
-	{
-		return this;
-	}
-
-	@Override
-	public Container transformAllLabels(Function<Element, Element> f)
-	{
-		Node[] r = new Node[children.length];
+		Node[] cs = new Node[children.length];
 		for (int i = 0; i < children.length; i++)
-			r[i] = children[i].transformAllLabels(f);
+			cs[i] = children[i].transform(recursive, f);
 
-		return new Container(f.apply(label), r);
+		return f.apply(new Container(label, cs));
 	}
 
 	@Override
-	public Container transformAllChildren(Function<Node[], Node[]> f)
+	public Node transformContainer(boolean recursive, Function<Container, Node> f)
 	{
-		Node[] r = new Node[children.length];
-		for (int i = 0; i < children.length; i++)
-			r[i] = children[i].transformAllChildren(f);
+		if (!recursive)
+			return f.apply(this);
 
-		return new Container(label, f.apply(r));
+		Node[] cs = new Node[children.length];
+		for (int i = 0; i < children.length; i++)
+			cs[i] = children[i].transformContainer(recursive, f);
+
+		return f.apply(new Container(label, cs));
 	}
 
 	@Override
-	public Container transformAllValues(Function<Object, Object> f)
+	public Node transformLeaf(boolean recursive, Function<Leaf, Node> f)
 	{
-		Node[] r = new Node[children.length];
-		for (int i = 0; i < children.length; i++)
-			r[i] = children[i].transformAllValues(f);
+		if (!recursive)
+			return this;
 
-		return new Container(label, r);
+		Node[] cs = new Node[children.length];
+		for (int i = 0; i < children.length; i++)
+			cs[i] = children[i].transformLeaf(recursive, f);
+
+		return new Container(label, cs);
+	}
+
+	@Override
+	public void visit(Consumer<? super Node> f)
+	{
+		f.accept(this);
+		for (Node c : children)
+			c.visit(f);
 	}
 
 	@Override

@@ -5,12 +5,22 @@ package xgen.grammar.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import xgen.grammar.*;
+import xgen.grammar.Alternative;
+import xgen.grammar.Any;
+import xgen.grammar.Definition;
+import xgen.grammar.Grammar;
+import xgen.grammar.GrammarFactory;
+import xgen.grammar.GrammarPackage;
+import xgen.grammar.Keyword;
+import xgen.grammar.Multiplicity;
+import xgen.grammar.Not;
+import xgen.grammar.Range;
+import xgen.grammar.Reference;
+import xgen.grammar.Sequence;
+import xgen.grammar.Until;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,6 +80,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 			case GrammarPackage.SEQUENCE: return createSequence();
 			case GrammarPackage.NOT: return createNot();
 			case GrammarPackage.MULTIPLICITY: return createMultiplicity();
+			case GrammarPackage.UNTIL: return createUntil();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -173,6 +184,17 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	public Multiplicity createMultiplicity() {
 		MultiplicityImpl multiplicity = new MultiplicityImpl();
 		return multiplicity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Until createUntil()
+	{
+		UntilImpl until = new UntilImpl();
+		return until;
 	}
 
 	/**

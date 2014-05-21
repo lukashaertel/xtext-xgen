@@ -1,11 +1,11 @@
 package xgen.index;
 
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.NavigableMap;
 import java.util.Optional;
 import java.util.OptionalLong;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 
 public class IndexFlatten<X> extends Index<X>
 {
