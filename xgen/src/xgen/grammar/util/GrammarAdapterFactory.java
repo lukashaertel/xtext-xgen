@@ -35,7 +35,8 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public GrammarAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = GrammarPackage.eINSTANCE;
 		}
 	}
@@ -50,10 +51,12 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -66,69 +69,86 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected GrammarSwitch<Adapter> modelSwitch =
-		new GrammarSwitch<Adapter>() {
+		new GrammarSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseGrammar(Grammar object) {
+			public Adapter caseGrammar(Grammar object)
+			{
 				return createGrammarAdapter();
 			}
 			@Override
-			public Adapter caseElement(Element object) {
+			public Adapter caseElement(Element object)
+			{
 				return createElementAdapter();
 			}
 			@Override
-			public Adapter caseDefinition(Definition object) {
+			public Adapter caseDefinition(Definition object)
+			{
 				return createDefinitionAdapter();
 			}
 			@Override
-			public Adapter caseConstruct(Construct object) {
+			public Adapter caseConstruct(Construct object)
+			{
 				return createConstructAdapter();
 			}
 			@Override
-			public Adapter caseTerminal(Terminal object) {
+			public Adapter caseTerminal(Terminal object)
+			{
 				return createTerminalAdapter();
 			}
 			@Override
-			public Adapter caseUnary(Unary object) {
+			public Adapter caseUnary(Unary object)
+			{
 				return createUnaryAdapter();
 			}
 			@Override
-			public Adapter caseNAry(NAry object) {
+			public Adapter caseNAry(NAry object)
+			{
 				return createNAryAdapter();
 			}
 			@Override
-			public Adapter caseAny(Any object) {
+			public Adapter caseAny(Any object)
+			{
 				return createAnyAdapter();
 			}
 			@Override
-			public Adapter caseKeyword(Keyword object) {
+			public Adapter caseKeyword(Keyword object)
+			{
 				return createKeywordAdapter();
 			}
 			@Override
-			public Adapter caseRange(Range object) {
+			public Adapter caseRange(Range object)
+			{
 				return createRangeAdapter();
 			}
 			@Override
-			public Adapter caseReference(Reference object) {
+			public Adapter caseReference(Reference object)
+			{
 				return createReferenceAdapter();
 			}
 			@Override
-			public Adapter caseAlternative(Alternative object) {
+			public Adapter caseAlternative(Alternative object)
+			{
 				return createAlternativeAdapter();
 			}
 			@Override
-			public Adapter caseSequence(Sequence object) {
+			public Adapter caseSequence(Sequence object)
+			{
 				return createSequenceAdapter();
 			}
 			@Override
-			public Adapter caseNot(Not object) {
+			public Adapter caseNot(Not object)
+			{
 				return createNotAdapter();
 			}
 			@Override
-			public Adapter caseMultiplicity(Multiplicity object) {
+			public Adapter caseMultiplicity(Multiplicity object)
+			{
 				return createMultiplicityAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

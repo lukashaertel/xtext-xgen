@@ -47,18 +47,18 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cLexicalAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final Keyword cLexicalLexicalKeyword_1_0 = (Keyword)cLexicalAssignment_1.eContents().get(0);
-		private final Assignment cLhsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLhsIDTerminalRuleCall_2_0 = (RuleCall)cLhsAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cRhsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cRhsConstruct0ParserRuleCall_4_0 = (RuleCall)cRhsAssignment_4.eContents().get(0);
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Definition:
-		//	{Definition} lexical?="lexical"? lhs=ID ":" rhs=Construct0 ";";
+		//	{Definition} lexical?="lexical"? name=ID ":" rhs=Construct0 ";";
 		public ParserRule getRule() { return rule; }
 
-		//{Definition} lexical?="lexical"? lhs=ID ":" rhs=Construct0 ";"
+		//{Definition} lexical?="lexical"? name=ID ":" rhs=Construct0 ";"
 		public Group getGroup() { return cGroup; }
 
 		//{Definition}
@@ -70,11 +70,11 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		//"lexical"
 		public Keyword getLexicalLexicalKeyword_1_0() { return cLexicalLexicalKeyword_1_0; }
 
-		//lhs=ID
-		public Assignment getLhsAssignment_2() { return cLhsAssignment_2; }
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getLhsIDTerminalRuleCall_2_0() { return cLhsIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
 		//":"
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
@@ -289,8 +289,9 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cRangeAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cMinAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cMinCHARTerminalRuleCall_1_1_0 = (RuleCall)cMinAssignment_1_1.eContents().get(0);
-		private final Assignment cMaxAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cMaxCHARTerminalRuleCall_1_2_0 = (RuleCall)cMaxAssignment_1_2.eContents().get(0);
+		private final Keyword cFullStopFullStopKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cMaxAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cMaxCHARTerminalRuleCall_1_3_0 = (RuleCall)cMaxAssignment_1_3.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Action cKeywordAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -304,11 +305,12 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//Construct4 returns Construct:
-		//	{Reference} target=[Definition] | {Range} min=CHAR max=CHAR | {Keyword} value=STRING | {Any} "." | "(" Construct0
-		//	")";
+		//	{Reference} target=[Definition] | {Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | "("
+		//	Construct0 ")";
 		public ParserRule getRule() { return rule; }
 
-		//{Reference} target=[Definition] | {Range} min=CHAR max=CHAR | {Keyword} value=STRING | {Any} "." | "(" Construct0 ")"
+		//{Reference} target=[Definition] | {Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | "(" Construct0
+		//")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{Reference} target=[Definition]
@@ -326,7 +328,7 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getTargetDefinitionIDTerminalRuleCall_0_1_0_1() { return cTargetDefinitionIDTerminalRuleCall_0_1_0_1; }
 
-		//{Range} min=CHAR max=CHAR
+		//{Range} min=CHAR ".." max=CHAR
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{Range}
@@ -338,11 +340,14 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		//CHAR
 		public RuleCall getMinCHARTerminalRuleCall_1_1_0() { return cMinCHARTerminalRuleCall_1_1_0; }
 
+		//".."
+		public Keyword getFullStopFullStopKeyword_1_2() { return cFullStopFullStopKeyword_1_2; }
+
 		//max=CHAR
-		public Assignment getMaxAssignment_1_2() { return cMaxAssignment_1_2; }
+		public Assignment getMaxAssignment_1_3() { return cMaxAssignment_1_3; }
 
 		//CHAR
-		public RuleCall getMaxCHARTerminalRuleCall_1_2_0() { return cMaxCHARTerminalRuleCall_1_2_0; }
+		public RuleCall getMaxCHARTerminalRuleCall_1_3_0() { return cMaxCHARTerminalRuleCall_1_3_0; }
 
 		//{Keyword} value=STRING
 		public Group getGroup_2() { return cGroup_2; }
@@ -435,7 +440,7 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Definition:
-	//	{Definition} lexical?="lexical"? lhs=ID ":" rhs=Construct0 ";";
+	//	{Definition} lexical?="lexical"? name=ID ":" rhs=Construct0 ";";
 	public DefinitionElements getDefinitionAccess() {
 		return (pDefinition != null) ? pDefinition : (pDefinition = new DefinitionElements());
 	}
@@ -485,8 +490,8 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Construct4 returns Construct:
-	//	{Reference} target=[Definition] | {Range} min=CHAR max=CHAR | {Keyword} value=STRING | {Any} "." | "(" Construct0
-	//	")";
+	//	{Reference} target=[Definition] | {Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | "("
+	//	Construct0 ")";
 	public Construct4Elements getConstruct4Access() {
 		return (pConstruct4 != null) ? pConstruct4 : (pConstruct4 = new Construct4Elements());
 	}
@@ -514,7 +519,7 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal CHAR returns ecore::EChar:
-	//	"\'" "\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'") "\'";
+	//	"\'" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'")) "\'";
 	public TerminalRule getCHARRule() {
 		return (tCHAR != null) ? tCHAR : (tCHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "CHAR"));
 	} 

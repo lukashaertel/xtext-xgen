@@ -245,7 +245,8 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDefinition_Lhs() {
+	public EAttribute getDefinition_Name()
+	{
 		return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -490,7 +491,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		elementEClass = createEClass(ELEMENT);
 
 		definitionEClass = createEClass(DEFINITION);
-		createEAttribute(definitionEClass, DEFINITION__LHS);
+		createEAttribute(definitionEClass, DEFINITION__NAME);
 		createEAttribute(definitionEClass, DEFINITION__LEXICAL);
 		createEReference(definitionEClass, DEFINITION__RHS);
 
@@ -580,7 +581,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDefinition_Lhs(), theEcorePackage.getEString(), "lhs", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDefinition_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDefinition_Lexical(), theEcorePackage.getEBoolean(), "lexical", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDefinition_Rhs(), this.getConstruct(), null, "rhs", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

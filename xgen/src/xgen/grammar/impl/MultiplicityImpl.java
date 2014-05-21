@@ -176,7 +176,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.MULTIPLICITY__MIN:
 				return getMin();
 			case GrammarPackage.MULTIPLICITY__MAX:
@@ -194,7 +195,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.MULTIPLICITY__MIN:
 				setMin((Integer)newValue);
 				return;
@@ -215,7 +217,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.MULTIPLICITY__MIN:
 				setMin(MIN_EDEFAULT);
 				return;
@@ -236,7 +239,8 @@ public class MultiplicityImpl extends UnaryImpl implements Multiplicity {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.MULTIPLICITY__MIN:
 				return min != MIN_EDEFAULT;
 			case GrammarPackage.MULTIPLICITY__MAX:

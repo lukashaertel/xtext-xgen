@@ -28,6 +28,7 @@ public class InternalGrammarLexer extends Lexer {
     public static final int RULE_ID=4;
     public static final int RULE_WS=10;
     public static final int RULE_INT=5;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__20=20;
     public static final int T__21=21;
@@ -170,10 +171,11 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:17:7: ( '.' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:17:9: '.'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:17:7: ( '..' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:17:9: '..'
             {
-            match('.'); 
+            match(".."); 
+
 
             }
 
@@ -190,10 +192,10 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:18:7: ( '(' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:18:9: '('
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:18:7: ( '.' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:18:9: '.'
             {
-            match('('); 
+            match('.'); 
 
             }
 
@@ -210,10 +212,10 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:19:7: ( ')' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:19:9: ')'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:19:7: ( '(' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:19:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -230,11 +232,10 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:20:7: ( 'lexical' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:20:9: 'lexical'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:20:7: ( ')' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:20:9: ')'
             {
-            match("lexical"); 
-
+            match(')'); 
 
             }
 
@@ -251,10 +252,11 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:21:7: ( ',' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:21:9: ','
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:21:7: ( 'lexical' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:21:9: 'lexical'
             {
-            match(','); 
+            match("lexical"); 
+
 
             }
 
@@ -266,15 +268,35 @@ public class InternalGrammarLexer extends Lexer {
     }
     // $ANTLR end "T__21"
 
+    // $ANTLR start "T__22"
+    public final void mT__22() throws RecognitionException {
+        try {
+            int _type = T__22;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:22:7: ( ',' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:22:9: ','
+            {
+            match(','); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__22"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2001:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2001:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2034:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2034:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2001:11: ( '^' )?
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2034:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -283,7 +305,7 @@ public class InternalGrammarLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2001:11: '^'
+                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2034:11: '^'
                     {
                     match('^'); 
 
@@ -301,7 +323,7 @@ public class InternalGrammarLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2001:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2034:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -350,10 +372,10 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2003:10: ( ( '0' .. '9' )+ )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2003:12: ( '0' .. '9' )+
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2036:10: ( ( '0' .. '9' )+ )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2036:12: ( '0' .. '9' )+
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2003:12: ( '0' .. '9' )+
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2036:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -367,7 +389,7 @@ public class InternalGrammarLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2003:13: '0' .. '9'
+            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2036:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -399,11 +421,11 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2005:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2005:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2038:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2038:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2005:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2038:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
             loop4:
             do {
                 int alt4=3;
@@ -419,7 +441,7 @@ public class InternalGrammarLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2005:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2038:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -435,7 +457,7 @@ public class InternalGrammarLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2005:65: ~ ( ( '\\\\' | '\"' ) )
+            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2038:65: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -472,14 +494,15 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = RULE_CHAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2007:11: ( ( '\\'' '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) '\\'' ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2007:13: ( '\\'' '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) '\\'' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2040:11: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) ) '\\'' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2040:13: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) ) '\\''
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2007:13: ( '\\'' '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) '\\'' )
+            match('\''); 
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2040:18: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0=='\'') ) {
+            if ( (LA5_0=='\\') ) {
                 alt5=1;
             }
             else if ( ((LA5_0>='\u0000' && LA5_0<='&')||(LA5_0>='(' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')) ) {
@@ -493,9 +516,8 @@ public class InternalGrammarLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2007:14: '\\'' '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2040:19: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     {
-                    match('\''); 
                     match('\\'); 
                     if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
                         input.consume();
@@ -510,7 +532,7 @@ public class InternalGrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2007:64: ~ ( ( '\\\\' | '\\'' ) ) '\\''
+                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2040:64: ~ ( ( '\\\\' | '\\'' ) )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -521,13 +543,13 @@ public class InternalGrammarLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    match('\''); 
 
                     }
                     break;
 
             }
 
+            match('\''); 
 
             }
 
@@ -544,12 +566,12 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2009:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2009:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2042:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2042:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2009:24: ( options {greedy=false; } : . )*
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2042:24: ( options {greedy=false; } : . )*
             loop6:
             do {
                 int alt6=2;
@@ -574,7 +596,7 @@ public class InternalGrammarLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2009:52: .
+            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2042:52: .
             	    {
             	    matchAny(); 
 
@@ -604,12 +626,12 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -622,7 +644,7 @@ public class InternalGrammarLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -642,7 +664,7 @@ public class InternalGrammarLexer extends Lexer {
                 }
             } while (true);
 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:40: ( ( '\\r' )? '\\n' )?
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:40: ( ( '\\r' )? '\\n' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -651,9 +673,9 @@ public class InternalGrammarLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:41: ( '\\r' )? '\\n'
+                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:41: ( '\\r' )? '\\n'
                     {
-                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:41: ( '\\r' )?
+                    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:41: ( '\\r' )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -662,7 +684,7 @@ public class InternalGrammarLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2011:41: '\\r'
+                            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2044:41: '\\r'
                             {
                             match('\r'); 
 
@@ -694,10 +716,10 @@ public class InternalGrammarLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2013:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2013:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2046:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2046:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2013:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2046:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -747,8 +769,8 @@ public class InternalGrammarLexer extends Lexer {
     // $ANTLR end "RULE_WS"
 
     public void mTokens() throws RecognitionException {
-        // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
-        int alt11=18;
+        // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
+        int alt11=19;
         alt11 = dfa11.predict(input);
         switch (alt11) {
             case 1 :
@@ -829,49 +851,56 @@ public class InternalGrammarLexer extends Lexer {
                 }
                 break;
             case 12 :
-                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:76: RULE_ID
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:76: T__22
+                {
+                mT__22(); 
+
+                }
+                break;
+            case 13 :
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:82: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 13 :
-                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:84: RULE_INT
+            case 14 :
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:90: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 14 :
-                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:93: RULE_STRING
+            case 15 :
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:99: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 15 :
-                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:105: RULE_CHAR
+            case 16 :
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:111: RULE_CHAR
                 {
                 mRULE_CHAR(); 
 
                 }
                 break;
-            case 16 :
-                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:115: RULE_ML_COMMENT
+            case 17 :
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:121: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 17 :
-                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:131: RULE_SL_COMMENT
+            case 18 :
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:137: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 18 :
-                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:147: RULE_WS
+            case 19 :
+                // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1:153: RULE_WS
                 {
                 mRULE_WS(); 
 
@@ -885,68 +914,52 @@ public class InternalGrammarLexer extends Lexer {
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\1\uffff\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\35\1\36"+
-        "\1\uffff\1\35\1\37\3\uffff\1\44\11\uffff\1\35\3\uffff\1\20\4\uffff"+
-        "\4\35\1\52\1\uffff";
+        "\7\uffff\1\23\2\uffff\1\14\11\uffff\1\14\2\uffff\4\14\1\34\1\uffff";
     static final String DFA11_eofS =
-        "\53\uffff";
+        "\35\uffff";
     static final String DFA11_minS =
-        "\1\0\16\47\1\0\1\uffff\2\47\11\uffff\1\170\3\uffff\1\0\4\uffff"+
+        "\1\11\6\uffff\1\56\2\uffff\1\145\5\uffff\1\52\3\uffff\1\170\2\uffff"+
         "\1\151\1\143\1\141\1\154\1\60\1\uffff";
     static final String DFA11_maxS =
-        "\1\uffff\11\47\1\145\1\47\1\172\2\47\1\uffff\1\uffff\1\57\1\47"+
-        "\11\uffff\1\170\3\uffff\1\uffff\4\uffff\1\151\1\143\1\141\1\154"+
-        "\1\172\1\uffff";
+        "\1\175\6\uffff\1\56\2\uffff\1\145\5\uffff\1\57\3\uffff\1\170\2"+
+        "\uffff\1\151\1\143\1\141\1\154\1\172\1\uffff";
     static final String DFA11_acceptS =
-        "\20\uffff\1\17\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1"+
-        "\uffff\1\14\1\13\1\15\1\uffff\1\16\1\20\1\21\1\22\5\uffff\1\12";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\uffff\1\11\1\12\1\uffff\1\14"+
+        "\1\15\1\16\1\17\1\20\1\uffff\1\23\1\7\1\10\1\uffff\1\21\1\22\5\uffff"+
+        "\1\13";
     static final String DFA11_specialS =
-        "\1\2\16\uffff\1\0\20\uffff\1\1\12\uffff}>";
+        "\35\uffff}>";
     static final String[] DFA11_transitionS = {
-            "\11\20\2\22\2\20\1\22\22\20\1\22\1\4\1\17\5\20\1\10\1\11\2"+
-            "\20\1\13\1\20\1\7\1\21\12\16\1\1\1\2\5\20\32\15\1\20\1\uffff"+
-            "\1\20\1\14\1\15\1\20\13\15\1\12\16\15\1\5\1\3\1\6\uff82\20",
-            "\1\20",
-            "\1\20",
-            "\1\20",
-            "\1\20",
-            "\1\20",
-            "\1\20",
-            "\1\20",
-            "\1\20",
-            "\1\20",
-            "\1\20\75\uffff\1\34",
-            "\1\20",
-            "\1\20\31\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\20",
-            "\1\20",
-            "\47\41\1\40\uffd8\41",
-            "",
-            "\1\20\2\uffff\1\42\4\uffff\1\43",
-            "\1\20",
+            "\2\21\2\uffff\1\21\22\uffff\1\21\1\4\1\16\4\uffff\1\17\1\10"+
+            "\1\11\2\uffff\1\13\1\uffff\1\7\1\20\12\15\1\1\1\2\5\uffff\32"+
+            "\14\3\uffff\2\14\1\uffff\13\14\1\12\16\14\1\5\1\3\1\6",
             "",
             "",
             "",
             "",
             "",
             "",
+            "\1\22",
             "",
             "",
-            "",
-            "\1\45",
-            "",
-            "",
-            "",
-            "\0\41",
+            "\1\24",
             "",
             "",
             "",
             "",
-            "\1\46",
-            "\1\47",
-            "\1\50",
-            "\1\51",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "",
+            "\1\25\4\uffff\1\26",
+            "",
+            "",
+            "",
+            "\1\27",
+            "",
+            "",
+            "\1\30",
+            "\1\31",
+            "\1\32",
+            "\1\33",
+            "\12\14\7\uffff\32\14\4\uffff\1\14\1\uffff\32\14",
             ""
     };
 
@@ -966,7 +979,7 @@ public class InternalGrammarLexer extends Lexer {
         }
     }
 
-    static class DFA11 extends DFA {
+    class DFA11 extends DFA {
 
         public DFA11(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
@@ -980,79 +993,7 @@ public class InternalGrammarLexer extends Lexer {
             this.transition = DFA11_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            IntStream input = _input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA11_15 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA11_15=='\'') ) {s = 32;}
-
-                        else if ( ((LA11_15>='\u0000' && LA11_15<='&')||(LA11_15>='(' && LA11_15<='\uFFFF')) ) {s = 33;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA11_32 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA11_32>='\u0000' && LA11_32<='\uFFFF')) ) {s = 33;}
-
-                        else s = 16;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA11_0 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA11_0==':') ) {s = 1;}
-
-                        else if ( (LA11_0==';') ) {s = 2;}
-
-                        else if ( (LA11_0=='|') ) {s = 3;}
-
-                        else if ( (LA11_0=='!') ) {s = 4;}
-
-                        else if ( (LA11_0=='{') ) {s = 5;}
-
-                        else if ( (LA11_0=='}') ) {s = 6;}
-
-                        else if ( (LA11_0=='.') ) {s = 7;}
-
-                        else if ( (LA11_0=='(') ) {s = 8;}
-
-                        else if ( (LA11_0==')') ) {s = 9;}
-
-                        else if ( (LA11_0=='l') ) {s = 10;}
-
-                        else if ( (LA11_0==',') ) {s = 11;}
-
-                        else if ( (LA11_0=='^') ) {s = 12;}
-
-                        else if ( ((LA11_0>='A' && LA11_0<='Z')||LA11_0=='_'||(LA11_0>='a' && LA11_0<='k')||(LA11_0>='m' && LA11_0<='z')) ) {s = 13;}
-
-                        else if ( ((LA11_0>='0' && LA11_0<='9')) ) {s = 14;}
-
-                        else if ( (LA11_0=='\"') ) {s = 15;}
-
-                        else if ( ((LA11_0>='\u0000' && LA11_0<='\b')||(LA11_0>='\u000B' && LA11_0<='\f')||(LA11_0>='\u000E' && LA11_0<='\u001F')||(LA11_0>='#' && LA11_0<='\'')||(LA11_0>='*' && LA11_0<='+')||LA11_0=='-'||(LA11_0>='<' && LA11_0<='@')||LA11_0=='['||LA11_0==']'||LA11_0=='`'||(LA11_0>='~' && LA11_0<='\uFFFF')) ) {s = 16;}
-
-                        else if ( (LA11_0=='/') ) {s = 17;}
-
-                        else if ( ((LA11_0>='\t' && LA11_0<='\n')||LA11_0=='\r'||LA11_0==' ') ) {s = 18;}
-
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 11, _s, input);
-            error(nvae);
-            throw nvae;
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
         }
     }
  

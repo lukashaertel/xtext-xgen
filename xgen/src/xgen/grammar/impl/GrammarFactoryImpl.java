@@ -26,13 +26,16 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * @generated
 	 */
 	public static GrammarFactory init() {
-		try {
+		try
+		{
 			GrammarFactory theGrammarFactory = (GrammarFactory)EPackage.Registry.INSTANCE.getEFactory(GrammarPackage.eNS_URI);
-			if (theGrammarFactory != null) {
+			if (theGrammarFactory != null)
+			{
 				return theGrammarFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GrammarFactoryImpl();
@@ -55,7 +58,8 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case GrammarPackage.GRAMMAR: return createGrammar();
 			case GrammarPackage.DEFINITION: return createDefinition();
 			case GrammarPackage.ANY: return createAny();

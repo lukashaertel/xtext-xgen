@@ -133,13 +133,13 @@ public interface GrammarPackage extends EPackage {
 	int DEFINITION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION__LHS = ELEMENT_FEATURE_COUNT + 0;
+	int DEFINITION__NAME = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Lexical</b></em>' attribute.
@@ -673,15 +673,15 @@ public interface GrammarPackage extends EPackage {
 	EClass getDefinition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link xgen.grammar.Definition#getLhs <em>Lhs</em>}'.
+	 * Returns the meta object for the attribute '{@link xgen.grammar.Definition#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lhs</em>'.
-	 * @see xgen.grammar.Definition#getLhs()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see xgen.grammar.Definition#getName()
 	 * @see #getDefinition()
 	 * @generated
 	 */
-	EAttribute getDefinition_Lhs();
+	EAttribute getDefinition_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link xgen.grammar.Definition#isLexical <em>Lexical</em>}'.
@@ -986,12 +986,12 @@ public interface GrammarPackage extends EPackage {
 		EClass DEFINITION = eINSTANCE.getDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Lhs</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DEFINITION__LHS = eINSTANCE.getDefinition_Lhs();
+		EAttribute DEFINITION__NAME = eINSTANCE.getDefinition_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Lexical</b></em>' attribute feature.

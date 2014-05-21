@@ -134,7 +134,8 @@ public class RangeImpl extends TerminalImpl implements Range {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.RANGE__MIN:
 				return getMin();
 			case GrammarPackage.RANGE__MAX:
@@ -150,7 +151,8 @@ public class RangeImpl extends TerminalImpl implements Range {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.RANGE__MIN:
 				setMin((Character)newValue);
 				return;
@@ -168,7 +170,8 @@ public class RangeImpl extends TerminalImpl implements Range {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.RANGE__MIN:
 				setMin(MIN_EDEFAULT);
 				return;
@@ -186,7 +189,8 @@ public class RangeImpl extends TerminalImpl implements Range {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.RANGE__MIN:
 				return min != MIN_EDEFAULT;
 			case GrammarPackage.RANGE__MAX:

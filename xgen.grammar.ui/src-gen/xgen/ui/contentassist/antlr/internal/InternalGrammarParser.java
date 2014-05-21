@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGrammarParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_CHAR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "':'", "';'", "'|'", "'!'", "'{'", "'}'", "'.'", "'('", "')'", "'lexical'", "','"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_CHAR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "':'", "';'", "'|'", "'!'", "'{'", "'}'", "'..'", "'.'", "'('", "')'", "'lexical'", "','"
     };
     public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=9;
@@ -40,6 +40,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
     public static final int RULE_ID=4;
     public static final int RULE_WS=10;
     public static final int RULE_INT=5;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__20=20;
     public static final int T__21=21;
@@ -634,7 +635,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
             if ( (LA1_0==14) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==RULE_ID||(LA1_0>=RULE_CHAR && LA1_0<=RULE_STRING)||(LA1_0>=17 && LA1_0<=18)) ) {
+            else if ( (LA1_0==RULE_ID||(LA1_0>=RULE_CHAR && LA1_0<=RULE_STRING)||(LA1_0>=18 && LA1_0<=19)) ) {
                 alt1=2;
             }
             else {
@@ -730,12 +731,12 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
                 alt2=3;
                 }
                 break;
-            case 17:
+            case 18:
                 {
                 alt2=4;
                 }
                 break;
-            case 18:
+            case 19:
                 {
                 alt2=5;
                 }
@@ -1018,7 +1019,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==RULE_ID||LA3_0==20) ) {
+                if ( (LA3_0==RULE_ID||LA3_0==21) ) {
                     alt3=1;
                 }
 
@@ -1194,7 +1195,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==20) ) {
+            if ( (LA4_0==21) ) {
                 alt4=1;
             }
             switch (alt4) {
@@ -1273,31 +1274,31 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Definition__Group__2__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:455:1: rule__Definition__Group__2__Impl : ( ( rule__Definition__LhsAssignment_2 ) ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:455:1: rule__Definition__Group__2__Impl : ( ( rule__Definition__NameAssignment_2 ) ) ;
     public final void rule__Definition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:459:1: ( ( ( rule__Definition__LhsAssignment_2 ) ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:460:1: ( ( rule__Definition__LhsAssignment_2 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:459:1: ( ( ( rule__Definition__NameAssignment_2 ) ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:460:1: ( ( rule__Definition__NameAssignment_2 ) )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:460:1: ( ( rule__Definition__LhsAssignment_2 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:461:1: ( rule__Definition__LhsAssignment_2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:460:1: ( ( rule__Definition__NameAssignment_2 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:461:1: ( rule__Definition__NameAssignment_2 )
             {
-             before(grammarAccess.getDefinitionAccess().getLhsAssignment_2()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:462:1: ( rule__Definition__LhsAssignment_2 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:462:2: rule__Definition__LhsAssignment_2
+             before(grammarAccess.getDefinitionAccess().getNameAssignment_2()); 
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:462:1: ( rule__Definition__NameAssignment_2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:462:2: rule__Definition__NameAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Definition__LhsAssignment_2_in_rule__Definition__Group__2__Impl918);
-            rule__Definition__LhsAssignment_2();
+            pushFollow(FollowSets000.FOLLOW_rule__Definition__NameAssignment_2_in_rule__Definition__Group__2__Impl918);
+            rule__Definition__NameAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDefinitionAccess().getLhsAssignment_2()); 
+             after(grammarAccess.getDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -2337,7 +2338,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_ID||(LA7_0>=RULE_CHAR && LA7_0<=RULE_STRING)||LA7_0==14||(LA7_0>=17 && LA7_0<=18)) ) {
+            if ( (LA7_0==RULE_ID||(LA7_0>=RULE_CHAR && LA7_0<=RULE_STRING)||LA7_0==14||(LA7_0>=18 && LA7_0<=19)) ) {
                 alt7=1;
             }
             switch (alt7) {
@@ -2590,7 +2591,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_ID||(LA8_0>=RULE_CHAR && LA8_0<=RULE_STRING)||LA8_0==14||(LA8_0>=17 && LA8_0<=18)) ) {
+                if ( (LA8_0==RULE_ID||(LA8_0>=RULE_CHAR && LA8_0<=RULE_STRING)||LA8_0==14||(LA8_0>=18 && LA8_0<=19)) ) {
                     alt8=1;
                 }
 
@@ -3333,7 +3334,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==21) ) {
+            if ( (LA10_0==22) ) {
                 alt10=1;
             }
             switch (alt10) {
@@ -3924,17 +3925,22 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_1__2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1481:1: rule__Construct4__Group_1__2 : rule__Construct4__Group_1__2__Impl ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1481:1: rule__Construct4__Group_1__2 : rule__Construct4__Group_1__2__Impl rule__Construct4__Group_1__3 ;
     public final void rule__Construct4__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1485:1: ( rule__Construct4__Group_1__2__Impl )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1486:2: rule__Construct4__Group_1__2__Impl
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1485:1: ( rule__Construct4__Group_1__2__Impl rule__Construct4__Group_1__3 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1486:2: rule__Construct4__Group_1__2__Impl rule__Construct4__Group_1__3
             {
             pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_1__2__Impl_in_rule__Construct4__Group_1__22924);
             rule__Construct4__Group_1__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_1__3_in_rule__Construct4__Group_1__22927);
+            rule__Construct4__Group_1__3();
 
             state._fsp--;
 
@@ -3957,31 +3963,21 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_1__2__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1492:1: rule__Construct4__Group_1__2__Impl : ( ( rule__Construct4__MaxAssignment_1_2 ) ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1493:1: rule__Construct4__Group_1__2__Impl : ( '..' ) ;
     public final void rule__Construct4__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1496:1: ( ( ( rule__Construct4__MaxAssignment_1_2 ) ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1497:1: ( ( rule__Construct4__MaxAssignment_1_2 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1497:1: ( ( '..' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1498:1: ( '..' )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1497:1: ( ( rule__Construct4__MaxAssignment_1_2 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1498:1: ( rule__Construct4__MaxAssignment_1_2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1498:1: ( '..' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1499:1: '..'
             {
-             before(grammarAccess.getConstruct4Access().getMaxAssignment_1_2()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1499:1: ( rule__Construct4__MaxAssignment_1_2 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1499:2: rule__Construct4__MaxAssignment_1_2
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__MaxAssignment_1_2_in_rule__Construct4__Group_1__2__Impl2951);
-            rule__Construct4__MaxAssignment_1_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConstruct4Access().getMaxAssignment_1_2()); 
+             before(grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_1_2()); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__Construct4__Group_1__2__Impl2955); 
+             after(grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_1_2()); 
 
             }
 
@@ -4003,22 +3999,102 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Construct4__Group_1__2__Impl"
 
 
+    // $ANTLR start "rule__Construct4__Group_1__3"
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1512:1: rule__Construct4__Group_1__3 : rule__Construct4__Group_1__3__Impl ;
+    public final void rule__Construct4__Group_1__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1516:1: ( rule__Construct4__Group_1__3__Impl )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1517:2: rule__Construct4__Group_1__3__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_1__3__Impl_in_rule__Construct4__Group_1__32986);
+            rule__Construct4__Group_1__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Construct4__Group_1__3"
+
+
+    // $ANTLR start "rule__Construct4__Group_1__3__Impl"
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1523:1: rule__Construct4__Group_1__3__Impl : ( ( rule__Construct4__MaxAssignment_1_3 ) ) ;
+    public final void rule__Construct4__Group_1__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1527:1: ( ( ( rule__Construct4__MaxAssignment_1_3 ) ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1528:1: ( ( rule__Construct4__MaxAssignment_1_3 ) )
+            {
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1528:1: ( ( rule__Construct4__MaxAssignment_1_3 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1529:1: ( rule__Construct4__MaxAssignment_1_3 )
+            {
+             before(grammarAccess.getConstruct4Access().getMaxAssignment_1_3()); 
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1530:1: ( rule__Construct4__MaxAssignment_1_3 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1530:2: rule__Construct4__MaxAssignment_1_3
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__MaxAssignment_1_3_in_rule__Construct4__Group_1__3__Impl3013);
+            rule__Construct4__MaxAssignment_1_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConstruct4Access().getMaxAssignment_1_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Construct4__Group_1__3__Impl"
+
+
     // $ANTLR start "rule__Construct4__Group_2__0"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1515:1: rule__Construct4__Group_2__0 : rule__Construct4__Group_2__0__Impl rule__Construct4__Group_2__1 ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1548:1: rule__Construct4__Group_2__0 : rule__Construct4__Group_2__0__Impl rule__Construct4__Group_2__1 ;
     public final void rule__Construct4__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1519:1: ( rule__Construct4__Group_2__0__Impl rule__Construct4__Group_2__1 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1520:2: rule__Construct4__Group_2__0__Impl rule__Construct4__Group_2__1
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1552:1: ( rule__Construct4__Group_2__0__Impl rule__Construct4__Group_2__1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1553:2: rule__Construct4__Group_2__0__Impl rule__Construct4__Group_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_2__0__Impl_in_rule__Construct4__Group_2__02987);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_2__0__Impl_in_rule__Construct4__Group_2__03051);
             rule__Construct4__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_2__1_in_rule__Construct4__Group_2__02990);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_2__1_in_rule__Construct4__Group_2__03054);
             rule__Construct4__Group_2__1();
 
             state._fsp--;
@@ -4042,21 +4118,21 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_2__0__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1527:1: rule__Construct4__Group_2__0__Impl : ( () ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1560:1: rule__Construct4__Group_2__0__Impl : ( () ) ;
     public final void rule__Construct4__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1531:1: ( ( () ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1532:1: ( () )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1564:1: ( ( () ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1565:1: ( () )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1532:1: ( () )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1533:1: ()
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1565:1: ( () )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1566:1: ()
             {
              before(grammarAccess.getConstruct4Access().getKeywordAction_2_0()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1534:1: ()
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1536:1: 
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1567:1: ()
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1569:1: 
             {
             }
 
@@ -4079,16 +4155,16 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_2__1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1546:1: rule__Construct4__Group_2__1 : rule__Construct4__Group_2__1__Impl ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1579:1: rule__Construct4__Group_2__1 : rule__Construct4__Group_2__1__Impl ;
     public final void rule__Construct4__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1550:1: ( rule__Construct4__Group_2__1__Impl )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1551:2: rule__Construct4__Group_2__1__Impl
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1583:1: ( rule__Construct4__Group_2__1__Impl )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1584:2: rule__Construct4__Group_2__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_2__1__Impl_in_rule__Construct4__Group_2__13048);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_2__1__Impl_in_rule__Construct4__Group_2__13112);
             rule__Construct4__Group_2__1__Impl();
 
             state._fsp--;
@@ -4112,23 +4188,23 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_2__1__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1557:1: rule__Construct4__Group_2__1__Impl : ( ( rule__Construct4__ValueAssignment_2_1 ) ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1590:1: rule__Construct4__Group_2__1__Impl : ( ( rule__Construct4__ValueAssignment_2_1 ) ) ;
     public final void rule__Construct4__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1561:1: ( ( ( rule__Construct4__ValueAssignment_2_1 ) ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1562:1: ( ( rule__Construct4__ValueAssignment_2_1 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1594:1: ( ( ( rule__Construct4__ValueAssignment_2_1 ) ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1595:1: ( ( rule__Construct4__ValueAssignment_2_1 ) )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1562:1: ( ( rule__Construct4__ValueAssignment_2_1 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1563:1: ( rule__Construct4__ValueAssignment_2_1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1595:1: ( ( rule__Construct4__ValueAssignment_2_1 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1596:1: ( rule__Construct4__ValueAssignment_2_1 )
             {
              before(grammarAccess.getConstruct4Access().getValueAssignment_2_1()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1564:1: ( rule__Construct4__ValueAssignment_2_1 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1564:2: rule__Construct4__ValueAssignment_2_1
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1597:1: ( rule__Construct4__ValueAssignment_2_1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1597:2: rule__Construct4__ValueAssignment_2_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__ValueAssignment_2_1_in_rule__Construct4__Group_2__1__Impl3075);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__ValueAssignment_2_1_in_rule__Construct4__Group_2__1__Impl3139);
             rule__Construct4__ValueAssignment_2_1();
 
             state._fsp--;
@@ -4159,21 +4235,21 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_3__0"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1578:1: rule__Construct4__Group_3__0 : rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1611:1: rule__Construct4__Group_3__0 : rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 ;
     public final void rule__Construct4__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1582:1: ( rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1583:2: rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1615:1: ( rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1616:2: rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__03109);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__03173);
             rule__Construct4__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__03112);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__03176);
             rule__Construct4__Group_3__1();
 
             state._fsp--;
@@ -4197,21 +4273,21 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_3__0__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1590:1: rule__Construct4__Group_3__0__Impl : ( () ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1623:1: rule__Construct4__Group_3__0__Impl : ( () ) ;
     public final void rule__Construct4__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1594:1: ( ( () ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1595:1: ( () )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1627:1: ( ( () ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1628:1: ( () )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1595:1: ( () )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1596:1: ()
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1628:1: ( () )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1629:1: ()
             {
              before(grammarAccess.getConstruct4Access().getAnyAction_3_0()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1597:1: ()
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1599:1: 
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1630:1: ()
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1632:1: 
             {
             }
 
@@ -4234,16 +4310,16 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_3__1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1609:1: rule__Construct4__Group_3__1 : rule__Construct4__Group_3__1__Impl ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1642:1: rule__Construct4__Group_3__1 : rule__Construct4__Group_3__1__Impl ;
     public final void rule__Construct4__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1613:1: ( rule__Construct4__Group_3__1__Impl )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1614:2: rule__Construct4__Group_3__1__Impl
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1646:1: ( rule__Construct4__Group_3__1__Impl )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1647:2: rule__Construct4__Group_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__13170);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__13234);
             rule__Construct4__Group_3__1__Impl();
 
             state._fsp--;
@@ -4267,20 +4343,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_3__1__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1620:1: rule__Construct4__Group_3__1__Impl : ( '.' ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1653:1: rule__Construct4__Group_3__1__Impl : ( '.' ) ;
     public final void rule__Construct4__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1624:1: ( ( '.' ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1625:1: ( '.' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1657:1: ( ( '.' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1658:1: ( '.' )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1625:1: ( '.' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1626:1: '.'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1658:1: ( '.' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1659:1: '.'
             {
              before(grammarAccess.getConstruct4Access().getFullStopKeyword_3_1()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__Construct4__Group_3__1__Impl3198); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__Construct4__Group_3__1__Impl3262); 
              after(grammarAccess.getConstruct4Access().getFullStopKeyword_3_1()); 
 
             }
@@ -4304,21 +4380,21 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_4__0"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1643:1: rule__Construct4__Group_4__0 : rule__Construct4__Group_4__0__Impl rule__Construct4__Group_4__1 ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1676:1: rule__Construct4__Group_4__0 : rule__Construct4__Group_4__0__Impl rule__Construct4__Group_4__1 ;
     public final void rule__Construct4__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1647:1: ( rule__Construct4__Group_4__0__Impl rule__Construct4__Group_4__1 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1648:2: rule__Construct4__Group_4__0__Impl rule__Construct4__Group_4__1
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1680:1: ( rule__Construct4__Group_4__0__Impl rule__Construct4__Group_4__1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1681:2: rule__Construct4__Group_4__0__Impl rule__Construct4__Group_4__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__0__Impl_in_rule__Construct4__Group_4__03233);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__0__Impl_in_rule__Construct4__Group_4__03297);
             rule__Construct4__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__1_in_rule__Construct4__Group_4__03236);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__1_in_rule__Construct4__Group_4__03300);
             rule__Construct4__Group_4__1();
 
             state._fsp--;
@@ -4342,20 +4418,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_4__0__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1655:1: rule__Construct4__Group_4__0__Impl : ( '(' ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1688:1: rule__Construct4__Group_4__0__Impl : ( '(' ) ;
     public final void rule__Construct4__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1659:1: ( ( '(' ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1660:1: ( '(' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1692:1: ( ( '(' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1693:1: ( '(' )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1660:1: ( '(' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1661:1: '('
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1693:1: ( '(' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1694:1: '('
             {
              before(grammarAccess.getConstruct4Access().getLeftParenthesisKeyword_4_0()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__Construct4__Group_4__0__Impl3264); 
+            match(input,19,FollowSets000.FOLLOW_19_in_rule__Construct4__Group_4__0__Impl3328); 
              after(grammarAccess.getConstruct4Access().getLeftParenthesisKeyword_4_0()); 
 
             }
@@ -4379,21 +4455,21 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_4__1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1674:1: rule__Construct4__Group_4__1 : rule__Construct4__Group_4__1__Impl rule__Construct4__Group_4__2 ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1707:1: rule__Construct4__Group_4__1 : rule__Construct4__Group_4__1__Impl rule__Construct4__Group_4__2 ;
     public final void rule__Construct4__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1678:1: ( rule__Construct4__Group_4__1__Impl rule__Construct4__Group_4__2 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1679:2: rule__Construct4__Group_4__1__Impl rule__Construct4__Group_4__2
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1711:1: ( rule__Construct4__Group_4__1__Impl rule__Construct4__Group_4__2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1712:2: rule__Construct4__Group_4__1__Impl rule__Construct4__Group_4__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__1__Impl_in_rule__Construct4__Group_4__13295);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__1__Impl_in_rule__Construct4__Group_4__13359);
             rule__Construct4__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__2_in_rule__Construct4__Group_4__13298);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__2_in_rule__Construct4__Group_4__13362);
             rule__Construct4__Group_4__2();
 
             state._fsp--;
@@ -4417,20 +4493,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_4__1__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1686:1: rule__Construct4__Group_4__1__Impl : ( ruleConstruct0 ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1719:1: rule__Construct4__Group_4__1__Impl : ( ruleConstruct0 ) ;
     public final void rule__Construct4__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1690:1: ( ( ruleConstruct0 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1691:1: ( ruleConstruct0 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1723:1: ( ( ruleConstruct0 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1724:1: ( ruleConstruct0 )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1691:1: ( ruleConstruct0 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1692:1: ruleConstruct0
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1724:1: ( ruleConstruct0 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1725:1: ruleConstruct0
             {
              before(grammarAccess.getConstruct4Access().getConstruct0ParserRuleCall_4_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstruct0_in_rule__Construct4__Group_4__1__Impl3325);
+            pushFollow(FollowSets000.FOLLOW_ruleConstruct0_in_rule__Construct4__Group_4__1__Impl3389);
             ruleConstruct0();
 
             state._fsp--;
@@ -4458,16 +4534,16 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_4__2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1703:1: rule__Construct4__Group_4__2 : rule__Construct4__Group_4__2__Impl ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1736:1: rule__Construct4__Group_4__2 : rule__Construct4__Group_4__2__Impl ;
     public final void rule__Construct4__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1707:1: ( rule__Construct4__Group_4__2__Impl )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1708:2: rule__Construct4__Group_4__2__Impl
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1740:1: ( rule__Construct4__Group_4__2__Impl )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1741:2: rule__Construct4__Group_4__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__2__Impl_in_rule__Construct4__Group_4__23354);
+            pushFollow(FollowSets000.FOLLOW_rule__Construct4__Group_4__2__Impl_in_rule__Construct4__Group_4__23418);
             rule__Construct4__Group_4__2__Impl();
 
             state._fsp--;
@@ -4491,20 +4567,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__Group_4__2__Impl"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1714:1: rule__Construct4__Group_4__2__Impl : ( ')' ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1747:1: rule__Construct4__Group_4__2__Impl : ( ')' ) ;
     public final void rule__Construct4__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1718:1: ( ( ')' ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1719:1: ( ')' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1751:1: ( ( ')' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1752:1: ( ')' )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1719:1: ( ')' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1720:1: ')'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1752:1: ( ')' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1753:1: ')'
             {
              before(grammarAccess.getConstruct4Access().getRightParenthesisKeyword_4_2()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__Construct4__Group_4__2__Impl3382); 
+            match(input,20,FollowSets000.FOLLOW_20_in_rule__Construct4__Group_4__2__Impl3446); 
              after(grammarAccess.getConstruct4Access().getRightParenthesisKeyword_4_2()); 
 
             }
@@ -4528,20 +4604,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grammar__DefinitionsAssignment_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1740:1: rule__Grammar__DefinitionsAssignment_1 : ( ruleDefinition ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1773:1: rule__Grammar__DefinitionsAssignment_1 : ( ruleDefinition ) ;
     public final void rule__Grammar__DefinitionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1744:1: ( ( ruleDefinition ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1745:1: ( ruleDefinition )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1777:1: ( ( ruleDefinition ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1778:1: ( ruleDefinition )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1745:1: ( ruleDefinition )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1746:1: ruleDefinition
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1778:1: ( ruleDefinition )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1779:1: ruleDefinition
             {
              before(grammarAccess.getGrammarAccess().getDefinitionsDefinitionParserRuleCall_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleDefinition_in_rule__Grammar__DefinitionsAssignment_13424);
+            pushFollow(FollowSets000.FOLLOW_ruleDefinition_in_rule__Grammar__DefinitionsAssignment_13488);
             ruleDefinition();
 
             state._fsp--;
@@ -4569,24 +4645,24 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Definition__LexicalAssignment_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1755:1: rule__Definition__LexicalAssignment_1 : ( ( 'lexical' ) ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1788:1: rule__Definition__LexicalAssignment_1 : ( ( 'lexical' ) ) ;
     public final void rule__Definition__LexicalAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1759:1: ( ( ( 'lexical' ) ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1760:1: ( ( 'lexical' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1792:1: ( ( ( 'lexical' ) ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1793:1: ( ( 'lexical' ) )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1760:1: ( ( 'lexical' ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1761:1: ( 'lexical' )
-            {
-             before(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1762:1: ( 'lexical' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1763:1: 'lexical'
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1793:1: ( ( 'lexical' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1794:1: ( 'lexical' )
             {
              before(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
-            match(input,20,FollowSets000.FOLLOW_20_in_rule__Definition__LexicalAssignment_13460); 
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1795:1: ( 'lexical' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1796:1: 'lexical'
+            {
+             before(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__Definition__LexicalAssignment_13524); 
              after(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
 
             }
@@ -4613,22 +4689,22 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Definition__LexicalAssignment_1"
 
 
-    // $ANTLR start "rule__Definition__LhsAssignment_2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1778:1: rule__Definition__LhsAssignment_2 : ( RULE_ID ) ;
-    public final void rule__Definition__LhsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Definition__NameAssignment_2"
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1811:1: rule__Definition__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__Definition__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1782:1: ( ( RULE_ID ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1783:1: ( RULE_ID )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1815:1: ( ( RULE_ID ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1816:1: ( RULE_ID )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1783:1: ( RULE_ID )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1784:1: RULE_ID
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1816:1: ( RULE_ID )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1817:1: RULE_ID
             {
-             before(grammarAccess.getDefinitionAccess().getLhsIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__Definition__LhsAssignment_23499); 
-             after(grammarAccess.getDefinitionAccess().getLhsIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_23563); 
+             after(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -4647,24 +4723,24 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Definition__LhsAssignment_2"
+    // $ANTLR end "rule__Definition__NameAssignment_2"
 
 
     // $ANTLR start "rule__Definition__RhsAssignment_4"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1793:1: rule__Definition__RhsAssignment_4 : ( ruleConstruct0 ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1826:1: rule__Definition__RhsAssignment_4 : ( ruleConstruct0 ) ;
     public final void rule__Definition__RhsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1797:1: ( ( ruleConstruct0 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1798:1: ( ruleConstruct0 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1830:1: ( ( ruleConstruct0 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1831:1: ( ruleConstruct0 )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1798:1: ( ruleConstruct0 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1799:1: ruleConstruct0
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1831:1: ( ruleConstruct0 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1832:1: ruleConstruct0
             {
              before(grammarAccess.getDefinitionAccess().getRhsConstruct0ParserRuleCall_4_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_43530);
+            pushFollow(FollowSets000.FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_43594);
             ruleConstruct0();
 
             state._fsp--;
@@ -4692,20 +4768,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct0__OperandsAssignment_1_2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1808:1: rule__Construct0__OperandsAssignment_1_2 : ( ruleConstruct1 ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1841:1: rule__Construct0__OperandsAssignment_1_2 : ( ruleConstruct1 ) ;
     public final void rule__Construct0__OperandsAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1812:1: ( ( ruleConstruct1 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1813:1: ( ruleConstruct1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1845:1: ( ( ruleConstruct1 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1846:1: ( ruleConstruct1 )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1813:1: ( ruleConstruct1 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1814:1: ruleConstruct1
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1846:1: ( ruleConstruct1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1847:1: ruleConstruct1
             {
              before(grammarAccess.getConstruct0Access().getOperandsConstruct1ParserRuleCall_1_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_23561);
+            pushFollow(FollowSets000.FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_23625);
             ruleConstruct1();
 
             state._fsp--;
@@ -4733,20 +4809,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct0__OperandsAssignment_1_3_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1823:1: rule__Construct0__OperandsAssignment_1_3_1 : ( ruleConstruct1 ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1856:1: rule__Construct0__OperandsAssignment_1_3_1 : ( ruleConstruct1 ) ;
     public final void rule__Construct0__OperandsAssignment_1_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1827:1: ( ( ruleConstruct1 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1828:1: ( ruleConstruct1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1860:1: ( ( ruleConstruct1 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1861:1: ( ruleConstruct1 )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1828:1: ( ruleConstruct1 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1829:1: ruleConstruct1
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1861:1: ( ruleConstruct1 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1862:1: ruleConstruct1
             {
              before(grammarAccess.getConstruct0Access().getOperandsConstruct1ParserRuleCall_1_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_13592);
+            pushFollow(FollowSets000.FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_13656);
             ruleConstruct1();
 
             state._fsp--;
@@ -4774,20 +4850,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct1__OperandsAssignment_1_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1838:1: rule__Construct1__OperandsAssignment_1_1 : ( ruleConstruct2 ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1871:1: rule__Construct1__OperandsAssignment_1_1 : ( ruleConstruct2 ) ;
     public final void rule__Construct1__OperandsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1842:1: ( ( ruleConstruct2 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1843:1: ( ruleConstruct2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1875:1: ( ( ruleConstruct2 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1876:1: ( ruleConstruct2 )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1843:1: ( ruleConstruct2 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1844:1: ruleConstruct2
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1876:1: ( ruleConstruct2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1877:1: ruleConstruct2
             {
              before(grammarAccess.getConstruct1Access().getOperandsConstruct2ParserRuleCall_1_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_13623);
+            pushFollow(FollowSets000.FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_13687);
             ruleConstruct2();
 
             state._fsp--;
@@ -4815,20 +4891,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct1__OperandsAssignment_1_2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1853:1: rule__Construct1__OperandsAssignment_1_2 : ( ruleConstruct2 ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1886:1: rule__Construct1__OperandsAssignment_1_2 : ( ruleConstruct2 ) ;
     public final void rule__Construct1__OperandsAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1857:1: ( ( ruleConstruct2 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1858:1: ( ruleConstruct2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1890:1: ( ( ruleConstruct2 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1891:1: ( ruleConstruct2 )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1858:1: ( ruleConstruct2 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1859:1: ruleConstruct2
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1891:1: ( ruleConstruct2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1892:1: ruleConstruct2
             {
              before(grammarAccess.getConstruct1Access().getOperandsConstruct2ParserRuleCall_1_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_23654);
+            pushFollow(FollowSets000.FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_23718);
             ruleConstruct2();
 
             state._fsp--;
@@ -4856,20 +4932,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct2__OperandAssignment_0_2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1868:1: rule__Construct2__OperandAssignment_0_2 : ( ruleConstruct2 ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1901:1: rule__Construct2__OperandAssignment_0_2 : ( ruleConstruct2 ) ;
     public final void rule__Construct2__OperandAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1872:1: ( ( ruleConstruct2 ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1873:1: ( ruleConstruct2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1905:1: ( ( ruleConstruct2 ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1906:1: ( ruleConstruct2 )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1873:1: ( ruleConstruct2 )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1874:1: ruleConstruct2
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1906:1: ( ruleConstruct2 )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1907:1: ruleConstruct2
             {
              before(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_0_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_23685);
+            pushFollow(FollowSets000.FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_23749);
             ruleConstruct2();
 
             state._fsp--;
@@ -4897,20 +4973,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct3__MinAssignment_1_2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1883:1: rule__Construct3__MinAssignment_1_2 : ( RULE_INT ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1916:1: rule__Construct3__MinAssignment_1_2 : ( RULE_INT ) ;
     public final void rule__Construct3__MinAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1887:1: ( ( RULE_INT ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1888:1: ( RULE_INT )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1920:1: ( ( RULE_INT ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1921:1: ( RULE_INT )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1888:1: ( RULE_INT )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1889:1: RULE_INT
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1921:1: ( RULE_INT )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1922:1: RULE_INT
             {
              before(grammarAccess.getConstruct3Access().getMinINTTerminalRuleCall_1_2_0()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_23716); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_23780); 
              after(grammarAccess.getConstruct3Access().getMinINTTerminalRuleCall_1_2_0()); 
 
             }
@@ -4934,24 +5010,24 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct3__UpperBoundedAssignment_1_3_0"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1898:1: rule__Construct3__UpperBoundedAssignment_1_3_0 : ( ( ',' ) ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1931:1: rule__Construct3__UpperBoundedAssignment_1_3_0 : ( ( ',' ) ) ;
     public final void rule__Construct3__UpperBoundedAssignment_1_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1902:1: ( ( ( ',' ) ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1903:1: ( ( ',' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1935:1: ( ( ( ',' ) ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1936:1: ( ( ',' ) )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1903:1: ( ( ',' ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1904:1: ( ',' )
-            {
-             before(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1905:1: ( ',' )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1906:1: ','
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1936:1: ( ( ',' ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1937:1: ( ',' )
             {
              before(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Construct3__UpperBoundedAssignment_1_3_03752); 
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1938:1: ( ',' )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1939:1: ','
+            {
+             before(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__Construct3__UpperBoundedAssignment_1_3_03816); 
              after(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
 
             }
@@ -4979,20 +5055,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct3__MaxAssignment_1_3_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1921:1: rule__Construct3__MaxAssignment_1_3_1 : ( RULE_INT ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1954:1: rule__Construct3__MaxAssignment_1_3_1 : ( RULE_INT ) ;
     public final void rule__Construct3__MaxAssignment_1_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1925:1: ( ( RULE_INT ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1926:1: ( RULE_INT )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1958:1: ( ( RULE_INT ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1959:1: ( RULE_INT )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1926:1: ( RULE_INT )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1927:1: RULE_INT
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1959:1: ( RULE_INT )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1960:1: RULE_INT
             {
              before(grammarAccess.getConstruct3Access().getMaxINTTerminalRuleCall_1_3_1_0()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_13791); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_13855); 
              after(grammarAccess.getConstruct3Access().getMaxINTTerminalRuleCall_1_3_1_0()); 
 
             }
@@ -5016,24 +5092,24 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__TargetAssignment_0_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1936:1: rule__Construct4__TargetAssignment_0_1 : ( ( RULE_ID ) ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1969:1: rule__Construct4__TargetAssignment_0_1 : ( ( RULE_ID ) ) ;
     public final void rule__Construct4__TargetAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1940:1: ( ( ( RULE_ID ) ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1941:1: ( ( RULE_ID ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1973:1: ( ( ( RULE_ID ) ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1974:1: ( ( RULE_ID ) )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1941:1: ( ( RULE_ID ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1942:1: ( RULE_ID )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1974:1: ( ( RULE_ID ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1975:1: ( RULE_ID )
             {
              before(grammarAccess.getConstruct4Access().getTargetDefinitionCrossReference_0_1_0()); 
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1943:1: ( RULE_ID )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1944:1: RULE_ID
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1976:1: ( RULE_ID )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1977:1: RULE_ID
             {
              before(grammarAccess.getConstruct4Access().getTargetDefinitionIDTerminalRuleCall_0_1_0_1()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_0_13826); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_0_13890); 
              after(grammarAccess.getConstruct4Access().getTargetDefinitionIDTerminalRuleCall_0_1_0_1()); 
 
             }
@@ -5061,20 +5137,20 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Construct4__MinAssignment_1_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1955:1: rule__Construct4__MinAssignment_1_1 : ( RULE_CHAR ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1988:1: rule__Construct4__MinAssignment_1_1 : ( RULE_CHAR ) ;
     public final void rule__Construct4__MinAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1959:1: ( ( RULE_CHAR ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1960:1: ( RULE_CHAR )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1992:1: ( ( RULE_CHAR ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1993:1: ( RULE_CHAR )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1960:1: ( RULE_CHAR )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1961:1: RULE_CHAR
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1993:1: ( RULE_CHAR )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1994:1: RULE_CHAR
             {
              before(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0()); 
-            match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_1_13861); 
+            match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_1_13925); 
              after(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0()); 
 
             }
@@ -5097,22 +5173,22 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Construct4__MinAssignment_1_1"
 
 
-    // $ANTLR start "rule__Construct4__MaxAssignment_1_2"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1970:1: rule__Construct4__MaxAssignment_1_2 : ( RULE_CHAR ) ;
-    public final void rule__Construct4__MaxAssignment_1_2() throws RecognitionException {
+    // $ANTLR start "rule__Construct4__MaxAssignment_1_3"
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2003:1: rule__Construct4__MaxAssignment_1_3 : ( RULE_CHAR ) ;
+    public final void rule__Construct4__MaxAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1974:1: ( ( RULE_CHAR ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1975:1: ( RULE_CHAR )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2007:1: ( ( RULE_CHAR ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2008:1: ( RULE_CHAR )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1975:1: ( RULE_CHAR )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1976:1: RULE_CHAR
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2008:1: ( RULE_CHAR )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2009:1: RULE_CHAR
             {
-             before(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_2_0()); 
-            match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_1_23892); 
-             after(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_2_0()); 
+             before(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0()); 
+            match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_1_33956); 
+             after(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0()); 
 
             }
 
@@ -5131,24 +5207,24 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Construct4__MaxAssignment_1_2"
+    // $ANTLR end "rule__Construct4__MaxAssignment_1_3"
 
 
     // $ANTLR start "rule__Construct4__ValueAssignment_2_1"
-    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1985:1: rule__Construct4__ValueAssignment_2_1 : ( RULE_STRING ) ;
+    // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2018:1: rule__Construct4__ValueAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__Construct4__ValueAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1989:1: ( ( RULE_STRING ) )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1990:1: ( RULE_STRING )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2022:1: ( ( RULE_STRING ) )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2023:1: ( RULE_STRING )
             {
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1990:1: ( RULE_STRING )
-            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:1991:1: RULE_STRING
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2023:1: ( RULE_STRING )
+            // ../xgen.grammar.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalGrammar.g:2024:1: RULE_STRING
             {
              before(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
-            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_2_13923); 
+            match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_2_13987); 
              after(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
 
             }
@@ -5205,19 +5281,19 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_rule__Construct4__Group_2__0_in_rule__Construct4__Alternatives576 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct4__Group_3__0_in_rule__Construct4__Alternatives594 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct4__Group_4__0_in_rule__Construct4__Alternatives612 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Grammar__Group__0__Impl_in_rule__Grammar__Group__0643 = new BitSet(new long[]{0x0000000000100010L});
+        public static final BitSet FOLLOW_rule__Grammar__Group__0__Impl_in_rule__Grammar__Group__0643 = new BitSet(new long[]{0x0000000000200010L});
         public static final BitSet FOLLOW_rule__Grammar__Group__1_in_rule__Grammar__Group__0646 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Grammar__Group__1__Impl_in_rule__Grammar__Group__1704 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Grammar__DefinitionsAssignment_1_in_rule__Grammar__Group__1__Impl731 = new BitSet(new long[]{0x0000000000100012L});
-        public static final BitSet FOLLOW_rule__Definition__Group__0__Impl_in_rule__Definition__Group__0766 = new BitSet(new long[]{0x0000000000100010L});
+        public static final BitSet FOLLOW_rule__Grammar__DefinitionsAssignment_1_in_rule__Grammar__Group__1__Impl731 = new BitSet(new long[]{0x0000000000200012L});
+        public static final BitSet FOLLOW_rule__Definition__Group__0__Impl_in_rule__Definition__Group__0766 = new BitSet(new long[]{0x0000000000200010L});
         public static final BitSet FOLLOW_rule__Definition__Group__1_in_rule__Definition__Group__0769 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Definition__Group__1__Impl_in_rule__Definition__Group__1827 = new BitSet(new long[]{0x0000000000100010L});
+        public static final BitSet FOLLOW_rule__Definition__Group__1__Impl_in_rule__Definition__Group__1827 = new BitSet(new long[]{0x0000000000200010L});
         public static final BitSet FOLLOW_rule__Definition__Group__2_in_rule__Definition__Group__1830 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Definition__LexicalAssignment_1_in_rule__Definition__Group__1__Impl857 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Definition__Group__2__Impl_in_rule__Definition__Group__2888 = new BitSet(new long[]{0x0000000000000800L});
         public static final BitSet FOLLOW_rule__Definition__Group__3_in_rule__Definition__Group__2891 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Definition__LhsAssignment_2_in_rule__Definition__Group__2__Impl918 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Definition__Group__3__Impl_in_rule__Definition__Group__3948 = new BitSet(new long[]{0x00000000000640D0L});
+        public static final BitSet FOLLOW_rule__Definition__NameAssignment_2_in_rule__Definition__Group__2__Impl918 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Definition__Group__3__Impl_in_rule__Definition__Group__3948 = new BitSet(new long[]{0x00000000000C40D0L});
         public static final BitSet FOLLOW_rule__Definition__Group__4_in_rule__Definition__Group__3951 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_11_in_rule__Definition__Group__3__Impl979 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Definition__Group__4__Impl_in_rule__Definition__Group__41010 = new BitSet(new long[]{0x0000000000001000L});
@@ -5232,7 +5308,7 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_rule__Construct0__Group_1__0_in_rule__Construct0__Group__1__Impl1227 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1__0__Impl_in_rule__Construct0__Group_1__01262 = new BitSet(new long[]{0x0000000000002000L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1__1_in_rule__Construct0__Group_1__01265 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct0__Group_1__1__Impl_in_rule__Construct0__Group_1__11323 = new BitSet(new long[]{0x00000000000640D0L});
+        public static final BitSet FOLLOW_rule__Construct0__Group_1__1__Impl_in_rule__Construct0__Group_1__11323 = new BitSet(new long[]{0x00000000000C40D0L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1__2_in_rule__Construct0__Group_1__11326 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_13_in_rule__Construct0__Group_1__1__Impl1354 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1__2__Impl_in_rule__Construct0__Group_1__21385 = new BitSet(new long[]{0x0000000000002000L});
@@ -5240,26 +5316,26 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_rule__Construct0__OperandsAssignment_1_2_in_rule__Construct0__Group_1__2__Impl1415 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1__3__Impl_in_rule__Construct0__Group_1__31445 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1_3__0_in_rule__Construct0__Group_1__3__Impl1472 = new BitSet(new long[]{0x0000000000002002L});
-        public static final BitSet FOLLOW_rule__Construct0__Group_1_3__0__Impl_in_rule__Construct0__Group_1_3__01511 = new BitSet(new long[]{0x00000000000640D0L});
+        public static final BitSet FOLLOW_rule__Construct0__Group_1_3__0__Impl_in_rule__Construct0__Group_1_3__01511 = new BitSet(new long[]{0x00000000000C40D0L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1_3__1_in_rule__Construct0__Group_1_3__01514 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_13_in_rule__Construct0__Group_1_3__0__Impl1542 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct0__Group_1_3__1__Impl_in_rule__Construct0__Group_1_3__11573 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct0__OperandsAssignment_1_3_1_in_rule__Construct0__Group_1_3__1__Impl1600 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct1__Group__0__Impl_in_rule__Construct1__Group__01634 = new BitSet(new long[]{0x00000000000640D0L});
+        public static final BitSet FOLLOW_rule__Construct1__Group__0__Impl_in_rule__Construct1__Group__01634 = new BitSet(new long[]{0x00000000000C40D0L});
         public static final BitSet FOLLOW_rule__Construct1__Group__1_in_rule__Construct1__Group__01637 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__Group__0__Impl1664 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct1__Group__1__Impl_in_rule__Construct1__Group__11693 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct1__Group_1__0_in_rule__Construct1__Group__1__Impl1720 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct1__Group_1__0__Impl_in_rule__Construct1__Group_1__01755 = new BitSet(new long[]{0x00000000000640D0L});
+        public static final BitSet FOLLOW_rule__Construct1__Group_1__0__Impl_in_rule__Construct1__Group_1__01755 = new BitSet(new long[]{0x00000000000C40D0L});
         public static final BitSet FOLLOW_rule__Construct1__Group_1__1_in_rule__Construct1__Group_1__01758 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct1__Group_1__1__Impl_in_rule__Construct1__Group_1__11816 = new BitSet(new long[]{0x00000000000640D0L});
+        public static final BitSet FOLLOW_rule__Construct1__Group_1__1__Impl_in_rule__Construct1__Group_1__11816 = new BitSet(new long[]{0x00000000000C40D0L});
         public static final BitSet FOLLOW_rule__Construct1__Group_1__2_in_rule__Construct1__Group_1__11819 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct1__OperandsAssignment_1_1_in_rule__Construct1__Group_1__1__Impl1846 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct1__Group_1__2__Impl_in_rule__Construct1__Group_1__21876 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct1__OperandsAssignment_1_2_in_rule__Construct1__Group_1__2__Impl1903 = new BitSet(new long[]{0x00000000000640D2L});
+        public static final BitSet FOLLOW_rule__Construct1__OperandsAssignment_1_2_in_rule__Construct1__Group_1__2__Impl1903 = new BitSet(new long[]{0x00000000000C40D2L});
         public static final BitSet FOLLOW_rule__Construct2__Group_0__0__Impl_in_rule__Construct2__Group_0__01940 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_rule__Construct2__Group_0__1_in_rule__Construct2__Group_0__01943 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct2__Group_0__1__Impl_in_rule__Construct2__Group_0__12001 = new BitSet(new long[]{0x00000000000640D0L});
+        public static final BitSet FOLLOW_rule__Construct2__Group_0__1__Impl_in_rule__Construct2__Group_0__12001 = new BitSet(new long[]{0x00000000000C40D0L});
         public static final BitSet FOLLOW_rule__Construct2__Group_0__2_in_rule__Construct2__Group_0__12004 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_14_in_rule__Construct2__Group_0__1__Impl2032 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct2__Group_0__2__Impl_in_rule__Construct2__Group_0__22063 = new BitSet(new long[]{0x0000000000000002L});
@@ -5274,10 +5350,10 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_rule__Construct3__Group_1__1__Impl_in_rule__Construct3__Group_1__12308 = new BitSet(new long[]{0x0000000000000020L});
         public static final BitSet FOLLOW_rule__Construct3__Group_1__2_in_rule__Construct3__Group_1__12311 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_15_in_rule__Construct3__Group_1__1__Impl2339 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct3__Group_1__2__Impl_in_rule__Construct3__Group_1__22370 = new BitSet(new long[]{0x0000000000210000L});
+        public static final BitSet FOLLOW_rule__Construct3__Group_1__2__Impl_in_rule__Construct3__Group_1__22370 = new BitSet(new long[]{0x0000000000410000L});
         public static final BitSet FOLLOW_rule__Construct3__Group_1__3_in_rule__Construct3__Group_1__22373 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct3__MinAssignment_1_2_in_rule__Construct3__Group_1__2__Impl2400 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct3__Group_1__3__Impl_in_rule__Construct3__Group_1__32430 = new BitSet(new long[]{0x0000000000210000L});
+        public static final BitSet FOLLOW_rule__Construct3__Group_1__3__Impl_in_rule__Construct3__Group_1__32430 = new BitSet(new long[]{0x0000000000410000L});
         public static final BitSet FOLLOW_rule__Construct3__Group_1__4_in_rule__Construct3__Group_1__32433 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct3__Group_1_3__0_in_rule__Construct3__Group_1__3__Impl2460 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct3__Group_1__4__Impl_in_rule__Construct3__Group_1__42491 = new BitSet(new long[]{0x0000000000000002L});
@@ -5293,43 +5369,46 @@ public class InternalGrammarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_rule__Construct4__TargetAssignment_0_1_in_rule__Construct4__Group_0__1__Impl2769 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct4__Group_1__0__Impl_in_rule__Construct4__Group_1__02803 = new BitSet(new long[]{0x0000000000000040L});
         public static final BitSet FOLLOW_rule__Construct4__Group_1__1_in_rule__Construct4__Group_1__02806 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_1__1__Impl_in_rule__Construct4__Group_1__12864 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_1__1__Impl_in_rule__Construct4__Group_1__12864 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_rule__Construct4__Group_1__2_in_rule__Construct4__Group_1__12867 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Construct4__MinAssignment_1_1_in_rule__Construct4__Group_1__1__Impl2894 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_1__2__Impl_in_rule__Construct4__Group_1__22924 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__MaxAssignment_1_2_in_rule__Construct4__Group_1__2__Impl2951 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_2__0__Impl_in_rule__Construct4__Group_2__02987 = new BitSet(new long[]{0x0000000000000080L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_2__1_in_rule__Construct4__Group_2__02990 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_2__1__Impl_in_rule__Construct4__Group_2__13048 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__ValueAssignment_2_1_in_rule__Construct4__Group_2__1__Impl3075 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__03109 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__03112 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__13170 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__Construct4__Group_3__1__Impl3198 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_4__0__Impl_in_rule__Construct4__Group_4__03233 = new BitSet(new long[]{0x00000000000640D0L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_4__1_in_rule__Construct4__Group_4__03236 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__Construct4__Group_4__0__Impl3264 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_4__1__Impl_in_rule__Construct4__Group_4__13295 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_4__2_in_rule__Construct4__Group_4__13298 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstruct0_in_rule__Construct4__Group_4__1__Impl3325 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Construct4__Group_4__2__Impl_in_rule__Construct4__Group_4__23354 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__Construct4__Group_4__2__Impl3382 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDefinition_in_rule__Grammar__DefinitionsAssignment_13424 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_rule__Definition__LexicalAssignment_13460 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__LhsAssignment_23499 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_43530 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_23561 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_13592 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_13623 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_23654 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_23685 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_23716 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Construct3__UpperBoundedAssignment_1_3_03752 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_13791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_0_13826 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_1_13861 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_1_23892 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_2_13923 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_1__2__Impl_in_rule__Construct4__Group_1__22924 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_1__3_in_rule__Construct4__Group_1__22927 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__Construct4__Group_1__2__Impl2955 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_1__3__Impl_in_rule__Construct4__Group_1__32986 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__MaxAssignment_1_3_in_rule__Construct4__Group_1__3__Impl3013 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_2__0__Impl_in_rule__Construct4__Group_2__03051 = new BitSet(new long[]{0x0000000000000080L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_2__1_in_rule__Construct4__Group_2__03054 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_2__1__Impl_in_rule__Construct4__Group_2__13112 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__ValueAssignment_2_1_in_rule__Construct4__Group_2__1__Impl3139 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__03173 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__03176 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__13234 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__Construct4__Group_3__1__Impl3262 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_4__0__Impl_in_rule__Construct4__Group_4__03297 = new BitSet(new long[]{0x00000000000C40D0L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_4__1_in_rule__Construct4__Group_4__03300 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_rule__Construct4__Group_4__0__Impl3328 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_4__1__Impl_in_rule__Construct4__Group_4__13359 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_4__2_in_rule__Construct4__Group_4__13362 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstruct0_in_rule__Construct4__Group_4__1__Impl3389 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Construct4__Group_4__2__Impl_in_rule__Construct4__Group_4__23418 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_20_in_rule__Construct4__Group_4__2__Impl3446 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDefinition_in_rule__Grammar__DefinitionsAssignment_13488 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__Definition__LexicalAssignment_13524 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_23563 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_43594 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_23625 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_13656 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_13687 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_23718 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_23749 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_23780 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__Construct3__UpperBoundedAssignment_1_3_03816 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_13855 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_0_13890 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_1_13925 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_1_33956 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_2_13987 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

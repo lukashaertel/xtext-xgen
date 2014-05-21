@@ -57,7 +57,7 @@ public class GrammarParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConstruct4Access().getGroup_4(), "rule__Construct4__Group_4__0");
 					put(grammarAccess.getGrammarAccess().getDefinitionsAssignment_1(), "rule__Grammar__DefinitionsAssignment_1");
 					put(grammarAccess.getDefinitionAccess().getLexicalAssignment_1(), "rule__Definition__LexicalAssignment_1");
-					put(grammarAccess.getDefinitionAccess().getLhsAssignment_2(), "rule__Definition__LhsAssignment_2");
+					put(grammarAccess.getDefinitionAccess().getNameAssignment_2(), "rule__Definition__NameAssignment_2");
 					put(grammarAccess.getDefinitionAccess().getRhsAssignment_4(), "rule__Definition__RhsAssignment_4");
 					put(grammarAccess.getConstruct0Access().getOperandsAssignment_1_2(), "rule__Construct0__OperandsAssignment_1_2");
 					put(grammarAccess.getConstruct0Access().getOperandsAssignment_1_3_1(), "rule__Construct0__OperandsAssignment_1_3_1");
@@ -69,7 +69,7 @@ public class GrammarParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConstruct3Access().getMaxAssignment_1_3_1(), "rule__Construct3__MaxAssignment_1_3_1");
 					put(grammarAccess.getConstruct4Access().getTargetAssignment_0_1(), "rule__Construct4__TargetAssignment_0_1");
 					put(grammarAccess.getConstruct4Access().getMinAssignment_1_1(), "rule__Construct4__MinAssignment_1_1");
-					put(grammarAccess.getConstruct4Access().getMaxAssignment_1_2(), "rule__Construct4__MaxAssignment_1_2");
+					put(grammarAccess.getConstruct4Access().getMaxAssignment_1_3(), "rule__Construct4__MaxAssignment_1_3");
 					put(grammarAccess.getConstruct4Access().getValueAssignment_2_1(), "rule__Construct4__ValueAssignment_2_1");
 				}
 			};

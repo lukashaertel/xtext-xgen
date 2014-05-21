@@ -1,7 +1,20 @@
-package xgen.grammar;
+package xgen.grammar.util;
 
 import java.util.Arrays;
 import java.util.Collection;
+
+import xgen.grammar.Alternative;
+import xgen.grammar.Any;
+import xgen.grammar.Construct;
+import xgen.grammar.Definition;
+import xgen.grammar.Grammar;
+import xgen.grammar.GrammarFactory;
+import xgen.grammar.Keyword;
+import xgen.grammar.Multiplicity;
+import xgen.grammar.Not;
+import xgen.grammar.Range;
+import xgen.grammar.Reference;
+import xgen.grammar.Sequence;
 
 public class GrammarConstructor
 {
@@ -21,11 +34,11 @@ public class GrammarConstructor
 		return grammar(Arrays.asList(definitions));
 	}
 
-	public static Definition definition(String lhs, Construct rhs)
+	public static Definition definition(String name, Construct rhs)
 	{
 		Definition d = GrammarFactory.eINSTANCE.createDefinition();
 
-		d.setLhs(lhs);
+		d.setName(name);
 		d.setRhs(rhs);
 
 		return d;

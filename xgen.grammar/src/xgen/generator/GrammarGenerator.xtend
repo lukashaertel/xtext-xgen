@@ -6,6 +6,8 @@ package xgen.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import xgen.grammar.Grammar
+import xgen.generate.Iteration
 
 /**
  * Generates code from your model files on save.
@@ -13,12 +15,19 @@ import org.eclipse.xtext.generator.IFileSystemAccess
  * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
  */
 class GrammarGenerator implements IGenerator {
-	
+
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		for (g : resource.allContents.filter(Grammar).toIterable) {
+			val i = new Iteration(g)
+			val x = i.iterate(g.definitions.get(0))
+
+			for (p : 0 .. 10000) {
+				val b = new StringBuilder
+
+				x.get(p).ifPresent[flatten(b, false)]
+
+				println(b)
+			}
+		}
 	}
 }

@@ -4,14 +4,17 @@ import java.util.function.Function;
 
 import xgen.grammar.Element;
 
-public abstract class Node {
+public abstract class Node
+{
 	protected Node parent;
 
-	public Node() {
+	public Node()
+	{
 		parent = null;
 	}
 
-	public Node getParent() {
+	public Node getParent()
+	{
 		return parent;
 	}
 
@@ -26,4 +29,6 @@ public abstract class Node {
 	public abstract Node transformAllChildren(Function<Node[], Node[]> f);
 
 	public abstract Node transformAllValues(Function<Object, Object> f);
+
+	public abstract void flatten(StringBuilder target, boolean lexical);
 }

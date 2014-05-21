@@ -236,7 +236,7 @@ public abstract class AbstractGrammarSemanticSequencer extends AbstractDelegatin
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_2_0(), semanticObject.getMax());
+		feeder.accept(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0(), semanticObject.getMax());
 		feeder.finish();
 	}
 	
@@ -259,7 +259,7 @@ public abstract class AbstractGrammarSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (lexical?='lexical'? lhs=ID rhs=Construct0)
+	 *     (lexical?='lexical'? name=ID rhs=Construct0)
 	 */
 	protected void sequence_Definition(EObject context, Definition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

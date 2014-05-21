@@ -62,10 +62,12 @@ public class ReferenceImpl extends TerminalImpl implements Reference {
 	 * @generated
 	 */
 	public Definition getTarget() {
-		if (target != null && target.eIsProxy()) {
+		if (target != null && target.eIsProxy())
+		{
 			InternalEObject oldTarget = (InternalEObject)target;
 			target = (Definition)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
+			if (target != oldTarget)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GrammarPackage.REFERENCE__TARGET, oldTarget, target));
 			}
@@ -101,7 +103,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.REFERENCE__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
@@ -116,7 +119,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.REFERENCE__TARGET:
 				setTarget((Definition)newValue);
 				return;
@@ -131,7 +135,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.REFERENCE__TARGET:
 				setTarget((Definition)null);
 				return;
@@ -146,7 +151,8 @@ public class ReferenceImpl extends TerminalImpl implements Reference {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.REFERENCE__TARGET:
 				return target != null;
 		}

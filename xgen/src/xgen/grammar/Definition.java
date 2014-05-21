@@ -11,7 +11,7 @@ package xgen.grammar;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link xgen.grammar.Definition#getLhs <em>Lhs</em>}</li>
+ *   <li>{@link xgen.grammar.Definition#getName <em>Name</em>}</li>
  *   <li>{@link xgen.grammar.Definition#isLexical <em>Lexical</em>}</li>
  *   <li>{@link xgen.grammar.Definition#getRhs <em>Rhs</em>}</li>
  * </ul>
@@ -23,30 +23,30 @@ package xgen.grammar;
  */
 public interface Definition extends Element {
 	/**
-	 * Returns the value of the '<em><b>Lhs</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lhs</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lhs</em>' attribute.
-	 * @see #setLhs(String)
-	 * @see xgen.grammar.GrammarPackage#getDefinition_Lhs()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see xgen.grammar.GrammarPackage#getDefinition_Name()
 	 * @model id="true"
 	 * @generated
 	 */
-	String getLhs();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link xgen.grammar.Definition#getLhs <em>Lhs</em>}' attribute.
+	 * Sets the value of the '{@link xgen.grammar.Definition#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Lhs</em>' attribute.
-	 * @see #getLhs()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setLhs(String value);
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Lexical</b></em>' attribute.

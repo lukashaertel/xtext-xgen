@@ -10,7 +10,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lhs" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lexical" unique="false"
         eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>

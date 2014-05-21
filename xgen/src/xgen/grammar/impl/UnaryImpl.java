@@ -74,7 +74,8 @@ public abstract class UnaryImpl extends ConstructImpl implements Unary {
 	public NotificationChain basicSetOperand(Construct newOperand, NotificationChain msgs) {
 		Construct oldOperand = operand;
 		operand = newOperand;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GrammarPackage.UNARY__OPERAND, oldOperand, newOperand);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -87,7 +88,8 @@ public abstract class UnaryImpl extends ConstructImpl implements Unary {
 	 * @generated
 	 */
 	public void setOperand(Construct newOperand) {
-		if (newOperand != operand) {
+		if (newOperand != operand)
+		{
 			NotificationChain msgs = null;
 			if (operand != null)
 				msgs = ((InternalEObject)operand).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GrammarPackage.UNARY__OPERAND, null, msgs);
@@ -107,7 +109,8 @@ public abstract class UnaryImpl extends ConstructImpl implements Unary {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.UNARY__OPERAND:
 				return basicSetOperand(null, msgs);
 		}
@@ -121,7 +124,8 @@ public abstract class UnaryImpl extends ConstructImpl implements Unary {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.UNARY__OPERAND:
 				return getOperand();
 		}
@@ -135,7 +139,8 @@ public abstract class UnaryImpl extends ConstructImpl implements Unary {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.UNARY__OPERAND:
 				setOperand((Construct)newValue);
 				return;
@@ -150,7 +155,8 @@ public abstract class UnaryImpl extends ConstructImpl implements Unary {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.UNARY__OPERAND:
 				setOperand((Construct)null);
 				return;
@@ -165,7 +171,8 @@ public abstract class UnaryImpl extends ConstructImpl implements Unary {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GrammarPackage.UNARY__OPERAND:
 				return operand != null;
 		}

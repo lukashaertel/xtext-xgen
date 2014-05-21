@@ -38,7 +38,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public GrammarSwitch() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = GrammarPackage.eINSTANCE;
 		}
 	}
@@ -65,34 +66,40 @@ public class GrammarSwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-			case GrammarPackage.GRAMMAR: {
+		switch (classifierID)
+		{
+			case GrammarPackage.GRAMMAR:
+			{
 				Grammar grammar = (Grammar)theEObject;
 				T result = caseGrammar(grammar);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.ELEMENT: {
+			case GrammarPackage.ELEMENT:
+			{
 				Element element = (Element)theEObject;
 				T result = caseElement(element);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.DEFINITION: {
+			case GrammarPackage.DEFINITION:
+			{
 				Definition definition = (Definition)theEObject;
 				T result = caseDefinition(definition);
 				if (result == null) result = caseElement(definition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.CONSTRUCT: {
+			case GrammarPackage.CONSTRUCT:
+			{
 				Construct construct = (Construct)theEObject;
 				T result = caseConstruct(construct);
 				if (result == null) result = caseElement(construct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.TERMINAL: {
+			case GrammarPackage.TERMINAL:
+			{
 				Terminal terminal = (Terminal)theEObject;
 				T result = caseTerminal(terminal);
 				if (result == null) result = caseConstruct(terminal);
@@ -100,7 +107,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.UNARY: {
+			case GrammarPackage.UNARY:
+			{
 				Unary unary = (Unary)theEObject;
 				T result = caseUnary(unary);
 				if (result == null) result = caseConstruct(unary);
@@ -108,7 +116,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.NARY: {
+			case GrammarPackage.NARY:
+			{
 				NAry nAry = (NAry)theEObject;
 				T result = caseNAry(nAry);
 				if (result == null) result = caseConstruct(nAry);
@@ -116,7 +125,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.ANY: {
+			case GrammarPackage.ANY:
+			{
 				Any any = (Any)theEObject;
 				T result = caseAny(any);
 				if (result == null) result = caseTerminal(any);
@@ -125,7 +135,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.KEYWORD: {
+			case GrammarPackage.KEYWORD:
+			{
 				Keyword keyword = (Keyword)theEObject;
 				T result = caseKeyword(keyword);
 				if (result == null) result = caseTerminal(keyword);
@@ -134,7 +145,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.RANGE: {
+			case GrammarPackage.RANGE:
+			{
 				Range range = (Range)theEObject;
 				T result = caseRange(range);
 				if (result == null) result = caseTerminal(range);
@@ -143,7 +155,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.REFERENCE: {
+			case GrammarPackage.REFERENCE:
+			{
 				Reference reference = (Reference)theEObject;
 				T result = caseReference(reference);
 				if (result == null) result = caseTerminal(reference);
@@ -152,7 +165,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.ALTERNATIVE: {
+			case GrammarPackage.ALTERNATIVE:
+			{
 				Alternative alternative = (Alternative)theEObject;
 				T result = caseAlternative(alternative);
 				if (result == null) result = caseNAry(alternative);
@@ -161,7 +175,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.SEQUENCE: {
+			case GrammarPackage.SEQUENCE:
+			{
 				Sequence sequence = (Sequence)theEObject;
 				T result = caseSequence(sequence);
 				if (result == null) result = caseNAry(sequence);
@@ -170,7 +185,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.NOT: {
+			case GrammarPackage.NOT:
+			{
 				Not not = (Not)theEObject;
 				T result = caseNot(not);
 				if (result == null) result = caseUnary(not);
@@ -179,7 +195,8 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GrammarPackage.MULTIPLICITY: {
+			case GrammarPackage.MULTIPLICITY:
+			{
 				Multiplicity multiplicity = (Multiplicity)theEObject;
 				T result = caseMultiplicity(multiplicity);
 				if (result == null) result = caseUnary(multiplicity);

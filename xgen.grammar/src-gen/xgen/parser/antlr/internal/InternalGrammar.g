@@ -145,9 +145,9 @@ ruleDefinition returns [EObject current=null]
 )
 )?(
 (
-		lv_lhs_2_0=RULE_ID
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_lhs_2_0, grammarAccess.getDefinitionAccess().getLhsIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -155,8 +155,8 @@ ruleDefinition returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"lhs",
-        		lv_lhs_2_0, 
+       			"name",
+        		lv_name_2_0, 
         		"ID");
 	    }
 
@@ -558,11 +558,15 @@ ruleConstruct4 returns [EObject current=null]
 	    }
 
 )
-)(
+)	otherlv_4='..' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_1_2());
+    }
 (
-		lv_max_4_0=RULE_CHAR
+(
+		lv_max_5_0=RULE_CHAR
 		{
-			newLeafNode(lv_max_4_0, grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_2_0()); 
+			newLeafNode(lv_max_5_0, grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -571,7 +575,7 @@ ruleConstruct4 returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"max",
-        		lv_max_4_0, 
+        		lv_max_5_0, 
         		"CHAR");
 	    }
 
@@ -585,9 +589,9 @@ ruleConstruct4 returns [EObject current=null]
     }
 )(
 (
-		lv_value_6_0=RULE_STRING
+		lv_value_7_0=RULE_STRING
 		{
-			newLeafNode(lv_value_6_0, grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
+			newLeafNode(lv_value_7_0, grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -596,7 +600,7 @@ ruleConstruct4 returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_6_0, 
+        		lv_value_7_0, 
         		"STRING");
 	    }
 
@@ -608,27 +612,27 @@ ruleConstruct4 returns [EObject current=null]
             grammarAccess.getConstruct4Access().getAnyAction_3_0(),
             $current);
     }
-)	otherlv_8='.' 
+)	otherlv_9='.' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getConstruct4Access().getFullStopKeyword_3_1());
+    	newLeafNode(otherlv_9, grammarAccess.getConstruct4Access().getFullStopKeyword_3_1());
     }
 )
-    |(	otherlv_9='(' 
+    |(	otherlv_10='(' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getConstruct4Access().getLeftParenthesisKeyword_4_0());
+    	newLeafNode(otherlv_10, grammarAccess.getConstruct4Access().getLeftParenthesisKeyword_4_0());
     }
 
     { 
         newCompositeNode(grammarAccess.getConstruct4Access().getConstruct0ParserRuleCall_4_1()); 
     }
-    this_Construct0_10=ruleConstruct0
+    this_Construct0_11=ruleConstruct0
     { 
-        $current = $this_Construct0_10.current; 
+        $current = $this_Construct0_11.current; 
         afterParserOrEnumRuleCall();
     }
-	otherlv_11=')' 
+	otherlv_12=')' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getConstruct4Access().getRightParenthesisKeyword_4_2());
+    	newLeafNode(otherlv_12, grammarAccess.getConstruct4Access().getRightParenthesisKeyword_4_2());
     }
 ))
 ;
@@ -643,7 +647,7 @@ RULE_INT : ('0'..'9')+;
 
 RULE_STRING : '"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"';
 
-RULE_CHAR : ('\'' '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')) '\'');
+RULE_CHAR : '\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\''))) '\'';
 
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 

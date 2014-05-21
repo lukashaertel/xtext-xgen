@@ -7,7 +7,7 @@ Grammar returns Grammar:
 	{Grammar} definitions+=Definition*;
 
 Definition returns Definition:
-	{Definition} (lexical?='lexical')? lhs=ID ':' rhs=Construct0 ';';
+	{Definition} (lexical?='lexical')? name=ID ':' rhs=Construct0 ';';
 
 Construct0 returns Construct:
 	Construct1 ({Alternative.operands+=current} '|' operands+=Construct1 ('|' operands+=Construct1)*)?;
@@ -24,7 +24,7 @@ Construct3 returns Construct:
 
 Construct4 returns Construct:
 	{Reference} target=[Definition] |
-	{Range} min=CHAR max=CHAR |
+	{Range} min=CHAR '..' max=CHAR |
 	{Keyword} value=STRING |
 	{Any} '.' |
 	'(' Construct0 ')';
@@ -39,7 +39,7 @@ terminal STRING:
 	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"';
 
 terminal CHAR returns ecore::EChar:
-	"'" '\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'") "'";
+	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'")) "'";
 
 terminal ML_COMMENT:
 	'/*'->'*/';
