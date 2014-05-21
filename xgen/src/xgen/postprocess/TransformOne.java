@@ -1,5 +1,6 @@
 package xgen.postprocess;
 
+import java.util.List;
 import java.util.Set;
 
 import xgen.index.Index;

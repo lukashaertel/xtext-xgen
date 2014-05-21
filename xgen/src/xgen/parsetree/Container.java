@@ -7,6 +7,7 @@ import java.util.function.Function;
 
 import xgen.grammar.Definition;
 import xgen.grammar.Element;
+import xgen.grammar.GrammarPackage;
 
 import com.google.common.collect.Iterables;
 
