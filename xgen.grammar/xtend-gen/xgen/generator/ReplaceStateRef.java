@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Random;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import xgen.parsetree.Leaf;
-import xgen.postprocess.ReplaceAll;
+import xgen.postprocess.TransformAll;
 
 @SuppressWarnings("all")
-public class ReplaceStateRef extends ReplaceAll {
+public class ReplaceStateRef extends TransformAll {
   private final Random random = new Function0<Random>() {
     public Random apply() {
       Random _random = new Random();
@@ -25,16 +25,19 @@ public class ReplaceStateRef extends ReplaceAll {
     this.exchange = exchange;
   }
   
-  protected boolean candidate(final Leaf it) {
-    boolean _equals = Objects.equal(it.value, "<state ref>");
-    return _equals;
-  }
-  
-  protected Leaf replace(final Leaf it) {
-    int _size = this.exchange.size();
-    int _nextInt = this.random.nextInt(_size);
-    String _get = this.exchange.get(_nextInt);
-    Leaf _leaf = new Leaf(_get);
-    return _leaf;
+  protected Leaf transform(final Leaf it) {
+    Leaf _xblockexpression = null;
+    {
+      boolean _notEquals = (!Objects.equal(it.value, "<state ref>"));
+      if (_notEquals) {
+        return it;
+      }
+      int _size = this.exchange.size();
+      int _nextInt = this.random.nextInt(_size);
+      String _get = this.exchange.get(_nextInt);
+      Leaf _leaf = new Leaf(_get);
+      _xblockexpression = (_leaf);
+    }
+    return _xblockexpression;
   }
 }

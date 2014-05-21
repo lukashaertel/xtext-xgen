@@ -9,7 +9,7 @@ import xgen.postprocess.RemoveAll;
 
 @SuppressWarnings("all")
 public class RemoveRemainingInitial extends RemoveAll {
-  protected boolean candidate(final Leaf it) {
+  protected boolean remove(final Leaf it) {
     boolean _equals = Objects.equal(it.value, "<initial>");
     return _equals;
   }

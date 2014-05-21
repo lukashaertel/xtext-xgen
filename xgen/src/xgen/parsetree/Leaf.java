@@ -4,10 +4,25 @@ import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+/**
+ * Node that does not contain any more nodes
+ * 
+ * @author Lukas Härtel
+ *
+ */
 public class Leaf extends Node
 {
+	/**
+	 * The value of the leaf
+	 */
 	public final Object value;
 
+	/**
+	 * Constructs the leaf
+	 * 
+	 * @param value
+	 *            The value to use
+	 */
 	public Leaf(Object value)
 	{
 		this.value = value;
@@ -41,35 +56,6 @@ public class Leaf extends Node
 	public void flatten(StringBuilder target, boolean lexical)
 	{
 		target.append(value);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Leaf other = (Leaf) obj;
-		if (value == null)
-		{
-			if (other.value != null)
-				return false;
-		}
-		else if (!value.equals(other.value))
-			return false;
-		return true;
 	}
 
 	@Override

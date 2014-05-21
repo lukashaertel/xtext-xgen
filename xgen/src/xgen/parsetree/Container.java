@@ -10,12 +10,37 @@ import xgen.grammar.Element;
 
 import com.google.common.collect.Iterables;
 
+/**
+ * Node that is not a leaf and contains more nodes
+ * 
+ * @author Lukas Härtel
+ *
+ */
 public class Container extends Node
 {
+	/**
+	 * The label of the node
+	 */
 	public final Element label;
 
+	/**
+	 * <p>
+	 * The children of this node
+	 * </p>
+	 * <p>
+	 * <em>Do not modify directly</em>
+	 * </p>
+	 */
 	public final Node[] children;
 
+	/**
+	 * Creates a new container
+	 * 
+	 * @param label
+	 *            The label of the node
+	 * @param children
+	 *            The children of this container
+	 */
 	public Container(Element label, Node... children)
 	{
 		this.label = label;
@@ -25,11 +50,25 @@ public class Container extends Node
 			c.parent = this;
 	}
 
-	public static Node fromIterable(Element label, Iterable<Node> children)
+	/**
+	 * Creates a node from a sequence of nodes
+	 * 
+	 * @param label
+	 *            The label to use
+	 * @param children
+	 *            The sequence to exhaust for array creation
+	 * @return Returns a new Container
+	 */
+	public static Container fromIterable(Element label, Iterable<Node> children)
 	{
 		return new Container(label, Iterables.toArray(children, Node.class));
 	}
 
+	/**
+	 * Checks if the label is a lexical definition element
+	 * 
+	 * @return True if label is a definition and the definition is lexical
+	 */
 	public boolean isLexicalDefinition()
 	{
 		return label instanceof Definition && ((Definition) label).isLexical();
@@ -83,64 +122,24 @@ public class Container extends Node
 	}
 
 	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(children);
-		result = prime * result + ((label == null) ? 0 : label.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Container other = (Container) obj;
-		if (!Arrays.equals(children, other.children))
-			return false;
-		if (label == null)
-		{
-			if (other.label != null)
-				return false;
-		}
-		else if (!label.equals(other.label))
-			return false;
-		return true;
-	}
-
-	@Override
 	public void flatten(StringBuilder target, boolean lexical)
 	{
 		if (lexical || isLexicalDefinition())
-			flattenLexical(target);
+			for (Node c1 : children)
+				c1.flatten(target, true);
 		else
-			flattenNonLexical(target);
-	}
-
-	private void flattenNonLexical(StringBuilder target)
-	{
-		boolean separate = false;
-		for (Node c : children)
 		{
-			if (separate)
-				target.append(" ");
+			boolean separate = false;
+			for (Node c : children)
+			{
+				if (separate)
+					target.append(" ");
 
-			c.flatten(target, false);
+				c.flatten(target, false);
 
-			separate = true;
+				separate = true;
+			}
 		}
-	}
-
-	private void flattenLexical(StringBuilder target)
-	{
-		for (Node c : children)
-			c.flatten(target, true);
 	}
 
 	@Override
