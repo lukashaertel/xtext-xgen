@@ -15,12 +15,13 @@ import xgen.grammar.Not;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
+import xgen.grammar.Until;
 
 public class GrammarConstructor
 {
 	public static Grammar grammar(Iterable<Definition> definitions)
 	{
-		
+
 		Grammar g = GrammarFactory.eINSTANCE.createGrammar();
 
 		for (Definition d : definitions)
@@ -34,11 +35,12 @@ public class GrammarConstructor
 		return grammar(Arrays.asList(definitions));
 	}
 
-	public static Definition definition(String name, Construct rhs)
+	public static Definition definition(String name, boolean lexical, Construct rhs)
 	{
 		Definition d = GrammarFactory.eINSTANCE.createDefinition();
 
 		d.setName(name);
+		d.setLexical(lexical);
 		d.setRhs(rhs);
 
 		return d;
@@ -139,6 +141,39 @@ public class GrammarConstructor
 		n.setOperand(operand);
 
 		return n;
+	}
+
+	public static Until until(Construct operand)
+	{
+		Until n = GrammarFactory.eINSTANCE.createUntil();
+
+		n.setOperand(operand);
+
+		return n;
+	}
+
+	public static Multiplicity multiplicityUnbound(Construct operand, int min)
+	{
+		Multiplicity m = GrammarFactory.eINSTANCE.createMultiplicity();
+
+		m.setOperand(operand);
+		m.setMin(min);
+		m.setUpperBounded(false);
+		m.setMax(-1);
+
+		return m;
+	}
+
+	public static Multiplicity multiplicityBound(Construct operand, int min, int max)
+	{
+		Multiplicity m = GrammarFactory.eINSTANCE.createMultiplicity();
+
+		m.setOperand(operand);
+		m.setMin(min);
+		m.setUpperBounded(true);
+		m.setMax(max);
+
+		return m;
 	}
 
 	public static Multiplicity multiplicity(Construct operand, int min, boolean upperBounded, int max)
