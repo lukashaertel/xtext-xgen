@@ -8,16 +8,36 @@ import xgen.parsetree.Node;
 
 import com.google.common.collect.Lists;
 
-public abstract class RemoveAll extends AbstractProcessorOneToOne
+/**
+ * Removes all leafs in the input node that satisfy a condition
+ * 
+ * @author Lukas Härtel
+ *
+ */
+public abstract class RemoveAll extends ProcessorOneToOne
 {
-	protected abstract boolean candidate(Leaf leaf);
+	/**
+	 * Checks if the leaf is to be removed
+	 * 
+	 * @param leaf
+	 *            The leaf to test
+	 * @return Returns true if leaf must be removed
+	 */
+	protected abstract boolean remove(Leaf leaf);
 
+	/**
+	 * Utility that removes all candidates
+	 * 
+	 * @param n
+	 *            The array of nodes to be narrowed
+	 * @return Returns a new array if any of the children must be removed
+	 */
 	private Node[] removeCandidates(Node[] n)
 	{
 		// First search for one node of type leaf
 		boolean l = false;
 		for (int i = 0; i < n.length && !l; i++)
-			if (n[i] instanceof Leaf)
+			if (n[i] instanceof Leaf && remove((Leaf) n[i]))
 				l = true;
 
 		// If no node is a leaf, return input unchanged
@@ -27,7 +47,7 @@ public abstract class RemoveAll extends AbstractProcessorOneToOne
 		// Else remove all nodes satisfying the candidate function
 		List<Node> r = Lists.newArrayList();
 		for (int i = 0; i < n.length; i++)
-			if (n[i] instanceof Leaf && !candidate((Leaf) n[i]))
+			if (n[i] instanceof Leaf && !remove((Leaf) n[i]))
 				r.add(n[i]);
 
 		// Return as array

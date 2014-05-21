@@ -6,10 +6,10 @@ package xgen.generator;
 import com.google.common.base.Objects;
 import java.util.Collection;
 import xgen.parsetree.Leaf;
-import xgen.postprocess.ReplaceAll;
+import xgen.postprocess.TransformAll;
 
 @SuppressWarnings("all")
-public class ReplaceStateName extends ReplaceAll {
+public class ReplaceStateName extends TransformAll {
   private int i = 0;
   
   private final Collection<String> exchange;
@@ -23,12 +23,11 @@ public class ReplaceStateName extends ReplaceAll {
     this.exchange.clear();
   }
   
-  protected boolean candidate(final Leaf it) {
-    boolean _equals = Objects.equal(it.value, "<state name>");
-    return _equals;
-  }
-  
-  protected Leaf replace(final Leaf it) {
+  protected Leaf transform(final Leaf it) {
+    boolean _notEquals = (!Objects.equal(it.value, "<state name>"));
+    if (_notEquals) {
+      return it;
+    }
     final String r = ("State" + Integer.valueOf(this.i));
     int _plus = (this.i + 1);
     this.i = _plus;

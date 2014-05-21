@@ -5,17 +5,22 @@ package xgen.generator;
 
 import com.google.common.base.Objects;
 import xgen.parsetree.Leaf;
-import xgen.postprocess.ReplaceOne;
+import xgen.postprocess.TransformSome;
 
 @SuppressWarnings("all")
-public class ReplaceInitial extends ReplaceOne {
-  protected boolean candidate(final Leaf it) {
-    boolean _equals = Objects.equal(it.value, "<INITIAL>");
+public class ReplaceInitial extends TransformSome {
+  protected boolean select(final Leaf it) {
+    boolean _equals = Objects.equal(it.value, "<initial>");
     return _equals;
   }
   
-  protected Leaf replace(final Leaf it) {
+  protected Leaf transform(final Leaf it) {
     Leaf _leaf = new Leaf("initial");
     return _leaf;
+  }
+  
+  protected boolean selectAmount(final int n) {
+    boolean _greaterThan = (n > 1);
+    return _greaterThan;
   }
 }

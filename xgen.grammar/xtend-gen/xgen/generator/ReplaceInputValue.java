@@ -8,20 +8,19 @@ import com.google.common.collect.Lists;
 import java.util.Collections;
 import java.util.List;
 import xgen.parsetree.Leaf;
-import xgen.postprocess.ReplaceAll;
+import xgen.postprocess.TransformAll;
 
 @SuppressWarnings("all")
-public class ReplaceInputValue extends ReplaceAll {
+public class ReplaceInputValue extends TransformAll {
   private int i = 0;
   
   private List<String> j = Collections.<String>unmodifiableList(Lists.<String>newArrayList("SomeInput", "MoreInput", "SlightlyDifferentInput", "EvenMore"));
   
-  protected boolean candidate(final Leaf it) {
-    boolean _equals = Objects.equal(it.value, "<input value>");
-    return _equals;
-  }
-  
-  protected Leaf replace(final Leaf it) {
+  protected Leaf transform(final Leaf it) {
+    boolean _notEquals = (!Objects.equal(it.value, "<input value>"));
+    if (_notEquals) {
+      return it;
+    }
     int _size = this.j.size();
     int _modulo = (this.i % _size);
     final String r = this.j.get(_modulo);

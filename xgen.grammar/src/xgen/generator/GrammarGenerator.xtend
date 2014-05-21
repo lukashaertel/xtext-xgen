@@ -8,42 +8,46 @@ import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import xgen.grammar.Grammar
 import xgen.generate.Iteration
-import xgen.postprocess.ReplaceOne
-import xgen.postprocess.RemoveAll
-import xgen.postprocess.ReplaceAll
 import xgen.postprocess.Processor
 import java.util.Collection
 import java.util.List
 import java.util.Random
 import xgen.parsetree.Leaf
+import xgen.postprocess.TransformSome
+import xgen.postprocess.RemoveAll
+import xgen.postprocess.TransformAll
 
-class ReplaceInitial extends ReplaceOne {
+class ReplaceInitial extends TransformSome {
 
-	override protected candidate(Leaf it) {
-		value == "<INITIAL>"
+	override protected select(Leaf it) {
+		value == "<initial>"
 	}
 
-	override protected replace(Leaf it) {
+	override protected transform(Leaf it) {
 		new Leaf("initial")
 	}
+	
+	override protected selectAmount(int n) {
+		n > 1
+	}
+	
 }
 
 class RemoveRemainingInitial extends RemoveAll {
 
-	override protected candidate(Leaf it) {
+	override protected remove(Leaf it) {
 		value == "<initial>"
 	}
 }
 
-class ReplaceInputValue extends ReplaceAll {
+class ReplaceInputValue extends TransformAll {
 	var i = 0
 	var j = #["SomeInput", "MoreInput", "SlightlyDifferentInput", "EvenMore"]
 
-	override protected candidate(Leaf it) {
-		value == "<input value>"
-	}
+	override protected transform(Leaf it) {
+		if (value != "<input value>")
+			return it
 
-	override protected replace(Leaf it) {
 		val r = j.get(i % j.size)
 
 		i = i + 1
@@ -52,7 +56,7 @@ class ReplaceInputValue extends ReplaceAll {
 	}
 }
 
-class ReplaceStateName extends ReplaceAll {
+class ReplaceStateName extends TransformAll {
 	var i = 0
 	val Collection<String> exchange
 
@@ -65,11 +69,10 @@ class ReplaceStateName extends ReplaceAll {
 		exchange.clear
 	}
 
-	override protected candidate(Leaf it) {
-		value == "<state name>"
-	}
+	override protected transform(Leaf it) {
+		if (value != "<state name>")
+			return it
 
-	override protected replace(Leaf it) {
 		val r = "State" + i
 
 		i = i + 1
@@ -79,7 +82,7 @@ class ReplaceStateName extends ReplaceAll {
 	}
 }
 
-class ReplaceStateRef extends ReplaceAll {
+class ReplaceStateRef extends TransformAll {
 	val random = new Random
 	val List<String> exchange
 
@@ -87,11 +90,10 @@ class ReplaceStateRef extends ReplaceAll {
 		this.exchange = exchange
 	}
 
-	override protected candidate(Leaf it) {
-		value == "<state ref>"
-	}
+	override protected transform(Leaf it) {
+		if (value != "<state ref>")
+			return it
 
-	override protected replace(Leaf it) {
 		new Leaf(exchange.get(random.nextInt(exchange.size)))
 	}
 }
@@ -104,7 +106,11 @@ class ReplaceStateRef extends ReplaceAll {
 class GrammarGenerator implements IGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+
+		// Exchange buffer object for the generated states in the replace state name PP
 		val s = newArrayList()
+
+		// Processor sequence
 		val t = Processor.compose(new ReplaceInitial, new RemoveRemainingInitial, new ReplaceInputValue,
 			new ReplaceStateName(s), new ReplaceStateRef(s))
 
@@ -120,8 +126,8 @@ class GrammarGenerator implements IGenerator {
 			val y = t.postProcess(x)
 
 			// Print some items
-			for (p : 0 .. 1000) {
-				y.get(p).ifPresent[println(flatten(false))]
+			for (p : 0 .. 10) {
+				y.get(p).ifPresent[println(p); print("  "); println(flatten(false))]
 			}
 		}
 	}

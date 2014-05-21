@@ -1,5 +1,11 @@
 package xgen.util;
 
+/**
+ * Utilities for the product
+ * 
+ * @author Lukas Härtel
+ *
+ */
 public class PairingUtil
 {
 	public static long cantorX(long z)

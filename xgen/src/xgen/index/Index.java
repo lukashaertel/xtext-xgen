@@ -1,6 +1,7 @@
 package xgen.index;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -16,6 +17,7 @@ import xgen.util.CrossCast;
 
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
 /**
  * <p>
@@ -117,11 +119,35 @@ public abstract class Index<X> implements Iterable<Optional<X>>
 	 * 
 	 * @param production
 	 *            The iterator that specifies the sequence of indices
-	 * @return
+	 * @return Returns an index satisfying flattening
 	 */
 	public static <X> Index<X> flatten(Iterator<? extends Index<X>> production)
 	{
 		return new IndexFlatten<>(production);
+	}
+
+	/**
+	 * Flattens the production specified by the sequenceF
+	 * 
+	 * @param production
+	 *            The sequence of indices
+	 * @return Returns an index satisfying flattening
+	 */
+	public static <X> Index<X> flatten(Iterable<? extends Index<X>> production)
+	{
+		return flatten(production.iterator());
+	}
+
+	/**
+	 * Maps a collection of items to indices
+	 * 
+	 * @param items
+	 *            The items to index
+	 * @return Returns an index satisfying item-access
+	 */
+	public static <X> Index<X> items(Collection<X> items)
+	{
+		return new IndexItems<>(Lists.newArrayList(items));
 	}
 
 	/**
@@ -149,6 +175,14 @@ public abstract class Index<X> implements Iterable<Optional<X>>
 		return new IndexItems<>(Arrays.asList(items));
 	}
 
+	/**
+	 * Delays the execution of an index and assumes the index to be infinite at
+	 * first
+	 * 
+	 * @param supplier
+	 *            The supplier of the real index
+	 * @return Returns an index satisfying late execution
+	 */
 	public static <X> Index<X> late(Supplier<Index<X>> supplier)
 	{
 		return new IndexLate<>(supplier);
@@ -494,6 +528,13 @@ public abstract class Index<X> implements Iterable<Optional<X>>
 		return new IndexZip<>(this, second, collapse);
 	}
 
+	/**
+	 * Combines this index to the given length
+	 * 
+	 * @param length
+	 *            The length of the output sequence
+	 * @return Returns an index satisfying combination
+	 */
 	public Index<Iterable<X>> combine(long length)
 	{
 		if (length < 0)
@@ -511,6 +552,18 @@ public abstract class Index<X> implements Iterable<Optional<X>>
 		return firstHalf.productPresent(secondHalf, (a, b) -> Iterables.concat(a, b));
 	}
 
+	/**
+	 * Combines this index between a minimum length and a maximum length or
+	 * infinity
+	 * 
+	 * @param min
+	 *            The minimum length of combinations
+	 * @param max
+	 *            The maximum or empty if infinite
+	 * @param innerPerOuter
+	 *            The amount of inner elements to exhaust if inner is empty
+	 * @return
+	 */
 	public Index<Iterable<X>> combinations(long min, OptionalLong max, long innerPerOuter)
 	{
 		return flatten(new AbstractIterator<Index<Iterable<X>>>()

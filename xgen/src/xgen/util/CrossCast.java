@@ -1,7 +1,20 @@
 package xgen.util;
 
+/**
+ * Combination of forward and backward conversion
+ * 
+ * @author Lukas Härtel
+ *
+ * @param <T>
+ *            The Target type
+ * @param <U>
+ *            The source type
+ */
 public interface CrossCast<T, U>
 {
+	/**
+	 * Conversion of long to character
+	 */
 	public final CrossCast<Character, Long> CHAR_LONG = new CrossCast<Character, Long>()
 	{
 		@Override
@@ -17,6 +30,9 @@ public interface CrossCast<T, U>
 		}
 	};
 
+	/**
+	 * Conversion of long to short
+	 */
 	public final CrossCast<Short, Long> SHORT_LONG = new CrossCast<Short, Long>()
 	{
 		@Override
@@ -32,6 +48,9 @@ public interface CrossCast<T, U>
 		}
 	};
 
+	/**
+	 * Conversion of long to int
+	 */
 	public final CrossCast<Integer, Long> INTEGER_LONG = new CrossCast<Integer, Long>()
 	{
 		@Override
@@ -46,6 +65,10 @@ public interface CrossCast<T, U>
 			return (long) (int) t;
 		}
 	};
+
+	/**
+	 * Conversion of long to long i.e. identity
+	 */
 	public final CrossCast<Long, Long> LONG_LONG = new CrossCast<Long, Long>()
 	{
 		@Override
@@ -61,7 +84,21 @@ public interface CrossCast<T, U>
 		}
 	};
 
+	/**
+	 * Casts to the target type from the source type
+	 * 
+	 * @param u
+	 *            The source
+	 * @return Returns the source as an item of the target type
+	 */
 	public T castFrom(U u);
 
+	/**
+	 * Casts from the target type to the source type
+	 * 
+	 * @param u
+	 *            The target
+	 * @return Returns the target as an item of the sourc type
+	 */
 	public U castTo(T t);
 }
