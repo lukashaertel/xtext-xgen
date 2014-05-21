@@ -12,6 +12,7 @@ import xgen.grammar.GrammarFactory;
 import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.Not;
+import xgen.grammar.Placeholder;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
@@ -186,5 +187,12 @@ public class GrammarConstructor
 		m.setMax(max);
 
 		return m;
+	}
+
+	public static Placeholder placeholder(Object source)
+	{
+		Placeholder p = GrammarFactory.eINSTANCE.createPlaceholder();
+		p.setSource(source);
+		return p;
 	}
 }

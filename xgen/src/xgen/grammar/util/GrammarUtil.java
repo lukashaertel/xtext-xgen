@@ -18,6 +18,7 @@ import xgen.grammar.GrammarPackage;
 import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.Not;
+import xgen.grammar.Placeholder;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
@@ -144,8 +145,26 @@ public class GrammarUtil
 			{
 				Reference r = incompleteReference();
 
-				unresolved.put(object.getTarget().getName(), r);
+				if (object.getTarget() == null)
+				{
+					String target = null;
 
+					for (Entry<String, Reference> e : unresolved.entries())
+						if (object == e.getValue())
+						{
+							target = e.getKey();
+							break;
+						}
+
+					if (target == null)
+						throw new IllegalArgumentException();
+
+					unresolved.put(target, r);
+				}
+				else
+				{
+					unresolved.put(object.getTarget().getName(), r);
+				}
 				return r;
 			}
 
@@ -164,6 +183,12 @@ public class GrammarUtil
 			{
 				return until(doSwitch(object.getOperand()));
 			}
+
+			@Override
+			public Construct casePlaceholder(Placeholder object)
+			{
+				return placeholder(object.getSource());
+			}
 		}.doSwitch(d.getRhs()));
 	}
 
@@ -177,6 +202,10 @@ public class GrammarUtil
 	 */
 	public static void resolve(Grammar grammar, Multimap<String, Reference> unresolved)
 	{
+
+		// Remove all that are in fact resolved
+		unresolved.entries().removeIf(e -> e.getValue().getTarget() != null);
+
 		// Make resolved map
 		Map<String, Definition> resolver = Maps.newHashMap();
 
@@ -197,12 +226,12 @@ public class GrammarUtil
 			if (p == null)
 				continue;
 
-			// If found remove from map
-			unresolved.remove(u.getKey(), u.getValue());
-
 			// Assign definition
 			u.getValue().setTarget(p);
 		}
+
+		// Remove all that are resolved now
+		unresolved.entries().removeIf(e -> e.getValue().getTarget() != null);
 	}
 
 	/**
@@ -214,13 +243,10 @@ public class GrammarUtil
 	 *            The grammar to override the source with
 	 * @return Returns a new grammar
 	 */
-	public static Grammar overrideWith(Grammar a, Grammar b)
+	public static Grammar overrideWith(Grammar a, Grammar b, Multimap<String, Reference> unresolved)
 	{
 		// Make the result
 		Grammar r = GrammarFactory.eINSTANCE.createGrammar();
-
-		// Make the map of unresolved references
-		Multimap<String, Reference> unresolved = HashMultimap.create();
 
 		// Make the set of defined rules
 		Set<String> defined = Sets.newHashSet();
@@ -240,10 +266,21 @@ public class GrammarUtil
 			if (!defined.contains(d.getName()))
 				r.getDefinitions().add(cloneUnresolved(d, unresolved));
 
-		// Resolve system
-		resolve(r, unresolved);
-
 		// Return result
 		return r;
+	}
+
+	/**
+	 * Overrides the definitions in a with the ones in b
+	 * 
+	 * @param a
+	 *            The source grammar
+	 * @param b
+	 *            The grammar to override the source with
+	 * @return Returns a new grammar
+	 */
+	public static Grammar overrideWith(Grammar a, Grammar b)
+	{
+		return overrideWith(a, b, HashMultimap.create());
 	}
 }

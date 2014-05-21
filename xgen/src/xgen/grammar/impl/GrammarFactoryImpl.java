@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import xgen.grammar.*;
 import xgen.grammar.Alternative;
 import xgen.grammar.Any;
 import xgen.grammar.Definition;
@@ -81,6 +82,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 			case GrammarPackage.NOT: return createNot();
 			case GrammarPackage.MULTIPLICITY: return createMultiplicity();
 			case GrammarPackage.UNTIL: return createUntil();
+			case GrammarPackage.PLACEHOLDER: return createPlaceholder();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -195,6 +197,17 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	{
 		UntilImpl until = new UntilImpl();
 		return until;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Placeholder createPlaceholder()
+	{
+		PlaceholderImpl placeholder = new PlaceholderImpl();
+		return placeholder;
 	}
 
 	/**

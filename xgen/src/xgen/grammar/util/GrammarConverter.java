@@ -2,6 +2,7 @@ package xgen.grammar.util;
 
 import java.util.NoSuchElementException;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.Alternatives;
@@ -49,20 +50,26 @@ public class GrammarConverter
 		// Convert the main grammar
 		xgen.grammar.Grammar it = fromSingleXText(xText, unresolved);
 
-		// If the main grammar does not extend any other grammar, return the
-		// result
+		// If the main grammar does not extend any other grammar, resolve and
+		// return the result
 		if (xText.getUsedGrammars().isEmpty())
+		{
+			// Resolve all unresolved references
+			GrammarUtil.resolve(it, unresolved);
+
+			// Return the result
 			return it;
+		}
 
 		// Convert the first used grammar
 		xgen.grammar.Grammar extend = fromSingleXText(xText.getUsedGrammars().get(0), unresolved);
 
 		// Merge all remaining as converted grammars
 		for (int i = 1; i < xText.getUsedGrammars().size(); i++)
-			extend = GrammarUtil.overrideWith(extend, fromSingleXText(xText.getUsedGrammars().get(i), unresolved));
+			extend = GrammarUtil.overrideWith(extend, fromSingleXText(xText.getUsedGrammars().get(i), unresolved), unresolved);
 
 		// Override the extended with the result
-		it = GrammarUtil.overrideWith(extend, it);
+		it = GrammarUtil.overrideWith(extend, it, unresolved);
 
 		// Resolve all unresolved references
 		GrammarUtil.resolve(it, unresolved);
@@ -193,6 +200,12 @@ public class GrammarConverter
 			public Construct caseWildcard(Wildcard object)
 			{
 				return any();
+			}
+
+			@Override
+			public Construct defaultCase(EObject object)
+			{
+				return placeholder(object);
 			}
 		}.doSwitch(e);
 

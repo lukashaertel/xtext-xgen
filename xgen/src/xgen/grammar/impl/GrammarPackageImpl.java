@@ -21,6 +21,7 @@ import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.NAry;
 import xgen.grammar.Not;
+import xgen.grammar.Placeholder;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
@@ -146,6 +147,13 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * @generated
 	 */
 	private EClass untilEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass placeholderEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -479,6 +487,26 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPlaceholder()
+	{
+		return placeholderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlaceholder_Source()
+	{
+		return (EAttribute)placeholderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GrammarFactory getGrammarFactory() {
 		return (GrammarFactory)getEFactoryInstance();
 	}
@@ -546,6 +574,9 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		createEAttribute(multiplicityEClass, MULTIPLICITY__UPPER_BOUNDED);
 
 		untilEClass = createEClass(UNTIL);
+
+		placeholderEClass = createEClass(PLACEHOLDER);
+		createEAttribute(placeholderEClass, PLACEHOLDER__SOURCE);
 	}
 
 	/**
@@ -593,6 +624,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		notEClass.getESuperTypes().add(this.getUnary());
 		multiplicityEClass.getESuperTypes().add(this.getUnary());
 		untilEClass.getESuperTypes().add(this.getUnary());
+		placeholderEClass.getESuperTypes().add(this.getTerminal());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(grammarEClass, Grammar.class, "Grammar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -639,6 +671,9 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		initEAttribute(getMultiplicity_UpperBounded(), theEcorePackage.getEBoolean(), "upperBounded", null, 0, 1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(untilEClass, Until.class, "Until", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(placeholderEClass, Placeholder.class, "Placeholder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlaceholder_Source(), ecorePackage.getEJavaObject(), "source", null, 0, 1, Placeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

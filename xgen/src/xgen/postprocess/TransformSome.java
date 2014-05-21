@@ -69,6 +69,6 @@ public abstract class TransformSome extends ProcessorOneToMany
 		Set<Set<Leaf>> leafsPower = Sets.powerSet(leafs);
 
 		// Replace each leaf in the target parse-tree
-		return Index.items(Collections2.filter(leafsPower, ls -> selectAmount(ls.size()))).mapPresent(ls -> n.transformLeaf(true, c -> ls.contains(c) ? transform(c) : c));
+		return Index.from(Collections2.filter(leafsPower, ls -> selectAmount(ls.size()))).mapPresent(ls -> n.transformLeaf(true, c -> ls.contains(c) ? transform(c) : c));
 	}
 }

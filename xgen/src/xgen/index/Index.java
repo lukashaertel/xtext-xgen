@@ -145,9 +145,9 @@ public abstract class Index<X> implements Iterable<Optional<X>>
 	 *            The items to index
 	 * @return Returns an index satisfying item-access
 	 */
-	public static <X> Index<X> items(Collection<X> items)
+	public static <X> Index<X> from(Collection<X> items)
 	{
-		return new IndexItems<>(Lists.newArrayList(items));
+		return new IndexFrom<>(Lists.newArrayList(items));
 	}
 
 	/**
@@ -157,9 +157,9 @@ public abstract class Index<X> implements Iterable<Optional<X>>
 	 *            The items to index
 	 * @return Returns an index satisfying item-access
 	 */
-	public static <X> Index<X> items(List<X> items)
+	public static <X> Index<X> from(List<X> items)
 	{
-		return new IndexItems<>(items);
+		return new IndexFrom<>(items);
 	}
 
 	/**
@@ -172,7 +172,7 @@ public abstract class Index<X> implements Iterable<Optional<X>>
 	@SafeVarargs
 	public static <X> Index<X> items(X... items)
 	{
-		return new IndexItems<>(Arrays.asList(items));
+		return from(Arrays.asList(items));
 	}
 
 	/**

@@ -1,0 +1,26 @@
+grammar xgen.Application with xgen.Grammar
+
+import "http://xgen/Grammar/1.0" as xg
+import "http://www.eclipse.org/2008/Xtext" as xt
+generate application "http://xgen/Application/1.0"
+
+Model:
+	applications+=Apply*;
+
+Apply:
+	{Application} target=[xt::Grammar|QID] '(' min=INT '..' max=INT ')'
+	('{'
+	(callReplacements+=CallReplacement | ruleReplacements+=RuleReplacement)*
+	'}')?;
+
+CallReplacement:
+	'replace' selector=[xt::AbstractRule] (positioned?='/' position=INT)?
+	'in' target=[xt::AbstractRule]
+	'with' replacement=Construct0;
+
+RuleReplacement:
+	'replace' target=[xt::AbstractRule]
+	'with' replacement=Construct0;
+
+QID:
+	ID ('.' ID)*;

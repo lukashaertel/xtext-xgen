@@ -3,6 +3,8 @@ package xgen.generate;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.common.collect.Maps;
+
 import xgen.grammar.Definition;
 
 /**
@@ -23,7 +25,7 @@ public class Depth
 	 */
 	public Depth()
 	{
-		depth = new HashMap<>();
+		depth = Maps.newIdentityHashMap();
 	}
 
 	/**
@@ -54,5 +56,14 @@ public class Depth
 			depth.remove(d);
 		else
 			depth.put(d, amt + offset);
+	}
+
+	public Depth copy()
+	{
+		Depth r = new Depth();
+
+		r.depth.putAll(depth);
+
+		return r;
 	}
 }

@@ -54,6 +54,6 @@ public abstract class TransformOne extends ProcessorOneToMany
 			return Index.items(n);
 
 		// Replace each leaf in the target parse-tree
-		return Index.items(leafs).mapPresent(l -> n.transformLeaf(true, c -> l == c ? transform(c) : c));
+		return Index.from(leafs).mapPresent(l -> n.transformLeaf(true, c -> l == c ? transform(c) : c));
 	}
 }

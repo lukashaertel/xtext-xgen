@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="application" nsURI="http://xgen/Application/1.0" nsPrefix="application">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applications" upperBound="-1"
+        eType="#//Apply" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Apply"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CallReplacement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="positioned" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replacement" eType="ecore:EClass ../../../xgen/src/xgen/grammar/Grammar.ecore#//Construct"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleReplacement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replacement" eType="ecore:EClass ../../../xgen/src/xgen/grammar/Grammar.ecore#//Construct"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//Apply">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//Grammar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="callReplacements" upperBound="-1"
+        eType="#//CallReplacement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleReplacements" upperBound="-1"
+        eType="#//RuleReplacement" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

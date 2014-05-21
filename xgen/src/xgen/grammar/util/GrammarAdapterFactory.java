@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import xgen.grammar.*;
 import xgen.grammar.Alternative;
 import xgen.grammar.Any;
 import xgen.grammar.Construct;
@@ -164,6 +165,11 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 			public Adapter caseUntil(Until object)
 			{
 				return createUntilAdapter();
+			}
+			@Override
+			public Adapter casePlaceholder(Placeholder object)
+			{
+				return createPlaceholderAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -407,6 +413,21 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUntilAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xgen.grammar.Placeholder <em>Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xgen.grammar.Placeholder
+	 * @generated
+	 */
+	public Adapter createPlaceholderAdapter()
 	{
 		return null;
 	}

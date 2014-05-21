@@ -16,6 +16,7 @@ import xgen.grammar.Grammar;
 import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.Not;
+import xgen.grammar.Placeholder;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
@@ -156,7 +157,11 @@ public class Iteration
 			@Override
 			public Index<Node> caseReference(Reference object)
 			{
-				return Index.late(() -> iterate(object.getTarget(), depth).mapPresent(x -> new Container(object, x)));
+				// Depth will be modified after we have passed it to the late
+				// iteration, so copy it
+				Depth c = depth.copy();
+
+				return Index.late(() -> iterate(object.getTarget(), c).mapPresent(x -> new Container(object, x)));
 			}
 
 			@Override
@@ -170,6 +175,17 @@ public class Iteration
 				return r.mapPresent(x -> Container.fromIterable(object, x));
 			}
 
+			@Override
+			public Index<Node> casePlaceholder(Placeholder object)
+			{
+				return Index.items(new Container(object, new Leaf("")));
+			}
+
+			@Override
+			public Index<Node> defaultCase(EObject object)
+			{
+				throw new IllegalArgumentException();
+			}
 		}.doSwitch(element);
 	}
 }

@@ -670,6 +670,44 @@ public interface GrammarPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.PlaceholderImpl <em>Placeholder</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.PlaceholderImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getPlaceholder()
+	 * @generated
+	 */
+	int PLACEHOLDER = 16;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACEHOLDER__SOURCE = TERMINAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Placeholder</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACEHOLDER_FEATURE_COUNT = TERMINAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Placeholder</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACEHOLDER_OPERATION_COUNT = TERMINAL_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link xgen.grammar.Grammar <em>Grammar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -973,6 +1011,27 @@ public interface GrammarPackage extends EPackage {
 	EClass getUntil();
 
 	/**
+	 * Returns the meta object for class '{@link xgen.grammar.Placeholder <em>Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Placeholder</em>'.
+	 * @see xgen.grammar.Placeholder
+	 * @generated
+	 */
+	EClass getPlaceholder();
+
+	/**
+	 * Returns the meta object for the attribute '{@link xgen.grammar.Placeholder#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source</em>'.
+	 * @see xgen.grammar.Placeholder#getSource()
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	EAttribute getPlaceholder_Source();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1258,6 +1317,24 @@ public interface GrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UNTIL = eINSTANCE.getUntil();
+
+		/**
+		 * The meta object literal for the '{@link xgen.grammar.impl.PlaceholderImpl <em>Placeholder</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xgen.grammar.impl.PlaceholderImpl
+		 * @see xgen.grammar.impl.GrammarPackageImpl#getPlaceholder()
+		 * @generated
+		 */
+		EClass PLACEHOLDER = eINSTANCE.getPlaceholder();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLACEHOLDER__SOURCE = eINSTANCE.getPlaceholder_Source();
 
 	}
 

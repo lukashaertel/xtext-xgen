@@ -121,6 +121,15 @@ public interface GrammarFactory extends EFactory {
 	Until createUntil();
 
 	/**
+	 * Returns a new object of class '<em>Placeholder</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Placeholder</em>'.
+	 * @generated
+	 */
+	Placeholder createPlaceholder();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

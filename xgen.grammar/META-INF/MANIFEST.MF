@@ -20,11 +20,12 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: xgen,
- xgen.services,
- xgen.serializer,
+ xgen.converters,
+ xgen.formatting,
+ xgen.generator,
  xgen.parser.antlr,
  xgen.parser.antlr.internal,
- xgen.validation,
  xgen.scoping,
- xgen.generator,
- xgen.formatting
+ xgen.serializer,
+ xgen.services,
+ xgen.validation

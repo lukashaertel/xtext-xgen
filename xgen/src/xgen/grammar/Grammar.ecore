@@ -48,4 +48,7 @@
         eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Until" eSuperTypes="#//Unary"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Placeholder" eSuperTypes="#//Terminal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
 </ecore:EPackage>

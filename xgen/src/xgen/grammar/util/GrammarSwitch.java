@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
+import xgen.grammar.*;
 import xgen.grammar.Alternative;
 import xgen.grammar.Any;
 import xgen.grammar.Construct;
@@ -227,6 +228,16 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = caseUnary(until);
 				if (result == null) result = caseConstruct(until);
 				if (result == null) result = caseElement(until);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrammarPackage.PLACEHOLDER:
+			{
+				Placeholder placeholder = (Placeholder)theEObject;
+				T result = casePlaceholder(placeholder);
+				if (result == null) result = caseTerminal(placeholder);
+				if (result == null) result = caseConstruct(placeholder);
+				if (result == null) result = caseElement(placeholder);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -471,6 +482,22 @@ public class GrammarSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUntil(Until object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Placeholder</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Placeholder</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlaceholder(Placeholder object)
 	{
 		return null;
 	}
