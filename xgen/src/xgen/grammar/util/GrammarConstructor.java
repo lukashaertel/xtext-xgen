@@ -71,18 +71,11 @@ public class GrammarConstructor
 		return r;
 	}
 
-	public static Reference reference(Definition target)
+	public static Reference reference(String target)
 	{
 		Reference r = GrammarFactory.eINSTANCE.createReference();
 
 		r.setTarget(target);
-
-		return r;
-	}
-
-	public static Reference incompleteReference()
-	{
-		Reference r = GrammarFactory.eINSTANCE.createReference();
 
 		return r;
 	}

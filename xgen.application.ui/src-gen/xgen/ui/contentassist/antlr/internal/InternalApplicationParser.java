@@ -1196,22 +1196,22 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:424:1: ( ( ( rule__Construct4__Group_0__0 ) ) | ( ( rule__Construct4__Group_1__0 ) ) | ( ( rule__Construct4__Group_2__0 ) ) | ( ( rule__Construct4__Group_3__0 ) ) | ( ( rule__Construct4__Group_4__0 ) ) )
             int alt4=5;
             switch ( input.LA(1) ) {
-            case RULE_ID:
+            case RULE_CHAR:
                 {
                 alt4=1;
                 }
                 break;
-            case RULE_CHAR:
+            case RULE_STRING:
                 {
                 alt4=2;
                 }
                 break;
-            case RULE_STRING:
+            case 19:
                 {
                 alt4=3;
                 }
                 break;
-            case 19:
+            case RULE_ID:
                 {
                 alt4=4;
                 }
@@ -6460,13 +6460,13 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2436:1: ( () )
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2437:1: ()
             {
-             before(grammarAccess.getConstruct4Access().getReferenceAction_0_0()); 
+             before(grammarAccess.getConstruct4Access().getRangeAction_0_0()); 
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2438:1: ()
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2440:1: 
             {
             }
 
-             after(grammarAccess.getConstruct4Access().getReferenceAction_0_0()); 
+             after(grammarAccess.getConstruct4Access().getRangeAction_0_0()); 
 
             }
 
@@ -6485,17 +6485,22 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_0__1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2450:1: rule__Construct4__Group_0__1 : rule__Construct4__Group_0__1__Impl ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2450:1: rule__Construct4__Group_0__1 : rule__Construct4__Group_0__1__Impl rule__Construct4__Group_0__2 ;
     public final void rule__Construct4__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2454:1: ( rule__Construct4__Group_0__1__Impl )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2455:2: rule__Construct4__Group_0__1__Impl
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2454:1: ( rule__Construct4__Group_0__1__Impl rule__Construct4__Group_0__2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2455:2: rule__Construct4__Group_0__1__Impl rule__Construct4__Group_0__2
             {
             pushFollow(FOLLOW_rule__Construct4__Group_0__1__Impl_in_rule__Construct4__Group_0__14858);
             rule__Construct4__Group_0__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Construct4__Group_0__2_in_rule__Construct4__Group_0__14861);
+            rule__Construct4__Group_0__2();
 
             state._fsp--;
 
@@ -6518,31 +6523,31 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_0__1__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2461:1: rule__Construct4__Group_0__1__Impl : ( ( rule__Construct4__TargetAssignment_0_1 ) ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2462:1: rule__Construct4__Group_0__1__Impl : ( ( rule__Construct4__MinAssignment_0_1 ) ) ;
     public final void rule__Construct4__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2465:1: ( ( ( rule__Construct4__TargetAssignment_0_1 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2466:1: ( ( rule__Construct4__TargetAssignment_0_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2466:1: ( ( ( rule__Construct4__MinAssignment_0_1 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2467:1: ( ( rule__Construct4__MinAssignment_0_1 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2466:1: ( ( rule__Construct4__TargetAssignment_0_1 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2467:1: ( rule__Construct4__TargetAssignment_0_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2467:1: ( ( rule__Construct4__MinAssignment_0_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2468:1: ( rule__Construct4__MinAssignment_0_1 )
             {
-             before(grammarAccess.getConstruct4Access().getTargetAssignment_0_1()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2468:1: ( rule__Construct4__TargetAssignment_0_1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2468:2: rule__Construct4__TargetAssignment_0_1
+             before(grammarAccess.getConstruct4Access().getMinAssignment_0_1()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2469:1: ( rule__Construct4__MinAssignment_0_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2469:2: rule__Construct4__MinAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Construct4__TargetAssignment_0_1_in_rule__Construct4__Group_0__1__Impl4885);
-            rule__Construct4__TargetAssignment_0_1();
+            pushFollow(FOLLOW_rule__Construct4__MinAssignment_0_1_in_rule__Construct4__Group_0__1__Impl4888);
+            rule__Construct4__MinAssignment_0_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConstruct4Access().getTargetAssignment_0_1()); 
+             after(grammarAccess.getConstruct4Access().getMinAssignment_0_1()); 
 
             }
 
@@ -6564,22 +6569,177 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Construct4__Group_0__1__Impl"
 
 
+    // $ANTLR start "rule__Construct4__Group_0__2"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2479:1: rule__Construct4__Group_0__2 : rule__Construct4__Group_0__2__Impl rule__Construct4__Group_0__3 ;
+    public final void rule__Construct4__Group_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2483:1: ( rule__Construct4__Group_0__2__Impl rule__Construct4__Group_0__3 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2484:2: rule__Construct4__Group_0__2__Impl rule__Construct4__Group_0__3
+            {
+            pushFollow(FOLLOW_rule__Construct4__Group_0__2__Impl_in_rule__Construct4__Group_0__24918);
+            rule__Construct4__Group_0__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Construct4__Group_0__3_in_rule__Construct4__Group_0__24921);
+            rule__Construct4__Group_0__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Construct4__Group_0__2"
+
+
+    // $ANTLR start "rule__Construct4__Group_0__2__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2491:1: rule__Construct4__Group_0__2__Impl : ( '..' ) ;
+    public final void rule__Construct4__Group_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2495:1: ( ( '..' ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2496:1: ( '..' )
+            {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2496:1: ( '..' )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2497:1: '..'
+            {
+             before(grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_0_2()); 
+            match(input,12,FOLLOW_12_in_rule__Construct4__Group_0__2__Impl4949); 
+             after(grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_0_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Construct4__Group_0__2__Impl"
+
+
+    // $ANTLR start "rule__Construct4__Group_0__3"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2510:1: rule__Construct4__Group_0__3 : rule__Construct4__Group_0__3__Impl ;
+    public final void rule__Construct4__Group_0__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2514:1: ( rule__Construct4__Group_0__3__Impl )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2515:2: rule__Construct4__Group_0__3__Impl
+            {
+            pushFollow(FOLLOW_rule__Construct4__Group_0__3__Impl_in_rule__Construct4__Group_0__34980);
+            rule__Construct4__Group_0__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Construct4__Group_0__3"
+
+
+    // $ANTLR start "rule__Construct4__Group_0__3__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2521:1: rule__Construct4__Group_0__3__Impl : ( ( rule__Construct4__MaxAssignment_0_3 ) ) ;
+    public final void rule__Construct4__Group_0__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2525:1: ( ( ( rule__Construct4__MaxAssignment_0_3 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2526:1: ( ( rule__Construct4__MaxAssignment_0_3 ) )
+            {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2526:1: ( ( rule__Construct4__MaxAssignment_0_3 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2527:1: ( rule__Construct4__MaxAssignment_0_3 )
+            {
+             before(grammarAccess.getConstruct4Access().getMaxAssignment_0_3()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2528:1: ( rule__Construct4__MaxAssignment_0_3 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2528:2: rule__Construct4__MaxAssignment_0_3
+            {
+            pushFollow(FOLLOW_rule__Construct4__MaxAssignment_0_3_in_rule__Construct4__Group_0__3__Impl5007);
+            rule__Construct4__MaxAssignment_0_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConstruct4Access().getMaxAssignment_0_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Construct4__Group_0__3__Impl"
+
+
     // $ANTLR start "rule__Construct4__Group_1__0"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2482:1: rule__Construct4__Group_1__0 : rule__Construct4__Group_1__0__Impl rule__Construct4__Group_1__1 ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2546:1: rule__Construct4__Group_1__0 : rule__Construct4__Group_1__0__Impl rule__Construct4__Group_1__1 ;
     public final void rule__Construct4__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2486:1: ( rule__Construct4__Group_1__0__Impl rule__Construct4__Group_1__1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2487:2: rule__Construct4__Group_1__0__Impl rule__Construct4__Group_1__1
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2550:1: ( rule__Construct4__Group_1__0__Impl rule__Construct4__Group_1__1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2551:2: rule__Construct4__Group_1__0__Impl rule__Construct4__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Construct4__Group_1__0__Impl_in_rule__Construct4__Group_1__04919);
+            pushFollow(FOLLOW_rule__Construct4__Group_1__0__Impl_in_rule__Construct4__Group_1__05045);
             rule__Construct4__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Construct4__Group_1__1_in_rule__Construct4__Group_1__04922);
+            pushFollow(FOLLOW_rule__Construct4__Group_1__1_in_rule__Construct4__Group_1__05048);
             rule__Construct4__Group_1__1();
 
             state._fsp--;
@@ -6603,25 +6763,25 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_1__0__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2494:1: rule__Construct4__Group_1__0__Impl : ( () ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2558:1: rule__Construct4__Group_1__0__Impl : ( () ) ;
     public final void rule__Construct4__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2498:1: ( ( () ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2499:1: ( () )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2562:1: ( ( () ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2563:1: ( () )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2499:1: ( () )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2500:1: ()
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2563:1: ( () )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2564:1: ()
             {
-             before(grammarAccess.getConstruct4Access().getRangeAction_1_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2501:1: ()
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2503:1: 
+             before(grammarAccess.getConstruct4Access().getKeywordAction_1_0()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2565:1: ()
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2567:1: 
             {
             }
 
-             after(grammarAccess.getConstruct4Access().getRangeAction_1_0()); 
+             after(grammarAccess.getConstruct4Access().getKeywordAction_1_0()); 
 
             }
 
@@ -6640,22 +6800,17 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_1__1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2513:1: rule__Construct4__Group_1__1 : rule__Construct4__Group_1__1__Impl rule__Construct4__Group_1__2 ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2577:1: rule__Construct4__Group_1__1 : rule__Construct4__Group_1__1__Impl ;
     public final void rule__Construct4__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2517:1: ( rule__Construct4__Group_1__1__Impl rule__Construct4__Group_1__2 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2518:2: rule__Construct4__Group_1__1__Impl rule__Construct4__Group_1__2
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2581:1: ( rule__Construct4__Group_1__1__Impl )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2582:2: rule__Construct4__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Construct4__Group_1__1__Impl_in_rule__Construct4__Group_1__14980);
+            pushFollow(FOLLOW_rule__Construct4__Group_1__1__Impl_in_rule__Construct4__Group_1__15106);
             rule__Construct4__Group_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Construct4__Group_1__2_in_rule__Construct4__Group_1__14983);
-            rule__Construct4__Group_1__2();
 
             state._fsp--;
 
@@ -6678,31 +6833,31 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_1__1__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2525:1: rule__Construct4__Group_1__1__Impl : ( ( rule__Construct4__MinAssignment_1_1 ) ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2588:1: rule__Construct4__Group_1__1__Impl : ( ( rule__Construct4__ValueAssignment_1_1 ) ) ;
     public final void rule__Construct4__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2529:1: ( ( ( rule__Construct4__MinAssignment_1_1 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2530:1: ( ( rule__Construct4__MinAssignment_1_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2592:1: ( ( ( rule__Construct4__ValueAssignment_1_1 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2593:1: ( ( rule__Construct4__ValueAssignment_1_1 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2530:1: ( ( rule__Construct4__MinAssignment_1_1 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2531:1: ( rule__Construct4__MinAssignment_1_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2593:1: ( ( rule__Construct4__ValueAssignment_1_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2594:1: ( rule__Construct4__ValueAssignment_1_1 )
             {
-             before(grammarAccess.getConstruct4Access().getMinAssignment_1_1()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2532:1: ( rule__Construct4__MinAssignment_1_1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2532:2: rule__Construct4__MinAssignment_1_1
+             before(grammarAccess.getConstruct4Access().getValueAssignment_1_1()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2595:1: ( rule__Construct4__ValueAssignment_1_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2595:2: rule__Construct4__ValueAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Construct4__MinAssignment_1_1_in_rule__Construct4__Group_1__1__Impl5010);
-            rule__Construct4__MinAssignment_1_1();
+            pushFollow(FOLLOW_rule__Construct4__ValueAssignment_1_1_in_rule__Construct4__Group_1__1__Impl5133);
+            rule__Construct4__ValueAssignment_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConstruct4Access().getMinAssignment_1_1()); 
+             after(grammarAccess.getConstruct4Access().getValueAssignment_1_1()); 
 
             }
 
@@ -6722,161 +6877,6 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         return ;
     }
     // $ANTLR end "rule__Construct4__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__Construct4__Group_1__2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2542:1: rule__Construct4__Group_1__2 : rule__Construct4__Group_1__2__Impl rule__Construct4__Group_1__3 ;
-    public final void rule__Construct4__Group_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2546:1: ( rule__Construct4__Group_1__2__Impl rule__Construct4__Group_1__3 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2547:2: rule__Construct4__Group_1__2__Impl rule__Construct4__Group_1__3
-            {
-            pushFollow(FOLLOW_rule__Construct4__Group_1__2__Impl_in_rule__Construct4__Group_1__25040);
-            rule__Construct4__Group_1__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Construct4__Group_1__3_in_rule__Construct4__Group_1__25043);
-            rule__Construct4__Group_1__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Construct4__Group_1__2"
-
-
-    // $ANTLR start "rule__Construct4__Group_1__2__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2554:1: rule__Construct4__Group_1__2__Impl : ( '..' ) ;
-    public final void rule__Construct4__Group_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2558:1: ( ( '..' ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2559:1: ( '..' )
-            {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2559:1: ( '..' )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2560:1: '..'
-            {
-             before(grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_1_2()); 
-            match(input,12,FOLLOW_12_in_rule__Construct4__Group_1__2__Impl5071); 
-             after(grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_1_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Construct4__Group_1__2__Impl"
-
-
-    // $ANTLR start "rule__Construct4__Group_1__3"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2573:1: rule__Construct4__Group_1__3 : rule__Construct4__Group_1__3__Impl ;
-    public final void rule__Construct4__Group_1__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2577:1: ( rule__Construct4__Group_1__3__Impl )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2578:2: rule__Construct4__Group_1__3__Impl
-            {
-            pushFollow(FOLLOW_rule__Construct4__Group_1__3__Impl_in_rule__Construct4__Group_1__35102);
-            rule__Construct4__Group_1__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Construct4__Group_1__3"
-
-
-    // $ANTLR start "rule__Construct4__Group_1__3__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2584:1: rule__Construct4__Group_1__3__Impl : ( ( rule__Construct4__MaxAssignment_1_3 ) ) ;
-    public final void rule__Construct4__Group_1__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2588:1: ( ( ( rule__Construct4__MaxAssignment_1_3 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2589:1: ( ( rule__Construct4__MaxAssignment_1_3 ) )
-            {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2589:1: ( ( rule__Construct4__MaxAssignment_1_3 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2590:1: ( rule__Construct4__MaxAssignment_1_3 )
-            {
-             before(grammarAccess.getConstruct4Access().getMaxAssignment_1_3()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2591:1: ( rule__Construct4__MaxAssignment_1_3 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2591:2: rule__Construct4__MaxAssignment_1_3
-            {
-            pushFollow(FOLLOW_rule__Construct4__MaxAssignment_1_3_in_rule__Construct4__Group_1__3__Impl5129);
-            rule__Construct4__MaxAssignment_1_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConstruct4Access().getMaxAssignment_1_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Construct4__Group_1__3__Impl"
 
 
     // $ANTLR start "rule__Construct4__Group_2__0"
@@ -6930,13 +6930,13 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2626:1: ( () )
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2627:1: ()
             {
-             before(grammarAccess.getConstruct4Access().getKeywordAction_2_0()); 
+             before(grammarAccess.getConstruct4Access().getAnyAction_2_0()); 
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2628:1: ()
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2630:1: 
             {
             }
 
-             after(grammarAccess.getConstruct4Access().getKeywordAction_2_0()); 
+             after(grammarAccess.getConstruct4Access().getAnyAction_2_0()); 
 
             }
 
@@ -6988,31 +6988,21 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_2__1__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2651:1: rule__Construct4__Group_2__1__Impl : ( ( rule__Construct4__ValueAssignment_2_1 ) ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2651:1: rule__Construct4__Group_2__1__Impl : ( '.' ) ;
     public final void rule__Construct4__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2655:1: ( ( ( rule__Construct4__ValueAssignment_2_1 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2656:1: ( ( rule__Construct4__ValueAssignment_2_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2655:1: ( ( '.' ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2656:1: ( '.' )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2656:1: ( ( rule__Construct4__ValueAssignment_2_1 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2657:1: ( rule__Construct4__ValueAssignment_2_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2656:1: ( '.' )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2657:1: '.'
             {
-             before(grammarAccess.getConstruct4Access().getValueAssignment_2_1()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2658:1: ( rule__Construct4__ValueAssignment_2_1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2658:2: rule__Construct4__ValueAssignment_2_1
-            {
-            pushFollow(FOLLOW_rule__Construct4__ValueAssignment_2_1_in_rule__Construct4__Group_2__1__Impl5255);
-            rule__Construct4__ValueAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConstruct4Access().getValueAssignment_2_1()); 
+             before(grammarAccess.getConstruct4Access().getFullStopKeyword_2_1()); 
+            match(input,19,FOLLOW_19_in_rule__Construct4__Group_2__1__Impl5256); 
+             after(grammarAccess.getConstruct4Access().getFullStopKeyword_2_1()); 
 
             }
 
@@ -7035,21 +7025,21 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_3__0"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2672:1: rule__Construct4__Group_3__0 : rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2674:1: rule__Construct4__Group_3__0 : rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 ;
     public final void rule__Construct4__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2676:1: ( rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2677:2: rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2678:1: ( rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2679:2: rule__Construct4__Group_3__0__Impl rule__Construct4__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__05289);
+            pushFollow(FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__05291);
             rule__Construct4__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__05292);
+            pushFollow(FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__05294);
             rule__Construct4__Group_3__1();
 
             state._fsp--;
@@ -7073,25 +7063,25 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_3__0__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2684:1: rule__Construct4__Group_3__0__Impl : ( () ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2686:1: rule__Construct4__Group_3__0__Impl : ( () ) ;
     public final void rule__Construct4__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2688:1: ( ( () ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2689:1: ( () )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2690:1: ( ( () ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2691:1: ( () )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2689:1: ( () )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2690:1: ()
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2691:1: ( () )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2692:1: ()
             {
-             before(grammarAccess.getConstruct4Access().getAnyAction_3_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2691:1: ()
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2693:1: 
+             before(grammarAccess.getConstruct4Access().getReferenceAction_3_0()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2693:1: ()
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2695:1: 
             {
             }
 
-             after(grammarAccess.getConstruct4Access().getAnyAction_3_0()); 
+             after(grammarAccess.getConstruct4Access().getReferenceAction_3_0()); 
 
             }
 
@@ -7110,16 +7100,16 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_3__1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2703:1: rule__Construct4__Group_3__1 : rule__Construct4__Group_3__1__Impl ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2705:1: rule__Construct4__Group_3__1 : rule__Construct4__Group_3__1__Impl ;
     public final void rule__Construct4__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2707:1: ( rule__Construct4__Group_3__1__Impl )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2708:2: rule__Construct4__Group_3__1__Impl
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2709:1: ( rule__Construct4__Group_3__1__Impl )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2710:2: rule__Construct4__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__15350);
+            pushFollow(FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__15352);
             rule__Construct4__Group_3__1__Impl();
 
             state._fsp--;
@@ -7143,21 +7133,31 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__Group_3__1__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2714:1: rule__Construct4__Group_3__1__Impl : ( '.' ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2716:1: rule__Construct4__Group_3__1__Impl : ( ( rule__Construct4__TargetAssignment_3_1 ) ) ;
     public final void rule__Construct4__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2718:1: ( ( '.' ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2719:1: ( '.' )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2720:1: ( ( ( rule__Construct4__TargetAssignment_3_1 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2721:1: ( ( rule__Construct4__TargetAssignment_3_1 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2719:1: ( '.' )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2720:1: '.'
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2721:1: ( ( rule__Construct4__TargetAssignment_3_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2722:1: ( rule__Construct4__TargetAssignment_3_1 )
             {
-             before(grammarAccess.getConstruct4Access().getFullStopKeyword_3_1()); 
-            match(input,19,FOLLOW_19_in_rule__Construct4__Group_3__1__Impl5378); 
-             after(grammarAccess.getConstruct4Access().getFullStopKeyword_3_1()); 
+             before(grammarAccess.getConstruct4Access().getTargetAssignment_3_1()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2723:1: ( rule__Construct4__TargetAssignment_3_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2723:2: rule__Construct4__TargetAssignment_3_1
+            {
+            pushFollow(FOLLOW_rule__Construct4__TargetAssignment_3_1_in_rule__Construct4__Group_3__1__Impl5379);
+            rule__Construct4__TargetAssignment_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConstruct4Access().getTargetAssignment_3_1()); 
 
             }
 
@@ -8436,30 +8436,22 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Construct3__MaxAssignment_1_3_1"
 
 
-    // $ANTLR start "rule__Construct4__TargetAssignment_0_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3250:1: rule__Construct4__TargetAssignment_0_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Construct4__TargetAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Construct4__MinAssignment_0_1"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3250:1: rule__Construct4__MinAssignment_0_1 : ( RULE_CHAR ) ;
+    public final void rule__Construct4__MinAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3254:1: ( ( ( RULE_ID ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3255:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3254:1: ( ( RULE_CHAR ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3255:1: ( RULE_CHAR )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3255:1: ( ( RULE_ID ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3256:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3255:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3256:1: RULE_CHAR
             {
-             before(grammarAccess.getConstruct4Access().getTargetDefinitionCrossReference_0_1_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3257:1: ( RULE_ID )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3258:1: RULE_ID
-            {
-             before(grammarAccess.getConstruct4Access().getTargetDefinitionIDTerminalRuleCall_0_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_0_16455); 
-             after(grammarAccess.getConstruct4Access().getTargetDefinitionIDTerminalRuleCall_0_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getConstruct4Access().getTargetDefinitionCrossReference_0_1_0()); 
+             before(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0()); 
+            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_0_16451); 
+             after(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0()); 
 
             }
 
@@ -8478,25 +8470,25 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Construct4__TargetAssignment_0_1"
+    // $ANTLR end "rule__Construct4__MinAssignment_0_1"
 
 
-    // $ANTLR start "rule__Construct4__MinAssignment_1_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3269:1: rule__Construct4__MinAssignment_1_1 : ( RULE_CHAR ) ;
-    public final void rule__Construct4__MinAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Construct4__MaxAssignment_0_3"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3265:1: rule__Construct4__MaxAssignment_0_3 : ( RULE_CHAR ) ;
+    public final void rule__Construct4__MaxAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3273:1: ( ( RULE_CHAR ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3274:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3269:1: ( ( RULE_CHAR ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3270:1: ( RULE_CHAR )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3274:1: ( RULE_CHAR )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3275:1: RULE_CHAR
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3270:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3271:1: RULE_CHAR
             {
-             before(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0()); 
-            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_1_16490); 
-             after(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0()); 
+             before(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0()); 
+            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_0_36482); 
+             after(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0()); 
 
             }
 
@@ -8515,25 +8507,25 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Construct4__MinAssignment_1_1"
+    // $ANTLR end "rule__Construct4__MaxAssignment_0_3"
 
 
-    // $ANTLR start "rule__Construct4__MaxAssignment_1_3"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3284:1: rule__Construct4__MaxAssignment_1_3 : ( RULE_CHAR ) ;
-    public final void rule__Construct4__MaxAssignment_1_3() throws RecognitionException {
+    // $ANTLR start "rule__Construct4__ValueAssignment_1_1"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3280:1: rule__Construct4__ValueAssignment_1_1 : ( RULE_STRING ) ;
+    public final void rule__Construct4__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3288:1: ( ( RULE_CHAR ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3289:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3284:1: ( ( RULE_STRING ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3285:1: ( RULE_STRING )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3289:1: ( RULE_CHAR )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3290:1: RULE_CHAR
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3285:1: ( RULE_STRING )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3286:1: RULE_STRING
             {
-             before(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0()); 
-            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_1_36521); 
-             after(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0()); 
+             before(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_1_16513); 
+             after(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0()); 
 
             }
 
@@ -8552,25 +8544,25 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Construct4__MaxAssignment_1_3"
+    // $ANTLR end "rule__Construct4__ValueAssignment_1_1"
 
 
-    // $ANTLR start "rule__Construct4__ValueAssignment_2_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3299:1: rule__Construct4__ValueAssignment_2_1 : ( RULE_STRING ) ;
-    public final void rule__Construct4__ValueAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Construct4__TargetAssignment_3_1"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3295:1: rule__Construct4__TargetAssignment_3_1 : ( RULE_ID ) ;
+    public final void rule__Construct4__TargetAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3303:1: ( ( RULE_STRING ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3304:1: ( RULE_STRING )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3299:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3300:1: ( RULE_ID )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3304:1: ( RULE_STRING )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3305:1: RULE_STRING
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3300:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3301:1: RULE_ID
             {
-             before(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_2_16552); 
-             after(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
+             before(grammarAccess.getConstruct4Access().getTargetIDTerminalRuleCall_3_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_3_16544); 
+             after(grammarAccess.getConstruct4Access().getTargetIDTerminalRuleCall_3_1_0()); 
 
             }
 
@@ -8589,7 +8581,7 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Construct4__ValueAssignment_2_1"
+    // $ANTLR end "rule__Construct4__TargetAssignment_3_1"
 
     // Delegated rules
 
@@ -8800,28 +8792,28 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_rule__Construct3__UpperBoundedAssignment_1_3_0_in_rule__Construct3__Group_1_3__0__Impl4706 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Construct3__Group_1_3__1__Impl_in_rule__Construct3__Group_1_3__14736 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Construct3__MaxAssignment_1_3_1_in_rule__Construct3__Group_1_3__1__Impl4763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_0__0__Impl_in_rule__Construct4__Group_0__04797 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_0__0__Impl_in_rule__Construct4__Group_0__04797 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__Construct4__Group_0__1_in_rule__Construct4__Group_0__04800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_0__1__Impl_in_rule__Construct4__Group_0__14858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__TargetAssignment_0_1_in_rule__Construct4__Group_0__1__Impl4885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_1__0__Impl_in_rule__Construct4__Group_1__04919 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_1__1_in_rule__Construct4__Group_1__04922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_1__1__Impl_in_rule__Construct4__Group_1__14980 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_1__2_in_rule__Construct4__Group_1__14983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__MinAssignment_1_1_in_rule__Construct4__Group_1__1__Impl5010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_1__2__Impl_in_rule__Construct4__Group_1__25040 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_1__3_in_rule__Construct4__Group_1__25043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Construct4__Group_1__2__Impl5071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_1__3__Impl_in_rule__Construct4__Group_1__35102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__MaxAssignment_1_3_in_rule__Construct4__Group_1__3__Impl5129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_2__0__Impl_in_rule__Construct4__Group_2__05167 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_0__1__Impl_in_rule__Construct4__Group_0__14858 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_0__2_in_rule__Construct4__Group_0__14861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__MinAssignment_0_1_in_rule__Construct4__Group_0__1__Impl4888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_0__2__Impl_in_rule__Construct4__Group_0__24918 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_0__3_in_rule__Construct4__Group_0__24921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Construct4__Group_0__2__Impl4949 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_0__3__Impl_in_rule__Construct4__Group_0__34980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__MaxAssignment_0_3_in_rule__Construct4__Group_0__3__Impl5007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_1__0__Impl_in_rule__Construct4__Group_1__05045 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_1__1_in_rule__Construct4__Group_1__05048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_1__1__Impl_in_rule__Construct4__Group_1__15106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__ValueAssignment_1_1_in_rule__Construct4__Group_1__1__Impl5133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_2__0__Impl_in_rule__Construct4__Group_2__05167 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_rule__Construct4__Group_2__1_in_rule__Construct4__Group_2__05170 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Construct4__Group_2__1__Impl_in_rule__Construct4__Group_2__15228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__ValueAssignment_2_1_in_rule__Construct4__Group_2__1__Impl5255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__05289 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__05292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__15350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Construct4__Group_3__1__Impl5378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Construct4__Group_2__1__Impl5256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_3__0__Impl_in_rule__Construct4__Group_3__05291 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_3__1_in_rule__Construct4__Group_3__05294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__Group_3__1__Impl_in_rule__Construct4__Group_3__15352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Construct4__TargetAssignment_3_1_in_rule__Construct4__Group_3__1__Impl5379 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Construct4__Group_4__0__Impl_in_rule__Construct4__Group_4__05413 = new BitSet(new long[]{0x00000000018808D0L});
     public static final BitSet FOLLOW_rule__Construct4__Group_4__1_in_rule__Construct4__Group_4__05416 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_rule__Construct4__Group_4__0__Impl5444 = new BitSet(new long[]{0x0000000000000002L});
@@ -8855,9 +8847,9 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_26345 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_rule__Construct3__UpperBoundedAssignment_1_3_06381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_16420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_0_16455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_1_16490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_1_36521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_2_16552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_0_16451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_0_36482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_1_16513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_3_16544 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -36,7 +36,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EChar"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//Terminal">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Definition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolved" eType="#//Definition"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Alternative" eSuperTypes="#//NAry"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sequence" eSuperTypes="#//NAry"/>

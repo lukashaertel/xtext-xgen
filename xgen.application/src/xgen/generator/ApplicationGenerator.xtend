@@ -19,6 +19,8 @@ import xgen.application.Application
 import xgen.grammar.util.GrammarConverter
 import xgen.grammar.util.GrammarUtil
 import xgen.postprocess.TransformOne
+import xgen.grammar.Reference
+import org.eclipse.emf.ecore.util.EcoreUtil
 
 class ReplaceInitial extends TransformOne {
 
@@ -107,11 +109,14 @@ class ApplicationGenerator implements IGenerator {
 	def getEffectiveGrammar(Application it) {
 		val g = GrammarConverter.fromXText(target)
 
-		for (r : ruleReplacements) {
+		for (r : ruleReplacements)
 			for (d : g.definitions)
 				if (d.name == r.target.name)
 					d.rhs = r.replacement
-		}
+
+//		for (c : callReplacements)
+//			GrammarUtil.transformIn(g, [it instanceof Reference && (it as Reference).target == c.selector.name],
+//				[EcoreUtil.copy(c.replacement)])
 
 		return g
 	}

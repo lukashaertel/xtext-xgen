@@ -1,14 +1,11 @@
 package xgen.grammar.util;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.Set;
-import java.util.Map.Entry;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import xgen.grammar.Alternative;
-import xgen.grammar.Any;
 import xgen.grammar.Construct;
 import xgen.grammar.Definition;
 import xgen.grammar.Element;
@@ -16,23 +13,21 @@ import xgen.grammar.Grammar;
 import xgen.grammar.GrammarFactory;
 import xgen.grammar.GrammarPackage;
 import xgen.grammar.Keyword;
-import xgen.grammar.Multiplicity;
-import xgen.grammar.Not;
-import xgen.grammar.Placeholder;
-import xgen.grammar.Range;
-import xgen.grammar.Reference;
-import xgen.grammar.Sequence;
-import xgen.grammar.Until;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Multimap;
+import com.google.common.base.Objects;
 import com.google.common.collect.Sets;
-
-import static xgen.grammar.util.GrammarConstructor.*;
 
 public class GrammarUtil
 {
+	public static Definition getDefinition(Grammar grammar, String name)
+	{
+		for (Definition d : grammar.getDefinitions())
+			if (Objects.equal(name, d.getName()))
+				return d;
+
+		return null;
+	}
+
 	/**
 	 * Maps from a construct to it's containing definition
 	 * 
@@ -41,7 +36,7 @@ public class GrammarUtil
 	 * @return Returns the definition containing the construct or null if not in
 	 *         definition, i.e. inconsistent grammar model
 	 */
-	public static Definition getDefinition(Construct c)
+	public static Definition inDefinition(Construct c)
 	{
 		if (c == null)
 			return null;
@@ -96,180 +91,6 @@ public class GrammarUtil
 		return higher;
 	}
 
-	public static Definition cloneUnresolved(Definition d, Multimap<String, Reference> unresolved)
-	{
-		return definition(d.getName(), d.isLexical(), new GrammarSwitch<Construct>()
-		{
-			@Override
-			public Construct caseAlternative(Alternative object)
-			{
-				Alternative r = alternative();
-				for (Construct c : object.getOperands())
-					r.getOperands().add(doSwitch(c));
-
-				return r;
-			}
-
-			@Override
-			public Construct caseAny(Any object)
-			{
-				return any();
-			}
-
-			@Override
-			public Construct caseKeyword(Keyword object)
-			{
-				return keyword(object.getValue());
-			}
-
-			@Override
-			public Construct caseMultiplicity(Multiplicity object)
-			{
-				return multiplicity(doSwitch(object.getOperand()), object.getMin(), object.isUpperBounded(), object.getMax());
-			}
-
-			@Override
-			public Construct caseNot(Not object)
-			{
-				return not(doSwitch(object.getOperand()));
-			}
-
-			@Override
-			public Construct caseRange(Range object)
-			{
-				return range(object.getMin(), object.getMax());
-			}
-
-			@Override
-			public Construct caseReference(Reference object)
-			{
-				Reference r = incompleteReference();
-
-				if (object.getTarget() == null)
-				{
-					String target = null;
-
-					for (Entry<String, Reference> e : unresolved.entries())
-						if (object == e.getValue())
-						{
-							target = e.getKey();
-							break;
-						}
-
-					if (target == null)
-						throw new IllegalArgumentException();
-
-					unresolved.put(target, r);
-				}
-				else
-				{
-					unresolved.put(object.getTarget().getName(), r);
-				}
-				return r;
-			}
-
-			@Override
-			public Construct caseSequence(Sequence object)
-			{
-				Sequence r = sequence();
-				for (Construct c : object.getOperands())
-					r.getOperands().add(doSwitch(c));
-
-				return r;
-			}
-
-			@Override
-			public Construct caseUntil(Until object)
-			{
-				return until(doSwitch(object.getOperand()));
-			}
-
-			@Override
-			public Construct casePlaceholder(Placeholder object)
-			{
-				return placeholder(object.getSource());
-			}
-		}.doSwitch(d.getRhs()));
-	}
-
-	/**
-	 * Resolve the unresolved system of references in the given grammar
-	 * 
-	 * @param grammar
-	 *            The resolving grammar
-	 * @param unresolved
-	 *            The unresolved references
-	 */
-	public static void resolve(Grammar grammar, Multimap<String, Reference> unresolved)
-	{
-
-		// Remove all that are in fact resolved
-		unresolved.entries().removeIf(e -> e.getValue().getTarget() != null);
-
-		// Make resolved map
-		Map<String, Definition> resolver = Maps.newHashMap();
-
-		// For all unresolved references
-		for (Entry<String, Reference> u : unresolved.entries())
-		{
-			// Go over all definitions in the effective grammar and check if
-			// it has the same name, then use it as target
-			Definition p = resolver.computeIfAbsent(u.getKey(), n -> {
-
-				for (Definition d : grammar.getDefinitions())
-					if (n.equals(d.getName()))
-						return d;
-				return null;
-			});
-
-			// If none found continue to next
-			if (p == null)
-				continue;
-
-			// Assign definition
-			u.getValue().setTarget(p);
-		}
-
-		// Remove all that are resolved now
-		unresolved.entries().removeIf(e -> e.getValue().getTarget() != null);
-	}
-
-	/**
-	 * Overrides the definitions in a with the ones in b
-	 * 
-	 * @param a
-	 *            The source grammar
-	 * @param b
-	 *            The grammar to override the source with
-	 * @return Returns a new grammar
-	 */
-	public static Grammar overrideWith(Grammar a, Grammar b, Multimap<String, Reference> unresolved)
-	{
-		// Make the result
-		Grammar r = GrammarFactory.eINSTANCE.createGrammar();
-
-		// Make the set of defined rules
-		Set<String> defined = Sets.newHashSet();
-
-		// Go over overidees definitions
-		for (Definition d : b.getDefinitions())
-		{
-			// Add an unresolved copy of the definition
-			r.getDefinitions().add(cloneUnresolved(d, unresolved));
-
-			// Mark as defined
-			defined.add(d.getName());
-		}
-
-		// Go over all rules of the overridden and add if not already defined
-		for (Definition d : a.getDefinitions())
-			if (!defined.contains(d.getName()))
-				r.getDefinitions().add(cloneUnresolved(d, unresolved));
-
-		// Return result
-		return r;
-	}
-
 	/**
 	 * Overrides the definitions in a with the ones in b
 	 * 
@@ -281,6 +102,28 @@ public class GrammarUtil
 	 */
 	public static Grammar overrideWith(Grammar a, Grammar b)
 	{
-		return overrideWith(a, b, HashMultimap.create());
+		// Make the result
+		Grammar r = GrammarFactory.eINSTANCE.createGrammar();
+
+		// Make the set of defined rules
+		Set<String> defined = Sets.newHashSet();
+
+		// Go over overidees definitions
+		for (Definition d : b.getDefinitions())
+		{
+			// Add a copy of the definition
+			r.getDefinitions().add(EcoreUtil.copy(d));
+
+			// Mark as defined
+			defined.add(d.getName());
+		}
+
+		// Go over all rules of the overridden and add if not already defined
+		for (Definition d : a.getDefinitions())
+			if (!defined.contains(d.getName()))
+				r.getDefinitions().add(EcoreUtil.copy(d));
+
+		// Return result
+		return r;
 	}
 }

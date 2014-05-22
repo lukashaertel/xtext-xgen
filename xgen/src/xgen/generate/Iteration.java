@@ -66,7 +66,7 @@ public class Iteration
 			public Index<Node> caseAlternative(Alternative object)
 			{
 				// Use offset here to avoid always going over one reference
-				int offset = depth.getDepth(GrammarUtil.getDefinition(object));
+				int offset = depth.getDepth(GrammarUtil.inDefinition(object));
 				int size = object.getOperands().size();
 
 				Index<Node> r = iterate(object.getOperands().get(offset % size), depth);
@@ -161,7 +161,7 @@ public class Iteration
 				// iteration, so copy it
 				Depth c = depth.copy();
 
-				return Index.late(() -> iterate(object.getTarget(), c).mapPresent(x -> new Container(object, x)));
+				return Index.late(() -> iterate(object.getResolved(), c).mapPresent(x -> new Container(object, x)));
 			}
 
 			@Override

@@ -1,11 +1,10 @@
 package xgen.generate;
 
-import java.util.HashMap;
 import java.util.Map;
 
-import com.google.common.collect.Maps;
-
 import xgen.grammar.Definition;
+
+import com.google.common.collect.Maps;
 
 /**
  * Stores the times a definition has been instantiated

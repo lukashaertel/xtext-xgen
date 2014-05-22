@@ -301,94 +301,88 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Construct4");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cReferenceAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cTargetAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final CrossReference cTargetDefinitionCrossReference_0_1_0 = (CrossReference)cTargetAssignment_0_1.eContents().get(0);
-		private final RuleCall cTargetDefinitionIDTerminalRuleCall_0_1_0_1 = (RuleCall)cTargetDefinitionCrossReference_0_1_0.eContents().get(1);
+		private final Action cRangeAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cMinAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cMinCHARTerminalRuleCall_0_1_0 = (RuleCall)cMinAssignment_0_1.eContents().get(0);
+		private final Keyword cFullStopFullStopKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cMaxAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cMaxCHARTerminalRuleCall_0_3_0 = (RuleCall)cMaxAssignment_0_3.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cRangeAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cMinAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cMinCHARTerminalRuleCall_1_1_0 = (RuleCall)cMinAssignment_1_1.eContents().get(0);
-		private final Keyword cFullStopFullStopKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cMaxAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cMaxCHARTerminalRuleCall_1_3_0 = (RuleCall)cMaxAssignment_1_3.eContents().get(0);
+		private final Action cKeywordAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cKeywordAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final Action cAnyAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cFullStopKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cAnyAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Keyword cFullStopKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Action cReferenceAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cTargetAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetIDTerminalRuleCall_3_1_0 = (RuleCall)cTargetAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Keyword cLeftParenthesisKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final RuleCall cConstruct0ParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//Construct4 returns Construct:
-		//	{Reference} target=[Definition] | {Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | "("
-		//	Construct0 ")";
+		//	{Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | {Reference} target=ID | "(" Construct0 ")";
 		public ParserRule getRule() { return rule; }
 
-		//{Reference} target=[Definition] | {Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | "(" Construct0
-		//")"
+		//{Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | {Reference} target=ID | "(" Construct0 ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{Reference} target=[Definition]
+		//{Range} min=CHAR ".." max=CHAR
 		public Group getGroup_0() { return cGroup_0; }
 
-		//{Reference}
-		public Action getReferenceAction_0_0() { return cReferenceAction_0_0; }
-
-		//target=[Definition]
-		public Assignment getTargetAssignment_0_1() { return cTargetAssignment_0_1; }
-
-		//[Definition]
-		public CrossReference getTargetDefinitionCrossReference_0_1_0() { return cTargetDefinitionCrossReference_0_1_0; }
-
-		//ID
-		public RuleCall getTargetDefinitionIDTerminalRuleCall_0_1_0_1() { return cTargetDefinitionIDTerminalRuleCall_0_1_0_1; }
-
-		//{Range} min=CHAR ".." max=CHAR
-		public Group getGroup_1() { return cGroup_1; }
-
 		//{Range}
-		public Action getRangeAction_1_0() { return cRangeAction_1_0; }
+		public Action getRangeAction_0_0() { return cRangeAction_0_0; }
 
 		//min=CHAR
-		public Assignment getMinAssignment_1_1() { return cMinAssignment_1_1; }
+		public Assignment getMinAssignment_0_1() { return cMinAssignment_0_1; }
 
 		//CHAR
-		public RuleCall getMinCHARTerminalRuleCall_1_1_0() { return cMinCHARTerminalRuleCall_1_1_0; }
+		public RuleCall getMinCHARTerminalRuleCall_0_1_0() { return cMinCHARTerminalRuleCall_0_1_0; }
 
 		//".."
-		public Keyword getFullStopFullStopKeyword_1_2() { return cFullStopFullStopKeyword_1_2; }
+		public Keyword getFullStopFullStopKeyword_0_2() { return cFullStopFullStopKeyword_0_2; }
 
 		//max=CHAR
-		public Assignment getMaxAssignment_1_3() { return cMaxAssignment_1_3; }
+		public Assignment getMaxAssignment_0_3() { return cMaxAssignment_0_3; }
 
 		//CHAR
-		public RuleCall getMaxCHARTerminalRuleCall_1_3_0() { return cMaxCHARTerminalRuleCall_1_3_0; }
+		public RuleCall getMaxCHARTerminalRuleCall_0_3_0() { return cMaxCHARTerminalRuleCall_0_3_0; }
 
 		//{Keyword} value=STRING
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//{Keyword}
-		public Action getKeywordAction_2_0() { return cKeywordAction_2_0; }
+		public Action getKeywordAction_1_0() { return cKeywordAction_1_0; }
 
 		//value=STRING
-		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_1_0() { return cValueSTRINGTerminalRuleCall_2_1_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_1_1_0() { return cValueSTRINGTerminalRuleCall_1_1_0; }
 
 		//{Any} "."
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//{Any}
-		public Action getAnyAction_3_0() { return cAnyAction_3_0; }
+		public Action getAnyAction_2_0() { return cAnyAction_2_0; }
 
 		//"."
-		public Keyword getFullStopKeyword_3_1() { return cFullStopKeyword_3_1; }
+		public Keyword getFullStopKeyword_2_1() { return cFullStopKeyword_2_1; }
+
+		//{Reference} target=ID
+		public Group getGroup_3() { return cGroup_3; }
+
+		//{Reference}
+		public Action getReferenceAction_3_0() { return cReferenceAction_3_0; }
+
+		//target=ID
+		public Assignment getTargetAssignment_3_1() { return cTargetAssignment_3_1; }
+
+		//ID
+		public RuleCall getTargetIDTerminalRuleCall_3_1_0() { return cTargetIDTerminalRuleCall_3_1_0; }
 
 		//"(" Construct0 ")"
 		public Group getGroup_4() { return cGroup_4; }
@@ -510,8 +504,7 @@ public class GrammarGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Construct4 returns Construct:
-	//	{Reference} target=[Definition] | {Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | "("
-	//	Construct0 ")";
+	//	{Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | {Reference} target=ID | "(" Construct0 ")";
 	public Construct4Elements getConstruct4Access() {
 		return (pConstruct4 != null) ? pConstruct4 : (pConstruct4 = new Construct4Elements());
 	}

@@ -429,7 +429,7 @@ public interface GrammarPackage extends EPackage {
 	int REFERENCE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -438,13 +438,22 @@ public interface GrammarPackage extends EPackage {
 	int REFERENCE__TARGET = TERMINAL_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Resolved</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__RESOLVED = TERMINAL_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = TERMINAL_FEATURE_COUNT + 1;
+	int REFERENCE_FEATURE_COUNT = TERMINAL_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Reference</em>' class.
@@ -917,15 +926,26 @@ public interface GrammarPackage extends EPackage {
 	EClass getReference();
 
 	/**
-	 * Returns the meta object for the reference '{@link xgen.grammar.Reference#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the attribute '{@link xgen.grammar.Reference#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @return the meta object for the attribute '<em>Target</em>'.
 	 * @see xgen.grammar.Reference#getTarget()
 	 * @see #getReference()
 	 * @generated
 	 */
-	EReference getReference_Target();
+	EAttribute getReference_Target();
+
+	/**
+	 * Returns the meta object for the reference '{@link xgen.grammar.Reference#getResolved <em>Resolved</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Resolved</em>'.
+	 * @see xgen.grammar.Reference#getResolved()
+	 * @see #getReference()
+	 * @generated
+	 */
+	EReference getReference_Resolved();
 
 	/**
 	 * Returns the meta object for class '{@link xgen.grammar.Alternative <em>Alternative</em>}'.
@@ -1237,12 +1257,20 @@ public interface GrammarPackage extends EPackage {
 		EClass REFERENCE = eINSTANCE.getReference();
 
 		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REFERENCE__TARGET = eINSTANCE.getReference_Target();
+		EAttribute REFERENCE__TARGET = eINSTANCE.getReference_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Resolved</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__RESOLVED = eINSTANCE.getReference_Resolved();
 
 		/**
 		 * The meta object literal for the '{@link xgen.grammar.impl.AlternativeImpl <em>Alternative</em>}' class.

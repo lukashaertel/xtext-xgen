@@ -265,7 +265,7 @@ public class Acceptor
 			@Override
 			public String caseReference(Reference object)
 			{
-				return acceptingRegEx(object.getTarget());
+				return acceptingRegEx(object.getResolved());
 			}
 
 			@Override

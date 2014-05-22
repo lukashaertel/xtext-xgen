@@ -428,8 +428,7 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Construct4 returns Construct:
-	//	{Reference} target=[Definition] | {Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | "("
-	//	Construct0 ")";
+	//	{Range} min=CHAR ".." max=CHAR | {Keyword} value=STRING | {Any} "." | {Reference} target=ID | "(" Construct0 ")";
 	public GrammarGrammarAccess.Construct4Elements getConstruct4Access() {
 		return gaGrammar.getConstruct4Access();
 	}

@@ -247,7 +247,7 @@ public abstract class AbstractGrammarSemanticSequencer extends AbstractDelegatin
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -265,25 +265,18 @@ public abstract class AbstractGrammarSemanticSequencer extends AbstractDelegatin
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0(), semanticObject.getMax());
+		feeder.accept(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0(), semanticObject.getMin());
+		feeder.accept(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0(), semanticObject.getMax());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     target=[Definition|ID]
+	 *     target=ID
 	 */
 	protected void sequence_Construct4(EObject context, Reference semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, GrammarPackage.Literals.REFERENCE__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GrammarPackage.Literals.REFERENCE__TARGET));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getConstruct4Access().getTargetDefinitionIDTerminalRuleCall_0_1_0_1(), semanticObject.getTarget());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

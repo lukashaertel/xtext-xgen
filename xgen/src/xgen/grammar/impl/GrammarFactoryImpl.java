@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import xgen.grammar.*;
 import xgen.grammar.Alternative;
 import xgen.grammar.Any;
 import xgen.grammar.Definition;
@@ -18,6 +17,7 @@ import xgen.grammar.GrammarPackage;
 import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.Not;
+import xgen.grammar.Placeholder;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;

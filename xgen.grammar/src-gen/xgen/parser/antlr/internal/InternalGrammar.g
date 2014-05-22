@@ -546,34 +546,14 @@ ruleConstruct4 returns [EObject current=null]
 (((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getConstruct4Access().getReferenceAction_0_0(),
+            grammarAccess.getConstruct4Access().getRangeAction_0_0(),
             $current);
     }
 )(
 (
+		lv_min_1_0=RULE_CHAR
 		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getConstruct4Rule());
-	        }
-        }
-	otherlv_1=RULE_ID
-	{
-		newLeafNode(otherlv_1, grammarAccess.getConstruct4Access().getTargetDefinitionCrossReference_0_1_0()); 
-	}
-
-)
-))
-    |((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getConstruct4Access().getRangeAction_1_0(),
-            $current);
-    }
-)(
-(
-		lv_min_3_0=RULE_CHAR
-		{
-			newLeafNode(lv_min_3_0, grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0()); 
+			newLeafNode(lv_min_1_0, grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -582,20 +562,20 @@ ruleConstruct4 returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"min",
-        		lv_min_3_0, 
+        		lv_min_1_0, 
         		"CHAR");
 	    }
 
 )
-)	otherlv_4='..' 
+)	otherlv_2='..' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_1_2());
+    	newLeafNode(otherlv_2, grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_0_2());
     }
 (
 (
-		lv_max_5_0=RULE_CHAR
+		lv_max_3_0=RULE_CHAR
 		{
-			newLeafNode(lv_max_5_0, grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0()); 
+			newLeafNode(lv_max_3_0, grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -604,7 +584,7 @@ ruleConstruct4 returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"max",
-        		lv_max_5_0, 
+        		lv_max_3_0, 
         		"CHAR");
 	    }
 
@@ -613,14 +593,14 @@ ruleConstruct4 returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getConstruct4Access().getKeywordAction_2_0(),
+            grammarAccess.getConstruct4Access().getKeywordAction_1_0(),
             $current);
     }
 )(
 (
-		lv_value_7_0=RULE_STRING
+		lv_value_5_0=RULE_STRING
 		{
-			newLeafNode(lv_value_7_0, grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
+			newLeafNode(lv_value_5_0, grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -629,7 +609,7 @@ ruleConstruct4 returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_7_0, 
+        		lv_value_5_0, 
         		"STRING");
 	    }
 
@@ -638,14 +618,39 @@ ruleConstruct4 returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getConstruct4Access().getAnyAction_3_0(),
+            grammarAccess.getConstruct4Access().getAnyAction_2_0(),
             $current);
     }
-)	otherlv_9='.' 
+)	otherlv_7='.' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getConstruct4Access().getFullStopKeyword_3_1());
+    	newLeafNode(otherlv_7, grammarAccess.getConstruct4Access().getFullStopKeyword_2_1());
     }
 )
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getConstruct4Access().getReferenceAction_3_0(),
+            $current);
+    }
+)(
+(
+		lv_target_9_0=RULE_ID
+		{
+			newLeafNode(lv_target_9_0, grammarAccess.getConstruct4Access().getTargetIDTerminalRuleCall_3_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getConstruct4Rule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"target",
+        		lv_target_9_0, 
+        		"ID");
+	    }
+
+)
+))
     |(	otherlv_10='(' 
     {
     	newLeafNode(otherlv_10, grammarAccess.getConstruct4Access().getLeftParenthesisKeyword_4_0());

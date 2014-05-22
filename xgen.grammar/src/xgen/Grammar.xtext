@@ -24,10 +24,10 @@ Construct3 returns Construct:
 	Construct4 ({Multiplicity.operand=current} '{' min=INT (upperBounded?=',' max=INT)? '}')*;
 
 Construct4 returns Construct:
-	{Reference} target=[Definition] |
 	{Range} min=CHAR '..' max=CHAR |
 	{Keyword} value=STRING |
 	{Any} '.' |
+	{Reference} target=ID |
 	'(' Construct0 ')';
 
 terminal ID:

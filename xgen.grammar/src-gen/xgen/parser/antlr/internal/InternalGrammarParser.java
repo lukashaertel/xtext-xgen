@@ -1313,16 +1313,16 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstruct4"
-    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:542:1: ruleConstruct4 returns [EObject current=null] : ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_min_3_0= RULE_CHAR ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_CHAR ) ) ) | ( () ( (lv_value_7_0= RULE_STRING ) ) ) | ( () otherlv_9= '.' ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) ;
+    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:542:1: ruleConstruct4 returns [EObject current=null] : ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) ;
     public final EObject ruleConstruct4() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token lv_min_3_0=null;
-        Token otherlv_4=null;
-        Token lv_max_5_0=null;
-        Token lv_value_7_0=null;
-        Token otherlv_9=null;
+        Token lv_min_1_0=null;
+        Token otherlv_2=null;
+        Token lv_max_3_0=null;
+        Token lv_value_5_0=null;
+        Token otherlv_7=null;
+        Token lv_target_9_0=null;
         Token otherlv_10=null;
         Token otherlv_12=null;
         EObject this_Construct0_11 = null;
@@ -1331,28 +1331,28 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:545:28: ( ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_min_3_0= RULE_CHAR ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_CHAR ) ) ) | ( () ( (lv_value_7_0= RULE_STRING ) ) ) | ( () otherlv_9= '.' ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) )
-            // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_min_3_0= RULE_CHAR ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_CHAR ) ) ) | ( () ( (lv_value_7_0= RULE_STRING ) ) ) | ( () otherlv_9= '.' ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
+            // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:545:28: ( ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) )
+            // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:1: ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
             {
-            // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_min_3_0= RULE_CHAR ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_CHAR ) ) ) | ( () ( (lv_value_7_0= RULE_STRING ) ) ) | ( () otherlv_9= '.' ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
+            // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:1: ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
             int alt10=5;
             switch ( input.LA(1) ) {
-            case RULE_ID:
+            case RULE_CHAR:
                 {
                 alt10=1;
                 }
                 break;
-            case RULE_CHAR:
+            case RULE_STRING:
                 {
                 alt10=2;
                 }
                 break;
-            case RULE_STRING:
+            case 21:
                 {
                 alt10=3;
                 }
                 break;
-            case 21:
+            case RULE_ID:
                 {
                 alt10=4;
                 }
@@ -1371,37 +1371,72 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
 
             switch (alt10) {
                 case 1 :
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:2: ( () ( (otherlv_1= RULE_ID ) ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:2: ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) )
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:2: ( () ( (otherlv_1= RULE_ID ) ) )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:3: () ( (otherlv_1= RULE_ID ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:2: ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:3: () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) )
                     {
                     // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:546:3: ()
                     // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:547:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getConstruct4Access().getReferenceAction_0_0(),
+                                grammarAccess.getConstruct4Access().getRangeAction_0_0(),
                                 current);
                         
 
                     }
 
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:552:2: ( (otherlv_1= RULE_ID ) )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:553:1: (otherlv_1= RULE_ID )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:552:2: ( (lv_min_1_0= RULE_CHAR ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:553:1: (lv_min_1_0= RULE_CHAR )
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:553:1: (otherlv_1= RULE_ID )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:554:3: otherlv_1= RULE_ID
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:553:1: (lv_min_1_0= RULE_CHAR )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:554:3: lv_min_1_0= RULE_CHAR
                     {
+                    lv_min_1_0=(Token)match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_ruleConstruct41136); 
 
-                    			if (current==null) {
+                    			newLeafNode(lv_min_1_0, grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0()); 
+                    		
+
+                    	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getConstruct4Rule());
                     	        }
-                            
-                    otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleConstruct41139); 
+                           		setWithLastConsumed(
+                           			current, 
+                           			"min",
+                            		lv_min_1_0, 
+                            		"CHAR");
+                    	    
 
-                    		newLeafNode(otherlv_1, grammarAccess.getConstruct4Access().getTargetDefinitionCrossReference_0_1_0()); 
-                    	
+                    }
+
+
+                    }
+
+                    otherlv_2=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleConstruct41153); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_0_2());
+                        
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:574:1: ( (lv_max_3_0= RULE_CHAR ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:575:1: (lv_max_3_0= RULE_CHAR )
+                    {
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:575:1: (lv_max_3_0= RULE_CHAR )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:576:3: lv_max_3_0= RULE_CHAR
+                    {
+                    lv_max_3_0=(Token)match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_ruleConstruct41170); 
+
+                    			newLeafNode(lv_max_3_0, grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getConstruct4Rule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"max",
+                            		lv_max_3_0, 
+                            		"CHAR");
+                    	    
 
                     }
 
@@ -1415,110 +1450,31 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:566:6: ( () ( (lv_min_3_0= RULE_CHAR ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_CHAR ) ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:593:6: ( () ( (lv_value_5_0= RULE_STRING ) ) )
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:566:6: ( () ( (lv_min_3_0= RULE_CHAR ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_CHAR ) ) )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:566:7: () ( (lv_min_3_0= RULE_CHAR ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_CHAR ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:593:6: ( () ( (lv_value_5_0= RULE_STRING ) ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:593:7: () ( (lv_value_5_0= RULE_STRING ) )
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:566:7: ()
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:567:5: 
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:593:7: ()
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:594:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getConstruct4Access().getRangeAction_1_0(),
+                                grammarAccess.getConstruct4Access().getKeywordAction_1_0(),
                                 current);
                         
 
                     }
 
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:572:2: ( (lv_min_3_0= RULE_CHAR ) )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:573:1: (lv_min_3_0= RULE_CHAR )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:599:2: ( (lv_value_5_0= RULE_STRING ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:600:1: (lv_value_5_0= RULE_STRING )
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:573:1: (lv_min_3_0= RULE_CHAR )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:574:3: lv_min_3_0= RULE_CHAR
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:600:1: (lv_value_5_0= RULE_STRING )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:601:3: lv_value_5_0= RULE_STRING
                     {
-                    lv_min_3_0=(Token)match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_ruleConstruct41173); 
+                    lv_value_5_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleConstruct41209); 
 
-                    			newLeafNode(lv_min_3_0, grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_1_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getConstruct4Rule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"min",
-                            		lv_min_3_0, 
-                            		"CHAR");
-                    	    
-
-                    }
-
-
-                    }
-
-                    otherlv_4=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleConstruct41190); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_1_2());
-                        
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:594:1: ( (lv_max_5_0= RULE_CHAR ) )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:595:1: (lv_max_5_0= RULE_CHAR )
-                    {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:595:1: (lv_max_5_0= RULE_CHAR )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:596:3: lv_max_5_0= RULE_CHAR
-                    {
-                    lv_max_5_0=(Token)match(input,RULE_CHAR,FollowSets000.FOLLOW_RULE_CHAR_in_ruleConstruct41207); 
-
-                    			newLeafNode(lv_max_5_0, grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_1_3_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getConstruct4Rule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"max",
-                            		lv_max_5_0, 
-                            		"CHAR");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:613:6: ( () ( (lv_value_7_0= RULE_STRING ) ) )
-                    {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:613:6: ( () ( (lv_value_7_0= RULE_STRING ) ) )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:613:7: () ( (lv_value_7_0= RULE_STRING ) )
-                    {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:613:7: ()
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:614:5: 
-                    {
-
-                            current = forceCreateModelElement(
-                                grammarAccess.getConstruct4Access().getKeywordAction_2_0(),
-                                current);
-                        
-
-                    }
-
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:619:2: ( (lv_value_7_0= RULE_STRING ) )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:620:1: (lv_value_7_0= RULE_STRING )
-                    {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:620:1: (lv_value_7_0= RULE_STRING )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:621:3: lv_value_7_0= RULE_STRING
-                    {
-                    lv_value_7_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleConstruct41246); 
-
-                    			newLeafNode(lv_value_7_0, grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_2_1_0()); 
+                    			newLeafNode(lv_value_5_0, grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0()); 
                     		
 
                     	        if (current==null) {
@@ -1527,7 +1483,7 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
                            		setWithLastConsumed(
                            			current, 
                            			"value",
-                            		lv_value_7_0, 
+                            		lv_value_5_0, 
                             		"STRING");
                     	    
 
@@ -1542,26 +1498,26 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 4 :
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:638:6: ( () otherlv_9= '.' )
+                case 3 :
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:618:6: ( () otherlv_7= '.' )
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:638:6: ( () otherlv_9= '.' )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:638:7: () otherlv_9= '.'
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:618:6: ( () otherlv_7= '.' )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:618:7: () otherlv_7= '.'
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:638:7: ()
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:639:5: 
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:618:7: ()
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:619:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getConstruct4Access().getAnyAction_3_0(),
+                                grammarAccess.getConstruct4Access().getAnyAction_2_0(),
                                 current);
                         
 
                     }
 
-                    otherlv_9=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleConstruct41280); 
+                    otherlv_7=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleConstruct41243); 
 
-                        	newLeafNode(otherlv_9, grammarAccess.getConstruct4Access().getFullStopKeyword_3_1());
+                        	newLeafNode(otherlv_7, grammarAccess.getConstruct4Access().getFullStopKeyword_2_1());
                         
 
                     }
@@ -1569,20 +1525,69 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 4 :
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:629:6: ( () ( (lv_target_9_0= RULE_ID ) ) )
+                    {
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:629:6: ( () ( (lv_target_9_0= RULE_ID ) ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:629:7: () ( (lv_target_9_0= RULE_ID ) )
+                    {
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:629:7: ()
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:630:5: 
+                    {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getConstruct4Access().getReferenceAction_3_0(),
+                                current);
+                        
+
+                    }
+
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:635:2: ( (lv_target_9_0= RULE_ID ) )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:636:1: (lv_target_9_0= RULE_ID )
+                    {
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:636:1: (lv_target_9_0= RULE_ID )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:637:3: lv_target_9_0= RULE_ID
+                    {
+                    lv_target_9_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleConstruct41277); 
+
+                    			newLeafNode(lv_target_9_0, grammarAccess.getConstruct4Access().getTargetIDTerminalRuleCall_3_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getConstruct4Rule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"target",
+                            		lv_target_9_0, 
+                            		"ID");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
                 case 5 :
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:649:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:654:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
                     {
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:649:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
-                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:649:8: otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')'
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:654:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
+                    // ../xgen.grammar/src-gen/xgen/parser/antlr/internal/InternalGrammar.g:654:8: otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')'
                     {
-                    otherlv_10=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleConstruct41300); 
+                    otherlv_10=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleConstruct41302); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getConstruct4Access().getLeftParenthesisKeyword_4_0());
                         
                      
                             newCompositeNode(grammarAccess.getConstruct4Access().getConstruct0ParserRuleCall_4_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleConstruct0_in_ruleConstruct41322);
+                    pushFollow(FollowSets000.FOLLOW_ruleConstruct0_in_ruleConstruct41324);
                     this_Construct0_11=ruleConstruct0();
 
                     state._fsp--;
@@ -1591,7 +1596,7 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
                             current = this_Construct0_11; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_12=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleConstruct41333); 
+                    otherlv_12=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleConstruct41335); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getConstruct4Access().getRightParenthesisKeyword_4_2());
                         
@@ -1666,15 +1671,15 @@ public class InternalGrammarParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_19_in_ruleConstruct31036 = new BitSet(new long[]{0x0000000000020002L});
         public static final BitSet FOLLOW_ruleConstruct4_in_entryRuleConstruct41074 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleConstruct41084 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleConstruct41139 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41173 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_20_in_ruleConstruct41190 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41207 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleConstruct41246 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_ruleConstruct41280 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_ruleConstruct41300 = new BitSet(new long[]{0x00000000006180D0L});
-        public static final BitSet FOLLOW_ruleConstruct0_in_ruleConstruct41322 = new BitSet(new long[]{0x0000000000800000L});
-        public static final BitSet FOLLOW_23_in_ruleConstruct41333 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41136 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_20_in_ruleConstruct41153 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41170 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleConstruct41209 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_ruleConstruct41243 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleConstruct41277 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_ruleConstruct41302 = new BitSet(new long[]{0x00000000006180D0L});
+        public static final BitSet FOLLOW_ruleConstruct0_in_ruleConstruct41324 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleConstruct41335 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

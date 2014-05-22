@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
-import xgen.grammar.*;
 import xgen.grammar.Alternative;
 import xgen.grammar.Any;
 import xgen.grammar.Construct;
@@ -18,6 +17,7 @@ import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.NAry;
 import xgen.grammar.Not;
+import xgen.grammar.Placeholder;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;

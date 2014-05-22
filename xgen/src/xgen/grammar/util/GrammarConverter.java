@@ -1,5 +1,18 @@
 package xgen.grammar.util;
 
+import static xgen.grammar.util.GrammarConstructor.alternative;
+import static xgen.grammar.util.GrammarConstructor.any;
+import static xgen.grammar.util.GrammarConstructor.definition;
+import static xgen.grammar.util.GrammarConstructor.keyword;
+import static xgen.grammar.util.GrammarConstructor.multiplicityBound;
+import static xgen.grammar.util.GrammarConstructor.multiplicityUnbound;
+import static xgen.grammar.util.GrammarConstructor.not;
+import static xgen.grammar.util.GrammarConstructor.placeholder;
+import static xgen.grammar.util.GrammarConstructor.range;
+import static xgen.grammar.util.GrammarConstructor.reference;
+import static xgen.grammar.util.GrammarConstructor.sequence;
+import static xgen.grammar.util.GrammarConstructor.until;
+
 import java.util.NoSuchElementException;
 
 import org.eclipse.emf.ecore.EObject;
@@ -22,16 +35,11 @@ import org.eclipse.xtext.UntilToken;
 import org.eclipse.xtext.Wildcard;
 import org.eclipse.xtext.util.XtextSwitch;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
-
 import xgen.grammar.Alternative;
 import xgen.grammar.Construct;
 import xgen.grammar.Definition;
 import xgen.grammar.GrammarFactory;
-import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
-import static xgen.grammar.util.GrammarConstructor.*;
 
 public class GrammarConverter
 {
@@ -44,41 +52,29 @@ public class GrammarConverter
 	 */
 	public static xgen.grammar.Grammar fromXText(Grammar xText)
 	{
-		// Make store for unresolved references
-		Multimap<String, Reference> unresolved = HashMultimap.create();
-
 		// Convert the main grammar
-		xgen.grammar.Grammar it = fromSingleXText(xText, unresolved);
+		xgen.grammar.Grammar it = fromSingleXText(xText);
 
-		// If the main grammar does not extend any other grammar, resolve and
-		// return the result
+		// If the main grammar does not extend any other grammar, return the
+		// result
 		if (xText.getUsedGrammars().isEmpty())
-		{
-			// Resolve all unresolved references
-			GrammarUtil.resolve(it, unresolved);
-
-			// Return the result
 			return it;
-		}
 
 		// Convert the first used grammar
-		xgen.grammar.Grammar extend = fromSingleXText(xText.getUsedGrammars().get(0), unresolved);
+		xgen.grammar.Grammar extend = fromSingleXText(xText.getUsedGrammars().get(0));
 
 		// Merge all remaining as converted grammars
 		for (int i = 1; i < xText.getUsedGrammars().size(); i++)
-			extend = GrammarUtil.overrideWith(extend, fromSingleXText(xText.getUsedGrammars().get(i), unresolved), unresolved);
+			extend = GrammarUtil.overrideWith(extend, fromSingleXText(xText.getUsedGrammars().get(i)));
 
 		// Override the extended with the result
-		it = GrammarUtil.overrideWith(extend, it, unresolved);
-
-		// Resolve all unresolved references
-		GrammarUtil.resolve(it, unresolved);
+		it = GrammarUtil.overrideWith(extend, it);
 
 		// Return the result
 		return it;
 	}
 
-	public static xgen.grammar.Grammar fromSingleXText(Grammar xText, Multimap<String, Reference> unresolved)
+	public static xgen.grammar.Grammar fromSingleXText(Grammar xText)
 	{
 		xgen.grammar.Grammar g = GrammarFactory.eINSTANCE.createGrammar();
 
@@ -89,11 +85,11 @@ public class GrammarConverter
 
 			// Convert the rule accordingly
 			if (r instanceof EnumRule)
-				d = fromSingleRule(true, r, unresolved);
+				d = fromSingleRule(true, r);
 			else if (r instanceof ParserRule)
-				d = fromSingleRule(false, r, unresolved);
+				d = fromSingleRule(false, r);
 			else if (r instanceof TerminalRule)
-				d = fromSingleRule(true, r, unresolved);
+				d = fromSingleRule(true, r);
 			else
 				throw new IllegalArgumentException("The input grammar contains a rule that cannot be converted");
 
@@ -104,12 +100,12 @@ public class GrammarConverter
 		return g;
 	}
 
-	public static Definition fromSingleRule(boolean lexical, AbstractRule rule, Multimap<String, Reference> unresolved)
+	public static Definition fromSingleRule(boolean lexical, AbstractRule rule)
 	{
-		return definition(rule.getName(), lexical, fromSingleElement(rule.getAlternatives(), unresolved));
+		return definition(rule.getName(), lexical, fromSingleElement(rule.getAlternatives()));
 	}
 
-	public static Construct fromSingleElement(AbstractElement e, Multimap<String, Reference> unresolved)
+	public static Construct fromSingleElement(AbstractElement e)
 	{
 		// Make inner element from XText
 		Construct inner = new XtextSwitch<Construct>()
@@ -117,19 +113,19 @@ public class GrammarConverter
 			@Override
 			public Construct caseNegatedToken(NegatedToken object)
 			{
-				return not(fromSingleElement(object.getTerminal(), unresolved));
+				return not(fromSingleElement(object.getTerminal()));
 			}
 
 			@Override
 			public Construct caseUntilToken(UntilToken object)
 			{
-				return until(fromSingleElement(object.getTerminal(), unresolved));
+				return until(fromSingleElement(object.getTerminal()));
 			}
 
 			@Override
 			public Construct caseAssignment(Assignment object)
 			{
-				return fromSingleElement(object.getTerminal(), unresolved);
+				return fromSingleElement(object.getTerminal());
 			}
 
 			@Override
@@ -152,7 +148,7 @@ public class GrammarConverter
 				Alternative r = alternative();
 
 				for (AbstractElement a : object.getElements())
-					r.getOperands().add(fromSingleElement(a, unresolved));
+					r.getOperands().add(fromSingleElement(a));
 
 				return r;
 			}
@@ -163,7 +159,7 @@ public class GrammarConverter
 				Sequence r = sequence();
 
 				for (AbstractElement a : object.getElements())
-					r.getOperands().add(fromSingleElement(a, unresolved));
+					r.getOperands().add(fromSingleElement(a));
 
 				return r;
 			}
@@ -177,7 +173,7 @@ public class GrammarConverter
 			@Override
 			public Construct caseCrossReference(CrossReference object)
 			{
-				return fromSingleElement(object.getTerminal(), unresolved);
+				return fromSingleElement(object.getTerminal());
 			}
 
 			@Override
@@ -189,11 +185,8 @@ public class GrammarConverter
 			@Override
 			public Construct caseRuleCall(RuleCall object)
 			{
-				Reference r = incompleteReference();
 
-				unresolved.put(object.getRule().getName(), r);
-
-				return r;
+				return reference(object.getRule().getName());
 			}
 
 			@Override

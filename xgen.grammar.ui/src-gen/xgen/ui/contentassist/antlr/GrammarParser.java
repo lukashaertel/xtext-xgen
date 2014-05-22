@@ -69,10 +69,10 @@ public class GrammarParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConstruct3Access().getMinAssignment_1_2(), "rule__Construct3__MinAssignment_1_2");
 					put(grammarAccess.getConstruct3Access().getUpperBoundedAssignment_1_3_0(), "rule__Construct3__UpperBoundedAssignment_1_3_0");
 					put(grammarAccess.getConstruct3Access().getMaxAssignment_1_3_1(), "rule__Construct3__MaxAssignment_1_3_1");
-					put(grammarAccess.getConstruct4Access().getTargetAssignment_0_1(), "rule__Construct4__TargetAssignment_0_1");
-					put(grammarAccess.getConstruct4Access().getMinAssignment_1_1(), "rule__Construct4__MinAssignment_1_1");
-					put(grammarAccess.getConstruct4Access().getMaxAssignment_1_3(), "rule__Construct4__MaxAssignment_1_3");
-					put(grammarAccess.getConstruct4Access().getValueAssignment_2_1(), "rule__Construct4__ValueAssignment_2_1");
+					put(grammarAccess.getConstruct4Access().getMinAssignment_0_1(), "rule__Construct4__MinAssignment_0_1");
+					put(grammarAccess.getConstruct4Access().getMaxAssignment_0_3(), "rule__Construct4__MaxAssignment_0_3");
+					put(grammarAccess.getConstruct4Access().getValueAssignment_1_1(), "rule__Construct4__ValueAssignment_1_1");
+					put(grammarAccess.getConstruct4Access().getTargetAssignment_3_1(), "rule__Construct4__TargetAssignment_3_1");
 				}
 			};
 		}
