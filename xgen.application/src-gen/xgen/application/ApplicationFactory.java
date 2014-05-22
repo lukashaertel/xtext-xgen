@@ -50,6 +50,15 @@ public interface ApplicationFactory extends EFactory
   ConstructReplacement createConstructReplacement();
 
   /**
+   * Returns a new object of class '<em>Multiplicity Adjustment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Adjustment</em>'.
+   * @generated
+   */
+  MultiplicityAdjustment createMultiplicityAdjustment();
+
+  /**
    * Returns a new object of class '<em>Rule Replacement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

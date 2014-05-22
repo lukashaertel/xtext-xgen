@@ -4,14 +4,10 @@ package xgen.application.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
 
-import xgen.application.Application;
-import xgen.application.ApplicationPackage;
-import xgen.application.Apply;
-import xgen.application.ConstructReplacement;
-import xgen.application.Model;
-import xgen.application.RuleReplacement;
+import xgen.application.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,6 +93,13 @@ public class ApplicationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ApplicationPackage.MULTIPLICITY_ADJUSTMENT:
+      {
+        MultiplicityAdjustment multiplicityAdjustment = (MultiplicityAdjustment)theEObject;
+        T result = caseMultiplicityAdjustment(multiplicityAdjustment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ApplicationPackage.RULE_REPLACEMENT:
       {
         RuleReplacement ruleReplacement = (RuleReplacement)theEObject;
@@ -160,6 +163,22 @@ public class ApplicationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstructReplacement(ConstructReplacement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity Adjustment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity Adjustment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicityAdjustment(MultiplicityAdjustment object)
   {
     return null;
   }

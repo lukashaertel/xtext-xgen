@@ -168,6 +168,79 @@ public interface ApplicationPackage extends EPackage
   int CONSTRUCT_REPLACEMENT_FEATURE_COUNT = 5;
 
   /**
+   * The meta object id for the '{@link xgen.application.impl.MultiplicityAdjustmentImpl <em>Multiplicity Adjustment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xgen.application.impl.MultiplicityAdjustmentImpl
+   * @see xgen.application.impl.ApplicationPackageImpl#getMultiplicityAdjustment()
+   * @generated
+   */
+  int MULTIPLICITY_ADJUSTMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Positioned</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_ADJUSTMENT__POSITIONED = 0;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_ADJUSTMENT__POSITION = 1;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_ADJUSTMENT__TARGET = 2;
+
+  /**
+   * The feature id for the '<em><b>Min</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_ADJUSTMENT__MIN = 3;
+
+  /**
+   * The feature id for the '<em><b>Upper Bounded</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_ADJUSTMENT__UPPER_BOUNDED = 4;
+
+  /**
+   * The feature id for the '<em><b>Max</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_ADJUSTMENT__MAX = 5;
+
+  /**
+   * The number of structural features of the '<em>Multiplicity Adjustment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_ADJUSTMENT_FEATURE_COUNT = 6;
+
+  /**
    * The meta object id for the '{@link xgen.application.impl.RuleReplacementImpl <em>Rule Replacement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -175,7 +248,7 @@ public interface ApplicationPackage extends EPackage
    * @see xgen.application.impl.ApplicationPackageImpl#getRuleReplacement()
    * @generated
    */
-  int RULE_REPLACEMENT = 3;
+  int RULE_REPLACEMENT = 4;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -212,7 +285,7 @@ public interface ApplicationPackage extends EPackage
    * @see xgen.application.impl.ApplicationPackageImpl#getApplication()
    * @generated
    */
-  int APPLICATION = 4;
+  int APPLICATION = 5;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -260,13 +333,22 @@ public interface ApplicationPackage extends EPackage
   int APPLICATION__RULE_REPLACEMENTS = APPLY_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Multiplicity Adjustments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION__MULTIPLICITY_ADJUSTMENTS = APPLY_FEATURE_COUNT + 5;
+
+  /**
    * The number of structural features of the '<em>Application</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int APPLICATION_FEATURE_COUNT = APPLY_FEATURE_COUNT + 5;
+  int APPLICATION_FEATURE_COUNT = APPLY_FEATURE_COUNT + 6;
 
 
   /**
@@ -366,6 +448,82 @@ public interface ApplicationPackage extends EPackage
   EReference getConstructReplacement_Replacement();
 
   /**
+   * Returns the meta object for class '{@link xgen.application.MultiplicityAdjustment <em>Multiplicity Adjustment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplicity Adjustment</em>'.
+   * @see xgen.application.MultiplicityAdjustment
+   * @generated
+   */
+  EClass getMultiplicityAdjustment();
+
+  /**
+   * Returns the meta object for the attribute '{@link xgen.application.MultiplicityAdjustment#isPositioned <em>Positioned</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Positioned</em>'.
+   * @see xgen.application.MultiplicityAdjustment#isPositioned()
+   * @see #getMultiplicityAdjustment()
+   * @generated
+   */
+  EAttribute getMultiplicityAdjustment_Positioned();
+
+  /**
+   * Returns the meta object for the attribute '{@link xgen.application.MultiplicityAdjustment#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Position</em>'.
+   * @see xgen.application.MultiplicityAdjustment#getPosition()
+   * @see #getMultiplicityAdjustment()
+   * @generated
+   */
+  EAttribute getMultiplicityAdjustment_Position();
+
+  /**
+   * Returns the meta object for the reference '{@link xgen.application.MultiplicityAdjustment#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see xgen.application.MultiplicityAdjustment#getTarget()
+   * @see #getMultiplicityAdjustment()
+   * @generated
+   */
+  EReference getMultiplicityAdjustment_Target();
+
+  /**
+   * Returns the meta object for the attribute '{@link xgen.application.MultiplicityAdjustment#getMin <em>Min</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Min</em>'.
+   * @see xgen.application.MultiplicityAdjustment#getMin()
+   * @see #getMultiplicityAdjustment()
+   * @generated
+   */
+  EAttribute getMultiplicityAdjustment_Min();
+
+  /**
+   * Returns the meta object for the attribute '{@link xgen.application.MultiplicityAdjustment#isUpperBounded <em>Upper Bounded</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Upper Bounded</em>'.
+   * @see xgen.application.MultiplicityAdjustment#isUpperBounded()
+   * @see #getMultiplicityAdjustment()
+   * @generated
+   */
+  EAttribute getMultiplicityAdjustment_UpperBounded();
+
+  /**
+   * Returns the meta object for the attribute '{@link xgen.application.MultiplicityAdjustment#getMax <em>Max</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Max</em>'.
+   * @see xgen.application.MultiplicityAdjustment#getMax()
+   * @see #getMultiplicityAdjustment()
+   * @generated
+   */
+  EAttribute getMultiplicityAdjustment_Max();
+
+  /**
    * Returns the meta object for class '{@link xgen.application.RuleReplacement <em>Rule Replacement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -461,6 +619,17 @@ public interface ApplicationPackage extends EPackage
    * @generated
    */
   EReference getApplication_RuleReplacements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xgen.application.Application#getMultiplicityAdjustments <em>Multiplicity Adjustments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Multiplicity Adjustments</em>'.
+   * @see xgen.application.Application#getMultiplicityAdjustments()
+   * @see #getApplication()
+   * @generated
+   */
+  EReference getApplication_MultiplicityAdjustments();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -564,6 +733,64 @@ public interface ApplicationPackage extends EPackage
     EReference CONSTRUCT_REPLACEMENT__REPLACEMENT = eINSTANCE.getConstructReplacement_Replacement();
 
     /**
+     * The meta object literal for the '{@link xgen.application.impl.MultiplicityAdjustmentImpl <em>Multiplicity Adjustment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xgen.application.impl.MultiplicityAdjustmentImpl
+     * @see xgen.application.impl.ApplicationPackageImpl#getMultiplicityAdjustment()
+     * @generated
+     */
+    EClass MULTIPLICITY_ADJUSTMENT = eINSTANCE.getMultiplicityAdjustment();
+
+    /**
+     * The meta object literal for the '<em><b>Positioned</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_ADJUSTMENT__POSITIONED = eINSTANCE.getMultiplicityAdjustment_Positioned();
+
+    /**
+     * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_ADJUSTMENT__POSITION = eINSTANCE.getMultiplicityAdjustment_Position();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICITY_ADJUSTMENT__TARGET = eINSTANCE.getMultiplicityAdjustment_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_ADJUSTMENT__MIN = eINSTANCE.getMultiplicityAdjustment_Min();
+
+    /**
+     * The meta object literal for the '<em><b>Upper Bounded</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_ADJUSTMENT__UPPER_BOUNDED = eINSTANCE.getMultiplicityAdjustment_UpperBounded();
+
+    /**
+     * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_ADJUSTMENT__MAX = eINSTANCE.getMultiplicityAdjustment_Max();
+
+    /**
      * The meta object literal for the '{@link xgen.application.impl.RuleReplacementImpl <em>Rule Replacement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -638,6 +865,14 @@ public interface ApplicationPackage extends EPackage
      * @generated
      */
     EReference APPLICATION__RULE_REPLACEMENTS = eINSTANCE.getApplication_RuleReplacements();
+
+    /**
+     * The meta object literal for the '<em><b>Multiplicity Adjustments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference APPLICATION__MULTIPLICITY_ADJUSTMENTS = eINSTANCE.getApplication_MultiplicityAdjustments();
 
   }
 

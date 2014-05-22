@@ -3,6 +3,7 @@
 package xgen.application;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.xtext.Grammar;
 
 /**
@@ -18,6 +19,7 @@ import org.eclipse.xtext.Grammar;
  *   <li>{@link xgen.application.Application#getMax <em>Max</em>}</li>
  *   <li>{@link xgen.application.Application#getConstructReplacements <em>Construct Replacements</em>}</li>
  *   <li>{@link xgen.application.Application#getRuleReplacements <em>Rule Replacements</em>}</li>
+ *   <li>{@link xgen.application.Application#getMultiplicityAdjustments <em>Multiplicity Adjustments</em>}</li>
  * </ul>
  * </p>
  *
@@ -136,5 +138,21 @@ public interface Application extends Apply
    * @generated
    */
   EList<RuleReplacement> getRuleReplacements();
+
+  /**
+   * Returns the value of the '<em><b>Multiplicity Adjustments</b></em>' containment reference list.
+   * The list contents are of type {@link xgen.application.MultiplicityAdjustment}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Multiplicity Adjustments</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Multiplicity Adjustments</em>' containment reference list.
+   * @see xgen.application.ApplicationPackage#getApplication_MultiplicityAdjustments()
+   * @model containment="true"
+   * @generated
+   */
+  EList<MultiplicityAdjustment> getMultiplicityAdjustments();
 
 } // Application

@@ -7,7 +7,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.xtext.XtextPackage;
 
 import xgen.application.Application;
@@ -16,7 +18,9 @@ import xgen.application.ApplicationPackage;
 import xgen.application.Apply;
 import xgen.application.ConstructReplacement;
 import xgen.application.Model;
+import xgen.application.MultiplicityAdjustment;
 import xgen.application.RuleReplacement;
+
 import xgen.grammar.GrammarPackage;
 
 /**
@@ -47,6 +51,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * @generated
    */
   private EClass constructReplacementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityAdjustmentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -224,6 +235,76 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMultiplicityAdjustment()
+  {
+    return multiplicityAdjustmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiplicityAdjustment_Positioned()
+  {
+    return (EAttribute)multiplicityAdjustmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiplicityAdjustment_Position()
+  {
+    return (EAttribute)multiplicityAdjustmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicityAdjustment_Target()
+  {
+    return (EReference)multiplicityAdjustmentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiplicityAdjustment_Min()
+  {
+    return (EAttribute)multiplicityAdjustmentEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiplicityAdjustment_UpperBounded()
+  {
+    return (EAttribute)multiplicityAdjustmentEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiplicityAdjustment_Max()
+  {
+    return (EAttribute)multiplicityAdjustmentEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRuleReplacement()
   {
     return ruleReplacementEClass;
@@ -314,6 +395,16 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getApplication_MultiplicityAdjustments()
+  {
+    return (EReference)applicationEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ApplicationFactory getApplicationFactory()
   {
     return (ApplicationFactory)getEFactoryInstance();
@@ -351,6 +442,14 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     createEReference(constructReplacementEClass, CONSTRUCT_REPLACEMENT__TARGET);
     createEReference(constructReplacementEClass, CONSTRUCT_REPLACEMENT__REPLACEMENT);
 
+    multiplicityAdjustmentEClass = createEClass(MULTIPLICITY_ADJUSTMENT);
+    createEAttribute(multiplicityAdjustmentEClass, MULTIPLICITY_ADJUSTMENT__POSITIONED);
+    createEAttribute(multiplicityAdjustmentEClass, MULTIPLICITY_ADJUSTMENT__POSITION);
+    createEReference(multiplicityAdjustmentEClass, MULTIPLICITY_ADJUSTMENT__TARGET);
+    createEAttribute(multiplicityAdjustmentEClass, MULTIPLICITY_ADJUSTMENT__MIN);
+    createEAttribute(multiplicityAdjustmentEClass, MULTIPLICITY_ADJUSTMENT__UPPER_BOUNDED);
+    createEAttribute(multiplicityAdjustmentEClass, MULTIPLICITY_ADJUSTMENT__MAX);
+
     ruleReplacementEClass = createEClass(RULE_REPLACEMENT);
     createEReference(ruleReplacementEClass, RULE_REPLACEMENT__TARGET);
     createEReference(ruleReplacementEClass, RULE_REPLACEMENT__REPLACEMENT);
@@ -361,6 +460,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     createEAttribute(applicationEClass, APPLICATION__MAX);
     createEReference(applicationEClass, APPLICATION__CONSTRUCT_REPLACEMENTS);
     createEReference(applicationEClass, APPLICATION__RULE_REPLACEMENTS);
+    createEReference(applicationEClass, APPLICATION__MULTIPLICITY_ADJUSTMENTS);
   }
 
   /**
@@ -412,6 +512,14 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     initEReference(getConstructReplacement_Target(), theXtextPackage.getAbstractRule(), null, "target", null, 0, 1, ConstructReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstructReplacement_Replacement(), theGrammarPackage.getConstruct(), null, "replacement", null, 0, 1, ConstructReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(multiplicityAdjustmentEClass, MultiplicityAdjustment.class, "MultiplicityAdjustment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiplicityAdjustment_Positioned(), theEcorePackage.getEBoolean(), "positioned", null, 0, 1, MultiplicityAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiplicityAdjustment_Position(), theEcorePackage.getEInt(), "position", null, 0, 1, MultiplicityAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicityAdjustment_Target(), theXtextPackage.getAbstractRule(), null, "target", null, 0, 1, MultiplicityAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiplicityAdjustment_Min(), theEcorePackage.getEInt(), "min", null, 0, 1, MultiplicityAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiplicityAdjustment_UpperBounded(), theEcorePackage.getEBoolean(), "upperBounded", null, 0, 1, MultiplicityAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiplicityAdjustment_Max(), theEcorePackage.getEInt(), "max", null, 0, 1, MultiplicityAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(ruleReplacementEClass, RuleReplacement.class, "RuleReplacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRuleReplacement_Target(), theXtextPackage.getAbstractRule(), null, "target", null, 0, 1, RuleReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRuleReplacement_Replacement(), theGrammarPackage.getConstruct(), null, "replacement", null, 0, 1, RuleReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -422,6 +530,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     initEAttribute(getApplication_Max(), theEcorePackage.getEInt(), "max", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getApplication_ConstructReplacements(), this.getConstructReplacement(), null, "constructReplacements", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getApplication_RuleReplacements(), this.getRuleReplacement(), null, "ruleReplacements", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApplication_MultiplicityAdjustments(), this.getMultiplicityAdjustment(), null, "multiplicityAdjustments", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

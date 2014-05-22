@@ -15,6 +15,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="replacement" eType="ecore:EClass ../../../xgen/src/xgen/grammar/Grammar.ecore#//Construct"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityAdjustment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="positioned" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBounded" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuleReplacement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="replacement" eType="ecore:EClass ../../../xgen/src/xgen/grammar/Grammar.ecore#//Construct"
@@ -28,5 +36,7 @@
         upperBound="-1" eType="#//ConstructReplacement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ruleReplacements" upperBound="-1"
         eType="#//RuleReplacement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicityAdjustments"
+        upperBound="-1" eType="#//MultiplicityAdjustment" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

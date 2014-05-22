@@ -5,16 +5,12 @@ package xgen.application.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import xgen.application.Application;
-import xgen.application.ApplicationFactory;
-import xgen.application.ApplicationPackage;
-import xgen.application.Apply;
-import xgen.application.ConstructReplacement;
-import xgen.application.Model;
-import xgen.application.RuleReplacement;
+import xgen.application.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,6 +67,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
       case ApplicationPackage.MODEL: return createModel();
       case ApplicationPackage.APPLY: return createApply();
       case ApplicationPackage.CONSTRUCT_REPLACEMENT: return createConstructReplacement();
+      case ApplicationPackage.MULTIPLICITY_ADJUSTMENT: return createMultiplicityAdjustment();
       case ApplicationPackage.RULE_REPLACEMENT: return createRuleReplacement();
       case ApplicationPackage.APPLICATION: return createApplication();
       default:
@@ -109,6 +106,17 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
   {
     ConstructReplacementImpl constructReplacement = new ConstructReplacementImpl();
     return constructReplacement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiplicityAdjustment createMultiplicityAdjustment()
+  {
+    MultiplicityAdjustmentImpl multiplicityAdjustment = new MultiplicityAdjustmentImpl();
+    return multiplicityAdjustment;
   }
 
   /**

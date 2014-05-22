@@ -6,9 +6,9 @@ package xgen.ui;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
-import xgen.ui.internal.ApplicationActivator;
-
 import com.google.inject.Injector;
+
+import xgen.ui.internal.ApplicationActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

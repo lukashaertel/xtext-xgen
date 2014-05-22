@@ -6,17 +6,23 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.xtext.Grammar;
 
 import xgen.application.Application;
 import xgen.application.ApplicationPackage;
 import xgen.application.ConstructReplacement;
+import xgen.application.MultiplicityAdjustment;
 import xgen.application.RuleReplacement;
 
 /**
@@ -31,6 +37,7 @@ import xgen.application.RuleReplacement;
  *   <li>{@link xgen.application.impl.ApplicationImpl#getMax <em>Max</em>}</li>
  *   <li>{@link xgen.application.impl.ApplicationImpl#getConstructReplacements <em>Construct Replacements</em>}</li>
  *   <li>{@link xgen.application.impl.ApplicationImpl#getRuleReplacements <em>Rule Replacements</em>}</li>
+ *   <li>{@link xgen.application.impl.ApplicationImpl#getMultiplicityAdjustments <em>Multiplicity Adjustments</em>}</li>
  * </ul>
  * </p>
  *
@@ -107,6 +114,16 @@ public class ApplicationImpl extends ApplyImpl implements Application
    * @ordered
    */
   protected EList<RuleReplacement> ruleReplacements;
+
+  /**
+   * The cached value of the '{@link #getMultiplicityAdjustments() <em>Multiplicity Adjustments</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMultiplicityAdjustments()
+   * @generated
+   * @ordered
+   */
+  protected EList<MultiplicityAdjustment> multiplicityAdjustments;
 
   /**
    * <!-- begin-user-doc -->
@@ -251,6 +268,20 @@ public class ApplicationImpl extends ApplyImpl implements Application
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<MultiplicityAdjustment> getMultiplicityAdjustments()
+  {
+    if (multiplicityAdjustments == null)
+    {
+      multiplicityAdjustments = new EObjectContainmentEList<MultiplicityAdjustment>(MultiplicityAdjustment.class, this, ApplicationPackage.APPLICATION__MULTIPLICITY_ADJUSTMENTS);
+    }
+    return multiplicityAdjustments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -260,6 +291,8 @@ public class ApplicationImpl extends ApplyImpl implements Application
         return ((InternalEList<?>)getConstructReplacements()).basicRemove(otherEnd, msgs);
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         return ((InternalEList<?>)getRuleReplacements()).basicRemove(otherEnd, msgs);
+      case ApplicationPackage.APPLICATION__MULTIPLICITY_ADJUSTMENTS:
+        return ((InternalEList<?>)getMultiplicityAdjustments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -285,6 +318,8 @@ public class ApplicationImpl extends ApplyImpl implements Application
         return getConstructReplacements();
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         return getRuleReplacements();
+      case ApplicationPackage.APPLICATION__MULTIPLICITY_ADJUSTMENTS:
+        return getMultiplicityAdjustments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -317,6 +352,10 @@ public class ApplicationImpl extends ApplyImpl implements Application
         getRuleReplacements().clear();
         getRuleReplacements().addAll((Collection<? extends RuleReplacement>)newValue);
         return;
+      case ApplicationPackage.APPLICATION__MULTIPLICITY_ADJUSTMENTS:
+        getMultiplicityAdjustments().clear();
+        getMultiplicityAdjustments().addAll((Collection<? extends MultiplicityAdjustment>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -346,6 +385,9 @@ public class ApplicationImpl extends ApplyImpl implements Application
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         getRuleReplacements().clear();
         return;
+      case ApplicationPackage.APPLICATION__MULTIPLICITY_ADJUSTMENTS:
+        getMultiplicityAdjustments().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -370,6 +412,8 @@ public class ApplicationImpl extends ApplyImpl implements Application
         return constructReplacements != null && !constructReplacements.isEmpty();
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         return ruleReplacements != null && !ruleReplacements.isEmpty();
+      case ApplicationPackage.APPLICATION__MULTIPLICITY_ADJUSTMENTS:
+        return multiplicityAdjustments != null && !multiplicityAdjustments.isEmpty();
     }
     return super.eIsSet(featureID);
   }

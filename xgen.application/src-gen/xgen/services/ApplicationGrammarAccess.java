@@ -3,24 +3,16 @@
 */
 package xgen.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import xgen.services.GrammarGrammarAccess;
 
 @Singleton
 public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
@@ -63,15 +55,17 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConstructReplacementsConstructReplacementParserRuleCall_7_1_0_0 = (RuleCall)cConstructReplacementsAssignment_7_1_0.eContents().get(0);
 		private final Assignment cRuleReplacementsAssignment_7_1_1 = (Assignment)cAlternatives_7_1.eContents().get(1);
 		private final RuleCall cRuleReplacementsRuleReplacementParserRuleCall_7_1_1_0 = (RuleCall)cRuleReplacementsAssignment_7_1_1.eContents().get(0);
+		private final Assignment cMultiplicityAdjustmentsAssignment_7_1_2 = (Assignment)cAlternatives_7_1.eContents().get(2);
+		private final RuleCall cMultiplicityAdjustmentsMultiplicityAdjustmentParserRuleCall_7_1_2_0 = (RuleCall)cMultiplicityAdjustmentsAssignment_7_1_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
 		
 		//Apply:
 		//	{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (constructReplacements+=ConstructReplacement
-		//	| ruleReplacements+=RuleReplacement)* "}")?;
+		//	| ruleReplacements+=RuleReplacement | multiplicityAdjustments+=MultiplicityAdjustment)* "}")?;
 		public ParserRule getRule() { return rule; }
 
 		//{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (constructReplacements+=ConstructReplacement |
-		//ruleReplacements+=RuleReplacement)* "}")?
+		//ruleReplacements+=RuleReplacement | multiplicityAdjustments+=MultiplicityAdjustment)* "}")?
 		public Group getGroup() { return cGroup; }
 
 		//{Application}
@@ -107,13 +101,15 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 
-		//("{" (constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement)* "}")?
+		//("{" (constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement |
+		//multiplicityAdjustments+=MultiplicityAdjustment)* "}")?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_7_0() { return cLeftCurlyBracketKeyword_7_0; }
 
-		//(constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement)*
+		//(constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement |
+		//multiplicityAdjustments+=MultiplicityAdjustment)*
 		public Alternatives getAlternatives_7_1() { return cAlternatives_7_1; }
 
 		//constructReplacements+=ConstructReplacement
@@ -127,6 +123,12 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 
 		//RuleReplacement
 		public RuleCall getRuleReplacementsRuleReplacementParserRuleCall_7_1_1_0() { return cRuleReplacementsRuleReplacementParserRuleCall_7_1_1_0; }
+
+		//multiplicityAdjustments+=MultiplicityAdjustment
+		public Assignment getMultiplicityAdjustmentsAssignment_7_1_2() { return cMultiplicityAdjustmentsAssignment_7_1_2; }
+
+		//MultiplicityAdjustment
+		public RuleCall getMultiplicityAdjustmentsMultiplicityAdjustmentParserRuleCall_7_1_2_0() { return cMultiplicityAdjustmentsMultiplicityAdjustmentParserRuleCall_7_1_2_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7_2() { return cRightCurlyBracketKeyword_7_2; }
@@ -206,6 +208,104 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getReplacementConstruct0ParserRuleCall_6_0() { return cReplacementConstruct0ParserRuleCall_6_0; }
 	}
 
+	public class MultiplicityAdjustmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MultiplicityAdjustment");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAdjustKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cMultiplicityKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cPositionedAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final Keyword cPositionedSolidusKeyword_2_0_0 = (Keyword)cPositionedAssignment_2_0.eContents().get(0);
+		private final Assignment cPositionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cPositionINTTerminalRuleCall_2_1_0 = (RuleCall)cPositionAssignment_2_1.eContents().get(0);
+		private final Keyword cInKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cTargetAbstractRuleCrossReference_4_0 = (CrossReference)cTargetAssignment_4.eContents().get(0);
+		private final RuleCall cTargetAbstractRuleIDTerminalRuleCall_4_0_1 = (RuleCall)cTargetAbstractRuleCrossReference_4_0.eContents().get(1);
+		private final Keyword cWithKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMinAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMinINTTerminalRuleCall_7_0 = (RuleCall)cMinAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cUpperBoundedAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final Keyword cUpperBoundedCommaKeyword_8_0_0 = (Keyword)cUpperBoundedAssignment_8_0.eContents().get(0);
+		private final Assignment cMaxAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cMaxINTTerminalRuleCall_8_1_0 = (RuleCall)cMaxAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//MultiplicityAdjustment:
+		//	"adjust" "multiplicity" (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with" "{" min=INT
+		//	(upperBounded?="," max=INT)? "}";
+		public ParserRule getRule() { return rule; }
+
+		//"adjust" "multiplicity" (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with" "{" min=INT
+		//(upperBounded?="," max=INT)? "}"
+		public Group getGroup() { return cGroup; }
+
+		//"adjust"
+		public Keyword getAdjustKeyword_0() { return cAdjustKeyword_0; }
+
+		//"multiplicity"
+		public Keyword getMultiplicityKeyword_1() { return cMultiplicityKeyword_1; }
+
+		//(positioned?="/" position=INT)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//positioned?="/"
+		public Assignment getPositionedAssignment_2_0() { return cPositionedAssignment_2_0; }
+
+		//"/"
+		public Keyword getPositionedSolidusKeyword_2_0_0() { return cPositionedSolidusKeyword_2_0_0; }
+
+		//position=INT
+		public Assignment getPositionAssignment_2_1() { return cPositionAssignment_2_1; }
+
+		//INT
+		public RuleCall getPositionINTTerminalRuleCall_2_1_0() { return cPositionINTTerminalRuleCall_2_1_0; }
+
+		//"in"
+		public Keyword getInKeyword_3() { return cInKeyword_3; }
+
+		//target=[xt::AbstractRule]
+		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
+
+		//[xt::AbstractRule]
+		public CrossReference getTargetAbstractRuleCrossReference_4_0() { return cTargetAbstractRuleCrossReference_4_0; }
+
+		//ID
+		public RuleCall getTargetAbstractRuleIDTerminalRuleCall_4_0_1() { return cTargetAbstractRuleIDTerminalRuleCall_4_0_1; }
+
+		//"with"
+		public Keyword getWithKeyword_5() { return cWithKeyword_5; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
+
+		//min=INT
+		public Assignment getMinAssignment_7() { return cMinAssignment_7; }
+
+		//INT
+		public RuleCall getMinINTTerminalRuleCall_7_0() { return cMinINTTerminalRuleCall_7_0; }
+
+		//(upperBounded?="," max=INT)?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//upperBounded?=","
+		public Assignment getUpperBoundedAssignment_8_0() { return cUpperBoundedAssignment_8_0; }
+
+		//","
+		public Keyword getUpperBoundedCommaKeyword_8_0_0() { return cUpperBoundedCommaKeyword_8_0_0; }
+
+		//max=INT
+		public Assignment getMaxAssignment_8_1() { return cMaxAssignment_8_1; }
+
+		//INT
+		public RuleCall getMaxINTTerminalRuleCall_8_1_0() { return cMaxINTTerminalRuleCall_8_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+
 	public class RuleReplacementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RuleReplacement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -278,6 +378,7 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 	private ModelElements pModel;
 	private ApplyElements pApply;
 	private ConstructReplacementElements pConstructReplacement;
+	private MultiplicityAdjustmentElements pMultiplicityAdjustment;
 	private RuleReplacementElements pRuleReplacement;
 	private QIDElements pQID;
 	
@@ -331,7 +432,7 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Apply:
 	//	{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (constructReplacements+=ConstructReplacement
-	//	| ruleReplacements+=RuleReplacement)* "}")?;
+	//	| ruleReplacements+=RuleReplacement | multiplicityAdjustments+=MultiplicityAdjustment)* "}")?;
 	public ApplyElements getApplyAccess() {
 		return (pApply != null) ? pApply : (pApply = new ApplyElements());
 	}
@@ -349,6 +450,17 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getConstructReplacementRule() {
 		return getConstructReplacementAccess().getRule();
+	}
+
+	//MultiplicityAdjustment:
+	//	"adjust" "multiplicity" (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with" "{" min=INT
+	//	(upperBounded?="," max=INT)? "}";
+	public MultiplicityAdjustmentElements getMultiplicityAdjustmentAccess() {
+		return (pMultiplicityAdjustment != null) ? pMultiplicityAdjustment : (pMultiplicityAdjustment = new MultiplicityAdjustmentElements());
+	}
+	
+	public ParserRule getMultiplicityAdjustmentRule() {
+		return getMultiplicityAdjustmentAccess().getRule();
 	}
 
 	//RuleReplacement:

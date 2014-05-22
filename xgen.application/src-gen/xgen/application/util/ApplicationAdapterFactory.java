@@ -4,15 +4,12 @@ package xgen.application.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
 
-import xgen.application.Application;
-import xgen.application.ApplicationPackage;
-import xgen.application.Apply;
-import xgen.application.ConstructReplacement;
-import xgen.application.Model;
-import xgen.application.RuleReplacement;
+import xgen.application.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,6 +90,11 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl
         return createConstructReplacementAdapter();
       }
       @Override
+      public Adapter caseMultiplicityAdjustment(MultiplicityAdjustment object)
+      {
+        return createMultiplicityAdjustmentAdapter();
+      }
+      @Override
       public Adapter caseRuleReplacement(RuleReplacement object)
       {
         return createRuleReplacementAdapter();
@@ -165,6 +167,21 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConstructReplacementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xgen.application.MultiplicityAdjustment <em>Multiplicity Adjustment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xgen.application.MultiplicityAdjustment
+   * @generated
+   */
+  public Adapter createMultiplicityAdjustmentAdapter()
   {
     return null;
   }

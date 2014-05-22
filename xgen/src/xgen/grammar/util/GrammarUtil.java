@@ -16,6 +16,7 @@ import xgen.grammar.Grammar;
 import xgen.grammar.GrammarFactory;
 import xgen.grammar.GrammarPackage;
 import xgen.grammar.Keyword;
+import xgen.grammar.Multiplicity;
 import xgen.grammar.NAry;
 import xgen.grammar.Terminal;
 import xgen.grammar.Unary;
@@ -77,6 +78,62 @@ public class GrammarUtil
 					if (!slotted || is.contains(p))
 						return t.apply(object);
 				}
+
+				// Delegates to default case
+				return null;
+			}
+
+			@Override
+			public Construct defaultCase(EObject object)
+			{
+				if (object instanceof Construct)
+					return (Construct) EcoreUtil.copy(object);
+
+				throw new UnsupportedOperationException();
+			}
+		}.doSwitch(c);
+	}
+
+	public static Construct adjustMultiplicity(Construct c, Function<Multiplicity, Multiplicity> t, boolean slotted, int... positions)
+	{
+		// Make positionset for quick testing
+		Set<Integer> is = Sets.newHashSet();
+
+		// Add all positions, for java primitive types sake
+		for (int p : positions)
+			is.add(p);
+
+		int[] a = { 0 };
+
+		return new GrammarSwitch<Construct>()
+		{
+			@Override
+			public Construct caseUnary(Unary object)
+			{
+				Unary c = EcoreUtil.copy(object);
+
+				c.setOperand(doSwitch(c.getOperand()));
+
+				return c;
+			}
+
+			@Override
+			public Construct caseNAry(NAry object)
+			{
+				NAry c = EcoreUtil.copy(object);
+
+				for (int i = 0; i < c.getOperands().size(); i++)
+					c.getOperands().set(i, doSwitch(c.getOperands().get(i)));
+
+				return c;
+			}
+
+			public Construct caseMultiplicity(Multiplicity object)
+			{
+				int p = a[0]++;
+
+				if (!slotted || is.contains(p))
+					return t.apply(object);
 
 				// Delegates to default case
 				return null;

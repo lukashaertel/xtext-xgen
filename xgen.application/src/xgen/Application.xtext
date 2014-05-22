@@ -10,13 +10,19 @@ Model:
 Apply:
 	{Application} target=[xt::Grammar|QID] '(' min=INT '..' max=INT ')'
 	('{'
-	(constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement)*
+	(constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement |
+	multiplicityAdjustments+=MultiplicityAdjustment)*
 	'}')?;
 
 ConstructReplacement:
 	'replace' selector=Construct0 (positioned?='/' position=INT)?
 	'in' target=[xt::AbstractRule]
 	'with' replacement=Construct0;
+
+MultiplicityAdjustment:
+	'adjust' 'multiplicity' (positioned?='/' position=INT)?
+	'in' target=[xt::AbstractRule]
+	'with' '{' min=INT (upperBounded?=',' max=INT)? '}';
 
 RuleReplacement:
 	'replace' target=[xt::AbstractRule]

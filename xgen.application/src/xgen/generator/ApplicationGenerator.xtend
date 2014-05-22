@@ -22,6 +22,7 @@ import xgen.postprocess.TransformOne
 import xgen.grammar.Reference
 import org.eclipse.emf.ecore.util.EcoreUtil
 import xgen.output.ApplicationOutput
+import static xgen.grammar.util.GrammarConstructor.*
 
 class ReplaceInitial extends TransformOne {
 
@@ -109,7 +110,7 @@ class ReplaceStateRef extends TransformAll {
 	}
 
 	override protected transform(Leaf it) {
-		if (value != "<state ref>")
+		if (value != "<state reference>")
 			return it
 
 		new Leaf(exchange.get(random.nextInt(exchange.size)))
@@ -126,17 +127,25 @@ class ApplicationGenerator implements IGenerator {
 	def getEffectiveGrammar(Application it) {
 		val g = GrammarConverter.fromXText(target)
 
-		for (r : ruleReplacements)
-			GrammarUtil.getDefinition(g, r.target.name).ifPresent[rhs = r.replacement]
+		for (rr : ruleReplacements)
+			GrammarUtil.getDefinition(g, rr.target.name).ifPresent[rhs = rr.replacement]
 
-		// Sort replacement by position descending so we don't mess up positions replacing prior candidates
-		val p = constructReplacements.sortBy[if(positioned) -position else 1]
+		// Sort by position descending so we don't mess up positions replacing prior candidates
+		val crs = constructReplacements.sortBy[if(positioned) -position else 1]
+		val mas = multiplicityAdjustments.sortBy[if(positioned) -position else 1]
 
-		for (c : p)
-			GrammarUtil.getDefinition(g, c.target.name).ifPresent [
-				rhs = GrammarUtil.selectTransform(rhs, [x|EcoreUtil.equals(c.selector, x)],
-					[x|EcoreUtil.copy(c.replacement)], c.positioned, c.position);
+		for (cs : crs)
+			GrammarUtil.getDefinition(g, cs.target.name).ifPresent [
+				rhs = GrammarUtil.selectTransform(rhs, [x|EcoreUtil.equals(cs.selector, x)],
+					[x|EcoreUtil.copy(cs.replacement)], cs.positioned, cs.position);
 			]
+			
+		for(ma : mas)
+			GrammarUtil.getDefinition(g, ma.target.name).ifPresent [
+				rhs = GrammarUtil.adjustMultiplicity(rhs, [x|multiplicity(x.operand, ma.min, ma.upperBounded, ma.max)],  ma.positioned, ma.position )
+			]
+		
+		
 		return g
 	}
 
@@ -148,15 +157,20 @@ class ApplicationGenerator implements IGenerator {
 		// Processor sequence
 		val t = Processor.compose(
 			// Replace one <initial> placeholder
-		new ReplaceInitial, 
+			new ReplaceInitial, 
+			
 			// Remove all remaining <initial> placeholders
-		new RemoveRemainingInitial,
+			new RemoveRemainingInitial,
+			
 			// Replace all <input value> positions with a set of values
 			new ReplaceInputValue,
+			
 			// Replace all <action value> positions with a set of values
 			new ReplaceActionValue,
+			
 			// Replace state names and store the defined names in an array list
 			new ReplaceStateName(s),
+			
 			// Replace all referenced names with the ones defined before this
 			new ReplaceStateRef(s))
 

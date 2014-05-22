@@ -2,15 +2,13 @@ package xgen.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.DFA;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
 import org.eclipse.xtext.parser.antlr.Lexer;
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalApplicationLexer extends Lexer {
@@ -31,7 +29,9 @@ public class InternalApplicationLexer extends Lexer {
     public static final int RULE_WS=10;
     public static final int T__26=26;
     public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
@@ -242,10 +242,11 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:20:7: ( '.' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:20:9: '.'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:20:7: ( 'adjust' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:20:9: 'adjust'
             {
-            match('.'); 
+            match("adjust"); 
+
 
             }
 
@@ -262,10 +263,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:21:7: ( 'lexical' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:21:9: 'lexical'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:21:7: ( 'multiplicity' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:21:9: 'multiplicity'
             {
-            match("lexical"); 
+            match("multiplicity"); 
 
 
             }
@@ -283,10 +284,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:22:7: ( ':' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:22:9: ':'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:22:7: ( ',' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:22:9: ','
             {
-            match(':'); 
+            match(','); 
 
             }
 
@@ -303,10 +304,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:23:7: ( ';' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:23:9: ';'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:23:7: ( '.' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:23:9: '.'
             {
-            match(';'); 
+            match('.'); 
 
             }
 
@@ -323,10 +324,11 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:24:7: ( '|' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:24:9: '|'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:24:7: ( 'lexical' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:24:9: 'lexical'
             {
-            match('|'); 
+            match("lexical"); 
+
 
             }
 
@@ -343,10 +345,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:25:7: ( '!' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:25:9: '!'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:25:7: ( ':' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:25:9: ':'
             {
-            match('!'); 
+            match(':'); 
 
             }
 
@@ -363,11 +365,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:26:7: ( '->' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:26:9: '->'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:26:7: ( ';' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:26:9: ';'
             {
-            match("->"); 
-
+            match(';'); 
 
             }
 
@@ -384,10 +385,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:27:7: ( ',' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:27:9: ','
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:27:7: ( '|' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:27:9: '|'
             {
-            match(','); 
+            match('|'); 
 
             }
 
@@ -399,15 +400,56 @@ public class InternalApplicationLexer extends Lexer {
     }
     // $ANTLR end "T__27"
 
+    // $ANTLR start "T__28"
+    public final void mT__28() throws RecognitionException {
+        try {
+            int _type = T__28;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:28:7: ( '!' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:28:9: '!'
+            {
+            match('!'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__28"
+
+    // $ANTLR start "T__29"
+    public final void mT__29() throws RecognitionException {
+        try {
+            int _type = T__29;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:29:7: ( '->' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:29:9: '->'
+            {
+            match("->"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__29"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1025:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1025:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1186:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1186:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1025:11: ( '^' )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1186:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -416,7 +458,7 @@ public class InternalApplicationLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1025:11: '^'
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1186:11: '^'
                     {
                     match('^'); 
 
@@ -434,7 +476,7 @@ public class InternalApplicationLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1025:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1186:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -483,10 +525,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1027:10: ( ( '0' .. '9' )+ )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1027:12: ( '0' .. '9' )+
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1188:10: ( ( '0' .. '9' )+ )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1188:12: ( '0' .. '9' )+
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1027:12: ( '0' .. '9' )+
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1188:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -500,7 +542,7 @@ public class InternalApplicationLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1027:13: '0' .. '9'
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1188:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -532,11 +574,11 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1029:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1029:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1190:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1190:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1029:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1190:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
             loop4:
             do {
                 int alt4=3;
@@ -552,7 +594,7 @@ public class InternalApplicationLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1029:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1190:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -568,7 +610,7 @@ public class InternalApplicationLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1029:65: ~ ( ( '\\\\' | '\"' ) )
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1190:65: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -605,11 +647,11 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = RULE_CHAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1031:11: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) ) '\\'' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1031:13: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) ) '\\''
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1192:11: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) ) '\\'' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1192:13: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) ) '\\''
             {
             match('\''); 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1031:18: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1192:18: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -627,7 +669,7 @@ public class InternalApplicationLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1031:19: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1192:19: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     {
                     match('\\'); 
                     if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -643,7 +685,7 @@ public class InternalApplicationLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1031:64: ~ ( ( '\\\\' | '\\'' ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1192:64: ~ ( ( '\\\\' | '\\'' ) )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -677,12 +719,12 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1033:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1033:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1194:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1194:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1033:24: ( options {greedy=false; } : . )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1194:24: ( options {greedy=false; } : . )*
             loop6:
             do {
                 int alt6=2;
@@ -707,7 +749,7 @@ public class InternalApplicationLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1033:52: .
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1194:52: .
             	    {
             	    matchAny(); 
 
@@ -737,12 +779,12 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -755,7 +797,7 @@ public class InternalApplicationLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -775,7 +817,7 @@ public class InternalApplicationLexer extends Lexer {
                 }
             } while (true);
 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:40: ( ( '\\r' )? '\\n' )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:40: ( ( '\\r' )? '\\n' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -784,9 +826,9 @@ public class InternalApplicationLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:41: ( '\\r' )? '\\n'
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:41: ( '\\r' )? '\\n'
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:41: ( '\\r' )?
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:41: ( '\\r' )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -795,7 +837,7 @@ public class InternalApplicationLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1035:41: '\\r'
+                            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1196:41: '\\r'
                             {
                             match('\r'); 
 
@@ -827,10 +869,10 @@ public class InternalApplicationLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1037:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1037:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1198:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1198:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1037:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1198:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -880,8 +922,8 @@ public class InternalApplicationLexer extends Lexer {
     // $ANTLR end "RULE_WS"
 
     public void mTokens() throws RecognitionException {
-        // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
-        int alt11=24;
+        // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
+        int alt11=26;
         alt11 = dfa11.predict(input);
         switch (alt11) {
             case 1 :
@@ -1004,49 +1046,63 @@ public class InternalApplicationLexer extends Lexer {
                 }
                 break;
             case 18 :
-                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:112: RULE_ID
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:112: T__28
+                {
+                mT__28(); 
+
+                }
+                break;
+            case 19 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:118: T__29
+                {
+                mT__29(); 
+
+                }
+                break;
+            case 20 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:124: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 19 :
-                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:120: RULE_INT
+            case 21 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:132: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 20 :
-                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:129: RULE_STRING
+            case 22 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:141: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 21 :
-                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:141: RULE_CHAR
+            case 23 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:153: RULE_CHAR
                 {
                 mRULE_CHAR(); 
 
                 }
                 break;
-            case 22 :
-                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:151: RULE_ML_COMMENT
+            case 24 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:163: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 23 :
-                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:167: RULE_SL_COMMENT
+            case 25 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:179: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 24 :
-                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:183: RULE_WS
+            case 26 :
+                // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1:195: RULE_WS
                 {
                 mRULE_WS(); 
 
@@ -1060,74 +1116,100 @@ public class InternalApplicationLexer extends Lexer {
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\2\uffff\1\27\3\uffff\1\21\1\33\3\21\15\uffff\1\21\3\uffff\1\40"+
-        "\3\21\1\uffff\3\21\1\47\2\21\1\uffff\3\21\1\55\1\56\2\uffff";
+        "\2\uffff\1\31\3\uffff\1\23\1\35\4\23\1\uffff\1\23\14\uffff\1\23"+
+        "\3\uffff\1\44\5\23\1\uffff\5\23\1\57\4\23\1\uffff\4\23\1\70\2\23"+
+        "\1\73\1\uffff\1\23\1\75\1\uffff\1\23\1\uffff\3\23\1\102\1\uffff";
     static final String DFA11_eofS =
-        "\57\uffff";
+        "\103\uffff";
     static final String DFA11_minS =
-        "\1\11\1\uffff\1\56\3\uffff\1\145\1\52\1\156\1\151\1\145\15\uffff"+
-        "\1\160\3\uffff\1\60\1\164\1\170\1\154\1\uffff\1\150\1\151\1\141"+
-        "\1\60\2\143\1\uffff\1\141\1\145\1\154\2\60\2\uffff";
+        "\1\11\1\uffff\1\56\3\uffff\1\145\1\52\1\156\1\151\1\144\1\165\1"+
+        "\uffff\1\145\14\uffff\1\160\3\uffff\1\60\1\164\1\152\1\154\1\170"+
+        "\1\154\1\uffff\1\150\1\165\1\164\1\151\1\141\1\60\1\163\1\151\2"+
+        "\143\1\uffff\1\164\1\160\1\141\1\145\1\60\2\154\1\60\1\uffff\1\151"+
+        "\1\60\1\uffff\1\143\1\uffff\1\151\1\164\1\171\1\60\1\uffff";
     static final String DFA11_maxS =
-        "\1\175\1\uffff\1\56\3\uffff\1\145\1\57\1\156\1\151\1\145\15\uffff"+
-        "\1\160\3\uffff\1\172\1\164\1\170\1\154\1\uffff\1\150\1\151\1\141"+
-        "\1\172\2\143\1\uffff\1\141\1\145\1\154\2\172\2\uffff";
+        "\1\175\1\uffff\1\56\3\uffff\1\145\1\57\1\156\1\151\1\144\1\165"+
+        "\1\uffff\1\145\14\uffff\1\160\3\uffff\1\172\1\164\1\152\1\154\1"+
+        "\170\1\154\1\uffff\1\150\1\165\1\164\1\151\1\141\1\172\1\163\1\151"+
+        "\2\143\1\uffff\1\164\1\160\1\141\1\145\1\172\2\154\1\172\1\uffff"+
+        "\1\151\1\172\1\uffff\1\143\1\uffff\1\151\1\164\1\171\1\172\1\uffff";
     static final String DFA11_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\1\4\1\5\5\uffff\1\14\1\15\1\16\1\17\1"+
-        "\20\1\21\1\22\1\23\1\24\1\25\1\30\1\2\1\12\1\uffff\1\26\1\27\1\7"+
-        "\4\uffff\1\10\6\uffff\1\11\5\uffff\1\6\1\13";
+        "\1\uffff\1\1\1\uffff\1\3\1\4\1\5\6\uffff\1\14\1\uffff\1\17\1\20"+
+        "\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\32\1\2\1\15\1\uffff\1\30\1"+
+        "\31\1\7\6\uffff\1\10\12\uffff\1\11\10\uffff\1\12\2\uffff\1\6\1\uffff"+
+        "\1\16\4\uffff\1\13";
     static final String DFA11_specialS =
-        "\57\uffff}>";
+        "\103\uffff}>";
     static final String[] DFA11_transitionS = {
-            "\2\25\2\uffff\1\25\22\uffff\1\25\1\16\1\23\4\uffff\1\24\1\1"+
-            "\1\3\2\uffff\1\20\1\17\1\2\1\7\12\22\1\13\1\14\5\uffff\32\21"+
-            "\3\uffff\2\21\1\uffff\10\21\1\10\2\21\1\12\5\21\1\6\4\21\1\11"+
-            "\3\21\1\4\1\15\1\5",
-            "",
-            "\1\26",
-            "",
-            "",
+            "\2\27\2\uffff\1\27\22\uffff\1\27\1\21\1\25\4\uffff\1\26\1\1"+
+            "\1\3\2\uffff\1\14\1\22\1\2\1\7\12\24\1\16\1\17\5\uffff\32\23"+
+            "\3\uffff\2\23\1\uffff\1\12\7\23\1\10\2\23\1\15\1\13\4\23\1\6"+
+            "\4\23\1\11\3\23\1\4\1\20\1\5",
             "",
             "\1\30",
-            "\1\31\4\uffff\1\32",
-            "\1\34",
-            "\1\35",
+            "",
+            "",
+            "",
+            "\1\32",
+            "\1\33\4\uffff\1\34",
             "\1\36",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\37",
-            "",
-            "",
-            "",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\40",
             "\1\41",
+            "",
             "\1\42",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\43",
             "",
-            "\1\44",
+            "",
+            "",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
             "\1\45",
             "\1\46",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\47",
             "\1\50",
             "\1\51",
             "",
             "\1\52",
             "\1\53",
             "\1\54",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\55",
+            "\1\56",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\60",
+            "\1\61",
+            "\1\62",
+            "\1\63",
             "",
+            "\1\64",
+            "\1\65",
+            "\1\66",
+            "\1\67",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\71",
+            "\1\72",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "\1\74",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "",
+            "\1\76",
+            "",
+            "\1\77",
+            "\1\100",
+            "\1\101",
+            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
             ""
     };
 
@@ -1161,7 +1243,7 @@ public class InternalApplicationLexer extends Lexer {
             this.transition = DFA11_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_ID | RULE_INT | RULE_STRING | RULE_CHAR | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
         }
     }
  
