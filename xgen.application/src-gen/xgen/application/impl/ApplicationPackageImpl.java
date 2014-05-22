@@ -7,19 +7,16 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.xtext.XtextPackage;
 
 import xgen.application.Application;
 import xgen.application.ApplicationFactory;
 import xgen.application.ApplicationPackage;
 import xgen.application.Apply;
-import xgen.application.CallReplacement;
+import xgen.application.ConstructReplacement;
 import xgen.application.Model;
 import xgen.application.RuleReplacement;
-
 import xgen.grammar.GrammarPackage;
 
 /**
@@ -49,7 +46,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass callReplacementEClass = null;
+  private EClass constructReplacementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,9 +164,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCallReplacement()
+  public EClass getConstructReplacement()
   {
-    return callReplacementEClass;
+    return constructReplacementEClass;
   }
 
   /**
@@ -177,9 +174,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCallReplacement_Selector()
+  public EReference getConstructReplacement_Selector()
   {
-    return (EReference)callReplacementEClass.getEStructuralFeatures().get(0);
+    return (EReference)constructReplacementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -187,9 +184,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCallReplacement_Positioned()
+  public EAttribute getConstructReplacement_Positioned()
   {
-    return (EAttribute)callReplacementEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)constructReplacementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -197,9 +194,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCallReplacement_Position()
+  public EAttribute getConstructReplacement_Position()
   {
-    return (EAttribute)callReplacementEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)constructReplacementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -207,9 +204,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCallReplacement_Target()
+  public EReference getConstructReplacement_Target()
   {
-    return (EReference)callReplacementEClass.getEStructuralFeatures().get(3);
+    return (EReference)constructReplacementEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -217,9 +214,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCallReplacement_Replacement()
+  public EReference getConstructReplacement_Replacement()
   {
-    return (EReference)callReplacementEClass.getEStructuralFeatures().get(4);
+    return (EReference)constructReplacementEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -297,7 +294,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getApplication_CallReplacements()
+  public EReference getApplication_ConstructReplacements()
   {
     return (EReference)applicationEClass.getEStructuralFeatures().get(3);
   }
@@ -347,12 +344,12 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
     applyEClass = createEClass(APPLY);
 
-    callReplacementEClass = createEClass(CALL_REPLACEMENT);
-    createEReference(callReplacementEClass, CALL_REPLACEMENT__SELECTOR);
-    createEAttribute(callReplacementEClass, CALL_REPLACEMENT__POSITIONED);
-    createEAttribute(callReplacementEClass, CALL_REPLACEMENT__POSITION);
-    createEReference(callReplacementEClass, CALL_REPLACEMENT__TARGET);
-    createEReference(callReplacementEClass, CALL_REPLACEMENT__REPLACEMENT);
+    constructReplacementEClass = createEClass(CONSTRUCT_REPLACEMENT);
+    createEReference(constructReplacementEClass, CONSTRUCT_REPLACEMENT__SELECTOR);
+    createEAttribute(constructReplacementEClass, CONSTRUCT_REPLACEMENT__POSITIONED);
+    createEAttribute(constructReplacementEClass, CONSTRUCT_REPLACEMENT__POSITION);
+    createEReference(constructReplacementEClass, CONSTRUCT_REPLACEMENT__TARGET);
+    createEReference(constructReplacementEClass, CONSTRUCT_REPLACEMENT__REPLACEMENT);
 
     ruleReplacementEClass = createEClass(RULE_REPLACEMENT);
     createEReference(ruleReplacementEClass, RULE_REPLACEMENT__TARGET);
@@ -362,7 +359,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     createEReference(applicationEClass, APPLICATION__TARGET);
     createEAttribute(applicationEClass, APPLICATION__MIN);
     createEAttribute(applicationEClass, APPLICATION__MAX);
-    createEReference(applicationEClass, APPLICATION__CALL_REPLACEMENTS);
+    createEReference(applicationEClass, APPLICATION__CONSTRUCT_REPLACEMENTS);
     createEReference(applicationEClass, APPLICATION__RULE_REPLACEMENTS);
   }
 
@@ -391,9 +388,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    XtextPackage theXtextPackage = (XtextPackage)EPackage.Registry.INSTANCE.getEPackage(XtextPackage.eNS_URI);
-    EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
     GrammarPackage theGrammarPackage = (GrammarPackage)EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI);
+    EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+    XtextPackage theXtextPackage = (XtextPackage)EPackage.Registry.INSTANCE.getEPackage(XtextPackage.eNS_URI);
 
     // Create type parameters
 
@@ -408,12 +405,12 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
     initEClass(applyEClass, Apply.class, "Apply", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(callReplacementEClass, CallReplacement.class, "CallReplacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCallReplacement_Selector(), theXtextPackage.getAbstractRule(), null, "selector", null, 0, 1, CallReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCallReplacement_Positioned(), theEcorePackage.getEBoolean(), "positioned", null, 0, 1, CallReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCallReplacement_Position(), theEcorePackage.getEInt(), "position", null, 0, 1, CallReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCallReplacement_Target(), theXtextPackage.getAbstractRule(), null, "target", null, 0, 1, CallReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCallReplacement_Replacement(), theGrammarPackage.getConstruct(), null, "replacement", null, 0, 1, CallReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(constructReplacementEClass, ConstructReplacement.class, "ConstructReplacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConstructReplacement_Selector(), theGrammarPackage.getConstruct(), null, "selector", null, 0, 1, ConstructReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConstructReplacement_Positioned(), theEcorePackage.getEBoolean(), "positioned", null, 0, 1, ConstructReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConstructReplacement_Position(), theEcorePackage.getEInt(), "position", null, 0, 1, ConstructReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstructReplacement_Target(), theXtextPackage.getAbstractRule(), null, "target", null, 0, 1, ConstructReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstructReplacement_Replacement(), theGrammarPackage.getConstruct(), null, "replacement", null, 0, 1, ConstructReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleReplacementEClass, RuleReplacement.class, "RuleReplacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRuleReplacement_Target(), theXtextPackage.getAbstractRule(), null, "target", null, 0, 1, RuleReplacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -423,7 +420,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
     initEReference(getApplication_Target(), theXtextPackage.getGrammar(), null, "target", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getApplication_Min(), theEcorePackage.getEInt(), "min", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getApplication_Max(), theEcorePackage.getEInt(), "max", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getApplication_CallReplacements(), this.getCallReplacement(), null, "callReplacements", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApplication_ConstructReplacements(), this.getConstructReplacement(), null, "constructReplacements", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getApplication_RuleReplacements(), this.getRuleReplacement(), null, "ruleReplacements", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

@@ -109,7 +109,10 @@ public class ReferenceImpl extends TerminalImpl implements Reference {
 	public Definition basicGetResolved()
 	{
 		Grammar g = EcoreUtil2.getContainerOfType(this, Grammar.class);
-		
+
+		if (g == null)
+			return null;
+
 		for (Definition d : g.getDefinitions())
 			if (Objects.equal(getTarget(), d.getName()))
 				return d;

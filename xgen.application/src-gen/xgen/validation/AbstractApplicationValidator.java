@@ -5,6 +5,7 @@ package xgen.validation;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.emf.ecore.EPackage;
 
 public class AbstractApplicationValidator extends xgen.validation.GrammarValidator {

@@ -6,8 +6,9 @@
         eType="#//Apply" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Apply"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CallReplacement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructReplacement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="ecore:EClass ../../../xgen/src/xgen/grammar/Grammar.ecore#//Construct"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="positioned" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
@@ -23,8 +24,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../../org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//Grammar"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType ../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="callReplacements" upperBound="-1"
-        eType="#//CallReplacement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructReplacements"
+        upperBound="-1" eType="#//ConstructReplacement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ruleReplacements" upperBound="-1"
         eType="#//RuleReplacement" containment="true"/>
   </eClassifiers>

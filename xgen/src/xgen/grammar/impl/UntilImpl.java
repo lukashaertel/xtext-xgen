@@ -16,7 +16,7 @@ import xgen.grammar.Until;
  *
  * @generated
  */
-public class UntilImpl extends UnaryImpl implements Until
+public class UntilImpl extends PrefixImpl implements Until
 {
 	/**
 	 * <!-- begin-user-doc -->

@@ -21,7 +21,7 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Multiplicity extends Unary {
+public interface Multiplicity extends Suffix {
 	/**
 	 * Returns the value of the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->

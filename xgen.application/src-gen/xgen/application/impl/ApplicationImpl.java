@@ -6,22 +6,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.xtext.Grammar;
 
 import xgen.application.Application;
 import xgen.application.ApplicationPackage;
-import xgen.application.CallReplacement;
+import xgen.application.ConstructReplacement;
 import xgen.application.RuleReplacement;
 
 /**
@@ -34,7 +29,7 @@ import xgen.application.RuleReplacement;
  *   <li>{@link xgen.application.impl.ApplicationImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link xgen.application.impl.ApplicationImpl#getMin <em>Min</em>}</li>
  *   <li>{@link xgen.application.impl.ApplicationImpl#getMax <em>Max</em>}</li>
- *   <li>{@link xgen.application.impl.ApplicationImpl#getCallReplacements <em>Call Replacements</em>}</li>
+ *   <li>{@link xgen.application.impl.ApplicationImpl#getConstructReplacements <em>Construct Replacements</em>}</li>
  *   <li>{@link xgen.application.impl.ApplicationImpl#getRuleReplacements <em>Rule Replacements</em>}</li>
  * </ul>
  * </p>
@@ -94,14 +89,14 @@ public class ApplicationImpl extends ApplyImpl implements Application
   protected int max = MAX_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getCallReplacements() <em>Call Replacements</em>}' containment reference list.
+   * The cached value of the '{@link #getConstructReplacements() <em>Construct Replacements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCallReplacements()
+   * @see #getConstructReplacements()
    * @generated
    * @ordered
    */
-  protected EList<CallReplacement> callReplacements;
+  protected EList<ConstructReplacement> constructReplacements;
 
   /**
    * The cached value of the '{@link #getRuleReplacements() <em>Rule Replacements</em>}' containment reference list.
@@ -228,13 +223,13 @@ public class ApplicationImpl extends ApplyImpl implements Application
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<CallReplacement> getCallReplacements()
+  public EList<ConstructReplacement> getConstructReplacements()
   {
-    if (callReplacements == null)
+    if (constructReplacements == null)
     {
-      callReplacements = new EObjectContainmentEList<CallReplacement>(CallReplacement.class, this, ApplicationPackage.APPLICATION__CALL_REPLACEMENTS);
+      constructReplacements = new EObjectContainmentEList<ConstructReplacement>(ConstructReplacement.class, this, ApplicationPackage.APPLICATION__CONSTRUCT_REPLACEMENTS);
     }
-    return callReplacements;
+    return constructReplacements;
   }
 
   /**
@@ -261,8 +256,8 @@ public class ApplicationImpl extends ApplyImpl implements Application
   {
     switch (featureID)
     {
-      case ApplicationPackage.APPLICATION__CALL_REPLACEMENTS:
-        return ((InternalEList<?>)getCallReplacements()).basicRemove(otherEnd, msgs);
+      case ApplicationPackage.APPLICATION__CONSTRUCT_REPLACEMENTS:
+        return ((InternalEList<?>)getConstructReplacements()).basicRemove(otherEnd, msgs);
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         return ((InternalEList<?>)getRuleReplacements()).basicRemove(otherEnd, msgs);
     }
@@ -286,8 +281,8 @@ public class ApplicationImpl extends ApplyImpl implements Application
         return getMin();
       case ApplicationPackage.APPLICATION__MAX:
         return getMax();
-      case ApplicationPackage.APPLICATION__CALL_REPLACEMENTS:
-        return getCallReplacements();
+      case ApplicationPackage.APPLICATION__CONSTRUCT_REPLACEMENTS:
+        return getConstructReplacements();
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         return getRuleReplacements();
     }
@@ -314,9 +309,9 @@ public class ApplicationImpl extends ApplyImpl implements Application
       case ApplicationPackage.APPLICATION__MAX:
         setMax((Integer)newValue);
         return;
-      case ApplicationPackage.APPLICATION__CALL_REPLACEMENTS:
-        getCallReplacements().clear();
-        getCallReplacements().addAll((Collection<? extends CallReplacement>)newValue);
+      case ApplicationPackage.APPLICATION__CONSTRUCT_REPLACEMENTS:
+        getConstructReplacements().clear();
+        getConstructReplacements().addAll((Collection<? extends ConstructReplacement>)newValue);
         return;
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         getRuleReplacements().clear();
@@ -345,8 +340,8 @@ public class ApplicationImpl extends ApplyImpl implements Application
       case ApplicationPackage.APPLICATION__MAX:
         setMax(MAX_EDEFAULT);
         return;
-      case ApplicationPackage.APPLICATION__CALL_REPLACEMENTS:
-        getCallReplacements().clear();
+      case ApplicationPackage.APPLICATION__CONSTRUCT_REPLACEMENTS:
+        getConstructReplacements().clear();
         return;
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         getRuleReplacements().clear();
@@ -371,8 +366,8 @@ public class ApplicationImpl extends ApplyImpl implements Application
         return min != MIN_EDEFAULT;
       case ApplicationPackage.APPLICATION__MAX:
         return max != MAX_EDEFAULT;
-      case ApplicationPackage.APPLICATION__CALL_REPLACEMENTS:
-        return callReplacements != null && !callReplacements.isEmpty();
+      case ApplicationPackage.APPLICATION__CONSTRUCT_REPLACEMENTS:
+        return constructReplacements != null && !constructReplacements.isEmpty();
       case ApplicationPackage.APPLICATION__RULE_REPLACEMENTS:
         return ruleReplacements != null && !ruleReplacements.isEmpty();
     }

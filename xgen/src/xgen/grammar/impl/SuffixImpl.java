@@ -5,24 +5,26 @@ package xgen.grammar.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import xgen.grammar.GrammarPackage;
-import xgen.grammar.Not;
+import xgen.grammar.Suffix;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Not</b></em>'.
+ * An implementation of the model object '<em><b>Suffix</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class NotImpl extends PrefixImpl implements Not {
+public class SuffixImpl extends UnaryImpl implements Suffix
+{
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NotImpl() {
+	protected SuffixImpl()
+	{
 		super();
 	}
 
@@ -32,8 +34,9 @@ public class NotImpl extends PrefixImpl implements Not {
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
-		return GrammarPackage.Literals.NOT;
+	protected EClass eStaticClass()
+	{
+		return GrammarPackage.Literals.SUFFIX;
 	}
 
-} //NotImpl
+} //SuffixImpl

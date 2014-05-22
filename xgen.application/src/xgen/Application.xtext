@@ -10,11 +10,11 @@ Model:
 Apply:
 	{Application} target=[xt::Grammar|QID] '(' min=INT '..' max=INT ')'
 	('{'
-	(callReplacements+=CallReplacement | ruleReplacements+=RuleReplacement)*
+	(constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement)*
 	'}')?;
 
-CallReplacement:
-	'replace' selector=[xt::AbstractRule] (positioned?='/' position=INT)?
+ConstructReplacement:
+	'replace' selector=Construct0 (positioned?='/' position=INT)?
 	'in' target=[xt::AbstractRule]
 	'with' replacement=Construct0;
 

@@ -41,13 +41,13 @@ public interface ApplicationFactory extends EFactory
   Apply createApply();
 
   /**
-   * Returns a new object of class '<em>Call Replacement</em>'.
+   * Returns a new object of class '<em>Construct Replacement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Call Replacement</em>'.
+   * @return a new object of class '<em>Construct Replacement</em>'.
    * @generated
    */
-  CallReplacement createCallReplacement();
+  ConstructReplacement createConstructReplacement();
 
   /**
    * Returns a new object of class '<em>Rule Replacement</em>'.

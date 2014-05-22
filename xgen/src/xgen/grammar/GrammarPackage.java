@@ -278,7 +278,151 @@ public interface GrammarPackage extends EPackage {
 	 * @see xgen.grammar.impl.GrammarPackageImpl#getNAry()
 	 * @generated
 	 */
-	int NARY = 6;
+	int NARY = 8;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.AnyImpl <em>Any</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.AnyImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getAny()
+	 * @generated
+	 */
+	int ANY = 9;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.KeywordImpl <em>Keyword</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.KeywordImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getKeyword()
+	 * @generated
+	 */
+	int KEYWORD = 10;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.RangeImpl <em>Range</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.RangeImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getRange()
+	 * @generated
+	 */
+	int RANGE = 11;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.ReferenceImpl <em>Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.ReferenceImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getReference()
+	 * @generated
+	 */
+	int REFERENCE = 12;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.AlternativeImpl <em>Alternative</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.AlternativeImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getAlternative()
+	 * @generated
+	 */
+	int ALTERNATIVE = 17;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.SequenceImpl <em>Sequence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.SequenceImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getSequence()
+	 * @generated
+	 */
+	int SEQUENCE = 18;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.PrefixImpl <em>Prefix</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.PrefixImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getPrefix()
+	 * @generated
+	 */
+	int PREFIX = 6;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREFIX__OPERAND = UNARY__OPERAND;
+
+	/**
+	 * The number of structural features of the '<em>Prefix</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREFIX_FEATURE_COUNT = UNARY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Prefix</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREFIX_OPERATION_COUNT = UNARY_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.NotImpl <em>Not</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.NotImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getNot()
+	 * @generated
+	 */
+	int NOT = 14;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.SuffixImpl <em>Suffix</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.SuffixImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getSuffix()
+	 * @generated
+	 */
+	int SUFFIX = 7;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUFFIX__OPERAND = UNARY__OPERAND;
+
+	/**
+	 * The number of structural features of the '<em>Suffix</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUFFIX_FEATURE_COUNT = UNARY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Suffix</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUFFIX_OPERATION_COUNT = UNARY_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Operands</b></em>' containment reference list.
@@ -308,16 +452,6 @@ public interface GrammarPackage extends EPackage {
 	int NARY_OPERATION_COUNT = CONSTRUCT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.AnyImpl <em>Any</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.AnyImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getAny()
-	 * @generated
-	 */
-	int ANY = 7;
-
-	/**
 	 * The number of structural features of the '<em>Any</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,16 +468,6 @@ public interface GrammarPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANY_OPERATION_COUNT = TERMINAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.KeywordImpl <em>Keyword</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.KeywordImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getKeyword()
-	 * @generated
-	 */
-	int KEYWORD = 8;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -371,16 +495,6 @@ public interface GrammarPackage extends EPackage {
 	 * @ordered
 	 */
 	int KEYWORD_OPERATION_COUNT = TERMINAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.RangeImpl <em>Range</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.RangeImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getRange()
-	 * @generated
-	 */
-	int RANGE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -419,16 +533,6 @@ public interface GrammarPackage extends EPackage {
 	int RANGE_OPERATION_COUNT = TERMINAL_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.ReferenceImpl <em>Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.ReferenceImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getReference()
-	 * @generated
-	 */
-	int REFERENCE = 10;
-
-	/**
 	 * The feature id for the '<em><b>Target</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -465,14 +569,169 @@ public interface GrammarPackage extends EPackage {
 	int REFERENCE_OPERATION_COUNT = TERMINAL_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.AlternativeImpl <em>Alternative</em>}' class.
+	 * The meta object id for the '{@link xgen.grammar.impl.MultiplicityImpl <em>Multiplicity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.AlternativeImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getAlternative()
+	 * @see xgen.grammar.impl.MultiplicityImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getMultiplicity()
 	 * @generated
 	 */
-	int ALTERNATIVE = 11;
+	int MULTIPLICITY = 16;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.UntilImpl <em>Until</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.UntilImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getUntil()
+	 * @generated
+	 */
+	int UNTIL = 15;
+
+	/**
+	 * The meta object id for the '{@link xgen.grammar.impl.PlaceholderImpl <em>Placeholder</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xgen.grammar.impl.PlaceholderImpl
+	 * @see xgen.grammar.impl.GrammarPackageImpl#getPlaceholder()
+	 * @generated
+	 */
+	int PLACEHOLDER = 13;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACEHOLDER__SOURCE = TERMINAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Placeholder</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACEHOLDER_FEATURE_COUNT = TERMINAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Placeholder</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACEHOLDER_OPERATION_COUNT = TERMINAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT__OPERAND = PREFIX__OPERAND;
+
+	/**
+	 * The number of structural features of the '<em>Not</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_FEATURE_COUNT = PREFIX_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Not</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_OPERATION_COUNT = PREFIX_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL__OPERAND = PREFIX__OPERAND;
+
+	/**
+	 * The number of structural features of the '<em>Until</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_FEATURE_COUNT = PREFIX_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Until</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_OPERATION_COUNT = PREFIX_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY__OPERAND = SUFFIX__OPERAND;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY__MIN = SUFFIX_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY__MAX = SUFFIX_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bounded</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY__UPPER_BOUNDED = SUFFIX_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Multiplicity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY_FEATURE_COUNT = SUFFIX_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Multiplicity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY_OPERATION_COUNT = SUFFIX_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Operands</b></em>' containment reference list.
@@ -502,16 +761,6 @@ public interface GrammarPackage extends EPackage {
 	int ALTERNATIVE_OPERATION_COUNT = NARY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.SequenceImpl <em>Sequence</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.SequenceImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getSequence()
-	 * @generated
-	 */
-	int SEQUENCE = 12;
-
-	/**
 	 * The feature id for the '<em><b>Operands</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -537,183 +786,6 @@ public interface GrammarPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEQUENCE_OPERATION_COUNT = NARY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.NotImpl <em>Not</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.NotImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getNot()
-	 * @generated
-	 */
-	int NOT = 13;
-
-	/**
-	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT__OPERAND = UNARY__OPERAND;
-
-	/**
-	 * The number of structural features of the '<em>Not</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT_FEATURE_COUNT = UNARY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Not</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT_OPERATION_COUNT = UNARY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.MultiplicityImpl <em>Multiplicity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.MultiplicityImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getMultiplicity()
-	 * @generated
-	 */
-	int MULTIPLICITY = 14;
-
-	/**
-	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY__OPERAND = UNARY__OPERAND;
-
-	/**
-	 * The feature id for the '<em><b>Min</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY__MIN = UNARY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY__MAX = UNARY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bounded</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY__UPPER_BOUNDED = UNARY_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Multiplicity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_FEATURE_COUNT = UNARY_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Multiplicity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_OPERATION_COUNT = UNARY_OPERATION_COUNT + 0;
-
-
-	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.UntilImpl <em>Until</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.UntilImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getUntil()
-	 * @generated
-	 */
-	int UNTIL = 15;
-
-	/**
-	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNTIL__OPERAND = UNARY__OPERAND;
-
-	/**
-	 * The number of structural features of the '<em>Until</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNTIL_FEATURE_COUNT = UNARY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Until</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNTIL_OPERATION_COUNT = UNARY_OPERATION_COUNT + 0;
-
-
-	/**
-	 * The meta object id for the '{@link xgen.grammar.impl.PlaceholderImpl <em>Placeholder</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xgen.grammar.impl.PlaceholderImpl
-	 * @see xgen.grammar.impl.GrammarPackageImpl#getPlaceholder()
-	 * @generated
-	 */
-	int PLACEHOLDER = 16;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACEHOLDER__SOURCE = TERMINAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Placeholder</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACEHOLDER_FEATURE_COUNT = TERMINAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Placeholder</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACEHOLDER_OPERATION_COUNT = TERMINAL_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1052,6 +1124,26 @@ public interface GrammarPackage extends EPackage {
 	EAttribute getPlaceholder_Source();
 
 	/**
+	 * Returns the meta object for class '{@link xgen.grammar.Prefix <em>Prefix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Prefix</em>'.
+	 * @see xgen.grammar.Prefix
+	 * @generated
+	 */
+	EClass getPrefix();
+
+	/**
+	 * Returns the meta object for class '{@link xgen.grammar.Suffix <em>Suffix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Suffix</em>'.
+	 * @see xgen.grammar.Suffix
+	 * @generated
+	 */
+	EClass getSuffix();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1363,6 +1455,26 @@ public interface GrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PLACEHOLDER__SOURCE = eINSTANCE.getPlaceholder_Source();
+
+		/**
+		 * The meta object literal for the '{@link xgen.grammar.impl.PrefixImpl <em>Prefix</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xgen.grammar.impl.PrefixImpl
+		 * @see xgen.grammar.impl.GrammarPackageImpl#getPrefix()
+		 * @generated
+		 */
+		EClass PREFIX = eINSTANCE.getPrefix();
+
+		/**
+		 * The meta object literal for the '{@link xgen.grammar.impl.SuffixImpl <em>Suffix</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xgen.grammar.impl.SuffixImpl
+		 * @see xgen.grammar.impl.GrammarPackageImpl#getSuffix()
+		 * @generated
+		 */
+		EClass SUFFIX = eINSTANCE.getSuffix();
 
 	}
 

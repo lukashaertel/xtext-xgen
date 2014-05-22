@@ -13,6 +13,6 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Until extends Unary
+public interface Until extends Prefix
 {
 } // Until

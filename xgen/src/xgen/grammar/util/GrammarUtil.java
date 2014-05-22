@@ -1,7 +1,10 @@
 package xgen.grammar.util;
 
 import java.util.Collection;
+import java.util.Optional;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -13,19 +16,81 @@ import xgen.grammar.Grammar;
 import xgen.grammar.GrammarFactory;
 import xgen.grammar.GrammarPackage;
 import xgen.grammar.Keyword;
+import xgen.grammar.NAry;
+import xgen.grammar.Terminal;
+import xgen.grammar.Unary;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Sets;
 
 public class GrammarUtil
 {
-	public static Definition getDefinition(Grammar grammar, String name)
+	public static Optional<Definition> getDefinition(Grammar grammar, String name)
 	{
 		for (Definition d : grammar.getDefinitions())
 			if (Objects.equal(name, d.getName()))
-				return d;
+				return Optional.of(d);
 
-		return null;
+		return Optional.empty();
+	}
+
+	public static Construct selectTransform(Construct c, Predicate<Construct> s, Function<Construct, Construct> t, boolean slotted, int... positions)
+	{
+		// Make positionset for quick testing
+		Set<Integer> is = Sets.newHashSet();
+
+		// Add all positions, for java primitive types sake
+		for (int p : positions)
+			is.add(p);
+
+		int[] a = { 0 };
+
+		return new GrammarSwitch<Construct>()
+		{
+			@Override
+			public Construct caseUnary(Unary object)
+			{
+				Unary c = EcoreUtil.copy(object);
+
+				c.setOperand(doSwitch(c.getOperand()));
+
+				return c;
+			}
+
+			@Override
+			public Construct caseNAry(NAry object)
+			{
+				NAry c = EcoreUtil.copy(object);
+
+				for (int i = 0; i < c.getOperands().size(); i++)
+					c.getOperands().set(i, doSwitch(c.getOperands().get(i)));
+
+				return c;
+			}
+
+			public Construct caseTerminal(Terminal object)
+			{
+				if (s.test(object))
+				{
+					int p = a[0]++;
+
+					if (!slotted || is.contains(p))
+						return t.apply(object);
+				}
+
+				// Delegates to default case
+				return null;
+			}
+
+			@Override
+			public Construct defaultCase(EObject object)
+			{
+				if (object instanceof Construct)
+					return (Construct) EcoreUtil.copy(object);
+
+				throw new UnsupportedOperationException();
+			}
+		}.doSwitch(c);
 	}
 
 	/**

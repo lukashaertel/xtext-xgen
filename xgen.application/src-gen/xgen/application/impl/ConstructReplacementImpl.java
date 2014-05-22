@@ -4,48 +4,44 @@ package xgen.application.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.xtext.AbstractRule;
 
 import xgen.application.ApplicationPackage;
-import xgen.application.CallReplacement;
-
+import xgen.application.ConstructReplacement;
 import xgen.grammar.Construct;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Call Replacement</b></em>'.
+ * An implementation of the model object '<em><b>Construct Replacement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link xgen.application.impl.CallReplacementImpl#getSelector <em>Selector</em>}</li>
- *   <li>{@link xgen.application.impl.CallReplacementImpl#isPositioned <em>Positioned</em>}</li>
- *   <li>{@link xgen.application.impl.CallReplacementImpl#getPosition <em>Position</em>}</li>
- *   <li>{@link xgen.application.impl.CallReplacementImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link xgen.application.impl.CallReplacementImpl#getReplacement <em>Replacement</em>}</li>
+ *   <li>{@link xgen.application.impl.ConstructReplacementImpl#getSelector <em>Selector</em>}</li>
+ *   <li>{@link xgen.application.impl.ConstructReplacementImpl#isPositioned <em>Positioned</em>}</li>
+ *   <li>{@link xgen.application.impl.ConstructReplacementImpl#getPosition <em>Position</em>}</li>
+ *   <li>{@link xgen.application.impl.ConstructReplacementImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link xgen.application.impl.ConstructReplacementImpl#getReplacement <em>Replacement</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CallReplacementImpl extends MinimalEObjectImpl.Container implements CallReplacement
+public class ConstructReplacementImpl extends MinimalEObjectImpl.Container implements ConstructReplacement
 {
   /**
-   * The cached value of the '{@link #getSelector() <em>Selector</em>}' reference.
+   * The cached value of the '{@link #getSelector() <em>Selector</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSelector()
    * @generated
    * @ordered
    */
-  protected AbstractRule selector;
+  protected Construct selector;
 
   /**
    * The default value of the '{@link #isPositioned() <em>Positioned</em>}' attribute.
@@ -112,7 +108,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CallReplacementImpl()
+  protected ConstructReplacementImpl()
   {
     super();
   }
@@ -125,7 +121,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return ApplicationPackage.Literals.CALL_REPLACEMENT;
+    return ApplicationPackage.Literals.CONSTRUCT_REPLACEMENT;
   }
 
   /**
@@ -133,27 +129,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractRule getSelector()
-  {
-    if (selector != null && selector.eIsProxy())
-    {
-      InternalEObject oldSelector = (InternalEObject)selector;
-      selector = (AbstractRule)eResolveProxy(oldSelector);
-      if (selector != oldSelector)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.CALL_REPLACEMENT__SELECTOR, oldSelector, selector));
-      }
-    }
-    return selector;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AbstractRule basicGetSelector()
+  public Construct getSelector()
   {
     return selector;
   }
@@ -163,12 +139,37 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSelector(AbstractRule newSelector)
+  public NotificationChain basicSetSelector(Construct newSelector, NotificationChain msgs)
   {
-    AbstractRule oldSelector = selector;
+    Construct oldSelector = selector;
     selector = newSelector;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CALL_REPLACEMENT__SELECTOR, oldSelector, selector));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR, oldSelector, newSelector);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSelector(Construct newSelector)
+  {
+    if (newSelector != selector)
+    {
+      NotificationChain msgs = null;
+      if (selector != null)
+        msgs = ((InternalEObject)selector).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR, null, msgs);
+      if (newSelector != null)
+        msgs = ((InternalEObject)newSelector).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR, null, msgs);
+      msgs = basicSetSelector(newSelector, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR, newSelector, newSelector));
   }
 
   /**
@@ -191,7 +192,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
     boolean oldPositioned = positioned;
     positioned = newPositioned;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CALL_REPLACEMENT__POSITIONED, oldPositioned, positioned));
+      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITIONED, oldPositioned, positioned));
   }
 
   /**
@@ -214,7 +215,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
     int oldPosition = position;
     position = newPosition;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CALL_REPLACEMENT__POSITION, oldPosition, position));
+      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITION, oldPosition, position));
   }
 
   /**
@@ -231,7 +232,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
       if (target != oldTarget)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.CALL_REPLACEMENT__TARGET, oldTarget, target));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.CONSTRUCT_REPLACEMENT__TARGET, oldTarget, target));
       }
     }
     return target;
@@ -257,7 +258,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
     AbstractRule oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CALL_REPLACEMENT__TARGET, oldTarget, target));
+      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CONSTRUCT_REPLACEMENT__TARGET, oldTarget, target));
   }
 
   /**
@@ -281,7 +282,7 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
     replacement = newReplacement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT, oldReplacement, newReplacement);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT, oldReplacement, newReplacement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -298,14 +299,14 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
     {
       NotificationChain msgs = null;
       if (replacement != null)
-        msgs = ((InternalEObject)replacement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT, null, msgs);
+        msgs = ((InternalEObject)replacement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT, null, msgs);
       if (newReplacement != null)
-        msgs = ((InternalEObject)newReplacement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT, null, msgs);
+        msgs = ((InternalEObject)newReplacement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT, null, msgs);
       msgs = basicSetReplacement(newReplacement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT, newReplacement, newReplacement));
+      eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT, newReplacement, newReplacement));
   }
 
   /**
@@ -318,7 +319,9 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR:
+        return basicSetSelector(null, msgs);
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT:
         return basicSetReplacement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -334,17 +337,16 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ApplicationPackage.CALL_REPLACEMENT__SELECTOR:
-        if (resolve) return getSelector();
-        return basicGetSelector();
-      case ApplicationPackage.CALL_REPLACEMENT__POSITIONED:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR:
+        return getSelector();
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITIONED:
         return isPositioned();
-      case ApplicationPackage.CALL_REPLACEMENT__POSITION:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITION:
         return getPosition();
-      case ApplicationPackage.CALL_REPLACEMENT__TARGET:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
-      case ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT:
         return getReplacement();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -360,19 +362,19 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ApplicationPackage.CALL_REPLACEMENT__SELECTOR:
-        setSelector((AbstractRule)newValue);
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR:
+        setSelector((Construct)newValue);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__POSITIONED:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITIONED:
         setPositioned((Boolean)newValue);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__POSITION:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITION:
         setPosition((Integer)newValue);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__TARGET:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__TARGET:
         setTarget((AbstractRule)newValue);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT:
         setReplacement((Construct)newValue);
         return;
     }
@@ -389,19 +391,19 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ApplicationPackage.CALL_REPLACEMENT__SELECTOR:
-        setSelector((AbstractRule)null);
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR:
+        setSelector((Construct)null);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__POSITIONED:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITIONED:
         setPositioned(POSITIONED_EDEFAULT);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__POSITION:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITION:
         setPosition(POSITION_EDEFAULT);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__TARGET:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__TARGET:
         setTarget((AbstractRule)null);
         return;
-      case ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT:
         setReplacement((Construct)null);
         return;
     }
@@ -418,15 +420,15 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ApplicationPackage.CALL_REPLACEMENT__SELECTOR:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__SELECTOR:
         return selector != null;
-      case ApplicationPackage.CALL_REPLACEMENT__POSITIONED:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITIONED:
         return positioned != POSITIONED_EDEFAULT;
-      case ApplicationPackage.CALL_REPLACEMENT__POSITION:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__POSITION:
         return position != POSITION_EDEFAULT;
-      case ApplicationPackage.CALL_REPLACEMENT__TARGET:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__TARGET:
         return target != null;
-      case ApplicationPackage.CALL_REPLACEMENT__REPLACEMENT:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT__REPLACEMENT:
         return replacement != null;
     }
     return super.eIsSet(featureID);
@@ -451,4 +453,4 @@ public class CallReplacementImpl extends MinimalEObjectImpl.Container implements
     return result.toString();
   }
 
-} //CallReplacementImpl
+} //ConstructReplacementImpl

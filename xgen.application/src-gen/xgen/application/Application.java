@@ -3,7 +3,6 @@
 package xgen.application;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.xtext.Grammar;
 
 /**
@@ -17,7 +16,7 @@ import org.eclipse.xtext.Grammar;
  *   <li>{@link xgen.application.Application#getTarget <em>Target</em>}</li>
  *   <li>{@link xgen.application.Application#getMin <em>Min</em>}</li>
  *   <li>{@link xgen.application.Application#getMax <em>Max</em>}</li>
- *   <li>{@link xgen.application.Application#getCallReplacements <em>Call Replacements</em>}</li>
+ *   <li>{@link xgen.application.Application#getConstructReplacements <em>Construct Replacements</em>}</li>
  *   <li>{@link xgen.application.Application#getRuleReplacements <em>Rule Replacements</em>}</li>
  * </ul>
  * </p>
@@ -107,20 +106,20 @@ public interface Application extends Apply
   void setMax(int value);
 
   /**
-   * Returns the value of the '<em><b>Call Replacements</b></em>' containment reference list.
-   * The list contents are of type {@link xgen.application.CallReplacement}.
+   * Returns the value of the '<em><b>Construct Replacements</b></em>' containment reference list.
+   * The list contents are of type {@link xgen.application.ConstructReplacement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Call Replacements</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Construct Replacements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Call Replacements</em>' containment reference list.
-   * @see xgen.application.ApplicationPackage#getApplication_CallReplacements()
+   * @return the value of the '<em>Construct Replacements</em>' containment reference list.
+   * @see xgen.application.ApplicationPackage#getApplication_ConstructReplacements()
    * @model containment="true"
    * @generated
    */
-  EList<CallReplacement> getCallReplacements();
+  EList<ConstructReplacement> getConstructReplacements();
 
   /**
    * Returns the value of the '<em><b>Rule Replacements</b></em>' containment reference list.

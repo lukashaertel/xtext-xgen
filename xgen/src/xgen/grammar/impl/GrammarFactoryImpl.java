@@ -18,9 +18,11 @@ import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.Not;
 import xgen.grammar.Placeholder;
+import xgen.grammar.Prefix;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
+import xgen.grammar.Suffix;
 import xgen.grammar.Until;
 
 /**
@@ -73,16 +75,18 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 		{
 			case GrammarPackage.GRAMMAR: return createGrammar();
 			case GrammarPackage.DEFINITION: return createDefinition();
+			case GrammarPackage.PREFIX: return createPrefix();
+			case GrammarPackage.SUFFIX: return createSuffix();
 			case GrammarPackage.ANY: return createAny();
 			case GrammarPackage.KEYWORD: return createKeyword();
 			case GrammarPackage.RANGE: return createRange();
 			case GrammarPackage.REFERENCE: return createReference();
+			case GrammarPackage.PLACEHOLDER: return createPlaceholder();
+			case GrammarPackage.NOT: return createNot();
+			case GrammarPackage.UNTIL: return createUntil();
+			case GrammarPackage.MULTIPLICITY: return createMultiplicity();
 			case GrammarPackage.ALTERNATIVE: return createAlternative();
 			case GrammarPackage.SEQUENCE: return createSequence();
-			case GrammarPackage.NOT: return createNot();
-			case GrammarPackage.MULTIPLICITY: return createMultiplicity();
-			case GrammarPackage.UNTIL: return createUntil();
-			case GrammarPackage.PLACEHOLDER: return createPlaceholder();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -208,6 +212,28 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	{
 		PlaceholderImpl placeholder = new PlaceholderImpl();
 		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Prefix createPrefix()
+	{
+		PrefixImpl prefix = new PrefixImpl();
+		return prefix;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Suffix createSuffix()
+	{
+		SuffixImpl suffix = new SuffixImpl();
+		return suffix;
 	}
 
 	/**

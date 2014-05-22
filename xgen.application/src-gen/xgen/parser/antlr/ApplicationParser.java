@@ -3,10 +3,11 @@
 */
 package xgen.parser.antlr;
 
-import com.google.inject.Inject;
-
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+
 import xgen.services.ApplicationGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class ApplicationParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

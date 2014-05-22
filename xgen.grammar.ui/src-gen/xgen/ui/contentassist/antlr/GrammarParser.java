@@ -4,8 +4,8 @@
 package xgen.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
@@ -13,9 +13,9 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistPars
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 
-import com.google.inject.Inject;
-
 import xgen.services.GrammarGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class GrammarParser extends AbstractContentAssistParser {
 	

@@ -4,10 +4,14 @@ package xgen.application.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
-import xgen.application.*;
+import xgen.application.Application;
+import xgen.application.ApplicationPackage;
+import xgen.application.Apply;
+import xgen.application.ConstructReplacement;
+import xgen.application.Model;
+import xgen.application.RuleReplacement;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,10 +90,10 @@ public class ApplicationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ApplicationPackage.CALL_REPLACEMENT:
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT:
       {
-        CallReplacement callReplacement = (CallReplacement)theEObject;
-        T result = caseCallReplacement(callReplacement);
+        ConstructReplacement constructReplacement = (ConstructReplacement)theEObject;
+        T result = caseConstructReplacement(constructReplacement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,17 +149,17 @@ public class ApplicationSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Call Replacement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Construct Replacement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Call Replacement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Construct Replacement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCallReplacement(CallReplacement object)
+  public T caseConstructReplacement(ConstructReplacement object)
   {
     return null;
   }

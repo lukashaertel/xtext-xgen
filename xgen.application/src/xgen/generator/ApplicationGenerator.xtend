@@ -21,6 +21,7 @@ import xgen.grammar.util.GrammarUtil
 import xgen.postprocess.TransformOne
 import xgen.grammar.Reference
 import org.eclipse.emf.ecore.util.EcoreUtil
+import xgen.output.ApplicationOutput
 
 class ReplaceInitial extends TransformOne {
 
@@ -47,6 +48,22 @@ class ReplaceInputValue extends TransformAll {
 
 	override protected transform(Leaf it) {
 		if (value != "<input value>")
+			return it
+
+		val r = j.get(i % j.size)
+
+		i = i + 1
+
+		return new Leaf(r)
+	}
+}
+
+class ReplaceActionValue extends TransformAll {
+	var i = 0
+	var j = #["DoStuff", "DoOtherStuff", "StopWithSomething", "ForgetSomething"]
+
+	override protected transform(Leaf it) {
+		if (value != "<action value>")
 			return it
 
 		val r = j.get(i % j.size)
@@ -110,14 +127,16 @@ class ApplicationGenerator implements IGenerator {
 		val g = GrammarConverter.fromXText(target)
 
 		for (r : ruleReplacements)
-			for (d : g.definitions)
-				if (d.name == r.target.name)
-					d.rhs = r.replacement
+			GrammarUtil.getDefinition(g, r.target.name).ifPresent[rhs = r.replacement]
 
-//		for (c : callReplacements)
-//			GrammarUtil.transformIn(g, [it instanceof Reference && (it as Reference).target == c.selector.name],
-//				[EcoreUtil.copy(c.replacement)])
+		// Sort replacement by position descending so we don't mess up positions replacing prior candidates
+		val p = constructReplacements.sortBy[if(positioned) -position else 1]
 
+		for (c : p)
+			GrammarUtil.getDefinition(g, c.target.name).ifPresent [
+				rhs = GrammarUtil.selectTransform(rhs, [x|EcoreUtil.equals(c.selector, x)],
+					[x|EcoreUtil.copy(c.replacement)], c.positioned, c.position);
+			]
 		return g
 	}
 
@@ -127,8 +146,19 @@ class ApplicationGenerator implements IGenerator {
 		val s = newArrayList()
 
 		// Processor sequence
-		val t = Processor.compose(new ReplaceInitial, new RemoveRemainingInitial, new ReplaceInputValue,
-			new ReplaceStateName(s), new ReplaceStateRef(s))
+		val t = Processor.compose(
+			// Replace one <initial> placeholder
+		new ReplaceInitial, 
+			// Remove all remaining <initial> placeholders
+		new RemoveRemainingInitial,
+			// Replace all <input value> positions with a set of values
+			new ReplaceInputValue,
+			// Replace all <action value> positions with a set of values
+			new ReplaceActionValue,
+			// Replace state names and store the defined names in an array list
+			new ReplaceStateName(s),
+			// Replace all referenced names with the ones defined before this
+			new ReplaceStateRef(s))
 
 		for (a : resource.allContents.filter(Application).toIterable) {
 
@@ -144,10 +174,19 @@ class ApplicationGenerator implements IGenerator {
 			// Post-process
 			val y = t.postProcess(x)
 
-			// Print some items
-			for (p : a.min .. a.max) {
-				y.get(p).ifPresent[println(p); print("  "); println(flatten(false))]
-			}
+			ApplicationOutput.print("Iteration", null,
+				[ o |
+					o.println()
+					// Print some items
+					for (p : a.min .. a.max) {
+						y.get(p).ifPresent [ pt |
+							o.println(p.toString);
+							o.println(pt.flatten(false));
+							o.println();
+						]
+					}
+				])
+
 		}
 	}
 }

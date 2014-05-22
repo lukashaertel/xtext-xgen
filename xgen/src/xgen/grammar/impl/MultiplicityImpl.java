@@ -24,7 +24,7 @@ import xgen.grammar.Multiplicity;
  *
  * @generated
  */
-public class MultiplicityImpl extends UnaryImpl implements Multiplicity {
+public class MultiplicityImpl extends SuffixImpl implements Multiplicity {
 	/**
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->

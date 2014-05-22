@@ -4,12 +4,15 @@ package xgen.application.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
-import xgen.application.*;
+import xgen.application.Application;
+import xgen.application.ApplicationPackage;
+import xgen.application.Apply;
+import xgen.application.ConstructReplacement;
+import xgen.application.Model;
+import xgen.application.RuleReplacement;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,9 +88,9 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl
         return createApplyAdapter();
       }
       @Override
-      public Adapter caseCallReplacement(CallReplacement object)
+      public Adapter caseConstructReplacement(ConstructReplacement object)
       {
-        return createCallReplacementAdapter();
+        return createConstructReplacementAdapter();
       }
       @Override
       public Adapter caseRuleReplacement(RuleReplacement object)
@@ -152,16 +155,16 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link xgen.application.CallReplacement <em>Call Replacement</em>}'.
+   * Creates a new adapter for an object of class '{@link xgen.application.ConstructReplacement <em>Construct Replacement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see xgen.application.CallReplacement
+   * @see xgen.application.ConstructReplacement
    * @generated
    */
-  public Adapter createCallReplacementAdapter()
+  public Adapter createConstructReplacementAdapter()
   {
     return null;
   }

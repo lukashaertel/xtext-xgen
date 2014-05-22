@@ -22,9 +22,11 @@ import xgen.grammar.Multiplicity;
 import xgen.grammar.NAry;
 import xgen.grammar.Not;
 import xgen.grammar.Placeholder;
+import xgen.grammar.Prefix;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
+import xgen.grammar.Suffix;
 import xgen.grammar.Terminal;
 import xgen.grammar.Unary;
 import xgen.grammar.Until;
@@ -154,6 +156,20 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * @generated
 	 */
 	private EClass placeholderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass prefixEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass suffixEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -517,6 +533,26 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPrefix()
+	{
+		return prefixEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSuffix()
+	{
+		return suffixEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GrammarFactory getGrammarFactory() {
 		return (GrammarFactory)getEFactoryInstance();
 	}
@@ -557,6 +593,10 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		unaryEClass = createEClass(UNARY);
 		createEReference(unaryEClass, UNARY__OPERAND);
 
+		prefixEClass = createEClass(PREFIX);
+
+		suffixEClass = createEClass(SUFFIX);
+
 		nAryEClass = createEClass(NARY);
 		createEReference(nAryEClass, NARY__OPERANDS);
 
@@ -573,21 +613,21 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		createEAttribute(referenceEClass, REFERENCE__TARGET);
 		createEReference(referenceEClass, REFERENCE__RESOLVED);
 
-		alternativeEClass = createEClass(ALTERNATIVE);
-
-		sequenceEClass = createEClass(SEQUENCE);
+		placeholderEClass = createEClass(PLACEHOLDER);
+		createEAttribute(placeholderEClass, PLACEHOLDER__SOURCE);
 
 		notEClass = createEClass(NOT);
+
+		untilEClass = createEClass(UNTIL);
 
 		multiplicityEClass = createEClass(MULTIPLICITY);
 		createEAttribute(multiplicityEClass, MULTIPLICITY__MIN);
 		createEAttribute(multiplicityEClass, MULTIPLICITY__MAX);
 		createEAttribute(multiplicityEClass, MULTIPLICITY__UPPER_BOUNDED);
 
-		untilEClass = createEClass(UNTIL);
+		alternativeEClass = createEClass(ALTERNATIVE);
 
-		placeholderEClass = createEClass(PLACEHOLDER);
-		createEAttribute(placeholderEClass, PLACEHOLDER__SOURCE);
+		sequenceEClass = createEClass(SEQUENCE);
 	}
 
 	/**
@@ -625,17 +665,19 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		constructEClass.getESuperTypes().add(this.getElement());
 		terminalEClass.getESuperTypes().add(this.getConstruct());
 		unaryEClass.getESuperTypes().add(this.getConstruct());
+		prefixEClass.getESuperTypes().add(this.getUnary());
+		suffixEClass.getESuperTypes().add(this.getUnary());
 		nAryEClass.getESuperTypes().add(this.getConstruct());
 		anyEClass.getESuperTypes().add(this.getTerminal());
 		keywordEClass.getESuperTypes().add(this.getTerminal());
 		rangeEClass.getESuperTypes().add(this.getTerminal());
 		referenceEClass.getESuperTypes().add(this.getTerminal());
+		placeholderEClass.getESuperTypes().add(this.getTerminal());
+		notEClass.getESuperTypes().add(this.getPrefix());
+		untilEClass.getESuperTypes().add(this.getPrefix());
+		multiplicityEClass.getESuperTypes().add(this.getSuffix());
 		alternativeEClass.getESuperTypes().add(this.getNAry());
 		sequenceEClass.getESuperTypes().add(this.getNAry());
-		notEClass.getESuperTypes().add(this.getUnary());
-		multiplicityEClass.getESuperTypes().add(this.getUnary());
-		untilEClass.getESuperTypes().add(this.getUnary());
-		placeholderEClass.getESuperTypes().add(this.getTerminal());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(grammarEClass, Grammar.class, "Grammar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -655,6 +697,10 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		initEClass(unaryEClass, Unary.class, "Unary", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnary_Operand(), this.getConstruct(), null, "operand", null, 0, 1, Unary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(prefixEClass, Prefix.class, "Prefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(suffixEClass, Suffix.class, "Suffix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(nAryEClass, NAry.class, "NAry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNAry_Operands(), this.getConstruct(), null, "operands", null, 0, -1, NAry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -671,21 +717,21 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		initEAttribute(getReference_Target(), ecorePackage.getEString(), "target", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Resolved(), this.getDefinition(), null, "resolved", null, 0, 1, Reference.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(alternativeEClass, Alternative.class, "Alternative", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(placeholderEClass, Placeholder.class, "Placeholder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlaceholder_Source(), ecorePackage.getEJavaObject(), "source", null, 0, 1, Placeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notEClass, Not.class, "Not", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(untilEClass, Until.class, "Until", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(multiplicityEClass, Multiplicity.class, "Multiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMultiplicity_Min(), theEcorePackage.getEInt(), "min", null, 0, 1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiplicity_Max(), theEcorePackage.getEInt(), "max", null, 0, 1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiplicity_UpperBounded(), theEcorePackage.getEBoolean(), "upperBounded", null, 0, 1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(untilEClass, Until.class, "Until", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(alternativeEClass, Alternative.class, "Alternative", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(placeholderEClass, Placeholder.class, "Placeholder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlaceholder_Source(), ecorePackage.getEJavaObject(), "source", null, 0, 1, Placeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

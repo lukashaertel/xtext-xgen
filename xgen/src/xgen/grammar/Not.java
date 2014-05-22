@@ -13,5 +13,5 @@ package xgen.grammar;
  * @model
  * @generated
  */
-public interface Not extends Unary {
+public interface Not extends Prefix {
 } // Not

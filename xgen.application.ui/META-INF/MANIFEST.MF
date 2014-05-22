@@ -19,7 +19,7 @@ Require-Bundle: xgen.application;visibility:=reexport,
  org.eclipse.compare
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: xgen.ui.quickfix,
  xgen.ui.contentassist,
  xgen.ui.contentassist.antlr,

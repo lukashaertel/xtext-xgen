@@ -19,9 +19,11 @@ import xgen.grammar.Multiplicity;
 import xgen.grammar.NAry;
 import xgen.grammar.Not;
 import xgen.grammar.Placeholder;
+import xgen.grammar.Prefix;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
+import xgen.grammar.Suffix;
 import xgen.grammar.Terminal;
 import xgen.grammar.Unary;
 import xgen.grammar.Until;
@@ -117,6 +119,16 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 				return createUnaryAdapter();
 			}
 			@Override
+			public Adapter casePrefix(Prefix object)
+			{
+				return createPrefixAdapter();
+			}
+			@Override
+			public Adapter caseSuffix(Suffix object)
+			{
+				return createSuffixAdapter();
+			}
+			@Override
 			public Adapter caseNAry(NAry object)
 			{
 				return createNAryAdapter();
@@ -142,6 +154,26 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 				return createReferenceAdapter();
 			}
 			@Override
+			public Adapter casePlaceholder(Placeholder object)
+			{
+				return createPlaceholderAdapter();
+			}
+			@Override
+			public Adapter caseNot(Not object)
+			{
+				return createNotAdapter();
+			}
+			@Override
+			public Adapter caseUntil(Until object)
+			{
+				return createUntilAdapter();
+			}
+			@Override
+			public Adapter caseMultiplicity(Multiplicity object)
+			{
+				return createMultiplicityAdapter();
+			}
+			@Override
 			public Adapter caseAlternative(Alternative object)
 			{
 				return createAlternativeAdapter();
@@ -150,26 +182,6 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 			public Adapter caseSequence(Sequence object)
 			{
 				return createSequenceAdapter();
-			}
-			@Override
-			public Adapter caseNot(Not object)
-			{
-				return createNotAdapter();
-			}
-			@Override
-			public Adapter caseMultiplicity(Multiplicity object)
-			{
-				return createMultiplicityAdapter();
-			}
-			@Override
-			public Adapter caseUntil(Until object)
-			{
-				return createUntilAdapter();
-			}
-			@Override
-			public Adapter casePlaceholder(Placeholder object)
-			{
-				return createPlaceholderAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -428,6 +440,36 @@ public class GrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPlaceholderAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xgen.grammar.Prefix <em>Prefix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xgen.grammar.Prefix
+	 * @generated
+	 */
+	public Adapter createPrefixAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xgen.grammar.Suffix <em>Suffix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xgen.grammar.Suffix
+	 * @generated
+	 */
+	public Adapter createSuffixAdapter()
 	{
 		return null;
 	}

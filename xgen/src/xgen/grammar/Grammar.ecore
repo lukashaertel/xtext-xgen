@@ -23,6 +23,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//Construct"
         containment="true" resolveProxies="false"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Prefix" eSuperTypes="#//Unary"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Suffix" eSuperTypes="#//Unary"/>
   <eClassifiers xsi:type="ecore:EClass" name="NAry" abstract="true" eSuperTypes="#//Construct">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
         eType="#//Construct" containment="true" resolveProxies="false"/>
@@ -40,17 +42,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="resolved" eType="#//Definition"
         changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Alternative" eSuperTypes="#//NAry"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sequence" eSuperTypes="#//NAry"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//Unary"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Multiplicity" eSuperTypes="#//Unary">
+  <eClassifiers xsi:type="ecore:EClass" name="Placeholder" eSuperTypes="#//Terminal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//Prefix"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Until" eSuperTypes="#//Prefix"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Multiplicity" eSuperTypes="#//Suffix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" unique="false" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBounded" unique="false"
         eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Until" eSuperTypes="#//Unary"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Placeholder" eSuperTypes="#//Terminal">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alternative" eSuperTypes="#//NAry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sequence" eSuperTypes="#//NAry"/>
 </ecore:EPackage>

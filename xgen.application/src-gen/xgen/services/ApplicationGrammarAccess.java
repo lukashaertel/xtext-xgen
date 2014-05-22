@@ -3,16 +3,24 @@
 */
 package xgen.services;
 
-import com.google.inject.Singleton;
-import com.google.inject.Inject;
-
 import java.util.List;
 
-import org.eclipse.xtext.*;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.Grammar;
+import org.eclipse.xtext.GrammarUtil;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
-import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import xgen.services.GrammarGrammarAccess;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 @Singleton
 public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
@@ -51,18 +59,18 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cLeftCurlyBracketKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Alternatives cAlternatives_7_1 = (Alternatives)cGroup_7.eContents().get(1);
-		private final Assignment cCallReplacementsAssignment_7_1_0 = (Assignment)cAlternatives_7_1.eContents().get(0);
-		private final RuleCall cCallReplacementsCallReplacementParserRuleCall_7_1_0_0 = (RuleCall)cCallReplacementsAssignment_7_1_0.eContents().get(0);
+		private final Assignment cConstructReplacementsAssignment_7_1_0 = (Assignment)cAlternatives_7_1.eContents().get(0);
+		private final RuleCall cConstructReplacementsConstructReplacementParserRuleCall_7_1_0_0 = (RuleCall)cConstructReplacementsAssignment_7_1_0.eContents().get(0);
 		private final Assignment cRuleReplacementsAssignment_7_1_1 = (Assignment)cAlternatives_7_1.eContents().get(1);
 		private final RuleCall cRuleReplacementsRuleReplacementParserRuleCall_7_1_1_0 = (RuleCall)cRuleReplacementsAssignment_7_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
 		
 		//Apply:
-		//	{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (callReplacements+=CallReplacement |
-		//	ruleReplacements+=RuleReplacement)* "}")?;
+		//	{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (constructReplacements+=ConstructReplacement
+		//	| ruleReplacements+=RuleReplacement)* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (callReplacements+=CallReplacement |
+		//{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (constructReplacements+=ConstructReplacement |
 		//ruleReplacements+=RuleReplacement)* "}")?
 		public Group getGroup() { return cGroup; }
 
@@ -99,20 +107,20 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 
-		//("{" (callReplacements+=CallReplacement | ruleReplacements+=RuleReplacement)* "}")?
+		//("{" (constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement)* "}")?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_7_0() { return cLeftCurlyBracketKeyword_7_0; }
 
-		//(callReplacements+=CallReplacement | ruleReplacements+=RuleReplacement)*
+		//(constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement)*
 		public Alternatives getAlternatives_7_1() { return cAlternatives_7_1; }
 
-		//callReplacements+=CallReplacement
-		public Assignment getCallReplacementsAssignment_7_1_0() { return cCallReplacementsAssignment_7_1_0; }
+		//constructReplacements+=ConstructReplacement
+		public Assignment getConstructReplacementsAssignment_7_1_0() { return cConstructReplacementsAssignment_7_1_0; }
 
-		//CallReplacement
-		public RuleCall getCallReplacementsCallReplacementParserRuleCall_7_1_0_0() { return cCallReplacementsCallReplacementParserRuleCall_7_1_0_0; }
+		//ConstructReplacement
+		public RuleCall getConstructReplacementsConstructReplacementParserRuleCall_7_1_0_0() { return cConstructReplacementsConstructReplacementParserRuleCall_7_1_0_0; }
 
 		//ruleReplacements+=RuleReplacement
 		public Assignment getRuleReplacementsAssignment_7_1_1() { return cRuleReplacementsAssignment_7_1_1; }
@@ -124,13 +132,12 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_7_2() { return cRightCurlyBracketKeyword_7_2; }
 	}
 
-	public class CallReplacementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CallReplacement");
+	public class ConstructReplacementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstructReplacement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cReplaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSelectorAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSelectorAbstractRuleCrossReference_1_0 = (CrossReference)cSelectorAssignment_1.eContents().get(0);
-		private final RuleCall cSelectorAbstractRuleIDTerminalRuleCall_1_0_1 = (RuleCall)cSelectorAbstractRuleCrossReference_1_0.eContents().get(1);
+		private final RuleCall cSelectorConstruct0ParserRuleCall_1_0 = (RuleCall)cSelectorAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cPositionedAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final Keyword cPositionedSolidusKeyword_2_0_0 = (Keyword)cPositionedAssignment_2_0.eContents().get(0);
@@ -144,26 +151,23 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cReplacementAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cReplacementConstruct0ParserRuleCall_6_0 = (RuleCall)cReplacementAssignment_6.eContents().get(0);
 		
-		//CallReplacement:
-		//	"replace" selector=[xt::AbstractRule] (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with"
+		//ConstructReplacement:
+		//	"replace" selector=Construct0 (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with"
 		//	replacement=Construct0;
 		public ParserRule getRule() { return rule; }
 
-		//"replace" selector=[xt::AbstractRule] (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with"
+		//"replace" selector=Construct0 (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with"
 		//replacement=Construct0
 		public Group getGroup() { return cGroup; }
 
 		//"replace"
 		public Keyword getReplaceKeyword_0() { return cReplaceKeyword_0; }
 
-		//selector=[xt::AbstractRule]
+		//selector=Construct0
 		public Assignment getSelectorAssignment_1() { return cSelectorAssignment_1; }
 
-		//[xt::AbstractRule]
-		public CrossReference getSelectorAbstractRuleCrossReference_1_0() { return cSelectorAbstractRuleCrossReference_1_0; }
-
-		//ID
-		public RuleCall getSelectorAbstractRuleIDTerminalRuleCall_1_0_1() { return cSelectorAbstractRuleIDTerminalRuleCall_1_0_1; }
+		//Construct0
+		public RuleCall getSelectorConstruct0ParserRuleCall_1_0() { return cSelectorConstruct0ParserRuleCall_1_0; }
 
 		//(positioned?="/" position=INT)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -273,7 +277,7 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private ModelElements pModel;
 	private ApplyElements pApply;
-	private CallReplacementElements pCallReplacement;
+	private ConstructReplacementElements pConstructReplacement;
 	private RuleReplacementElements pRuleReplacement;
 	private QIDElements pQID;
 	
@@ -326,8 +330,8 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Apply:
-	//	{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (callReplacements+=CallReplacement |
-	//	ruleReplacements+=RuleReplacement)* "}")?;
+	//	{Application} target=[xt::Grammar|QID] "(" min=INT ".." max=INT ")" ("{" (constructReplacements+=ConstructReplacement
+	//	| ruleReplacements+=RuleReplacement)* "}")?;
 	public ApplyElements getApplyAccess() {
 		return (pApply != null) ? pApply : (pApply = new ApplyElements());
 	}
@@ -336,15 +340,15 @@ public class ApplicationGrammarAccess extends AbstractGrammarElementFinder {
 		return getApplyAccess().getRule();
 	}
 
-	//CallReplacement:
-	//	"replace" selector=[xt::AbstractRule] (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with"
+	//ConstructReplacement:
+	//	"replace" selector=Construct0 (positioned?="/" position=INT)? "in" target=[xt::AbstractRule] "with"
 	//	replacement=Construct0;
-	public CallReplacementElements getCallReplacementAccess() {
-		return (pCallReplacement != null) ? pCallReplacement : (pCallReplacement = new CallReplacementElements());
+	public ConstructReplacementElements getConstructReplacementAccess() {
+		return (pConstructReplacement != null) ? pConstructReplacement : (pConstructReplacement = new ConstructReplacementElements());
 	}
 	
-	public ParserRule getCallReplacementRule() {
-		return getCallReplacementAccess().getRule();
+	public ParserRule getConstructReplacementRule() {
+		return getConstructReplacementAccess().getRule();
 	}
 
 	//RuleReplacement:

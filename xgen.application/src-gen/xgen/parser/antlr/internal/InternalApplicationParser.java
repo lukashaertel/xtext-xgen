@@ -1,22 +1,16 @@
 package xgen.parser.antlr.internal; 
 
-import org.eclipse.xtext.*;
-import org.eclipse.xtext.parser.*;
-import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
+
 import xgen.services.ApplicationGrammarAccess;
-
-
-
-import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalApplicationParser extends AbstractInternalAntlrParser {
@@ -240,7 +234,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApply"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:115:1: ruleApply returns [EObject current=null] : ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:115:1: ruleApply returns [EObject current=null] : ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? ) ;
     public final EObject ruleApply() throws RecognitionException {
         EObject current = null;
 
@@ -251,7 +245,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
         Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_10=null;
-        EObject lv_callReplacements_8_0 = null;
+        EObject lv_constructReplacements_8_0 = null;
 
         EObject lv_ruleReplacements_9_0 = null;
 
@@ -259,11 +253,11 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:118:28: ( ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:119:1: ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:118:28: ( ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:119:1: ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:119:1: ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:119:2: () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:119:1: ( () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )? )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:119:2: () ( ( ruleQID ) ) otherlv_2= '(' ( (lv_min_3_0= RULE_INT ) ) otherlv_4= '..' ( (lv_max_5_0= RULE_INT ) ) otherlv_6= ')' (otherlv_7= '{' ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )?
             {
             // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:119:2: ()
             // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:120:5: 
@@ -368,7 +362,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_6, grammarAccess.getApplyAccess().getRightParenthesisKeyword_6());
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:188:1: (otherlv_7= '{' ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:188:1: (otherlv_7= '{' ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -377,13 +371,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:188:3: otherlv_7= '{' ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}'
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:188:3: otherlv_7= '{' ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )* otherlv_10= '}'
                     {
                     otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleApply326); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getApplyAccess().getLeftCurlyBracketKeyword_7_0());
                         
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:192:1: ( ( (lv_callReplacements_8_0= ruleCallReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )*
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:192:1: ( ( (lv_constructReplacements_8_0= ruleConstructReplacement ) ) | ( (lv_ruleReplacements_9_0= ruleRuleReplacement ) ) )*
                     loop2:
                     do {
                         int alt2=3;
@@ -395,7 +389,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                             if ( (LA2_2==RULE_ID) ) {
                                 int LA2_3 = input.LA(3);
 
-                                if ( ((LA2_3>=17 && LA2_3<=18)) ) {
+                                if ( ((LA2_3>=RULE_ID && LA2_3<=RULE_STRING)||LA2_3==11||LA2_3==14||(LA2_3>=17 && LA2_3<=18)||LA2_3==20||(LA2_3>=24 && LA2_3<=26)) ) {
                                     alt2=1;
                                 }
                                 else if ( (LA2_3==19) ) {
@@ -404,6 +398,9 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
                             }
+                            else if ( ((LA2_2>=RULE_CHAR && LA2_2<=RULE_STRING)||LA2_2==11||LA2_2==20||(LA2_2>=25 && LA2_2<=26)) ) {
+                                alt2=1;
+                            }
 
 
                         }
@@ -411,19 +408,19 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:192:2: ( (lv_callReplacements_8_0= ruleCallReplacement ) )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:192:2: ( (lv_constructReplacements_8_0= ruleConstructReplacement ) )
                     	    {
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:192:2: ( (lv_callReplacements_8_0= ruleCallReplacement ) )
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:193:1: (lv_callReplacements_8_0= ruleCallReplacement )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:192:2: ( (lv_constructReplacements_8_0= ruleConstructReplacement ) )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:193:1: (lv_constructReplacements_8_0= ruleConstructReplacement )
                     	    {
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:193:1: (lv_callReplacements_8_0= ruleCallReplacement )
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:194:3: lv_callReplacements_8_0= ruleCallReplacement
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:193:1: (lv_constructReplacements_8_0= ruleConstructReplacement )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:194:3: lv_constructReplacements_8_0= ruleConstructReplacement
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getApplyAccess().getCallReplacementsCallReplacementParserRuleCall_7_1_0_0()); 
+                    	    	        newCompositeNode(grammarAccess.getApplyAccess().getConstructReplacementsConstructReplacementParserRuleCall_7_1_0_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleCallReplacement_in_ruleApply348);
-                    	    lv_callReplacements_8_0=ruleCallReplacement();
+                    	    pushFollow(FOLLOW_ruleConstructReplacement_in_ruleApply348);
+                    	    lv_constructReplacements_8_0=ruleConstructReplacement();
 
                     	    state._fsp--;
 
@@ -433,9 +430,9 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     	    	        }
                     	           		add(
                     	           			current, 
-                    	           			"callReplacements",
-                    	            		lv_callReplacements_8_0, 
-                    	            		"CallReplacement");
+                    	           			"constructReplacements",
+                    	            		lv_constructReplacements_8_0, 
+                    	            		"ConstructReplacement");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -520,26 +517,26 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleApply"
 
 
-    // $ANTLR start "entryRuleCallReplacement"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:241:1: entryRuleCallReplacement returns [EObject current=null] : iv_ruleCallReplacement= ruleCallReplacement EOF ;
-    public final EObject entryRuleCallReplacement() throws RecognitionException {
+    // $ANTLR start "entryRuleConstructReplacement"
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:241:1: entryRuleConstructReplacement returns [EObject current=null] : iv_ruleConstructReplacement= ruleConstructReplacement EOF ;
+    public final EObject entryRuleConstructReplacement() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleCallReplacement = null;
+        EObject iv_ruleConstructReplacement = null;
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:242:2: (iv_ruleCallReplacement= ruleCallReplacement EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:243:2: iv_ruleCallReplacement= ruleCallReplacement EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:242:2: (iv_ruleConstructReplacement= ruleConstructReplacement EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:243:2: iv_ruleConstructReplacement= ruleConstructReplacement EOF
             {
-             newCompositeNode(grammarAccess.getCallReplacementRule()); 
-            pushFollow(FOLLOW_ruleCallReplacement_in_entryRuleCallReplacement427);
-            iv_ruleCallReplacement=ruleCallReplacement();
+             newCompositeNode(grammarAccess.getConstructReplacementRule()); 
+            pushFollow(FOLLOW_ruleConstructReplacement_in_entryRuleConstructReplacement427);
+            iv_ruleConstructReplacement=ruleConstructReplacement();
 
             state._fsp--;
 
-             current =iv_ruleCallReplacement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCallReplacement437); 
+             current =iv_ruleConstructReplacement; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstructReplacement437); 
 
             }
 
@@ -553,59 +550,70 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleCallReplacement"
+    // $ANTLR end "entryRuleConstructReplacement"
 
 
-    // $ANTLR start "ruleCallReplacement"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:250:1: ruleCallReplacement returns [EObject current=null] : (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) ) ;
-    public final EObject ruleCallReplacement() throws RecognitionException {
+    // $ANTLR start "ruleConstructReplacement"
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:250:1: ruleConstructReplacement returns [EObject current=null] : (otherlv_0= 'replace' ( (lv_selector_1_0= ruleConstruct0 ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) ) ;
+    public final EObject ruleConstructReplacement() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token lv_positioned_2_0=null;
         Token lv_position_3_0=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
+        EObject lv_selector_1_0 = null;
+
         EObject lv_replacement_7_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:253:28: ( (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:254:1: (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:253:28: ( (otherlv_0= 'replace' ( (lv_selector_1_0= ruleConstruct0 ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:254:1: (otherlv_0= 'replace' ( (lv_selector_1_0= ruleConstruct0 ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:254:1: (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:254:3: otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:254:1: (otherlv_0= 'replace' ( (lv_selector_1_0= ruleConstruct0 ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:254:3: otherlv_0= 'replace' ( (lv_selector_1_0= ruleConstruct0 ) ) ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )? otherlv_4= 'in' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'with' ( (lv_replacement_7_0= ruleConstruct0 ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleCallReplacement474); 
+            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleConstructReplacement474); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getCallReplacementAccess().getReplaceKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getConstructReplacementAccess().getReplaceKeyword_0());
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:258:1: ( (otherlv_1= RULE_ID ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:259:1: (otherlv_1= RULE_ID )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:258:1: ( (lv_selector_1_0= ruleConstruct0 ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:259:1: (lv_selector_1_0= ruleConstruct0 )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:259:1: (otherlv_1= RULE_ID )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:260:3: otherlv_1= RULE_ID
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:259:1: (lv_selector_1_0= ruleConstruct0 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:260:3: lv_selector_1_0= ruleConstruct0
             {
+             
+            	        newCompositeNode(grammarAccess.getConstructReplacementAccess().getSelectorConstruct0ParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleConstruct0_in_ruleConstructReplacement495);
+            lv_selector_1_0=ruleConstruct0();
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getCallReplacementRule());
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getConstructReplacementRule());
             	        }
-                    
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCallReplacement494); 
-
-            		newLeafNode(otherlv_1, grammarAccess.getCallReplacementAccess().getSelectorAbstractRuleCrossReference_1_0()); 
-            	
+                   		set(
+                   			current, 
+                   			"selector",
+                    		lv_selector_1_0, 
+                    		"Construct0");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:271:2: ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:276:2: ( ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -614,21 +622,21 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:271:3: ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:276:3: ( (lv_positioned_2_0= '/' ) ) ( (lv_position_3_0= RULE_INT ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:271:3: ( (lv_positioned_2_0= '/' ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:272:1: (lv_positioned_2_0= '/' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:276:3: ( (lv_positioned_2_0= '/' ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:277:1: (lv_positioned_2_0= '/' )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:272:1: (lv_positioned_2_0= '/' )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:273:3: lv_positioned_2_0= '/'
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:277:1: (lv_positioned_2_0= '/' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:278:3: lv_positioned_2_0= '/'
                     {
-                    lv_positioned_2_0=(Token)match(input,17,FOLLOW_17_in_ruleCallReplacement513); 
+                    lv_positioned_2_0=(Token)match(input,17,FOLLOW_17_in_ruleConstructReplacement514); 
 
-                            newLeafNode(lv_positioned_2_0, grammarAccess.getCallReplacementAccess().getPositionedSolidusKeyword_2_0_0());
+                            newLeafNode(lv_positioned_2_0, grammarAccess.getConstructReplacementAccess().getPositionedSolidusKeyword_2_0_0());
                         
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCallReplacementRule());
+                    	            current = createModelElement(grammarAccess.getConstructReplacementRule());
                     	        }
                            		setWithLastConsumed(current, "positioned", true, "/");
                     	    
@@ -638,19 +646,19 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:286:2: ( (lv_position_3_0= RULE_INT ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:287:1: (lv_position_3_0= RULE_INT )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:291:2: ( (lv_position_3_0= RULE_INT ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:292:1: (lv_position_3_0= RULE_INT )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:287:1: (lv_position_3_0= RULE_INT )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:288:3: lv_position_3_0= RULE_INT
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:292:1: (lv_position_3_0= RULE_INT )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:293:3: lv_position_3_0= RULE_INT
                     {
-                    lv_position_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleCallReplacement543); 
+                    lv_position_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleConstructReplacement544); 
 
-                    			newLeafNode(lv_position_3_0, grammarAccess.getCallReplacementAccess().getPositionINTTerminalRuleCall_2_1_0()); 
+                    			newLeafNode(lv_position_3_0, grammarAccess.getConstructReplacementAccess().getPositionINTTerminalRuleCall_2_1_0()); 
                     		
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCallReplacementRule());
+                    	            current = createModelElement(grammarAccess.getConstructReplacementRule());
                     	        }
                            		setWithLastConsumed(
                            			current, 
@@ -670,24 +678,24 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleCallReplacement562); 
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleConstructReplacement563); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getCallReplacementAccess().getInKeyword_3());
+                	newLeafNode(otherlv_4, grammarAccess.getConstructReplacementAccess().getInKeyword_3());
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:308:1: ( (otherlv_5= RULE_ID ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:309:1: (otherlv_5= RULE_ID )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:313:1: ( (otherlv_5= RULE_ID ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:314:1: (otherlv_5= RULE_ID )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:309:1: (otherlv_5= RULE_ID )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:310:3: otherlv_5= RULE_ID
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:314:1: (otherlv_5= RULE_ID )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:315:3: otherlv_5= RULE_ID
             {
 
             			if (current==null) {
-            	            current = createModelElement(grammarAccess.getCallReplacementRule());
+            	            current = createModelElement(grammarAccess.getConstructReplacementRule());
             	        }
                     
-            otherlv_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCallReplacement582); 
+            otherlv_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstructReplacement583); 
 
-            		newLeafNode(otherlv_5, grammarAccess.getCallReplacementAccess().getTargetAbstractRuleCrossReference_4_0()); 
+            		newLeafNode(otherlv_5, grammarAccess.getConstructReplacementAccess().getTargetAbstractRuleCrossReference_4_0()); 
             	
 
             }
@@ -695,27 +703,27 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleCallReplacement594); 
+            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleConstructReplacement595); 
 
-                	newLeafNode(otherlv_6, grammarAccess.getCallReplacementAccess().getWithKeyword_5());
+                	newLeafNode(otherlv_6, grammarAccess.getConstructReplacementAccess().getWithKeyword_5());
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:325:1: ( (lv_replacement_7_0= ruleConstruct0 ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:326:1: (lv_replacement_7_0= ruleConstruct0 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:330:1: ( (lv_replacement_7_0= ruleConstruct0 ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:331:1: (lv_replacement_7_0= ruleConstruct0 )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:326:1: (lv_replacement_7_0= ruleConstruct0 )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:327:3: lv_replacement_7_0= ruleConstruct0
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:331:1: (lv_replacement_7_0= ruleConstruct0 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:332:3: lv_replacement_7_0= ruleConstruct0
             {
              
-            	        newCompositeNode(grammarAccess.getCallReplacementAccess().getReplacementConstruct0ParserRuleCall_6_0()); 
+            	        newCompositeNode(grammarAccess.getConstructReplacementAccess().getReplacementConstruct0ParserRuleCall_6_0()); 
             	    
-            pushFollow(FOLLOW_ruleConstruct0_in_ruleCallReplacement615);
+            pushFollow(FOLLOW_ruleConstruct0_in_ruleConstructReplacement616);
             lv_replacement_7_0=ruleConstruct0();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getCallReplacementRule());
+            	            current = createModelElementForParent(grammarAccess.getConstructReplacementRule());
             	        }
                    		set(
                    			current, 
@@ -747,11 +755,11 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleCallReplacement"
+    // $ANTLR end "ruleConstructReplacement"
 
 
     // $ANTLR start "entryRuleRuleReplacement"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:351:1: entryRuleRuleReplacement returns [EObject current=null] : iv_ruleRuleReplacement= ruleRuleReplacement EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:356:1: entryRuleRuleReplacement returns [EObject current=null] : iv_ruleRuleReplacement= ruleRuleReplacement EOF ;
     public final EObject entryRuleRuleReplacement() throws RecognitionException {
         EObject current = null;
 
@@ -759,17 +767,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:352:2: (iv_ruleRuleReplacement= ruleRuleReplacement EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:353:2: iv_ruleRuleReplacement= ruleRuleReplacement EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:357:2: (iv_ruleRuleReplacement= ruleRuleReplacement EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:358:2: iv_ruleRuleReplacement= ruleRuleReplacement EOF
             {
              newCompositeNode(grammarAccess.getRuleReplacementRule()); 
-            pushFollow(FOLLOW_ruleRuleReplacement_in_entryRuleRuleReplacement651);
+            pushFollow(FOLLOW_ruleRuleReplacement_in_entryRuleRuleReplacement652);
             iv_ruleRuleReplacement=ruleRuleReplacement();
 
             state._fsp--;
 
              current =iv_ruleRuleReplacement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRuleReplacement661); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRuleReplacement662); 
 
             }
 
@@ -787,7 +795,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRuleReplacement"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:360:1: ruleRuleReplacement returns [EObject current=null] : (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:365:1: ruleRuleReplacement returns [EObject current=null] : (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) ) ;
     public final EObject ruleRuleReplacement() throws RecognitionException {
         EObject current = null;
 
@@ -800,28 +808,28 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:363:28: ( (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:364:1: (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:368:28: ( (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:369:1: (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:364:1: (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:364:3: otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:369:1: (otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:369:3: otherlv_0= 'replace' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with' ( (lv_replacement_3_0= ruleConstruct0 ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleRuleReplacement698); 
+            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleRuleReplacement699); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRuleReplacementAccess().getReplaceKeyword_0());
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:368:1: ( (otherlv_1= RULE_ID ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:369:1: (otherlv_1= RULE_ID )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:373:1: ( (otherlv_1= RULE_ID ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:374:1: (otherlv_1= RULE_ID )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:369:1: (otherlv_1= RULE_ID )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:370:3: otherlv_1= RULE_ID
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:374:1: (otherlv_1= RULE_ID )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:375:3: otherlv_1= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getRuleReplacementRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRuleReplacement718); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRuleReplacement719); 
 
             		newLeafNode(otherlv_1, grammarAccess.getRuleReplacementAccess().getTargetAbstractRuleCrossReference_1_0()); 
             	
@@ -831,20 +839,20 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleRuleReplacement730); 
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleRuleReplacement731); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRuleReplacementAccess().getWithKeyword_2());
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:385:1: ( (lv_replacement_3_0= ruleConstruct0 ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:386:1: (lv_replacement_3_0= ruleConstruct0 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:390:1: ( (lv_replacement_3_0= ruleConstruct0 ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:391:1: (lv_replacement_3_0= ruleConstruct0 )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:386:1: (lv_replacement_3_0= ruleConstruct0 )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:387:3: lv_replacement_3_0= ruleConstruct0
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:391:1: (lv_replacement_3_0= ruleConstruct0 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:392:3: lv_replacement_3_0= ruleConstruct0
             {
              
             	        newCompositeNode(grammarAccess.getRuleReplacementAccess().getReplacementConstruct0ParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleConstruct0_in_ruleRuleReplacement751);
+            pushFollow(FOLLOW_ruleConstruct0_in_ruleRuleReplacement752);
             lv_replacement_3_0=ruleConstruct0();
 
             state._fsp--;
@@ -887,7 +895,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQID"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:411:1: entryRuleQID returns [String current=null] : iv_ruleQID= ruleQID EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:416:1: entryRuleQID returns [String current=null] : iv_ruleQID= ruleQID EOF ;
     public final String entryRuleQID() throws RecognitionException {
         String current = null;
 
@@ -895,17 +903,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:412:2: (iv_ruleQID= ruleQID EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:413:2: iv_ruleQID= ruleQID EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:417:2: (iv_ruleQID= ruleQID EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:418:2: iv_ruleQID= ruleQID EOF
             {
              newCompositeNode(grammarAccess.getQIDRule()); 
-            pushFollow(FOLLOW_ruleQID_in_entryRuleQID788);
+            pushFollow(FOLLOW_ruleQID_in_entryRuleQID789);
             iv_ruleQID=ruleQID();
 
             state._fsp--;
 
              current =iv_ruleQID.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQID799); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQID800); 
 
             }
 
@@ -923,7 +931,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQID"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:420:1: ruleQID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:425:1: ruleQID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -934,20 +942,20 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:423:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:424:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:428:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:429:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:424:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:424:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:429:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:429:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQID839); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQID840); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getQIDAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:431:1: (kw= '.' this_ID_2= RULE_ID )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:436:1: (kw= '.' this_ID_2= RULE_ID )*
             loop5:
             do {
                 int alt5=2;
@@ -960,14 +968,14 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:432:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:437:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,20,FOLLOW_20_in_ruleQID858); 
+            	    kw=(Token)match(input,20,FOLLOW_20_in_ruleQID859); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQIDAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQID873); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQID874); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -1004,7 +1012,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefinition"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:454:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:459:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
     public final EObject entryRuleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1012,17 +1020,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:455:2: (iv_ruleDefinition= ruleDefinition EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:456:2: iv_ruleDefinition= ruleDefinition EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:460:2: (iv_ruleDefinition= ruleDefinition EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:461:2: iv_ruleDefinition= ruleDefinition EOF
             {
              newCompositeNode(grammarAccess.getDefinitionRule()); 
-            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition922);
+            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition923);
             iv_ruleDefinition=ruleDefinition();
 
             state._fsp--;
 
              current =iv_ruleDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition932); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition933); 
 
             }
 
@@ -1040,7 +1048,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefinition"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:463:1: ruleDefinition returns [EObject current=null] : ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:468:1: ruleDefinition returns [EObject current=null] : ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' ) ;
     public final EObject ruleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1054,14 +1062,14 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:466:28: ( ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:467:1: ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:471:28: ( ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:472:1: ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:467:1: ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:467:2: () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';'
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:472:1: ( () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';' )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:472:2: () ( (lv_lexical_1_0= 'lexical' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_rhs_4_0= ruleConstruct0 ) ) otherlv_5= ';'
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:467:2: ()
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:468:5: 
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:472:2: ()
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:473:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1071,7 +1079,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:473:2: ( (lv_lexical_1_0= 'lexical' ) )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:478:2: ( (lv_lexical_1_0= 'lexical' ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1080,12 +1088,12 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:474:1: (lv_lexical_1_0= 'lexical' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:479:1: (lv_lexical_1_0= 'lexical' )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:474:1: (lv_lexical_1_0= 'lexical' )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:475:3: lv_lexical_1_0= 'lexical'
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:479:1: (lv_lexical_1_0= 'lexical' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:480:3: lv_lexical_1_0= 'lexical'
                     {
-                    lv_lexical_1_0=(Token)match(input,21,FOLLOW_21_in_ruleDefinition984); 
+                    lv_lexical_1_0=(Token)match(input,21,FOLLOW_21_in_ruleDefinition985); 
 
                             newLeafNode(lv_lexical_1_0, grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0());
                         
@@ -1104,13 +1112,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:488:3: ( (lv_name_2_0= RULE_ID ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:489:1: (lv_name_2_0= RULE_ID )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:493:3: ( (lv_name_2_0= RULE_ID ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:494:1: (lv_name_2_0= RULE_ID )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:489:1: (lv_name_2_0= RULE_ID )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:490:3: lv_name_2_0= RULE_ID
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:494:1: (lv_name_2_0= RULE_ID )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:495:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1015); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1016); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -1130,20 +1138,20 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleDefinition1032); 
+            otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleDefinition1033); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getDefinitionAccess().getColonKeyword_3());
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:510:1: ( (lv_rhs_4_0= ruleConstruct0 ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:511:1: (lv_rhs_4_0= ruleConstruct0 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:515:1: ( (lv_rhs_4_0= ruleConstruct0 ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:516:1: (lv_rhs_4_0= ruleConstruct0 )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:511:1: (lv_rhs_4_0= ruleConstruct0 )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:512:3: lv_rhs_4_0= ruleConstruct0
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:516:1: (lv_rhs_4_0= ruleConstruct0 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:517:3: lv_rhs_4_0= ruleConstruct0
             {
              
             	        newCompositeNode(grammarAccess.getDefinitionAccess().getRhsConstruct0ParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleConstruct0_in_ruleDefinition1053);
+            pushFollow(FOLLOW_ruleConstruct0_in_ruleDefinition1054);
             lv_rhs_4_0=ruleConstruct0();
 
             state._fsp--;
@@ -1165,7 +1173,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleDefinition1065); 
+            otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleDefinition1066); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getDefinitionAccess().getSemicolonKeyword_5());
                 
@@ -1190,7 +1198,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstruct0"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:540:1: entryRuleConstruct0 returns [EObject current=null] : iv_ruleConstruct0= ruleConstruct0 EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:545:1: entryRuleConstruct0 returns [EObject current=null] : iv_ruleConstruct0= ruleConstruct0 EOF ;
     public final EObject entryRuleConstruct0() throws RecognitionException {
         EObject current = null;
 
@@ -1198,17 +1206,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:541:2: (iv_ruleConstruct0= ruleConstruct0 EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:542:2: iv_ruleConstruct0= ruleConstruct0 EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:546:2: (iv_ruleConstruct0= ruleConstruct0 EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:547:2: iv_ruleConstruct0= ruleConstruct0 EOF
             {
              newCompositeNode(grammarAccess.getConstruct0Rule()); 
-            pushFollow(FOLLOW_ruleConstruct0_in_entryRuleConstruct01101);
+            pushFollow(FOLLOW_ruleConstruct0_in_entryRuleConstruct01102);
             iv_ruleConstruct0=ruleConstruct0();
 
             state._fsp--;
 
              current =iv_ruleConstruct0; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct01111); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct01112); 
 
             }
 
@@ -1226,7 +1234,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstruct0"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:549:1: ruleConstruct0 returns [EObject current=null] : (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:554:1: ruleConstruct0 returns [EObject current=null] : (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? ) ;
     public final EObject ruleConstruct0() throws RecognitionException {
         EObject current = null;
 
@@ -1242,16 +1250,16 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:552:28: ( (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:553:1: (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:557:28: ( (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:558:1: (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:553:1: (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:554:5: this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:558:1: (this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )? )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:559:5: this_Construct1_0= ruleConstruct1 ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )?
             {
              
                     newCompositeNode(grammarAccess.getConstruct0Access().getConstruct1ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleConstruct1_in_ruleConstruct01158);
+            pushFollow(FOLLOW_ruleConstruct1_in_ruleConstruct01159);
             this_Construct1_0=ruleConstruct1();
 
             state._fsp--;
@@ -1260,7 +1268,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     current = this_Construct1_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:562:1: ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:567:1: ( () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )* )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1269,10 +1277,10 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:562:2: () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )*
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:567:2: () otherlv_2= '|' ( (lv_operands_3_0= ruleConstruct1 ) ) (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )*
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:562:2: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:563:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:567:2: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:568:5: 
                     {
 
                             current = forceCreateModelElementAndAdd(
@@ -1282,20 +1290,20 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleConstruct01179); 
+                    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleConstruct01180); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getConstruct0Access().getVerticalLineKeyword_1_1());
                         
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:572:1: ( (lv_operands_3_0= ruleConstruct1 ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:573:1: (lv_operands_3_0= ruleConstruct1 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:577:1: ( (lv_operands_3_0= ruleConstruct1 ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:578:1: (lv_operands_3_0= ruleConstruct1 )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:573:1: (lv_operands_3_0= ruleConstruct1 )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:574:3: lv_operands_3_0= ruleConstruct1
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:578:1: (lv_operands_3_0= ruleConstruct1 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:579:3: lv_operands_3_0= ruleConstruct1
                     {
                      
                     	        newCompositeNode(grammarAccess.getConstruct0Access().getOperandsConstruct1ParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleConstruct1_in_ruleConstruct01200);
+                    pushFollow(FOLLOW_ruleConstruct1_in_ruleConstruct01201);
                     lv_operands_3_0=ruleConstruct1();
 
                     state._fsp--;
@@ -1317,7 +1325,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:590:2: (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )*
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:595:2: (otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) ) )*
                     loop7:
                     do {
                         int alt7=2;
@@ -1330,22 +1338,22 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:590:4: otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:595:4: otherlv_4= '|' ( (lv_operands_5_0= ruleConstruct1 ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleConstruct01213); 
+                    	    otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleConstruct01214); 
 
                     	        	newLeafNode(otherlv_4, grammarAccess.getConstruct0Access().getVerticalLineKeyword_1_3_0());
                     	        
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:594:1: ( (lv_operands_5_0= ruleConstruct1 ) )
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:595:1: (lv_operands_5_0= ruleConstruct1 )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:599:1: ( (lv_operands_5_0= ruleConstruct1 ) )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:600:1: (lv_operands_5_0= ruleConstruct1 )
                     	    {
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:595:1: (lv_operands_5_0= ruleConstruct1 )
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:596:3: lv_operands_5_0= ruleConstruct1
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:600:1: (lv_operands_5_0= ruleConstruct1 )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:601:3: lv_operands_5_0= ruleConstruct1
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getConstruct0Access().getOperandsConstruct1ParserRuleCall_1_3_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleConstruct1_in_ruleConstruct01234);
+                    	    pushFollow(FOLLOW_ruleConstruct1_in_ruleConstruct01235);
                     	    lv_operands_5_0=ruleConstruct1();
 
                     	    state._fsp--;
@@ -1403,7 +1411,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstruct1"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:620:1: entryRuleConstruct1 returns [EObject current=null] : iv_ruleConstruct1= ruleConstruct1 EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:625:1: entryRuleConstruct1 returns [EObject current=null] : iv_ruleConstruct1= ruleConstruct1 EOF ;
     public final EObject entryRuleConstruct1() throws RecognitionException {
         EObject current = null;
 
@@ -1411,17 +1419,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:621:2: (iv_ruleConstruct1= ruleConstruct1 EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:622:2: iv_ruleConstruct1= ruleConstruct1 EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:626:2: (iv_ruleConstruct1= ruleConstruct1 EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:627:2: iv_ruleConstruct1= ruleConstruct1 EOF
             {
              newCompositeNode(grammarAccess.getConstruct1Rule()); 
-            pushFollow(FOLLOW_ruleConstruct1_in_entryRuleConstruct11274);
+            pushFollow(FOLLOW_ruleConstruct1_in_entryRuleConstruct11275);
             iv_ruleConstruct1=ruleConstruct1();
 
             state._fsp--;
 
              current =iv_ruleConstruct1; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct11284); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct11285); 
 
             }
 
@@ -1439,7 +1447,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstruct1"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:629:1: ruleConstruct1 returns [EObject current=null] : (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:634:1: ruleConstruct1 returns [EObject current=null] : (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? ) ;
     public final EObject ruleConstruct1() throws RecognitionException {
         EObject current = null;
 
@@ -1453,16 +1461,16 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:632:28: ( (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:633:1: (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:637:28: ( (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:638:1: (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:633:1: (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:634:5: this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:638:1: (this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )? )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:639:5: this_Construct2_0= ruleConstruct2 ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )?
             {
              
                     newCompositeNode(grammarAccess.getConstruct1Access().getConstruct2ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct11331);
+            pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct11332);
             this_Construct2_0=ruleConstruct2();
 
             state._fsp--;
@@ -1471,7 +1479,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     current = this_Construct2_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:642:1: ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )?
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:647:1: ( () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )* )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1480,10 +1488,10 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:642:2: () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )*
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:647:2: () ( (lv_operands_2_0= ruleConstruct2 ) ) ( (lv_operands_3_0= ruleConstruct2 ) )*
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:642:2: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:643:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:647:2: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:648:5: 
                     {
 
                             current = forceCreateModelElementAndAdd(
@@ -1493,16 +1501,16 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:648:2: ( (lv_operands_2_0= ruleConstruct2 ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:649:1: (lv_operands_2_0= ruleConstruct2 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:653:2: ( (lv_operands_2_0= ruleConstruct2 ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:654:1: (lv_operands_2_0= ruleConstruct2 )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:649:1: (lv_operands_2_0= ruleConstruct2 )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:650:3: lv_operands_2_0= ruleConstruct2
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:654:1: (lv_operands_2_0= ruleConstruct2 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:655:3: lv_operands_2_0= ruleConstruct2
                     {
                      
                     	        newCompositeNode(grammarAccess.getConstruct1Access().getOperandsConstruct2ParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct11361);
+                    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct11362);
                     lv_operands_2_0=ruleConstruct2();
 
                     state._fsp--;
@@ -1524,7 +1532,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:666:2: ( (lv_operands_3_0= ruleConstruct2 ) )*
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:671:2: ( (lv_operands_3_0= ruleConstruct2 ) )*
                     loop9:
                     do {
                         int alt9=2;
@@ -1537,15 +1545,15 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:667:1: (lv_operands_3_0= ruleConstruct2 )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:672:1: (lv_operands_3_0= ruleConstruct2 )
                     	    {
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:667:1: (lv_operands_3_0= ruleConstruct2 )
-                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:668:3: lv_operands_3_0= ruleConstruct2
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:672:1: (lv_operands_3_0= ruleConstruct2 )
+                    	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:673:3: lv_operands_3_0= ruleConstruct2
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getConstruct1Access().getOperandsConstruct2ParserRuleCall_1_2_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct11382);
+                    	    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct11383);
                     	    lv_operands_3_0=ruleConstruct2();
 
                     	    state._fsp--;
@@ -1600,7 +1608,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstruct2"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:692:1: entryRuleConstruct2 returns [EObject current=null] : iv_ruleConstruct2= ruleConstruct2 EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:697:1: entryRuleConstruct2 returns [EObject current=null] : iv_ruleConstruct2= ruleConstruct2 EOF ;
     public final EObject entryRuleConstruct2() throws RecognitionException {
         EObject current = null;
 
@@ -1608,17 +1616,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:693:2: (iv_ruleConstruct2= ruleConstruct2 EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:694:2: iv_ruleConstruct2= ruleConstruct2 EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:698:2: (iv_ruleConstruct2= ruleConstruct2 EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:699:2: iv_ruleConstruct2= ruleConstruct2 EOF
             {
              newCompositeNode(grammarAccess.getConstruct2Rule()); 
-            pushFollow(FOLLOW_ruleConstruct2_in_entryRuleConstruct21421);
+            pushFollow(FOLLOW_ruleConstruct2_in_entryRuleConstruct21422);
             iv_ruleConstruct2=ruleConstruct2();
 
             state._fsp--;
 
              current =iv_ruleConstruct2; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct21431); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct21432); 
 
             }
 
@@ -1636,7 +1644,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstruct2"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:701:1: ruleConstruct2 returns [EObject current=null] : ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:706:1: ruleConstruct2 returns [EObject current=null] : ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 ) ;
     public final EObject ruleConstruct2() throws RecognitionException {
         EObject current = null;
 
@@ -1652,10 +1660,10 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:704:28: ( ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:705:1: ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:709:28: ( ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:710:1: ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:705:1: ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:710:1: ( ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) ) | ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) ) | this_Construct3_6= ruleConstruct3 )
             int alt11=3;
             switch ( input.LA(1) ) {
             case 25:
@@ -1686,13 +1694,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             switch (alt11) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:705:2: ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:710:2: ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:705:2: ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:705:3: () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:710:2: ( () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:710:3: () otherlv_1= '!' ( (lv_operand_2_0= ruleConstruct2 ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:705:3: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:706:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:710:3: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:711:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -1702,20 +1710,20 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleConstruct21478); 
+                    otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleConstruct21479); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getConstruct2Access().getExclamationMarkKeyword_0_1());
                         
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:715:1: ( (lv_operand_2_0= ruleConstruct2 ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:716:1: (lv_operand_2_0= ruleConstruct2 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:720:1: ( (lv_operand_2_0= ruleConstruct2 ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:721:1: (lv_operand_2_0= ruleConstruct2 )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:716:1: (lv_operand_2_0= ruleConstruct2 )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:717:3: lv_operand_2_0= ruleConstruct2
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:721:1: (lv_operand_2_0= ruleConstruct2 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:722:3: lv_operand_2_0= ruleConstruct2
                     {
                      
                     	        newCompositeNode(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_0_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct21499);
+                    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct21500);
                     lv_operand_2_0=ruleConstruct2();
 
                     state._fsp--;
@@ -1744,13 +1752,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:734:6: ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:739:6: ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:734:6: ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:734:7: () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:739:6: ( () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:739:7: () otherlv_4= '->' ( (lv_operand_5_0= ruleConstruct2 ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:734:7: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:735:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:739:7: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:740:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -1760,20 +1768,20 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,26,FOLLOW_26_in_ruleConstruct21528); 
+                    otherlv_4=(Token)match(input,26,FOLLOW_26_in_ruleConstruct21529); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getConstruct2Access().getHyphenMinusGreaterThanSignKeyword_1_1());
                         
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:744:1: ( (lv_operand_5_0= ruleConstruct2 ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:745:1: (lv_operand_5_0= ruleConstruct2 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:749:1: ( (lv_operand_5_0= ruleConstruct2 ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:750:1: (lv_operand_5_0= ruleConstruct2 )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:745:1: (lv_operand_5_0= ruleConstruct2 )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:746:3: lv_operand_5_0= ruleConstruct2
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:750:1: (lv_operand_5_0= ruleConstruct2 )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:751:3: lv_operand_5_0= ruleConstruct2
                     {
                      
                     	        newCompositeNode(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct21549);
+                    pushFollow(FOLLOW_ruleConstruct2_in_ruleConstruct21550);
                     lv_operand_5_0=ruleConstruct2();
 
                     state._fsp--;
@@ -1802,12 +1810,12 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:764:5: this_Construct3_6= ruleConstruct3
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:769:5: this_Construct3_6= ruleConstruct3
                     {
                      
                             newCompositeNode(grammarAccess.getConstruct2Access().getConstruct3ParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleConstruct3_in_ruleConstruct21578);
+                    pushFollow(FOLLOW_ruleConstruct3_in_ruleConstruct21579);
                     this_Construct3_6=ruleConstruct3();
 
                     state._fsp--;
@@ -1840,7 +1848,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstruct3"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:780:1: entryRuleConstruct3 returns [EObject current=null] : iv_ruleConstruct3= ruleConstruct3 EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:785:1: entryRuleConstruct3 returns [EObject current=null] : iv_ruleConstruct3= ruleConstruct3 EOF ;
     public final EObject entryRuleConstruct3() throws RecognitionException {
         EObject current = null;
 
@@ -1848,17 +1856,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:781:2: (iv_ruleConstruct3= ruleConstruct3 EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:782:2: iv_ruleConstruct3= ruleConstruct3 EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:786:2: (iv_ruleConstruct3= ruleConstruct3 EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:787:2: iv_ruleConstruct3= ruleConstruct3 EOF
             {
              newCompositeNode(grammarAccess.getConstruct3Rule()); 
-            pushFollow(FOLLOW_ruleConstruct3_in_entryRuleConstruct31613);
+            pushFollow(FOLLOW_ruleConstruct3_in_entryRuleConstruct31614);
             iv_ruleConstruct3=ruleConstruct3();
 
             state._fsp--;
 
              current =iv_ruleConstruct3; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct31623); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct31624); 
 
             }
 
@@ -1876,7 +1884,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstruct3"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:789:1: ruleConstruct3 returns [EObject current=null] : (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:794:1: ruleConstruct3 returns [EObject current=null] : (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* ) ;
     public final EObject ruleConstruct3() throws RecognitionException {
         EObject current = null;
 
@@ -1891,16 +1899,16 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:792:28: ( (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:793:1: (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:797:28: ( (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:798:1: (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:793:1: (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:794:5: this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:798:1: (this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )* )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:799:5: this_Construct4_0= ruleConstruct4 ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )*
             {
              
                     newCompositeNode(grammarAccess.getConstruct3Access().getConstruct4ParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleConstruct4_in_ruleConstruct31670);
+            pushFollow(FOLLOW_ruleConstruct4_in_ruleConstruct31671);
             this_Construct4_0=ruleConstruct4();
 
             state._fsp--;
@@ -1909,7 +1917,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     current = this_Construct4_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:802:1: ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )*
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:807:1: ( () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}' )*
             loop13:
             do {
                 int alt13=2;
@@ -1922,10 +1930,10 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:802:2: () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}'
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:807:2: () otherlv_2= '{' ( (lv_min_3_0= RULE_INT ) ) ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )? otherlv_6= '}'
             	    {
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:802:2: ()
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:803:5: 
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:807:2: ()
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:808:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -1935,17 +1943,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleConstruct31691); 
+            	    otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleConstruct31692); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getConstruct3Access().getLeftCurlyBracketKeyword_1_1());
             	        
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:812:1: ( (lv_min_3_0= RULE_INT ) )
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:813:1: (lv_min_3_0= RULE_INT )
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:817:1: ( (lv_min_3_0= RULE_INT ) )
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:818:1: (lv_min_3_0= RULE_INT )
             	    {
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:813:1: (lv_min_3_0= RULE_INT )
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:814:3: lv_min_3_0= RULE_INT
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:818:1: (lv_min_3_0= RULE_INT )
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:819:3: lv_min_3_0= RULE_INT
             	    {
-            	    lv_min_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleConstruct31708); 
+            	    lv_min_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleConstruct31709); 
 
             	    			newLeafNode(lv_min_3_0, grammarAccess.getConstruct3Access().getMinINTTerminalRuleCall_1_2_0()); 
             	    		
@@ -1965,7 +1973,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:830:2: ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )?
+            	    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:835:2: ( ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) ) )?
             	    int alt12=2;
             	    int LA12_0 = input.LA(1);
 
@@ -1974,15 +1982,15 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt12) {
             	        case 1 :
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:830:3: ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) )
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:835:3: ( (lv_upperBounded_4_0= ',' ) ) ( (lv_max_5_0= RULE_INT ) )
             	            {
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:830:3: ( (lv_upperBounded_4_0= ',' ) )
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:831:1: (lv_upperBounded_4_0= ',' )
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:835:3: ( (lv_upperBounded_4_0= ',' ) )
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:836:1: (lv_upperBounded_4_0= ',' )
             	            {
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:831:1: (lv_upperBounded_4_0= ',' )
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:832:3: lv_upperBounded_4_0= ','
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:836:1: (lv_upperBounded_4_0= ',' )
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:837:3: lv_upperBounded_4_0= ','
             	            {
-            	            lv_upperBounded_4_0=(Token)match(input,27,FOLLOW_27_in_ruleConstruct31732); 
+            	            lv_upperBounded_4_0=(Token)match(input,27,FOLLOW_27_in_ruleConstruct31733); 
 
             	                    newLeafNode(lv_upperBounded_4_0, grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0());
             	                
@@ -1998,13 +2006,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:845:2: ( (lv_max_5_0= RULE_INT ) )
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:846:1: (lv_max_5_0= RULE_INT )
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:850:2: ( (lv_max_5_0= RULE_INT ) )
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:851:1: (lv_max_5_0= RULE_INT )
             	            {
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:846:1: (lv_max_5_0= RULE_INT )
-            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:847:3: lv_max_5_0= RULE_INT
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:851:1: (lv_max_5_0= RULE_INT )
+            	            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:852:3: lv_max_5_0= RULE_INT
             	            {
-            	            lv_max_5_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleConstruct31762); 
+            	            lv_max_5_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleConstruct31763); 
 
             	            			newLeafNode(lv_max_5_0, grammarAccess.getConstruct3Access().getMaxINTTerminalRuleCall_1_3_1_0()); 
             	            		
@@ -2030,7 +2038,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_6=(Token)match(input,15,FOLLOW_15_in_ruleConstruct31781); 
+            	    otherlv_6=(Token)match(input,15,FOLLOW_15_in_ruleConstruct31782); 
 
             	        	newLeafNode(otherlv_6, grammarAccess.getConstruct3Access().getRightCurlyBracketKeyword_1_4());
             	        
@@ -2064,7 +2072,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstruct4"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:875:1: entryRuleConstruct4 returns [EObject current=null] : iv_ruleConstruct4= ruleConstruct4 EOF ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:880:1: entryRuleConstruct4 returns [EObject current=null] : iv_ruleConstruct4= ruleConstruct4 EOF ;
     public final EObject entryRuleConstruct4() throws RecognitionException {
         EObject current = null;
 
@@ -2072,17 +2080,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:876:2: (iv_ruleConstruct4= ruleConstruct4 EOF )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:877:2: iv_ruleConstruct4= ruleConstruct4 EOF
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:881:2: (iv_ruleConstruct4= ruleConstruct4 EOF )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:882:2: iv_ruleConstruct4= ruleConstruct4 EOF
             {
              newCompositeNode(grammarAccess.getConstruct4Rule()); 
-            pushFollow(FOLLOW_ruleConstruct4_in_entryRuleConstruct41819);
+            pushFollow(FOLLOW_ruleConstruct4_in_entryRuleConstruct41820);
             iv_ruleConstruct4=ruleConstruct4();
 
             state._fsp--;
 
              current =iv_ruleConstruct4; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct41829); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct41830); 
 
             }
 
@@ -2100,7 +2108,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstruct4"
-    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:884:1: ruleConstruct4 returns [EObject current=null] : ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) ;
+    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:889:1: ruleConstruct4 returns [EObject current=null] : ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) ;
     public final EObject ruleConstruct4() throws RecognitionException {
         EObject current = null;
 
@@ -2118,10 +2126,10 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:887:28: ( ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) )
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:888:1: ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:892:28: ( ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:893:1: ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
             {
-            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:888:1: ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
+            // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:893:1: ( ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) ) | ( () ( (lv_value_5_0= RULE_STRING ) ) ) | ( () otherlv_7= '.' ) | ( () ( (lv_target_9_0= RULE_ID ) ) ) | (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' ) )
             int alt14=5;
             switch ( input.LA(1) ) {
             case RULE_CHAR:
@@ -2158,13 +2166,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
             switch (alt14) {
                 case 1 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:888:2: ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:893:2: ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:888:2: ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:888:3: () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:893:2: ( () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:893:3: () ( (lv_min_1_0= RULE_CHAR ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_CHAR ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:888:3: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:889:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:893:3: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:894:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -2174,13 +2182,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:894:2: ( (lv_min_1_0= RULE_CHAR ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:895:1: (lv_min_1_0= RULE_CHAR )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:899:2: ( (lv_min_1_0= RULE_CHAR ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:900:1: (lv_min_1_0= RULE_CHAR )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:895:1: (lv_min_1_0= RULE_CHAR )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:896:3: lv_min_1_0= RULE_CHAR
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:900:1: (lv_min_1_0= RULE_CHAR )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:901:3: lv_min_1_0= RULE_CHAR
                     {
-                    lv_min_1_0=(Token)match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_ruleConstruct41881); 
+                    lv_min_1_0=(Token)match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_ruleConstruct41882); 
 
                     			newLeafNode(lv_min_1_0, grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0()); 
                     		
@@ -2200,17 +2208,17 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleConstruct41898); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleConstruct41899); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getConstruct4Access().getFullStopFullStopKeyword_0_2());
                         
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:916:1: ( (lv_max_3_0= RULE_CHAR ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:917:1: (lv_max_3_0= RULE_CHAR )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:921:1: ( (lv_max_3_0= RULE_CHAR ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:922:1: (lv_max_3_0= RULE_CHAR )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:917:1: (lv_max_3_0= RULE_CHAR )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:918:3: lv_max_3_0= RULE_CHAR
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:922:1: (lv_max_3_0= RULE_CHAR )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:923:3: lv_max_3_0= RULE_CHAR
                     {
-                    lv_max_3_0=(Token)match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_ruleConstruct41915); 
+                    lv_max_3_0=(Token)match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_ruleConstruct41916); 
 
                     			newLeafNode(lv_max_3_0, grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0()); 
                     		
@@ -2237,13 +2245,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:935:6: ( () ( (lv_value_5_0= RULE_STRING ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:940:6: ( () ( (lv_value_5_0= RULE_STRING ) ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:935:6: ( () ( (lv_value_5_0= RULE_STRING ) ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:935:7: () ( (lv_value_5_0= RULE_STRING ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:940:6: ( () ( (lv_value_5_0= RULE_STRING ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:940:7: () ( (lv_value_5_0= RULE_STRING ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:935:7: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:936:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:940:7: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:941:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -2253,13 +2261,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:941:2: ( (lv_value_5_0= RULE_STRING ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:942:1: (lv_value_5_0= RULE_STRING )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:946:2: ( (lv_value_5_0= RULE_STRING ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:947:1: (lv_value_5_0= RULE_STRING )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:942:1: (lv_value_5_0= RULE_STRING )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:943:3: lv_value_5_0= RULE_STRING
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:947:1: (lv_value_5_0= RULE_STRING )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:948:3: lv_value_5_0= RULE_STRING
                     {
-                    lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleConstruct41954); 
+                    lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleConstruct41955); 
 
                     			newLeafNode(lv_value_5_0, grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0()); 
                     		
@@ -2286,13 +2294,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:960:6: ( () otherlv_7= '.' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:965:6: ( () otherlv_7= '.' )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:960:6: ( () otherlv_7= '.' )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:960:7: () otherlv_7= '.'
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:965:6: ( () otherlv_7= '.' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:965:7: () otherlv_7= '.'
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:960:7: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:961:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:965:7: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:966:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -2302,7 +2310,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleConstruct41988); 
+                    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleConstruct41989); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getConstruct4Access().getFullStopKeyword_2_1());
                         
@@ -2313,13 +2321,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:971:6: ( () ( (lv_target_9_0= RULE_ID ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:976:6: ( () ( (lv_target_9_0= RULE_ID ) ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:971:6: ( () ( (lv_target_9_0= RULE_ID ) ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:971:7: () ( (lv_target_9_0= RULE_ID ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:976:6: ( () ( (lv_target_9_0= RULE_ID ) ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:976:7: () ( (lv_target_9_0= RULE_ID ) )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:971:7: ()
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:972:5: 
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:976:7: ()
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:977:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -2329,13 +2337,13 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:977:2: ( (lv_target_9_0= RULE_ID ) )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:978:1: (lv_target_9_0= RULE_ID )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:982:2: ( (lv_target_9_0= RULE_ID ) )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:983:1: (lv_target_9_0= RULE_ID )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:978:1: (lv_target_9_0= RULE_ID )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:979:3: lv_target_9_0= RULE_ID
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:983:1: (lv_target_9_0= RULE_ID )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:984:3: lv_target_9_0= RULE_ID
                     {
-                    lv_target_9_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstruct42022); 
+                    lv_target_9_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstruct42023); 
 
                     			newLeafNode(lv_target_9_0, grammarAccess.getConstruct4Access().getTargetIDTerminalRuleCall_3_1_0()); 
                     		
@@ -2362,19 +2370,19 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:996:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1001:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
                     {
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:996:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
-                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:996:8: otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')'
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1001:6: (otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')' )
+                    // ../xgen.application/src-gen/xgen/parser/antlr/internal/InternalApplication.g:1001:8: otherlv_10= '(' this_Construct0_11= ruleConstruct0 otherlv_12= ')'
                     {
-                    otherlv_10=(Token)match(input,11,FOLLOW_11_in_ruleConstruct42047); 
+                    otherlv_10=(Token)match(input,11,FOLLOW_11_in_ruleConstruct42048); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getConstruct4Access().getLeftParenthesisKeyword_4_0());
                         
                      
                             newCompositeNode(grammarAccess.getConstruct4Access().getConstruct0ParserRuleCall_4_1()); 
                         
-                    pushFollow(FOLLOW_ruleConstruct0_in_ruleConstruct42069);
+                    pushFollow(FOLLOW_ruleConstruct0_in_ruleConstruct42070);
                     this_Construct0_11=ruleConstruct0();
 
                     state._fsp--;
@@ -2383,7 +2391,7 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
                             current = this_Construct0_11; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_12=(Token)match(input,13,FOLLOW_13_in_ruleConstruct42080); 
+                    otherlv_12=(Token)match(input,13,FOLLOW_13_in_ruleConstruct42081); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getConstruct4Access().getRightParenthesisKeyword_4_2());
                         
@@ -2429,74 +2437,74 @@ public class InternalApplicationParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_INT_in_ruleApply296 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleApply313 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_14_in_ruleApply326 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_ruleCallReplacement_in_ruleApply348 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_ruleConstructReplacement_in_ruleApply348 = new BitSet(new long[]{0x0000000000018000L});
     public static final BitSet FOLLOW_ruleRuleReplacement_in_ruleApply375 = new BitSet(new long[]{0x0000000000018000L});
     public static final BitSet FOLLOW_15_in_ruleApply389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCallReplacement_in_entryRuleCallReplacement427 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCallReplacement437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleCallReplacement474 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCallReplacement494 = new BitSet(new long[]{0x0000000000060000L});
-    public static final BitSet FOLLOW_17_in_ruleCallReplacement513 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleCallReplacement543 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleCallReplacement562 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCallReplacement582 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleCallReplacement594 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_ruleCallReplacement615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRuleReplacement_in_entryRuleRuleReplacement651 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRuleReplacement661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleRuleReplacement698 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRuleReplacement718 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleRuleReplacement730 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_ruleRuleReplacement751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQID_in_entryRuleQID788 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQID799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQID839 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_20_in_ruleQID858 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQID873 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition922 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleDefinition984 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1015 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleDefinition1032 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_ruleDefinition1053 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleDefinition1065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_entryRuleConstruct01101 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct01111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct1_in_ruleConstruct01158 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_ruleConstruct01179 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct1_in_ruleConstruct01200 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_ruleConstruct01213 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct1_in_ruleConstruct01234 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_ruleConstruct1_in_entryRuleConstruct11274 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct11284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct11331 = new BitSet(new long[]{0x00000000061008E2L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct11361 = new BitSet(new long[]{0x00000000061008E2L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct11382 = new BitSet(new long[]{0x00000000061008E2L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_entryRuleConstruct21421 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct21431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleConstruct21478 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct21499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleConstruct21528 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct21549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct3_in_ruleConstruct21578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct3_in_entryRuleConstruct31613 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct31623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct4_in_ruleConstruct31670 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleConstruct31691 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleConstruct31708 = new BitSet(new long[]{0x0000000008008000L});
-    public static final BitSet FOLLOW_27_in_ruleConstruct31732 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleConstruct31762 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleConstruct31781 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_ruleConstruct4_in_entryRuleConstruct41819 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct41829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41881 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleConstruct41898 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleConstruct41954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleConstruct41988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstruct42022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleConstruct42047 = new BitSet(new long[]{0x00000000061008E0L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_ruleConstruct42069 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleConstruct42080 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructReplacement_in_entryRuleConstructReplacement427 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstructReplacement437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleConstructReplacement474 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_ruleConstructReplacement495 = new BitSet(new long[]{0x0000000000060000L});
+    public static final BitSet FOLLOW_17_in_ruleConstructReplacement514 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleConstructReplacement544 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleConstructReplacement563 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstructReplacement583 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleConstructReplacement595 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_ruleConstructReplacement616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRuleReplacement_in_entryRuleRuleReplacement652 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRuleReplacement662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleRuleReplacement699 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRuleReplacement719 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleRuleReplacement731 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_ruleRuleReplacement752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQID_in_entryRuleQID789 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQID800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQID840 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_20_in_ruleQID859 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQID874 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition923 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleDefinition985 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1016 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleDefinition1033 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_ruleDefinition1054 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleDefinition1066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_entryRuleConstruct01102 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct01112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct1_in_ruleConstruct01159 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24_in_ruleConstruct01180 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct1_in_ruleConstruct01201 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24_in_ruleConstruct01214 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct1_in_ruleConstruct01235 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_ruleConstruct1_in_entryRuleConstruct11275 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct11285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct11332 = new BitSet(new long[]{0x00000000061008E2L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct11362 = new BitSet(new long[]{0x00000000061008E2L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct11383 = new BitSet(new long[]{0x00000000061008E2L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_entryRuleConstruct21422 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct21432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleConstruct21479 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct21500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleConstruct21529 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_ruleConstruct21550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct3_in_ruleConstruct21579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct3_in_entryRuleConstruct31614 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct31624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct4_in_ruleConstruct31671 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleConstruct31692 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleConstruct31709 = new BitSet(new long[]{0x0000000008008000L});
+    public static final BitSet FOLLOW_27_in_ruleConstruct31733 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleConstruct31763 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleConstruct31782 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_ruleConstruct4_in_entryRuleConstruct41820 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct41830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41882 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleConstruct41899 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_CHAR_in_ruleConstruct41916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleConstruct41955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleConstruct41989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstruct42023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleConstruct42048 = new BitSet(new long[]{0x00000000061008E0L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_ruleConstruct42070 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleConstruct42081 = new BitSet(new long[]{0x0000000000000002L});
 
 }

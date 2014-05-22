@@ -104,23 +104,23 @@ public interface ApplicationPackage extends EPackage
   int APPLY_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link xgen.application.impl.CallReplacementImpl <em>Call Replacement</em>}' class.
+   * The meta object id for the '{@link xgen.application.impl.ConstructReplacementImpl <em>Construct Replacement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see xgen.application.impl.CallReplacementImpl
-   * @see xgen.application.impl.ApplicationPackageImpl#getCallReplacement()
+   * @see xgen.application.impl.ConstructReplacementImpl
+   * @see xgen.application.impl.ApplicationPackageImpl#getConstructReplacement()
    * @generated
    */
-  int CALL_REPLACEMENT = 2;
+  int CONSTRUCT_REPLACEMENT = 2;
 
   /**
-   * The feature id for the '<em><b>Selector</b></em>' reference.
+   * The feature id for the '<em><b>Selector</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALL_REPLACEMENT__SELECTOR = 0;
+  int CONSTRUCT_REPLACEMENT__SELECTOR = 0;
 
   /**
    * The feature id for the '<em><b>Positioned</b></em>' attribute.
@@ -129,7 +129,7 @@ public interface ApplicationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALL_REPLACEMENT__POSITIONED = 1;
+  int CONSTRUCT_REPLACEMENT__POSITIONED = 1;
 
   /**
    * The feature id for the '<em><b>Position</b></em>' attribute.
@@ -138,7 +138,7 @@ public interface ApplicationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALL_REPLACEMENT__POSITION = 2;
+  int CONSTRUCT_REPLACEMENT__POSITION = 2;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -147,7 +147,7 @@ public interface ApplicationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALL_REPLACEMENT__TARGET = 3;
+  int CONSTRUCT_REPLACEMENT__TARGET = 3;
 
   /**
    * The feature id for the '<em><b>Replacement</b></em>' containment reference.
@@ -156,16 +156,16 @@ public interface ApplicationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALL_REPLACEMENT__REPLACEMENT = 4;
+  int CONSTRUCT_REPLACEMENT__REPLACEMENT = 4;
 
   /**
-   * The number of structural features of the '<em>Call Replacement</em>' class.
+   * The number of structural features of the '<em>Construct Replacement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALL_REPLACEMENT_FEATURE_COUNT = 5;
+  int CONSTRUCT_REPLACEMENT_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link xgen.application.impl.RuleReplacementImpl <em>Rule Replacement</em>}' class.
@@ -242,13 +242,13 @@ public interface ApplicationPackage extends EPackage
   int APPLICATION__MAX = APPLY_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Call Replacements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Construct Replacements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int APPLICATION__CALL_REPLACEMENTS = APPLY_FEATURE_COUNT + 3;
+  int APPLICATION__CONSTRUCT_REPLACEMENTS = APPLY_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Rule Replacements</b></em>' containment reference list.
@@ -301,69 +301,69 @@ public interface ApplicationPackage extends EPackage
   EClass getApply();
 
   /**
-   * Returns the meta object for class '{@link xgen.application.CallReplacement <em>Call Replacement</em>}'.
+   * Returns the meta object for class '{@link xgen.application.ConstructReplacement <em>Construct Replacement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Call Replacement</em>'.
-   * @see xgen.application.CallReplacement
+   * @return the meta object for class '<em>Construct Replacement</em>'.
+   * @see xgen.application.ConstructReplacement
    * @generated
    */
-  EClass getCallReplacement();
+  EClass getConstructReplacement();
 
   /**
-   * Returns the meta object for the reference '{@link xgen.application.CallReplacement#getSelector <em>Selector</em>}'.
+   * Returns the meta object for the containment reference '{@link xgen.application.ConstructReplacement#getSelector <em>Selector</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Selector</em>'.
-   * @see xgen.application.CallReplacement#getSelector()
-   * @see #getCallReplacement()
+   * @return the meta object for the containment reference '<em>Selector</em>'.
+   * @see xgen.application.ConstructReplacement#getSelector()
+   * @see #getConstructReplacement()
    * @generated
    */
-  EReference getCallReplacement_Selector();
+  EReference getConstructReplacement_Selector();
 
   /**
-   * Returns the meta object for the attribute '{@link xgen.application.CallReplacement#isPositioned <em>Positioned</em>}'.
+   * Returns the meta object for the attribute '{@link xgen.application.ConstructReplacement#isPositioned <em>Positioned</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Positioned</em>'.
-   * @see xgen.application.CallReplacement#isPositioned()
-   * @see #getCallReplacement()
+   * @see xgen.application.ConstructReplacement#isPositioned()
+   * @see #getConstructReplacement()
    * @generated
    */
-  EAttribute getCallReplacement_Positioned();
+  EAttribute getConstructReplacement_Positioned();
 
   /**
-   * Returns the meta object for the attribute '{@link xgen.application.CallReplacement#getPosition <em>Position</em>}'.
+   * Returns the meta object for the attribute '{@link xgen.application.ConstructReplacement#getPosition <em>Position</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Position</em>'.
-   * @see xgen.application.CallReplacement#getPosition()
-   * @see #getCallReplacement()
+   * @see xgen.application.ConstructReplacement#getPosition()
+   * @see #getConstructReplacement()
    * @generated
    */
-  EAttribute getCallReplacement_Position();
+  EAttribute getConstructReplacement_Position();
 
   /**
-   * Returns the meta object for the reference '{@link xgen.application.CallReplacement#getTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link xgen.application.ConstructReplacement#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Target</em>'.
-   * @see xgen.application.CallReplacement#getTarget()
-   * @see #getCallReplacement()
+   * @see xgen.application.ConstructReplacement#getTarget()
+   * @see #getConstructReplacement()
    * @generated
    */
-  EReference getCallReplacement_Target();
+  EReference getConstructReplacement_Target();
 
   /**
-   * Returns the meta object for the containment reference '{@link xgen.application.CallReplacement#getReplacement <em>Replacement</em>}'.
+   * Returns the meta object for the containment reference '{@link xgen.application.ConstructReplacement#getReplacement <em>Replacement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Replacement</em>'.
-   * @see xgen.application.CallReplacement#getReplacement()
-   * @see #getCallReplacement()
+   * @see xgen.application.ConstructReplacement#getReplacement()
+   * @see #getConstructReplacement()
    * @generated
    */
-  EReference getCallReplacement_Replacement();
+  EReference getConstructReplacement_Replacement();
 
   /**
    * Returns the meta object for class '{@link xgen.application.RuleReplacement <em>Rule Replacement</em>}'.
@@ -441,15 +441,15 @@ public interface ApplicationPackage extends EPackage
   EAttribute getApplication_Max();
 
   /**
-   * Returns the meta object for the containment reference list '{@link xgen.application.Application#getCallReplacements <em>Call Replacements</em>}'.
+   * Returns the meta object for the containment reference list '{@link xgen.application.Application#getConstructReplacements <em>Construct Replacements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Call Replacements</em>'.
-   * @see xgen.application.Application#getCallReplacements()
+   * @return the meta object for the containment reference list '<em>Construct Replacements</em>'.
+   * @see xgen.application.Application#getConstructReplacements()
    * @see #getApplication()
    * @generated
    */
-  EReference getApplication_CallReplacements();
+  EReference getApplication_ConstructReplacements();
 
   /**
    * Returns the meta object for the containment reference list '{@link xgen.application.Application#getRuleReplacements <em>Rule Replacements</em>}'.
@@ -514,22 +514,22 @@ public interface ApplicationPackage extends EPackage
     EClass APPLY = eINSTANCE.getApply();
 
     /**
-     * The meta object literal for the '{@link xgen.application.impl.CallReplacementImpl <em>Call Replacement</em>}' class.
+     * The meta object literal for the '{@link xgen.application.impl.ConstructReplacementImpl <em>Construct Replacement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see xgen.application.impl.CallReplacementImpl
-     * @see xgen.application.impl.ApplicationPackageImpl#getCallReplacement()
+     * @see xgen.application.impl.ConstructReplacementImpl
+     * @see xgen.application.impl.ApplicationPackageImpl#getConstructReplacement()
      * @generated
      */
-    EClass CALL_REPLACEMENT = eINSTANCE.getCallReplacement();
+    EClass CONSTRUCT_REPLACEMENT = eINSTANCE.getConstructReplacement();
 
     /**
-     * The meta object literal for the '<em><b>Selector</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Selector</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CALL_REPLACEMENT__SELECTOR = eINSTANCE.getCallReplacement_Selector();
+    EReference CONSTRUCT_REPLACEMENT__SELECTOR = eINSTANCE.getConstructReplacement_Selector();
 
     /**
      * The meta object literal for the '<em><b>Positioned</b></em>' attribute feature.
@@ -537,7 +537,7 @@ public interface ApplicationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CALL_REPLACEMENT__POSITIONED = eINSTANCE.getCallReplacement_Positioned();
+    EAttribute CONSTRUCT_REPLACEMENT__POSITIONED = eINSTANCE.getConstructReplacement_Positioned();
 
     /**
      * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
@@ -545,7 +545,7 @@ public interface ApplicationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CALL_REPLACEMENT__POSITION = eINSTANCE.getCallReplacement_Position();
+    EAttribute CONSTRUCT_REPLACEMENT__POSITION = eINSTANCE.getConstructReplacement_Position();
 
     /**
      * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -553,7 +553,7 @@ public interface ApplicationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CALL_REPLACEMENT__TARGET = eINSTANCE.getCallReplacement_Target();
+    EReference CONSTRUCT_REPLACEMENT__TARGET = eINSTANCE.getConstructReplacement_Target();
 
     /**
      * The meta object literal for the '<em><b>Replacement</b></em>' containment reference feature.
@@ -561,7 +561,7 @@ public interface ApplicationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CALL_REPLACEMENT__REPLACEMENT = eINSTANCE.getCallReplacement_Replacement();
+    EReference CONSTRUCT_REPLACEMENT__REPLACEMENT = eINSTANCE.getConstructReplacement_Replacement();
 
     /**
      * The meta object literal for the '{@link xgen.application.impl.RuleReplacementImpl <em>Rule Replacement</em>}' class.
@@ -624,12 +624,12 @@ public interface ApplicationPackage extends EPackage
     EAttribute APPLICATION__MAX = eINSTANCE.getApplication_Max();
 
     /**
-     * The meta object literal for the '<em><b>Call Replacements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Construct Replacements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference APPLICATION__CALL_REPLACEMENTS = eINSTANCE.getApplication_CallReplacements();
+    EReference APPLICATION__CONSTRUCT_REPLACEMENTS = eINSTANCE.getApplication_ConstructReplacements();
 
     /**
      * The meta object literal for the '<em><b>Rule Replacements</b></em>' containment reference list feature.

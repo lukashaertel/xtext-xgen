@@ -5,12 +5,16 @@ package xgen.application.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import xgen.application.*;
+import xgen.application.Application;
+import xgen.application.ApplicationFactory;
+import xgen.application.ApplicationPackage;
+import xgen.application.Apply;
+import xgen.application.ConstructReplacement;
+import xgen.application.Model;
+import xgen.application.RuleReplacement;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +70,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
     {
       case ApplicationPackage.MODEL: return createModel();
       case ApplicationPackage.APPLY: return createApply();
-      case ApplicationPackage.CALL_REPLACEMENT: return createCallReplacement();
+      case ApplicationPackage.CONSTRUCT_REPLACEMENT: return createConstructReplacement();
       case ApplicationPackage.RULE_REPLACEMENT: return createRuleReplacement();
       case ApplicationPackage.APPLICATION: return createApplication();
       default:
@@ -101,10 +105,10 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
    * <!-- end-user-doc -->
    * @generated
    */
-  public CallReplacement createCallReplacement()
+  public ConstructReplacement createConstructReplacement()
   {
-    CallReplacementImpl callReplacement = new CallReplacementImpl();
-    return callReplacement;
+    ConstructReplacementImpl constructReplacement = new ConstructReplacementImpl();
+    return constructReplacement;
   }
 
   /**

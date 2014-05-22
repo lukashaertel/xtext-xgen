@@ -4,8 +4,8 @@
 package xgen.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
@@ -13,9 +13,9 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistPars
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 
-import com.google.inject.Inject;
-
 import xgen.services.ApplicationGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class ApplicationParser extends AbstractContentAssistParser {
 	
@@ -42,8 +42,8 @@ public class ApplicationParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConstruct4Access().getAlternatives(), "rule__Construct4__Alternatives");
 					put(grammarAccess.getApplyAccess().getGroup(), "rule__Apply__Group__0");
 					put(grammarAccess.getApplyAccess().getGroup_7(), "rule__Apply__Group_7__0");
-					put(grammarAccess.getCallReplacementAccess().getGroup(), "rule__CallReplacement__Group__0");
-					put(grammarAccess.getCallReplacementAccess().getGroup_2(), "rule__CallReplacement__Group_2__0");
+					put(grammarAccess.getConstructReplacementAccess().getGroup(), "rule__ConstructReplacement__Group__0");
+					put(grammarAccess.getConstructReplacementAccess().getGroup_2(), "rule__ConstructReplacement__Group_2__0");
 					put(grammarAccess.getRuleReplacementAccess().getGroup(), "rule__RuleReplacement__Group__0");
 					put(grammarAccess.getQIDAccess().getGroup(), "rule__QID__Group__0");
 					put(grammarAccess.getQIDAccess().getGroup_1(), "rule__QID__Group_1__0");
@@ -68,13 +68,13 @@ public class ApplicationParser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplyAccess().getTargetAssignment_1(), "rule__Apply__TargetAssignment_1");
 					put(grammarAccess.getApplyAccess().getMinAssignment_3(), "rule__Apply__MinAssignment_3");
 					put(grammarAccess.getApplyAccess().getMaxAssignment_5(), "rule__Apply__MaxAssignment_5");
-					put(grammarAccess.getApplyAccess().getCallReplacementsAssignment_7_1_0(), "rule__Apply__CallReplacementsAssignment_7_1_0");
+					put(grammarAccess.getApplyAccess().getConstructReplacementsAssignment_7_1_0(), "rule__Apply__ConstructReplacementsAssignment_7_1_0");
 					put(grammarAccess.getApplyAccess().getRuleReplacementsAssignment_7_1_1(), "rule__Apply__RuleReplacementsAssignment_7_1_1");
-					put(grammarAccess.getCallReplacementAccess().getSelectorAssignment_1(), "rule__CallReplacement__SelectorAssignment_1");
-					put(grammarAccess.getCallReplacementAccess().getPositionedAssignment_2_0(), "rule__CallReplacement__PositionedAssignment_2_0");
-					put(grammarAccess.getCallReplacementAccess().getPositionAssignment_2_1(), "rule__CallReplacement__PositionAssignment_2_1");
-					put(grammarAccess.getCallReplacementAccess().getTargetAssignment_4(), "rule__CallReplacement__TargetAssignment_4");
-					put(grammarAccess.getCallReplacementAccess().getReplacementAssignment_6(), "rule__CallReplacement__ReplacementAssignment_6");
+					put(grammarAccess.getConstructReplacementAccess().getSelectorAssignment_1(), "rule__ConstructReplacement__SelectorAssignment_1");
+					put(grammarAccess.getConstructReplacementAccess().getPositionedAssignment_2_0(), "rule__ConstructReplacement__PositionedAssignment_2_0");
+					put(grammarAccess.getConstructReplacementAccess().getPositionAssignment_2_1(), "rule__ConstructReplacement__PositionAssignment_2_1");
+					put(grammarAccess.getConstructReplacementAccess().getTargetAssignment_4(), "rule__ConstructReplacement__TargetAssignment_4");
+					put(grammarAccess.getConstructReplacementAccess().getReplacementAssignment_6(), "rule__ConstructReplacement__ReplacementAssignment_6");
 					put(grammarAccess.getRuleReplacementAccess().getTargetAssignment_1(), "rule__RuleReplacement__TargetAssignment_1");
 					put(grammarAccess.getRuleReplacementAccess().getReplacementAssignment_3(), "rule__RuleReplacement__ReplacementAssignment_3");
 					put(grammarAccess.getGrammarAccess().getDefinitionsAssignment_1(), "rule__Grammar__DefinitionsAssignment_1");

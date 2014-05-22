@@ -1,23 +1,14 @@
 package xgen.ui.contentassist.antlr.internal; 
 
-import java.io.InputStream;
-import org.eclipse.xtext.*;
-import org.eclipse.xtext.parser.*;
-import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.TokenStream;
+import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
+
 import xgen.services.ApplicationGrammarAccess;
-
-
-
-import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalApplicationParser extends AbstractInternalContentAssistParser {
@@ -259,21 +250,21 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleApply"
 
 
-    // $ANTLR start "entryRuleCallReplacement"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:116:1: entryRuleCallReplacement : ruleCallReplacement EOF ;
-    public final void entryRuleCallReplacement() throws RecognitionException {
+    // $ANTLR start "entryRuleConstructReplacement"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:116:1: entryRuleConstructReplacement : ruleConstructReplacement EOF ;
+    public final void entryRuleConstructReplacement() throws RecognitionException {
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:117:1: ( ruleCallReplacement EOF )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:118:1: ruleCallReplacement EOF
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:117:1: ( ruleConstructReplacement EOF )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:118:1: ruleConstructReplacement EOF
             {
-             before(grammarAccess.getCallReplacementRule()); 
-            pushFollow(FOLLOW_ruleCallReplacement_in_entryRuleCallReplacement182);
-            ruleCallReplacement();
+             before(grammarAccess.getConstructReplacementRule()); 
+            pushFollow(FOLLOW_ruleConstructReplacement_in_entryRuleConstructReplacement182);
+            ruleConstructReplacement();
 
             state._fsp--;
 
-             after(grammarAccess.getCallReplacementRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCallReplacement189); 
+             after(grammarAccess.getConstructReplacementRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstructReplacement189); 
 
             }
 
@@ -286,35 +277,35 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "entryRuleCallReplacement"
+    // $ANTLR end "entryRuleConstructReplacement"
 
 
-    // $ANTLR start "ruleCallReplacement"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:125:1: ruleCallReplacement : ( ( rule__CallReplacement__Group__0 ) ) ;
-    public final void ruleCallReplacement() throws RecognitionException {
+    // $ANTLR start "ruleConstructReplacement"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:125:1: ruleConstructReplacement : ( ( rule__ConstructReplacement__Group__0 ) ) ;
+    public final void ruleConstructReplacement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:129:2: ( ( ( rule__CallReplacement__Group__0 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:130:1: ( ( rule__CallReplacement__Group__0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:129:2: ( ( ( rule__ConstructReplacement__Group__0 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:130:1: ( ( rule__ConstructReplacement__Group__0 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:130:1: ( ( rule__CallReplacement__Group__0 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:131:1: ( rule__CallReplacement__Group__0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:130:1: ( ( rule__ConstructReplacement__Group__0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:131:1: ( rule__ConstructReplacement__Group__0 )
             {
-             before(grammarAccess.getCallReplacementAccess().getGroup()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:132:1: ( rule__CallReplacement__Group__0 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:132:2: rule__CallReplacement__Group__0
+             before(grammarAccess.getConstructReplacementAccess().getGroup()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:132:1: ( rule__ConstructReplacement__Group__0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:132:2: rule__ConstructReplacement__Group__0
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__0_in_ruleCallReplacement215);
-            rule__CallReplacement__Group__0();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__0_in_ruleConstructReplacement215);
+            rule__ConstructReplacement__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCallReplacementAccess().getGroup()); 
+             after(grammarAccess.getConstructReplacementAccess().getGroup()); 
 
             }
 
@@ -333,7 +324,7 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "ruleCallReplacement"
+    // $ANTLR end "ruleConstructReplacement"
 
 
     // $ANTLR start "entryRuleRuleReplacement"
@@ -953,31 +944,34 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Apply__Alternatives_7_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:370:1: rule__Apply__Alternatives_7_1 : ( ( ( rule__Apply__CallReplacementsAssignment_7_1_0 ) ) | ( ( rule__Apply__RuleReplacementsAssignment_7_1_1 ) ) );
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:370:1: rule__Apply__Alternatives_7_1 : ( ( ( rule__Apply__ConstructReplacementsAssignment_7_1_0 ) ) | ( ( rule__Apply__RuleReplacementsAssignment_7_1_1 ) ) );
     public final void rule__Apply__Alternatives_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:374:1: ( ( ( rule__Apply__CallReplacementsAssignment_7_1_0 ) ) | ( ( rule__Apply__RuleReplacementsAssignment_7_1_1 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:374:1: ( ( ( rule__Apply__ConstructReplacementsAssignment_7_1_0 ) ) | ( ( rule__Apply__RuleReplacementsAssignment_7_1_1 ) ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
             if ( (LA2_0==16) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==RULE_ID) ) {
-                    int LA2_2 = input.LA(3);
+                if ( ((LA2_1>=RULE_CHAR && LA2_1<=RULE_STRING)||LA2_1==11||LA2_1==19||(LA2_1>=23 && LA2_1<=24)) ) {
+                    alt2=1;
+                }
+                else if ( (LA2_1==RULE_ID) ) {
+                    int LA2_3 = input.LA(3);
 
-                    if ( (LA2_2==17||LA2_2==25) ) {
+                    if ( (LA2_3==RULE_ID||(LA2_3>=RULE_CHAR && LA2_3<=RULE_STRING)||LA2_3==11||LA2_3==14||LA2_3==17||LA2_3==19||(LA2_3>=22 && LA2_3<=25)) ) {
                         alt2=1;
                     }
-                    else if ( (LA2_2==18) ) {
+                    else if ( (LA2_3==18) ) {
                         alt2=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 2, 2, input);
+                            new NoViableAltException("", 2, 3, input);
 
                         throw nvae;
                     }
@@ -997,24 +991,24 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             }
             switch (alt2) {
                 case 1 :
-                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:375:1: ( ( rule__Apply__CallReplacementsAssignment_7_1_0 ) )
+                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:375:1: ( ( rule__Apply__ConstructReplacementsAssignment_7_1_0 ) )
                     {
-                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:375:1: ( ( rule__Apply__CallReplacementsAssignment_7_1_0 ) )
-                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:376:1: ( rule__Apply__CallReplacementsAssignment_7_1_0 )
+                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:375:1: ( ( rule__Apply__ConstructReplacementsAssignment_7_1_0 ) )
+                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:376:1: ( rule__Apply__ConstructReplacementsAssignment_7_1_0 )
                     {
-                     before(grammarAccess.getApplyAccess().getCallReplacementsAssignment_7_1_0()); 
-                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:377:1: ( rule__Apply__CallReplacementsAssignment_7_1_0 )
-                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:377:2: rule__Apply__CallReplacementsAssignment_7_1_0
+                     before(grammarAccess.getApplyAccess().getConstructReplacementsAssignment_7_1_0()); 
+                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:377:1: ( rule__Apply__ConstructReplacementsAssignment_7_1_0 )
+                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:377:2: rule__Apply__ConstructReplacementsAssignment_7_1_0
                     {
-                    pushFollow(FOLLOW_rule__Apply__CallReplacementsAssignment_7_1_0_in_rule__Apply__Alternatives_7_1733);
-                    rule__Apply__CallReplacementsAssignment_7_1_0();
+                    pushFollow(FOLLOW_rule__Apply__ConstructReplacementsAssignment_7_1_0_in_rule__Apply__Alternatives_7_1733);
+                    rule__Apply__ConstructReplacementsAssignment_7_1_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getApplyAccess().getCallReplacementsAssignment_7_1_0()); 
+                     after(grammarAccess.getApplyAccess().getConstructReplacementsAssignment_7_1_0()); 
 
                     }
 
@@ -2265,23 +2259,23 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Apply__Group_7__2__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__0"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:813:1: rule__CallReplacement__Group__0 : rule__CallReplacement__Group__0__Impl rule__CallReplacement__Group__1 ;
-    public final void rule__CallReplacement__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__0"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:813:1: rule__ConstructReplacement__Group__0 : rule__ConstructReplacement__Group__0__Impl rule__ConstructReplacement__Group__1 ;
+    public final void rule__ConstructReplacement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:817:1: ( rule__CallReplacement__Group__0__Impl rule__CallReplacement__Group__1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:818:2: rule__CallReplacement__Group__0__Impl rule__CallReplacement__Group__1
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:817:1: ( rule__ConstructReplacement__Group__0__Impl rule__ConstructReplacement__Group__1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:818:2: rule__ConstructReplacement__Group__0__Impl rule__ConstructReplacement__Group__1
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__0__Impl_in_rule__CallReplacement__Group__01644);
-            rule__CallReplacement__Group__0__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__0__Impl_in_rule__ConstructReplacement__Group__01644);
+            rule__ConstructReplacement__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CallReplacement__Group__1_in_rule__CallReplacement__Group__01647);
-            rule__CallReplacement__Group__1();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__1_in_rule__ConstructReplacement__Group__01647);
+            rule__ConstructReplacement__Group__1();
 
             state._fsp--;
 
@@ -2300,12 +2294,12 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__0"
+    // $ANTLR end "rule__ConstructReplacement__Group__0"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__0__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:825:1: rule__CallReplacement__Group__0__Impl : ( 'replace' ) ;
-    public final void rule__CallReplacement__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__0__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:825:1: rule__ConstructReplacement__Group__0__Impl : ( 'replace' ) ;
+    public final void rule__ConstructReplacement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -2316,9 +2310,9 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:830:1: ( 'replace' )
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:831:1: 'replace'
             {
-             before(grammarAccess.getCallReplacementAccess().getReplaceKeyword_0()); 
-            match(input,16,FOLLOW_16_in_rule__CallReplacement__Group__0__Impl1675); 
-             after(grammarAccess.getCallReplacementAccess().getReplaceKeyword_0()); 
+             before(grammarAccess.getConstructReplacementAccess().getReplaceKeyword_0()); 
+            match(input,16,FOLLOW_16_in_rule__ConstructReplacement__Group__0__Impl1675); 
+             after(grammarAccess.getConstructReplacementAccess().getReplaceKeyword_0()); 
 
             }
 
@@ -2337,26 +2331,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__0__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group__0__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:844:1: rule__CallReplacement__Group__1 : rule__CallReplacement__Group__1__Impl rule__CallReplacement__Group__2 ;
-    public final void rule__CallReplacement__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__1"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:844:1: rule__ConstructReplacement__Group__1 : rule__ConstructReplacement__Group__1__Impl rule__ConstructReplacement__Group__2 ;
+    public final void rule__ConstructReplacement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:848:1: ( rule__CallReplacement__Group__1__Impl rule__CallReplacement__Group__2 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:849:2: rule__CallReplacement__Group__1__Impl rule__CallReplacement__Group__2
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:848:1: ( rule__ConstructReplacement__Group__1__Impl rule__ConstructReplacement__Group__2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:849:2: rule__ConstructReplacement__Group__1__Impl rule__ConstructReplacement__Group__2
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__1__Impl_in_rule__CallReplacement__Group__11706);
-            rule__CallReplacement__Group__1__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__1__Impl_in_rule__ConstructReplacement__Group__11706);
+            rule__ConstructReplacement__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CallReplacement__Group__2_in_rule__CallReplacement__Group__11709);
-            rule__CallReplacement__Group__2();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__2_in_rule__ConstructReplacement__Group__11709);
+            rule__ConstructReplacement__Group__2();
 
             state._fsp--;
 
@@ -2375,35 +2369,35 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__1"
+    // $ANTLR end "rule__ConstructReplacement__Group__1"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__1__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:856:1: rule__CallReplacement__Group__1__Impl : ( ( rule__CallReplacement__SelectorAssignment_1 ) ) ;
-    public final void rule__CallReplacement__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__1__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:856:1: rule__ConstructReplacement__Group__1__Impl : ( ( rule__ConstructReplacement__SelectorAssignment_1 ) ) ;
+    public final void rule__ConstructReplacement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:860:1: ( ( ( rule__CallReplacement__SelectorAssignment_1 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:861:1: ( ( rule__CallReplacement__SelectorAssignment_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:860:1: ( ( ( rule__ConstructReplacement__SelectorAssignment_1 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:861:1: ( ( rule__ConstructReplacement__SelectorAssignment_1 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:861:1: ( ( rule__CallReplacement__SelectorAssignment_1 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:862:1: ( rule__CallReplacement__SelectorAssignment_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:861:1: ( ( rule__ConstructReplacement__SelectorAssignment_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:862:1: ( rule__ConstructReplacement__SelectorAssignment_1 )
             {
-             before(grammarAccess.getCallReplacementAccess().getSelectorAssignment_1()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:863:1: ( rule__CallReplacement__SelectorAssignment_1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:863:2: rule__CallReplacement__SelectorAssignment_1
+             before(grammarAccess.getConstructReplacementAccess().getSelectorAssignment_1()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:863:1: ( rule__ConstructReplacement__SelectorAssignment_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:863:2: rule__ConstructReplacement__SelectorAssignment_1
             {
-            pushFollow(FOLLOW_rule__CallReplacement__SelectorAssignment_1_in_rule__CallReplacement__Group__1__Impl1736);
-            rule__CallReplacement__SelectorAssignment_1();
+            pushFollow(FOLLOW_rule__ConstructReplacement__SelectorAssignment_1_in_rule__ConstructReplacement__Group__1__Impl1736);
+            rule__ConstructReplacement__SelectorAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCallReplacementAccess().getSelectorAssignment_1()); 
+             after(grammarAccess.getConstructReplacementAccess().getSelectorAssignment_1()); 
 
             }
 
@@ -2422,26 +2416,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__1__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group__1__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:873:1: rule__CallReplacement__Group__2 : rule__CallReplacement__Group__2__Impl rule__CallReplacement__Group__3 ;
-    public final void rule__CallReplacement__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__2"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:873:1: rule__ConstructReplacement__Group__2 : rule__ConstructReplacement__Group__2__Impl rule__ConstructReplacement__Group__3 ;
+    public final void rule__ConstructReplacement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:877:1: ( rule__CallReplacement__Group__2__Impl rule__CallReplacement__Group__3 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:878:2: rule__CallReplacement__Group__2__Impl rule__CallReplacement__Group__3
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:877:1: ( rule__ConstructReplacement__Group__2__Impl rule__ConstructReplacement__Group__3 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:878:2: rule__ConstructReplacement__Group__2__Impl rule__ConstructReplacement__Group__3
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__2__Impl_in_rule__CallReplacement__Group__21766);
-            rule__CallReplacement__Group__2__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__2__Impl_in_rule__ConstructReplacement__Group__21766);
+            rule__ConstructReplacement__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CallReplacement__Group__3_in_rule__CallReplacement__Group__21769);
-            rule__CallReplacement__Group__3();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__3_in_rule__ConstructReplacement__Group__21769);
+            rule__ConstructReplacement__Group__3();
 
             state._fsp--;
 
@@ -2460,24 +2454,24 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__2"
+    // $ANTLR end "rule__ConstructReplacement__Group__2"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__2__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:885:1: rule__CallReplacement__Group__2__Impl : ( ( rule__CallReplacement__Group_2__0 )? ) ;
-    public final void rule__CallReplacement__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__2__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:885:1: rule__ConstructReplacement__Group__2__Impl : ( ( rule__ConstructReplacement__Group_2__0 )? ) ;
+    public final void rule__ConstructReplacement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:889:1: ( ( ( rule__CallReplacement__Group_2__0 )? ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:890:1: ( ( rule__CallReplacement__Group_2__0 )? )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:889:1: ( ( ( rule__ConstructReplacement__Group_2__0 )? ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:890:1: ( ( rule__ConstructReplacement__Group_2__0 )? )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:890:1: ( ( rule__CallReplacement__Group_2__0 )? )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:891:1: ( rule__CallReplacement__Group_2__0 )?
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:890:1: ( ( rule__ConstructReplacement__Group_2__0 )? )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:891:1: ( rule__ConstructReplacement__Group_2__0 )?
             {
-             before(grammarAccess.getCallReplacementAccess().getGroup_2()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:892:1: ( rule__CallReplacement__Group_2__0 )?
+             before(grammarAccess.getConstructReplacementAccess().getGroup_2()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:892:1: ( rule__ConstructReplacement__Group_2__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2486,10 +2480,10 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             }
             switch (alt7) {
                 case 1 :
-                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:892:2: rule__CallReplacement__Group_2__0
+                    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:892:2: rule__ConstructReplacement__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__CallReplacement__Group_2__0_in_rule__CallReplacement__Group__2__Impl1796);
-                    rule__CallReplacement__Group_2__0();
+                    pushFollow(FOLLOW_rule__ConstructReplacement__Group_2__0_in_rule__ConstructReplacement__Group__2__Impl1796);
+                    rule__ConstructReplacement__Group_2__0();
 
                     state._fsp--;
 
@@ -2499,7 +2493,7 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
             }
 
-             after(grammarAccess.getCallReplacementAccess().getGroup_2()); 
+             after(grammarAccess.getConstructReplacementAccess().getGroup_2()); 
 
             }
 
@@ -2518,26 +2512,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__2__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group__2__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__3"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:902:1: rule__CallReplacement__Group__3 : rule__CallReplacement__Group__3__Impl rule__CallReplacement__Group__4 ;
-    public final void rule__CallReplacement__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__3"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:902:1: rule__ConstructReplacement__Group__3 : rule__ConstructReplacement__Group__3__Impl rule__ConstructReplacement__Group__4 ;
+    public final void rule__ConstructReplacement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:906:1: ( rule__CallReplacement__Group__3__Impl rule__CallReplacement__Group__4 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:907:2: rule__CallReplacement__Group__3__Impl rule__CallReplacement__Group__4
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:906:1: ( rule__ConstructReplacement__Group__3__Impl rule__ConstructReplacement__Group__4 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:907:2: rule__ConstructReplacement__Group__3__Impl rule__ConstructReplacement__Group__4
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__3__Impl_in_rule__CallReplacement__Group__31827);
-            rule__CallReplacement__Group__3__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__3__Impl_in_rule__ConstructReplacement__Group__31827);
+            rule__ConstructReplacement__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CallReplacement__Group__4_in_rule__CallReplacement__Group__31830);
-            rule__CallReplacement__Group__4();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__4_in_rule__ConstructReplacement__Group__31830);
+            rule__ConstructReplacement__Group__4();
 
             state._fsp--;
 
@@ -2556,12 +2550,12 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__3"
+    // $ANTLR end "rule__ConstructReplacement__Group__3"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__3__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:914:1: rule__CallReplacement__Group__3__Impl : ( 'in' ) ;
-    public final void rule__CallReplacement__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__3__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:914:1: rule__ConstructReplacement__Group__3__Impl : ( 'in' ) ;
+    public final void rule__ConstructReplacement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -2572,9 +2566,9 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:919:1: ( 'in' )
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:920:1: 'in'
             {
-             before(grammarAccess.getCallReplacementAccess().getInKeyword_3()); 
-            match(input,17,FOLLOW_17_in_rule__CallReplacement__Group__3__Impl1858); 
-             after(grammarAccess.getCallReplacementAccess().getInKeyword_3()); 
+             before(grammarAccess.getConstructReplacementAccess().getInKeyword_3()); 
+            match(input,17,FOLLOW_17_in_rule__ConstructReplacement__Group__3__Impl1858); 
+             after(grammarAccess.getConstructReplacementAccess().getInKeyword_3()); 
 
             }
 
@@ -2593,26 +2587,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__3__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group__3__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__4"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:933:1: rule__CallReplacement__Group__4 : rule__CallReplacement__Group__4__Impl rule__CallReplacement__Group__5 ;
-    public final void rule__CallReplacement__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__4"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:933:1: rule__ConstructReplacement__Group__4 : rule__ConstructReplacement__Group__4__Impl rule__ConstructReplacement__Group__5 ;
+    public final void rule__ConstructReplacement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:937:1: ( rule__CallReplacement__Group__4__Impl rule__CallReplacement__Group__5 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:938:2: rule__CallReplacement__Group__4__Impl rule__CallReplacement__Group__5
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:937:1: ( rule__ConstructReplacement__Group__4__Impl rule__ConstructReplacement__Group__5 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:938:2: rule__ConstructReplacement__Group__4__Impl rule__ConstructReplacement__Group__5
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__4__Impl_in_rule__CallReplacement__Group__41889);
-            rule__CallReplacement__Group__4__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__4__Impl_in_rule__ConstructReplacement__Group__41889);
+            rule__ConstructReplacement__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CallReplacement__Group__5_in_rule__CallReplacement__Group__41892);
-            rule__CallReplacement__Group__5();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__5_in_rule__ConstructReplacement__Group__41892);
+            rule__ConstructReplacement__Group__5();
 
             state._fsp--;
 
@@ -2631,35 +2625,35 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__4"
+    // $ANTLR end "rule__ConstructReplacement__Group__4"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__4__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:945:1: rule__CallReplacement__Group__4__Impl : ( ( rule__CallReplacement__TargetAssignment_4 ) ) ;
-    public final void rule__CallReplacement__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__4__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:945:1: rule__ConstructReplacement__Group__4__Impl : ( ( rule__ConstructReplacement__TargetAssignment_4 ) ) ;
+    public final void rule__ConstructReplacement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:949:1: ( ( ( rule__CallReplacement__TargetAssignment_4 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:950:1: ( ( rule__CallReplacement__TargetAssignment_4 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:949:1: ( ( ( rule__ConstructReplacement__TargetAssignment_4 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:950:1: ( ( rule__ConstructReplacement__TargetAssignment_4 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:950:1: ( ( rule__CallReplacement__TargetAssignment_4 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:951:1: ( rule__CallReplacement__TargetAssignment_4 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:950:1: ( ( rule__ConstructReplacement__TargetAssignment_4 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:951:1: ( rule__ConstructReplacement__TargetAssignment_4 )
             {
-             before(grammarAccess.getCallReplacementAccess().getTargetAssignment_4()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:952:1: ( rule__CallReplacement__TargetAssignment_4 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:952:2: rule__CallReplacement__TargetAssignment_4
+             before(grammarAccess.getConstructReplacementAccess().getTargetAssignment_4()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:952:1: ( rule__ConstructReplacement__TargetAssignment_4 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:952:2: rule__ConstructReplacement__TargetAssignment_4
             {
-            pushFollow(FOLLOW_rule__CallReplacement__TargetAssignment_4_in_rule__CallReplacement__Group__4__Impl1919);
-            rule__CallReplacement__TargetAssignment_4();
+            pushFollow(FOLLOW_rule__ConstructReplacement__TargetAssignment_4_in_rule__ConstructReplacement__Group__4__Impl1919);
+            rule__ConstructReplacement__TargetAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCallReplacementAccess().getTargetAssignment_4()); 
+             after(grammarAccess.getConstructReplacementAccess().getTargetAssignment_4()); 
 
             }
 
@@ -2678,26 +2672,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__4__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group__4__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__5"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:962:1: rule__CallReplacement__Group__5 : rule__CallReplacement__Group__5__Impl rule__CallReplacement__Group__6 ;
-    public final void rule__CallReplacement__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__5"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:962:1: rule__ConstructReplacement__Group__5 : rule__ConstructReplacement__Group__5__Impl rule__ConstructReplacement__Group__6 ;
+    public final void rule__ConstructReplacement__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:966:1: ( rule__CallReplacement__Group__5__Impl rule__CallReplacement__Group__6 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:967:2: rule__CallReplacement__Group__5__Impl rule__CallReplacement__Group__6
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:966:1: ( rule__ConstructReplacement__Group__5__Impl rule__ConstructReplacement__Group__6 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:967:2: rule__ConstructReplacement__Group__5__Impl rule__ConstructReplacement__Group__6
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__5__Impl_in_rule__CallReplacement__Group__51949);
-            rule__CallReplacement__Group__5__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__5__Impl_in_rule__ConstructReplacement__Group__51949);
+            rule__ConstructReplacement__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CallReplacement__Group__6_in_rule__CallReplacement__Group__51952);
-            rule__CallReplacement__Group__6();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__6_in_rule__ConstructReplacement__Group__51952);
+            rule__ConstructReplacement__Group__6();
 
             state._fsp--;
 
@@ -2716,12 +2710,12 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__5"
+    // $ANTLR end "rule__ConstructReplacement__Group__5"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__5__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:974:1: rule__CallReplacement__Group__5__Impl : ( 'with' ) ;
-    public final void rule__CallReplacement__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__5__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:974:1: rule__ConstructReplacement__Group__5__Impl : ( 'with' ) ;
+    public final void rule__ConstructReplacement__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -2732,9 +2726,9 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:979:1: ( 'with' )
             // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:980:1: 'with'
             {
-             before(grammarAccess.getCallReplacementAccess().getWithKeyword_5()); 
-            match(input,18,FOLLOW_18_in_rule__CallReplacement__Group__5__Impl1980); 
-             after(grammarAccess.getCallReplacementAccess().getWithKeyword_5()); 
+             before(grammarAccess.getConstructReplacementAccess().getWithKeyword_5()); 
+            match(input,18,FOLLOW_18_in_rule__ConstructReplacement__Group__5__Impl1980); 
+             after(grammarAccess.getConstructReplacementAccess().getWithKeyword_5()); 
 
             }
 
@@ -2753,21 +2747,21 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__5__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group__5__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__6"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:993:1: rule__CallReplacement__Group__6 : rule__CallReplacement__Group__6__Impl ;
-    public final void rule__CallReplacement__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__6"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:993:1: rule__ConstructReplacement__Group__6 : rule__ConstructReplacement__Group__6__Impl ;
+    public final void rule__ConstructReplacement__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:997:1: ( rule__CallReplacement__Group__6__Impl )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:998:2: rule__CallReplacement__Group__6__Impl
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:997:1: ( rule__ConstructReplacement__Group__6__Impl )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:998:2: rule__ConstructReplacement__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group__6__Impl_in_rule__CallReplacement__Group__62011);
-            rule__CallReplacement__Group__6__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group__6__Impl_in_rule__ConstructReplacement__Group__62011);
+            rule__ConstructReplacement__Group__6__Impl();
 
             state._fsp--;
 
@@ -2786,35 +2780,35 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__6"
+    // $ANTLR end "rule__ConstructReplacement__Group__6"
 
 
-    // $ANTLR start "rule__CallReplacement__Group__6__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1004:1: rule__CallReplacement__Group__6__Impl : ( ( rule__CallReplacement__ReplacementAssignment_6 ) ) ;
-    public final void rule__CallReplacement__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group__6__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1004:1: rule__ConstructReplacement__Group__6__Impl : ( ( rule__ConstructReplacement__ReplacementAssignment_6 ) ) ;
+    public final void rule__ConstructReplacement__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1008:1: ( ( ( rule__CallReplacement__ReplacementAssignment_6 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1009:1: ( ( rule__CallReplacement__ReplacementAssignment_6 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1008:1: ( ( ( rule__ConstructReplacement__ReplacementAssignment_6 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1009:1: ( ( rule__ConstructReplacement__ReplacementAssignment_6 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1009:1: ( ( rule__CallReplacement__ReplacementAssignment_6 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1010:1: ( rule__CallReplacement__ReplacementAssignment_6 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1009:1: ( ( rule__ConstructReplacement__ReplacementAssignment_6 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1010:1: ( rule__ConstructReplacement__ReplacementAssignment_6 )
             {
-             before(grammarAccess.getCallReplacementAccess().getReplacementAssignment_6()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1011:1: ( rule__CallReplacement__ReplacementAssignment_6 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1011:2: rule__CallReplacement__ReplacementAssignment_6
+             before(grammarAccess.getConstructReplacementAccess().getReplacementAssignment_6()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1011:1: ( rule__ConstructReplacement__ReplacementAssignment_6 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1011:2: rule__ConstructReplacement__ReplacementAssignment_6
             {
-            pushFollow(FOLLOW_rule__CallReplacement__ReplacementAssignment_6_in_rule__CallReplacement__Group__6__Impl2038);
-            rule__CallReplacement__ReplacementAssignment_6();
+            pushFollow(FOLLOW_rule__ConstructReplacement__ReplacementAssignment_6_in_rule__ConstructReplacement__Group__6__Impl2038);
+            rule__ConstructReplacement__ReplacementAssignment_6();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCallReplacementAccess().getReplacementAssignment_6()); 
+             after(grammarAccess.getConstructReplacementAccess().getReplacementAssignment_6()); 
 
             }
 
@@ -2833,26 +2827,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group__6__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group__6__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group_2__0"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1035:1: rule__CallReplacement__Group_2__0 : rule__CallReplacement__Group_2__0__Impl rule__CallReplacement__Group_2__1 ;
-    public final void rule__CallReplacement__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group_2__0"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1035:1: rule__ConstructReplacement__Group_2__0 : rule__ConstructReplacement__Group_2__0__Impl rule__ConstructReplacement__Group_2__1 ;
+    public final void rule__ConstructReplacement__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1039:1: ( rule__CallReplacement__Group_2__0__Impl rule__CallReplacement__Group_2__1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1040:2: rule__CallReplacement__Group_2__0__Impl rule__CallReplacement__Group_2__1
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1039:1: ( rule__ConstructReplacement__Group_2__0__Impl rule__ConstructReplacement__Group_2__1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1040:2: rule__ConstructReplacement__Group_2__0__Impl rule__ConstructReplacement__Group_2__1
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group_2__0__Impl_in_rule__CallReplacement__Group_2__02082);
-            rule__CallReplacement__Group_2__0__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group_2__0__Impl_in_rule__ConstructReplacement__Group_2__02082);
+            rule__ConstructReplacement__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CallReplacement__Group_2__1_in_rule__CallReplacement__Group_2__02085);
-            rule__CallReplacement__Group_2__1();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group_2__1_in_rule__ConstructReplacement__Group_2__02085);
+            rule__ConstructReplacement__Group_2__1();
 
             state._fsp--;
 
@@ -2871,35 +2865,35 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group_2__0"
+    // $ANTLR end "rule__ConstructReplacement__Group_2__0"
 
 
-    // $ANTLR start "rule__CallReplacement__Group_2__0__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1047:1: rule__CallReplacement__Group_2__0__Impl : ( ( rule__CallReplacement__PositionedAssignment_2_0 ) ) ;
-    public final void rule__CallReplacement__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group_2__0__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1047:1: rule__ConstructReplacement__Group_2__0__Impl : ( ( rule__ConstructReplacement__PositionedAssignment_2_0 ) ) ;
+    public final void rule__ConstructReplacement__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1051:1: ( ( ( rule__CallReplacement__PositionedAssignment_2_0 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1052:1: ( ( rule__CallReplacement__PositionedAssignment_2_0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1051:1: ( ( ( rule__ConstructReplacement__PositionedAssignment_2_0 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1052:1: ( ( rule__ConstructReplacement__PositionedAssignment_2_0 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1052:1: ( ( rule__CallReplacement__PositionedAssignment_2_0 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1053:1: ( rule__CallReplacement__PositionedAssignment_2_0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1052:1: ( ( rule__ConstructReplacement__PositionedAssignment_2_0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1053:1: ( rule__ConstructReplacement__PositionedAssignment_2_0 )
             {
-             before(grammarAccess.getCallReplacementAccess().getPositionedAssignment_2_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1054:1: ( rule__CallReplacement__PositionedAssignment_2_0 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1054:2: rule__CallReplacement__PositionedAssignment_2_0
+             before(grammarAccess.getConstructReplacementAccess().getPositionedAssignment_2_0()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1054:1: ( rule__ConstructReplacement__PositionedAssignment_2_0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1054:2: rule__ConstructReplacement__PositionedAssignment_2_0
             {
-            pushFollow(FOLLOW_rule__CallReplacement__PositionedAssignment_2_0_in_rule__CallReplacement__Group_2__0__Impl2112);
-            rule__CallReplacement__PositionedAssignment_2_0();
+            pushFollow(FOLLOW_rule__ConstructReplacement__PositionedAssignment_2_0_in_rule__ConstructReplacement__Group_2__0__Impl2112);
+            rule__ConstructReplacement__PositionedAssignment_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCallReplacementAccess().getPositionedAssignment_2_0()); 
+             after(grammarAccess.getConstructReplacementAccess().getPositionedAssignment_2_0()); 
 
             }
 
@@ -2918,21 +2912,21 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group_2__0__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__CallReplacement__Group_2__1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1064:1: rule__CallReplacement__Group_2__1 : rule__CallReplacement__Group_2__1__Impl ;
-    public final void rule__CallReplacement__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group_2__1"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1064:1: rule__ConstructReplacement__Group_2__1 : rule__ConstructReplacement__Group_2__1__Impl ;
+    public final void rule__ConstructReplacement__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1068:1: ( rule__CallReplacement__Group_2__1__Impl )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1069:2: rule__CallReplacement__Group_2__1__Impl
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1068:1: ( rule__ConstructReplacement__Group_2__1__Impl )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1069:2: rule__ConstructReplacement__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__CallReplacement__Group_2__1__Impl_in_rule__CallReplacement__Group_2__12142);
-            rule__CallReplacement__Group_2__1__Impl();
+            pushFollow(FOLLOW_rule__ConstructReplacement__Group_2__1__Impl_in_rule__ConstructReplacement__Group_2__12142);
+            rule__ConstructReplacement__Group_2__1__Impl();
 
             state._fsp--;
 
@@ -2951,35 +2945,35 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group_2__1"
+    // $ANTLR end "rule__ConstructReplacement__Group_2__1"
 
 
-    // $ANTLR start "rule__CallReplacement__Group_2__1__Impl"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1075:1: rule__CallReplacement__Group_2__1__Impl : ( ( rule__CallReplacement__PositionAssignment_2_1 ) ) ;
-    public final void rule__CallReplacement__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__Group_2__1__Impl"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1075:1: rule__ConstructReplacement__Group_2__1__Impl : ( ( rule__ConstructReplacement__PositionAssignment_2_1 ) ) ;
+    public final void rule__ConstructReplacement__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1079:1: ( ( ( rule__CallReplacement__PositionAssignment_2_1 ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1080:1: ( ( rule__CallReplacement__PositionAssignment_2_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1079:1: ( ( ( rule__ConstructReplacement__PositionAssignment_2_1 ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1080:1: ( ( rule__ConstructReplacement__PositionAssignment_2_1 ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1080:1: ( ( rule__CallReplacement__PositionAssignment_2_1 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1081:1: ( rule__CallReplacement__PositionAssignment_2_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1080:1: ( ( rule__ConstructReplacement__PositionAssignment_2_1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1081:1: ( rule__ConstructReplacement__PositionAssignment_2_1 )
             {
-             before(grammarAccess.getCallReplacementAccess().getPositionAssignment_2_1()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1082:1: ( rule__CallReplacement__PositionAssignment_2_1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1082:2: rule__CallReplacement__PositionAssignment_2_1
+             before(grammarAccess.getConstructReplacementAccess().getPositionAssignment_2_1()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1082:1: ( rule__ConstructReplacement__PositionAssignment_2_1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:1082:2: rule__ConstructReplacement__PositionAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__CallReplacement__PositionAssignment_2_1_in_rule__CallReplacement__Group_2__1__Impl2169);
-            rule__CallReplacement__PositionAssignment_2_1();
+            pushFollow(FOLLOW_rule__ConstructReplacement__PositionAssignment_2_1_in_rule__ConstructReplacement__Group_2__1__Impl2169);
+            rule__ConstructReplacement__PositionAssignment_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCallReplacementAccess().getPositionAssignment_2_1()); 
+             after(grammarAccess.getConstructReplacementAccess().getPositionAssignment_2_1()); 
 
             }
 
@@ -2998,7 +2992,7 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__Group_2__1__Impl"
+    // $ANTLR end "rule__ConstructReplacement__Group_2__1__Impl"
 
 
     // $ANTLR start "rule__RuleReplacement__Group__0"
@@ -7567,26 +7561,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Apply__MaxAssignment_5"
 
 
-    // $ANTLR start "rule__Apply__CallReplacementsAssignment_7_1_0"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2898:1: rule__Apply__CallReplacementsAssignment_7_1_0 : ( ruleCallReplacement ) ;
-    public final void rule__Apply__CallReplacementsAssignment_7_1_0() throws RecognitionException {
+    // $ANTLR start "rule__Apply__ConstructReplacementsAssignment_7_1_0"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2898:1: rule__Apply__ConstructReplacementsAssignment_7_1_0 : ( ruleConstructReplacement ) ;
+    public final void rule__Apply__ConstructReplacementsAssignment_7_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2902:1: ( ( ruleCallReplacement ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2903:1: ( ruleCallReplacement )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2902:1: ( ( ruleConstructReplacement ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2903:1: ( ruleConstructReplacement )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2903:1: ( ruleCallReplacement )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2904:1: ruleCallReplacement
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2903:1: ( ruleConstructReplacement )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2904:1: ruleConstructReplacement
             {
-             before(grammarAccess.getApplyAccess().getCallReplacementsCallReplacementParserRuleCall_7_1_0_0()); 
-            pushFollow(FOLLOW_ruleCallReplacement_in_rule__Apply__CallReplacementsAssignment_7_1_05736);
-            ruleCallReplacement();
+             before(grammarAccess.getApplyAccess().getConstructReplacementsConstructReplacementParserRuleCall_7_1_0_0()); 
+            pushFollow(FOLLOW_ruleConstructReplacement_in_rule__Apply__ConstructReplacementsAssignment_7_1_05736);
+            ruleConstructReplacement();
 
             state._fsp--;
 
-             after(grammarAccess.getApplyAccess().getCallReplacementsCallReplacementParserRuleCall_7_1_0_0()); 
+             after(grammarAccess.getApplyAccess().getConstructReplacementsConstructReplacementParserRuleCall_7_1_0_0()); 
 
             }
 
@@ -7605,7 +7599,7 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Apply__CallReplacementsAssignment_7_1_0"
+    // $ANTLR end "rule__Apply__ConstructReplacementsAssignment_7_1_0"
 
 
     // $ANTLR start "rule__Apply__RuleReplacementsAssignment_7_1_1"
@@ -7649,198 +7643,26 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Apply__RuleReplacementsAssignment_7_1_1"
 
 
-    // $ANTLR start "rule__CallReplacement__SelectorAssignment_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2928:1: rule__CallReplacement__SelectorAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__CallReplacement__SelectorAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ConstructReplacement__SelectorAssignment_1"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2928:1: rule__ConstructReplacement__SelectorAssignment_1 : ( ruleConstruct0 ) ;
+    public final void rule__ConstructReplacement__SelectorAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2932:1: ( ( ( RULE_ID ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2933:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2932:1: ( ( ruleConstruct0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2933:1: ( ruleConstruct0 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2933:1: ( ( RULE_ID ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2934:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2933:1: ( ruleConstruct0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2934:1: ruleConstruct0
             {
-             before(grammarAccess.getCallReplacementAccess().getSelectorAbstractRuleCrossReference_1_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2935:1: ( RULE_ID )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2936:1: RULE_ID
-            {
-             before(grammarAccess.getCallReplacementAccess().getSelectorAbstractRuleIDTerminalRuleCall_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__CallReplacement__SelectorAssignment_15802); 
-             after(grammarAccess.getCallReplacementAccess().getSelectorAbstractRuleIDTerminalRuleCall_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getCallReplacementAccess().getSelectorAbstractRuleCrossReference_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CallReplacement__SelectorAssignment_1"
-
-
-    // $ANTLR start "rule__CallReplacement__PositionedAssignment_2_0"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2947:1: rule__CallReplacement__PositionedAssignment_2_0 : ( ( '/' ) ) ;
-    public final void rule__CallReplacement__PositionedAssignment_2_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2951:1: ( ( ( '/' ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2952:1: ( ( '/' ) )
-            {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2952:1: ( ( '/' ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2953:1: ( '/' )
-            {
-             before(grammarAccess.getCallReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2954:1: ( '/' )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2955:1: '/'
-            {
-             before(grammarAccess.getCallReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
-            match(input,25,FOLLOW_25_in_rule__CallReplacement__PositionedAssignment_2_05842); 
-             after(grammarAccess.getCallReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
-
-            }
-
-             after(grammarAccess.getCallReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CallReplacement__PositionedAssignment_2_0"
-
-
-    // $ANTLR start "rule__CallReplacement__PositionAssignment_2_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2970:1: rule__CallReplacement__PositionAssignment_2_1 : ( RULE_INT ) ;
-    public final void rule__CallReplacement__PositionAssignment_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2974:1: ( ( RULE_INT ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2975:1: ( RULE_INT )
-            {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2975:1: ( RULE_INT )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2976:1: RULE_INT
-            {
-             before(grammarAccess.getCallReplacementAccess().getPositionINTTerminalRuleCall_2_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__CallReplacement__PositionAssignment_2_15881); 
-             after(grammarAccess.getCallReplacementAccess().getPositionINTTerminalRuleCall_2_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CallReplacement__PositionAssignment_2_1"
-
-
-    // $ANTLR start "rule__CallReplacement__TargetAssignment_4"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2985:1: rule__CallReplacement__TargetAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__CallReplacement__TargetAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2989:1: ( ( ( RULE_ID ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2990:1: ( ( RULE_ID ) )
-            {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2990:1: ( ( RULE_ID ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2991:1: ( RULE_ID )
-            {
-             before(grammarAccess.getCallReplacementAccess().getTargetAbstractRuleCrossReference_4_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2992:1: ( RULE_ID )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2993:1: RULE_ID
-            {
-             before(grammarAccess.getCallReplacementAccess().getTargetAbstractRuleIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__CallReplacement__TargetAssignment_45916); 
-             after(grammarAccess.getCallReplacementAccess().getTargetAbstractRuleIDTerminalRuleCall_4_0_1()); 
-
-            }
-
-             after(grammarAccess.getCallReplacementAccess().getTargetAbstractRuleCrossReference_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CallReplacement__TargetAssignment_4"
-
-
-    // $ANTLR start "rule__CallReplacement__ReplacementAssignment_6"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3004:1: rule__CallReplacement__ReplacementAssignment_6 : ( ruleConstruct0 ) ;
-    public final void rule__CallReplacement__ReplacementAssignment_6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3008:1: ( ( ruleConstruct0 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3009:1: ( ruleConstruct0 )
-            {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3009:1: ( ruleConstruct0 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3010:1: ruleConstruct0
-            {
-             before(grammarAccess.getCallReplacementAccess().getReplacementConstruct0ParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleConstruct0_in_rule__CallReplacement__ReplacementAssignment_65951);
+             before(grammarAccess.getConstructReplacementAccess().getSelectorConstruct0ParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleConstruct0_in_rule__ConstructReplacement__SelectorAssignment_15798);
             ruleConstruct0();
 
             state._fsp--;
 
-             after(grammarAccess.getCallReplacementAccess().getReplacementConstruct0ParserRuleCall_6_0()); 
+             after(grammarAccess.getConstructReplacementAccess().getSelectorConstruct0ParserRuleCall_1_0()); 
 
             }
 
@@ -7859,28 +7681,196 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CallReplacement__ReplacementAssignment_6"
+    // $ANTLR end "rule__ConstructReplacement__SelectorAssignment_1"
+
+
+    // $ANTLR start "rule__ConstructReplacement__PositionedAssignment_2_0"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2943:1: rule__ConstructReplacement__PositionedAssignment_2_0 : ( ( '/' ) ) ;
+    public final void rule__ConstructReplacement__PositionedAssignment_2_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2947:1: ( ( ( '/' ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2948:1: ( ( '/' ) )
+            {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2948:1: ( ( '/' ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2949:1: ( '/' )
+            {
+             before(grammarAccess.getConstructReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2950:1: ( '/' )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2951:1: '/'
+            {
+             before(grammarAccess.getConstructReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
+            match(input,25,FOLLOW_25_in_rule__ConstructReplacement__PositionedAssignment_2_05834); 
+             after(grammarAccess.getConstructReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
+
+            }
+
+             after(grammarAccess.getConstructReplacementAccess().getPositionedSolidusKeyword_2_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ConstructReplacement__PositionedAssignment_2_0"
+
+
+    // $ANTLR start "rule__ConstructReplacement__PositionAssignment_2_1"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2966:1: rule__ConstructReplacement__PositionAssignment_2_1 : ( RULE_INT ) ;
+    public final void rule__ConstructReplacement__PositionAssignment_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2970:1: ( ( RULE_INT ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2971:1: ( RULE_INT )
+            {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2971:1: ( RULE_INT )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2972:1: RULE_INT
+            {
+             before(grammarAccess.getConstructReplacementAccess().getPositionINTTerminalRuleCall_2_1_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__ConstructReplacement__PositionAssignment_2_15873); 
+             after(grammarAccess.getConstructReplacementAccess().getPositionINTTerminalRuleCall_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ConstructReplacement__PositionAssignment_2_1"
+
+
+    // $ANTLR start "rule__ConstructReplacement__TargetAssignment_4"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2981:1: rule__ConstructReplacement__TargetAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__ConstructReplacement__TargetAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2985:1: ( ( ( RULE_ID ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2986:1: ( ( RULE_ID ) )
+            {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2986:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2987:1: ( RULE_ID )
+            {
+             before(grammarAccess.getConstructReplacementAccess().getTargetAbstractRuleCrossReference_4_0()); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2988:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:2989:1: RULE_ID
+            {
+             before(grammarAccess.getConstructReplacementAccess().getTargetAbstractRuleIDTerminalRuleCall_4_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ConstructReplacement__TargetAssignment_45908); 
+             after(grammarAccess.getConstructReplacementAccess().getTargetAbstractRuleIDTerminalRuleCall_4_0_1()); 
+
+            }
+
+             after(grammarAccess.getConstructReplacementAccess().getTargetAbstractRuleCrossReference_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ConstructReplacement__TargetAssignment_4"
+
+
+    // $ANTLR start "rule__ConstructReplacement__ReplacementAssignment_6"
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3000:1: rule__ConstructReplacement__ReplacementAssignment_6 : ( ruleConstruct0 ) ;
+    public final void rule__ConstructReplacement__ReplacementAssignment_6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3004:1: ( ( ruleConstruct0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3005:1: ( ruleConstruct0 )
+            {
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3005:1: ( ruleConstruct0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3006:1: ruleConstruct0
+            {
+             before(grammarAccess.getConstructReplacementAccess().getReplacementConstruct0ParserRuleCall_6_0()); 
+            pushFollow(FOLLOW_ruleConstruct0_in_rule__ConstructReplacement__ReplacementAssignment_65943);
+            ruleConstruct0();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstructReplacementAccess().getReplacementConstruct0ParserRuleCall_6_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ConstructReplacement__ReplacementAssignment_6"
 
 
     // $ANTLR start "rule__RuleReplacement__TargetAssignment_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3019:1: rule__RuleReplacement__TargetAssignment_1 : ( ( RULE_ID ) ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3015:1: rule__RuleReplacement__TargetAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__RuleReplacement__TargetAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3023:1: ( ( ( RULE_ID ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3024:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3019:1: ( ( ( RULE_ID ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3020:1: ( ( RULE_ID ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3024:1: ( ( RULE_ID ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3025:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3020:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3021:1: ( RULE_ID )
             {
              before(grammarAccess.getRuleReplacementAccess().getTargetAbstractRuleCrossReference_1_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3026:1: ( RULE_ID )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3027:1: RULE_ID
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3022:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3023:1: RULE_ID
             {
              before(grammarAccess.getRuleReplacementAccess().getTargetAbstractRuleIDTerminalRuleCall_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RuleReplacement__TargetAssignment_15986); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RuleReplacement__TargetAssignment_15978); 
              after(grammarAccess.getRuleReplacementAccess().getTargetAbstractRuleIDTerminalRuleCall_1_0_1()); 
 
             }
@@ -7908,20 +7898,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RuleReplacement__ReplacementAssignment_3"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3038:1: rule__RuleReplacement__ReplacementAssignment_3 : ( ruleConstruct0 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3034:1: rule__RuleReplacement__ReplacementAssignment_3 : ( ruleConstruct0 ) ;
     public final void rule__RuleReplacement__ReplacementAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3042:1: ( ( ruleConstruct0 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3043:1: ( ruleConstruct0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3038:1: ( ( ruleConstruct0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3039:1: ( ruleConstruct0 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3043:1: ( ruleConstruct0 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3044:1: ruleConstruct0
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3039:1: ( ruleConstruct0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3040:1: ruleConstruct0
             {
              before(grammarAccess.getRuleReplacementAccess().getReplacementConstruct0ParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleConstruct0_in_rule__RuleReplacement__ReplacementAssignment_36021);
+            pushFollow(FOLLOW_ruleConstruct0_in_rule__RuleReplacement__ReplacementAssignment_36013);
             ruleConstruct0();
 
             state._fsp--;
@@ -7949,24 +7939,24 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Definition__LexicalAssignment_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3054:1: rule__Definition__LexicalAssignment_1 : ( ( 'lexical' ) ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3050:1: rule__Definition__LexicalAssignment_1 : ( ( 'lexical' ) ) ;
     public final void rule__Definition__LexicalAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3058:1: ( ( ( 'lexical' ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3059:1: ( ( 'lexical' ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3054:1: ( ( ( 'lexical' ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3055:1: ( ( 'lexical' ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3059:1: ( ( 'lexical' ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3060:1: ( 'lexical' )
-            {
-             before(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3061:1: ( 'lexical' )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3062:1: 'lexical'
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3055:1: ( ( 'lexical' ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3056:1: ( 'lexical' )
             {
              before(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
-            match(input,26,FOLLOW_26_in_rule__Definition__LexicalAssignment_16058); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3057:1: ( 'lexical' )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3058:1: 'lexical'
+            {
+             before(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
+            match(input,26,FOLLOW_26_in_rule__Definition__LexicalAssignment_16050); 
              after(grammarAccess.getDefinitionAccess().getLexicalLexicalKeyword_1_0()); 
 
             }
@@ -7994,20 +7984,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Definition__NameAssignment_2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3077:1: rule__Definition__NameAssignment_2 : ( RULE_ID ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3073:1: rule__Definition__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Definition__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3081:1: ( ( RULE_ID ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3082:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3077:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3078:1: ( RULE_ID )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3082:1: ( RULE_ID )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3083:1: RULE_ID
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3078:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3079:1: RULE_ID
             {
              before(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_26097); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_26089); 
              after(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -8031,20 +8021,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Definition__RhsAssignment_4"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3092:1: rule__Definition__RhsAssignment_4 : ( ruleConstruct0 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3088:1: rule__Definition__RhsAssignment_4 : ( ruleConstruct0 ) ;
     public final void rule__Definition__RhsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3096:1: ( ( ruleConstruct0 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3097:1: ( ruleConstruct0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3092:1: ( ( ruleConstruct0 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3093:1: ( ruleConstruct0 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3097:1: ( ruleConstruct0 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3098:1: ruleConstruct0
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3093:1: ( ruleConstruct0 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3094:1: ruleConstruct0
             {
              before(grammarAccess.getDefinitionAccess().getRhsConstruct0ParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_46128);
+            pushFollow(FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_46120);
             ruleConstruct0();
 
             state._fsp--;
@@ -8072,20 +8062,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct0__OperandsAssignment_1_2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3107:1: rule__Construct0__OperandsAssignment_1_2 : ( ruleConstruct1 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3103:1: rule__Construct0__OperandsAssignment_1_2 : ( ruleConstruct1 ) ;
     public final void rule__Construct0__OperandsAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3111:1: ( ( ruleConstruct1 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3112:1: ( ruleConstruct1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3107:1: ( ( ruleConstruct1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3108:1: ( ruleConstruct1 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3112:1: ( ruleConstruct1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3113:1: ruleConstruct1
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3108:1: ( ruleConstruct1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3109:1: ruleConstruct1
             {
              before(grammarAccess.getConstruct0Access().getOperandsConstruct1ParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_26159);
+            pushFollow(FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_26151);
             ruleConstruct1();
 
             state._fsp--;
@@ -8113,20 +8103,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct0__OperandsAssignment_1_3_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3122:1: rule__Construct0__OperandsAssignment_1_3_1 : ( ruleConstruct1 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3118:1: rule__Construct0__OperandsAssignment_1_3_1 : ( ruleConstruct1 ) ;
     public final void rule__Construct0__OperandsAssignment_1_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3126:1: ( ( ruleConstruct1 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3127:1: ( ruleConstruct1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3122:1: ( ( ruleConstruct1 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3123:1: ( ruleConstruct1 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3127:1: ( ruleConstruct1 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3128:1: ruleConstruct1
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3123:1: ( ruleConstruct1 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3124:1: ruleConstruct1
             {
              before(grammarAccess.getConstruct0Access().getOperandsConstruct1ParserRuleCall_1_3_1_0()); 
-            pushFollow(FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_16190);
+            pushFollow(FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_16182);
             ruleConstruct1();
 
             state._fsp--;
@@ -8154,20 +8144,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct1__OperandsAssignment_1_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3137:1: rule__Construct1__OperandsAssignment_1_1 : ( ruleConstruct2 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3133:1: rule__Construct1__OperandsAssignment_1_1 : ( ruleConstruct2 ) ;
     public final void rule__Construct1__OperandsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3141:1: ( ( ruleConstruct2 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3142:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3137:1: ( ( ruleConstruct2 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3138:1: ( ruleConstruct2 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3142:1: ( ruleConstruct2 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3143:1: ruleConstruct2
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3138:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3139:1: ruleConstruct2
             {
              before(grammarAccess.getConstruct1Access().getOperandsConstruct2ParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_16221);
+            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_16213);
             ruleConstruct2();
 
             state._fsp--;
@@ -8195,20 +8185,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct1__OperandsAssignment_1_2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3152:1: rule__Construct1__OperandsAssignment_1_2 : ( ruleConstruct2 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3148:1: rule__Construct1__OperandsAssignment_1_2 : ( ruleConstruct2 ) ;
     public final void rule__Construct1__OperandsAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3156:1: ( ( ruleConstruct2 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3157:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3152:1: ( ( ruleConstruct2 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3153:1: ( ruleConstruct2 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3157:1: ( ruleConstruct2 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3158:1: ruleConstruct2
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3153:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3154:1: ruleConstruct2
             {
              before(grammarAccess.getConstruct1Access().getOperandsConstruct2ParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_26252);
+            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_26244);
             ruleConstruct2();
 
             state._fsp--;
@@ -8236,20 +8226,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct2__OperandAssignment_0_2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3167:1: rule__Construct2__OperandAssignment_0_2 : ( ruleConstruct2 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3163:1: rule__Construct2__OperandAssignment_0_2 : ( ruleConstruct2 ) ;
     public final void rule__Construct2__OperandAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3171:1: ( ( ruleConstruct2 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3172:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3167:1: ( ( ruleConstruct2 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3168:1: ( ruleConstruct2 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3172:1: ( ruleConstruct2 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3173:1: ruleConstruct2
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3168:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3169:1: ruleConstruct2
             {
              before(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_26283);
+            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_26275);
             ruleConstruct2();
 
             state._fsp--;
@@ -8277,20 +8267,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct2__OperandAssignment_1_2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3182:1: rule__Construct2__OperandAssignment_1_2 : ( ruleConstruct2 ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3178:1: rule__Construct2__OperandAssignment_1_2 : ( ruleConstruct2 ) ;
     public final void rule__Construct2__OperandAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3186:1: ( ( ruleConstruct2 ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3187:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3182:1: ( ( ruleConstruct2 ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3183:1: ( ruleConstruct2 )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3187:1: ( ruleConstruct2 )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3188:1: ruleConstruct2
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3183:1: ( ruleConstruct2 )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3184:1: ruleConstruct2
             {
              before(grammarAccess.getConstruct2Access().getOperandConstruct2ParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_1_26314);
+            pushFollow(FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_1_26306);
             ruleConstruct2();
 
             state._fsp--;
@@ -8318,20 +8308,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct3__MinAssignment_1_2"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3197:1: rule__Construct3__MinAssignment_1_2 : ( RULE_INT ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3193:1: rule__Construct3__MinAssignment_1_2 : ( RULE_INT ) ;
     public final void rule__Construct3__MinAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3201:1: ( ( RULE_INT ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3202:1: ( RULE_INT )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3197:1: ( ( RULE_INT ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3198:1: ( RULE_INT )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3202:1: ( RULE_INT )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3203:1: RULE_INT
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3198:1: ( RULE_INT )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3199:1: RULE_INT
             {
              before(grammarAccess.getConstruct3Access().getMinINTTerminalRuleCall_1_2_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_26345); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_26337); 
              after(grammarAccess.getConstruct3Access().getMinINTTerminalRuleCall_1_2_0()); 
 
             }
@@ -8355,24 +8345,24 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct3__UpperBoundedAssignment_1_3_0"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3212:1: rule__Construct3__UpperBoundedAssignment_1_3_0 : ( ( ',' ) ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3208:1: rule__Construct3__UpperBoundedAssignment_1_3_0 : ( ( ',' ) ) ;
     public final void rule__Construct3__UpperBoundedAssignment_1_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3216:1: ( ( ( ',' ) ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3217:1: ( ( ',' ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3212:1: ( ( ( ',' ) ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3213:1: ( ( ',' ) )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3217:1: ( ( ',' ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3218:1: ( ',' )
-            {
-             before(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3219:1: ( ',' )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3220:1: ','
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3213:1: ( ( ',' ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3214:1: ( ',' )
             {
              before(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
-            match(input,27,FOLLOW_27_in_rule__Construct3__UpperBoundedAssignment_1_3_06381); 
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3215:1: ( ',' )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3216:1: ','
+            {
+             before(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
+            match(input,27,FOLLOW_27_in_rule__Construct3__UpperBoundedAssignment_1_3_06373); 
              after(grammarAccess.getConstruct3Access().getUpperBoundedCommaKeyword_1_3_0_0()); 
 
             }
@@ -8400,20 +8390,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct3__MaxAssignment_1_3_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3235:1: rule__Construct3__MaxAssignment_1_3_1 : ( RULE_INT ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3231:1: rule__Construct3__MaxAssignment_1_3_1 : ( RULE_INT ) ;
     public final void rule__Construct3__MaxAssignment_1_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3239:1: ( ( RULE_INT ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3240:1: ( RULE_INT )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3235:1: ( ( RULE_INT ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3236:1: ( RULE_INT )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3240:1: ( RULE_INT )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3241:1: RULE_INT
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3236:1: ( RULE_INT )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3237:1: RULE_INT
             {
              before(grammarAccess.getConstruct3Access().getMaxINTTerminalRuleCall_1_3_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_16420); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_16412); 
              after(grammarAccess.getConstruct3Access().getMaxINTTerminalRuleCall_1_3_1_0()); 
 
             }
@@ -8437,20 +8427,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__MinAssignment_0_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3250:1: rule__Construct4__MinAssignment_0_1 : ( RULE_CHAR ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3246:1: rule__Construct4__MinAssignment_0_1 : ( RULE_CHAR ) ;
     public final void rule__Construct4__MinAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3254:1: ( ( RULE_CHAR ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3255:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3250:1: ( ( RULE_CHAR ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3251:1: ( RULE_CHAR )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3255:1: ( RULE_CHAR )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3256:1: RULE_CHAR
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3251:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3252:1: RULE_CHAR
             {
              before(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0()); 
-            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_0_16451); 
+            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_0_16443); 
              after(grammarAccess.getConstruct4Access().getMinCHARTerminalRuleCall_0_1_0()); 
 
             }
@@ -8474,20 +8464,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__MaxAssignment_0_3"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3265:1: rule__Construct4__MaxAssignment_0_3 : ( RULE_CHAR ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3261:1: rule__Construct4__MaxAssignment_0_3 : ( RULE_CHAR ) ;
     public final void rule__Construct4__MaxAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3269:1: ( ( RULE_CHAR ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3270:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3265:1: ( ( RULE_CHAR ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3266:1: ( RULE_CHAR )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3270:1: ( RULE_CHAR )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3271:1: RULE_CHAR
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3266:1: ( RULE_CHAR )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3267:1: RULE_CHAR
             {
              before(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0()); 
-            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_0_36482); 
+            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_0_36474); 
              after(grammarAccess.getConstruct4Access().getMaxCHARTerminalRuleCall_0_3_0()); 
 
             }
@@ -8511,20 +8501,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__ValueAssignment_1_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3280:1: rule__Construct4__ValueAssignment_1_1 : ( RULE_STRING ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3276:1: rule__Construct4__ValueAssignment_1_1 : ( RULE_STRING ) ;
     public final void rule__Construct4__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3284:1: ( ( RULE_STRING ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3285:1: ( RULE_STRING )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3280:1: ( ( RULE_STRING ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3281:1: ( RULE_STRING )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3285:1: ( RULE_STRING )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3286:1: RULE_STRING
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3281:1: ( RULE_STRING )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3282:1: RULE_STRING
             {
              before(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_1_16513); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_1_16505); 
              after(grammarAccess.getConstruct4Access().getValueSTRINGTerminalRuleCall_1_1_0()); 
 
             }
@@ -8548,20 +8538,20 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Construct4__TargetAssignment_3_1"
-    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3295:1: rule__Construct4__TargetAssignment_3_1 : ( RULE_ID ) ;
+    // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3291:1: rule__Construct4__TargetAssignment_3_1 : ( RULE_ID ) ;
     public final void rule__Construct4__TargetAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3299:1: ( ( RULE_ID ) )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3300:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3295:1: ( ( RULE_ID ) )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3296:1: ( RULE_ID )
             {
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3300:1: ( RULE_ID )
-            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3301:1: RULE_ID
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3296:1: ( RULE_ID )
+            // ../xgen.application.ui/src-gen/xgen/ui/contentassist/antlr/internal/InternalApplication.g:3297:1: RULE_ID
             {
              before(grammarAccess.getConstruct4Access().getTargetIDTerminalRuleCall_3_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_3_16544); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_3_16536); 
              after(grammarAccess.getConstruct4Access().getTargetIDTerminalRuleCall_3_1_0()); 
 
             }
@@ -8594,9 +8584,9 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_ruleApply_in_entryRuleApply122 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApply129 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Apply__Group__0_in_ruleApply155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCallReplacement_in_entryRuleCallReplacement182 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCallReplacement189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__0_in_ruleCallReplacement215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructReplacement_in_entryRuleConstructReplacement182 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstructReplacement189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__0_in_ruleConstructReplacement215 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRuleReplacement_in_entryRuleRuleReplacement242 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRuleReplacement249 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RuleReplacement__Group__0_in_ruleRuleReplacement275 = new BitSet(new long[]{0x0000000000000002L});
@@ -8621,7 +8611,7 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_ruleConstruct4_in_entryRuleConstruct4664 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleConstruct4671 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Construct4__Alternatives_in_ruleConstruct4697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Apply__CallReplacementsAssignment_7_1_0_in_rule__Apply__Alternatives_7_1733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Apply__ConstructReplacementsAssignment_7_1_0_in_rule__Apply__Alternatives_7_1733 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Apply__RuleReplacementsAssignment_7_1_1_in_rule__Apply__Alternatives_7_1751 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Construct2__Group_0__0_in_rule__Construct2__Alternatives784 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Construct2__Group_1__0_in_rule__Construct2__Alternatives802 = new BitSet(new long[]{0x0000000000000002L});
@@ -8661,31 +8651,31 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_rule__Apply__Alternatives_7_1_in_rule__Apply__Group_7__1__Impl1548 = new BitSet(new long[]{0x0000000000010002L});
     public static final BitSet FOLLOW_rule__Apply__Group_7__2__Impl_in_rule__Apply__Group_7__21579 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_rule__Apply__Group_7__2__Impl1607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__0__Impl_in_rule__CallReplacement__Group__01644 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__1_in_rule__CallReplacement__Group__01647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__CallReplacement__Group__0__Impl1675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__1__Impl_in_rule__CallReplacement__Group__11706 = new BitSet(new long[]{0x0000000002020000L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__2_in_rule__CallReplacement__Group__11709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__SelectorAssignment_1_in_rule__CallReplacement__Group__1__Impl1736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__2__Impl_in_rule__CallReplacement__Group__21766 = new BitSet(new long[]{0x0000000002020000L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__3_in_rule__CallReplacement__Group__21769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group_2__0_in_rule__CallReplacement__Group__2__Impl1796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__3__Impl_in_rule__CallReplacement__Group__31827 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__4_in_rule__CallReplacement__Group__31830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__CallReplacement__Group__3__Impl1858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__4__Impl_in_rule__CallReplacement__Group__41889 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__5_in_rule__CallReplacement__Group__41892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__TargetAssignment_4_in_rule__CallReplacement__Group__4__Impl1919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__5__Impl_in_rule__CallReplacement__Group__51949 = new BitSet(new long[]{0x00000000018808D0L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__6_in_rule__CallReplacement__Group__51952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__CallReplacement__Group__5__Impl1980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group__6__Impl_in_rule__CallReplacement__Group__62011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__ReplacementAssignment_6_in_rule__CallReplacement__Group__6__Impl2038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group_2__0__Impl_in_rule__CallReplacement__Group_2__02082 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group_2__1_in_rule__CallReplacement__Group_2__02085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__PositionedAssignment_2_0_in_rule__CallReplacement__Group_2__0__Impl2112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__Group_2__1__Impl_in_rule__CallReplacement__Group_2__12142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CallReplacement__PositionAssignment_2_1_in_rule__CallReplacement__Group_2__1__Impl2169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__0__Impl_in_rule__ConstructReplacement__Group__01644 = new BitSet(new long[]{0x00000000018808D0L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__1_in_rule__ConstructReplacement__Group__01647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__ConstructReplacement__Group__0__Impl1675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__1__Impl_in_rule__ConstructReplacement__Group__11706 = new BitSet(new long[]{0x0000000002020000L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__2_in_rule__ConstructReplacement__Group__11709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__SelectorAssignment_1_in_rule__ConstructReplacement__Group__1__Impl1736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__2__Impl_in_rule__ConstructReplacement__Group__21766 = new BitSet(new long[]{0x0000000002020000L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__3_in_rule__ConstructReplacement__Group__21769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group_2__0_in_rule__ConstructReplacement__Group__2__Impl1796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__3__Impl_in_rule__ConstructReplacement__Group__31827 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__4_in_rule__ConstructReplacement__Group__31830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__ConstructReplacement__Group__3__Impl1858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__4__Impl_in_rule__ConstructReplacement__Group__41889 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__5_in_rule__ConstructReplacement__Group__41892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__TargetAssignment_4_in_rule__ConstructReplacement__Group__4__Impl1919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__5__Impl_in_rule__ConstructReplacement__Group__51949 = new BitSet(new long[]{0x00000000018808D0L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__6_in_rule__ConstructReplacement__Group__51952 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__ConstructReplacement__Group__5__Impl1980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group__6__Impl_in_rule__ConstructReplacement__Group__62011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__ReplacementAssignment_6_in_rule__ConstructReplacement__Group__6__Impl2038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group_2__0__Impl_in_rule__ConstructReplacement__Group_2__02082 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group_2__1_in_rule__ConstructReplacement__Group_2__02085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__PositionedAssignment_2_0_in_rule__ConstructReplacement__Group_2__0__Impl2112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__Group_2__1__Impl_in_rule__ConstructReplacement__Group_2__12142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstructReplacement__PositionAssignment_2_1_in_rule__ConstructReplacement__Group_2__1__Impl2169 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RuleReplacement__Group__0__Impl_in_rule__RuleReplacement__Group__02203 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__RuleReplacement__Group__1_in_rule__RuleReplacement__Group__02206 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_rule__RuleReplacement__Group__0__Impl2234 = new BitSet(new long[]{0x0000000000000002L});
@@ -8826,30 +8816,30 @@ public class InternalApplicationParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_ruleQID_in_rule__Apply__TargetAssignment_15639 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__Apply__MinAssignment_35674 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__Apply__MaxAssignment_55705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCallReplacement_in_rule__Apply__CallReplacementsAssignment_7_1_05736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructReplacement_in_rule__Apply__ConstructReplacementsAssignment_7_1_05736 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRuleReplacement_in_rule__Apply__RuleReplacementsAssignment_7_1_15767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__CallReplacement__SelectorAssignment_15802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__CallReplacement__PositionedAssignment_2_05842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__CallReplacement__PositionAssignment_2_15881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__CallReplacement__TargetAssignment_45916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_rule__CallReplacement__ReplacementAssignment_65951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__RuleReplacement__TargetAssignment_15986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_rule__RuleReplacement__ReplacementAssignment_36021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Definition__LexicalAssignment_16058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_26097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_46128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_26159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_16190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_16221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_26252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_26283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_1_26314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_26345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Construct3__UpperBoundedAssignment_1_3_06381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_16420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_0_16451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_0_36482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_1_16513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_3_16544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_rule__ConstructReplacement__SelectorAssignment_15798 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__ConstructReplacement__PositionedAssignment_2_05834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__ConstructReplacement__PositionAssignment_2_15873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ConstructReplacement__TargetAssignment_45908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_rule__ConstructReplacement__ReplacementAssignment_65943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__RuleReplacement__TargetAssignment_15978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_rule__RuleReplacement__ReplacementAssignment_36013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Definition__LexicalAssignment_16050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_26089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct0_in_rule__Definition__RhsAssignment_46120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_26151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct1_in_rule__Construct0__OperandsAssignment_1_3_16182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_16213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct1__OperandsAssignment_1_26244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_0_26275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstruct2_in_rule__Construct2__OperandAssignment_1_26306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MinAssignment_1_26337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Construct3__UpperBoundedAssignment_1_3_06373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Construct3__MaxAssignment_1_3_16412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MinAssignment_0_16443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Construct4__MaxAssignment_0_36474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Construct4__ValueAssignment_1_16505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Construct4__TargetAssignment_3_16536 = new BitSet(new long[]{0x0000000000000002L});
 
 }

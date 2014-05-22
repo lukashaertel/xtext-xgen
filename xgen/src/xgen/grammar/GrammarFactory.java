@@ -130,6 +130,24 @@ public interface GrammarFactory extends EFactory {
 	Placeholder createPlaceholder();
 
 	/**
+	 * Returns a new object of class '<em>Prefix</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Prefix</em>'.
+	 * @generated
+	 */
+	Prefix createPrefix();
+
+	/**
+	 * Returns a new object of class '<em>Suffix</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Suffix</em>'.
+	 * @generated
+	 */
+	Suffix createSuffix();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

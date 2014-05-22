@@ -18,9 +18,11 @@ import xgen.grammar.Multiplicity;
 import xgen.grammar.NAry;
 import xgen.grammar.Not;
 import xgen.grammar.Placeholder;
+import xgen.grammar.Prefix;
 import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
+import xgen.grammar.Suffix;
 import xgen.grammar.Terminal;
 import xgen.grammar.Unary;
 import xgen.grammar.Until;
@@ -132,6 +134,26 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GrammarPackage.PREFIX:
+			{
+				Prefix prefix = (Prefix)theEObject;
+				T result = casePrefix(prefix);
+				if (result == null) result = caseUnary(prefix);
+				if (result == null) result = caseConstruct(prefix);
+				if (result == null) result = caseElement(prefix);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrammarPackage.SUFFIX:
+			{
+				Suffix suffix = (Suffix)theEObject;
+				T result = caseSuffix(suffix);
+				if (result == null) result = caseUnary(suffix);
+				if (result == null) result = caseConstruct(suffix);
+				if (result == null) result = caseElement(suffix);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GrammarPackage.NARY:
 			{
 				NAry nAry = (NAry)theEObject;
@@ -181,6 +203,49 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GrammarPackage.PLACEHOLDER:
+			{
+				Placeholder placeholder = (Placeholder)theEObject;
+				T result = casePlaceholder(placeholder);
+				if (result == null) result = caseTerminal(placeholder);
+				if (result == null) result = caseConstruct(placeholder);
+				if (result == null) result = caseElement(placeholder);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrammarPackage.NOT:
+			{
+				Not not = (Not)theEObject;
+				T result = caseNot(not);
+				if (result == null) result = casePrefix(not);
+				if (result == null) result = caseUnary(not);
+				if (result == null) result = caseConstruct(not);
+				if (result == null) result = caseElement(not);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrammarPackage.UNTIL:
+			{
+				Until until = (Until)theEObject;
+				T result = caseUntil(until);
+				if (result == null) result = casePrefix(until);
+				if (result == null) result = caseUnary(until);
+				if (result == null) result = caseConstruct(until);
+				if (result == null) result = caseElement(until);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrammarPackage.MULTIPLICITY:
+			{
+				Multiplicity multiplicity = (Multiplicity)theEObject;
+				T result = caseMultiplicity(multiplicity);
+				if (result == null) result = caseSuffix(multiplicity);
+				if (result == null) result = caseUnary(multiplicity);
+				if (result == null) result = caseConstruct(multiplicity);
+				if (result == null) result = caseElement(multiplicity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GrammarPackage.ALTERNATIVE:
 			{
 				Alternative alternative = (Alternative)theEObject;
@@ -198,46 +263,6 @@ public class GrammarSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNAry(sequence);
 				if (result == null) result = caseConstruct(sequence);
 				if (result == null) result = caseElement(sequence);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GrammarPackage.NOT:
-			{
-				Not not = (Not)theEObject;
-				T result = caseNot(not);
-				if (result == null) result = caseUnary(not);
-				if (result == null) result = caseConstruct(not);
-				if (result == null) result = caseElement(not);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GrammarPackage.MULTIPLICITY:
-			{
-				Multiplicity multiplicity = (Multiplicity)theEObject;
-				T result = caseMultiplicity(multiplicity);
-				if (result == null) result = caseUnary(multiplicity);
-				if (result == null) result = caseConstruct(multiplicity);
-				if (result == null) result = caseElement(multiplicity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GrammarPackage.UNTIL:
-			{
-				Until until = (Until)theEObject;
-				T result = caseUntil(until);
-				if (result == null) result = caseUnary(until);
-				if (result == null) result = caseConstruct(until);
-				if (result == null) result = caseElement(until);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GrammarPackage.PLACEHOLDER:
-			{
-				Placeholder placeholder = (Placeholder)theEObject;
-				T result = casePlaceholder(placeholder);
-				if (result == null) result = caseTerminal(placeholder);
-				if (result == null) result = caseConstruct(placeholder);
-				if (result == null) result = caseElement(placeholder);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -498,6 +523,38 @@ public class GrammarSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePlaceholder(Placeholder object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Prefix</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Prefix</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrefix(Prefix object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Suffix</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Suffix</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSuffix(Suffix object)
 	{
 		return null;
 	}

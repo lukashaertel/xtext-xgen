@@ -1,20 +1,13 @@
 package xgen.serializer;
 
-import com.google.inject.Inject;
-import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+
 import xgen.application.Application;
 import xgen.application.ApplicationPackage;
-import xgen.application.CallReplacement;
+import xgen.application.ConstructReplacement;
 import xgen.application.Model;
 import xgen.application.RuleReplacement;
 import xgen.grammar.Alternative;
@@ -29,8 +22,9 @@ import xgen.grammar.Range;
 import xgen.grammar.Reference;
 import xgen.grammar.Sequence;
 import xgen.grammar.Until;
-import xgen.serializer.GrammarSemanticSequencer;
 import xgen.services.ApplicationGrammarAccess;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class ApplicationSemanticSequencer extends GrammarSemanticSequencer {
@@ -46,9 +40,9 @@ public class ApplicationSemanticSequencer extends GrammarSemanticSequencer {
 					return; 
 				}
 				else break;
-			case ApplicationPackage.CALL_REPLACEMENT:
-				if(context == grammarAccess.getCallReplacementRule()) {
-					sequence_CallReplacement(context, (CallReplacement) semanticObject); 
+			case ApplicationPackage.CONSTRUCT_REPLACEMENT:
+				if(context == grammarAccess.getConstructReplacementRule()) {
+					sequence_ConstructReplacement(context, (ConstructReplacement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -201,7 +195,7 @@ public class ApplicationSemanticSequencer extends GrammarSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (target=[Grammar|QID] min=INT max=INT (callReplacements+=CallReplacement | ruleReplacements+=RuleReplacement)*)
+	 *     (target=[Grammar|QID] min=INT max=INT (constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement)*)
 	 */
 	protected void sequence_Apply(EObject context, Application semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -210,9 +204,9 @@ public class ApplicationSemanticSequencer extends GrammarSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (selector=[AbstractRule|ID] (positioned?='/' position=INT)? target=[AbstractRule|ID] replacement=Construct0)
+	 *     (selector=Construct0 (positioned?='/' position=INT)? target=[AbstractRule|ID] replacement=Construct0)
 	 */
-	protected void sequence_CallReplacement(EObject context, CallReplacement semanticObject) {
+	protected void sequence_ConstructReplacement(EObject context, ConstructReplacement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
