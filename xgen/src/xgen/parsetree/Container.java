@@ -5,7 +5,6 @@ import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import xgen.grammar.Definition;
 import xgen.grammar.Element;
 
 import com.google.common.collect.Iterables;
@@ -18,11 +17,6 @@ import com.google.common.collect.Iterables;
  */
 public class Container extends Node
 {
-	/**
-	 * The label of the node
-	 */
-	public final Element label;
-
 	/**
 	 * <p>
 	 * The children of this node
@@ -43,7 +37,8 @@ public class Container extends Node
 	 */
 	public Container(Element label, Node... children)
 	{
-		this.label = label;
+		super(label);
+		
 		this.children = children;
 
 		for (Node c : children)
@@ -59,19 +54,9 @@ public class Container extends Node
 	 *            The sequence to exhaust for array creation
 	 * @return Returns a new Container
 	 */
-	public static Container fromIterable(Element label, Iterable<Node> children)
+	public static Node fromIterable(Element label, Iterable<Node> children)
 	{
 		return new Container(label, Iterables.toArray(children, Node.class));
-	}
-
-	/**
-	 * Checks if the label is a lexical definition element
-	 * 
-	 * @return True if label is a definition and the definition is lexical
-	 */
-	public boolean isLexicalDefinition()
-	{
-		return label instanceof Definition && ((Definition) label).isLexical();
 	}
 
 	@Override
@@ -122,11 +107,13 @@ public class Container extends Node
 	}
 
 	@Override
-	public void flatten(StringBuilder target, boolean lexical)
+	public void flatten(Setting setting, StringBuilder target, boolean lexical)
 	{
+		setting.beforeContainer(target, this);
+
 		if (lexical || isLexicalDefinition())
 			for (Node c1 : children)
-				c1.flatten(target, true);
+				c1.flatten(setting, target, true);
 		else
 		{
 			boolean separate = false;
@@ -135,11 +122,13 @@ public class Container extends Node
 				if (separate)
 					target.append(" ");
 
-				c.flatten(target, false);
+				c.flatten(setting, target, false);
 
 				separate = true;
 			}
 		}
+
+		setting.afterContainer(target, this);
 	}
 
 	@Override

@@ -11,7 +11,6 @@ import xgen.postprocess.Processor
 import java.util.Collection
 import java.util.List
 import java.util.Random
-import xgen.parsetree.Leaf
 import xgen.postprocess.TransformSome
 import xgen.postprocess.RemoveAll
 import xgen.postprocess.TransformAll
@@ -23,6 +22,8 @@ import xgen.grammar.Reference
 import org.eclipse.emf.ecore.util.EcoreUtil
 import xgen.output.ApplicationOutput
 import static xgen.grammar.util.GrammarConstructor.*
+import xgen.parsetree.Setting
+import xgen.parsetree.Leaf
 
 class ReplaceInitial extends TransformOne {
 
@@ -31,7 +32,7 @@ class ReplaceInitial extends TransformOne {
 	}
 
 	override protected transform(Leaf it) {
-		new Leaf("initial")
+		new Leaf(label, "initial")
 	}
 
 }
@@ -55,7 +56,7 @@ class ReplaceInputValue extends TransformAll {
 
 		i = i + 1
 
-		return new Leaf(r)
+		return new Leaf(label, r)
 	}
 }
 
@@ -71,7 +72,7 @@ class ReplaceActionValue extends TransformAll {
 
 		i = i + 1
 
-		return new Leaf(r)
+		return new Leaf(label, r)
 	}
 }
 
@@ -97,7 +98,7 @@ class ReplaceStateName extends TransformAll {
 		i = i + 1
 
 		exchange += r
-		return new Leaf(r)
+		return new Leaf(label, r)
 	}
 }
 
@@ -113,7 +114,7 @@ class ReplaceStateRef extends TransformAll {
 		if (value != "<state reference>")
 			return it
 
-		new Leaf(exchange.get(random.nextInt(exchange.size)))
+		new Leaf(label, exchange.get(random.nextInt(exchange.size)))
 	}
 }
 
@@ -139,13 +140,13 @@ class ApplicationGenerator implements IGenerator {
 				rhs = GrammarUtil.selectTransform(rhs, [x|EcoreUtil.equals(cs.selector, x)],
 					[x|EcoreUtil.copy(cs.replacement)], cs.positioned, cs.position);
 			]
-			
-		for(ma : mas)
+
+		for (ma : mas)
 			GrammarUtil.getDefinition(g, ma.target.name).ifPresent [
-				rhs = GrammarUtil.adjustMultiplicity(rhs, [x|multiplicity(x.operand, ma.min, ma.upperBounded, ma.max)],  ma.positioned, ma.position )
+				rhs = GrammarUtil.adjustMultiplicity(rhs, [x|multiplicity(x.operand, ma.min, ma.upperBounded, ma.max)],
+					ma.positioned, ma.position)
 			]
-		
-		
+
 		return g
 	}
 
@@ -157,20 +158,16 @@ class ApplicationGenerator implements IGenerator {
 		// Processor sequence
 		val t = Processor.compose(
 			// Replace one <initial> placeholder
-			new ReplaceInitial, 
+		new ReplaceInitial, 
 			
 			// Remove all remaining <initial> placeholders
-			new RemoveRemainingInitial,
-			
+		new RemoveRemainingInitial,
 			// Replace all <input value> positions with a set of values
 			new ReplaceInputValue,
-			
 			// Replace all <action value> positions with a set of values
 			new ReplaceActionValue,
-			
 			// Replace state names and store the defined names in an array list
 			new ReplaceStateName(s),
-			
 			// Replace all referenced names with the ones defined before this
 			new ReplaceStateRef(s))
 
@@ -194,8 +191,9 @@ class ApplicationGenerator implements IGenerator {
 					// Print some items
 					for (p : a.min .. a.max) {
 						y.get(p).ifPresent [ pt |
-							o.println(p.toString);
-							o.println(pt.flatten(false));
+							o.println("Test-data #" + p.toString);
+							o.println("--------------------------------------------");
+							o.println(pt.flatten(Setting.DEFAULT_SETTING, false));
 							o.println();
 						]
 					}

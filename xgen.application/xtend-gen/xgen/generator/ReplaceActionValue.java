@@ -26,7 +26,7 @@ public class ReplaceActionValue extends TransformAll {
     final String r = this.j.get(_modulo);
     int _plus = (this.i + 1);
     this.i = _plus;
-    Leaf _leaf = new Leaf(r);
+    Leaf _leaf = new Leaf(it.label, r);
     return _leaf;
   }
 }

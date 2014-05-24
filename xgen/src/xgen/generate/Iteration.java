@@ -28,6 +28,7 @@ import xgen.parsetree.Container;
 import xgen.parsetree.Leaf;
 import xgen.parsetree.Node;
 import xgen.util.StringUtil;
+import xgen.parsetree.Setting;
 
 import com.google.common.collect.Iterables;
 
@@ -79,7 +80,7 @@ public class Iteration
 			@Override
 			public Index<Node> caseAny(Any object)
 			{
-				return getAlphabet().mapPresent(x -> new Container(object, new Leaf(Character.toString(x))));
+				return getAlphabet().mapPresent(x -> new Leaf(object, Character.toString(x)));
 			}
 
 			@Override
@@ -96,7 +97,7 @@ public class Iteration
 						Predicate<Node> f = n -> {
 
 							// Make a flat representation on lexical level
-							String s = n.flatten(true);
+							String s = n.flatten(Setting.VOID_SETTING, true);
 
 							// If any higher matches, don't use this parse-tree
 							for (Element e : higher)
@@ -121,7 +122,7 @@ public class Iteration
 			@Override
 			public Index<Node> caseKeyword(Keyword object)
 			{
-				return Index.items(object.getValue()).mapPresent(x -> new Container(object, new Leaf(x)));
+				return Index.items(object.getValue()).mapPresent(x -> new Leaf(object, x));
 			}
 
 			@Override
@@ -137,21 +138,21 @@ public class Iteration
 			@Override
 			public Index<Node> caseNot(Not object)
 			{
-				return getStrings().filter(i -> !Acceptor.acceptsAnySuffix(object.getOperand(), i)).mapPresent(x -> new Container(object, new Leaf(x)));
+				return getStrings().filter(i -> !Acceptor.acceptsAnySuffix(object.getOperand(), i)).mapPresent(x -> new Leaf(object, x));
 			}
 
 			public Index<Node> caseUntil(Until object)
 			{
 				Index<String> head = getStrings().filter(i -> !Acceptor.acceptsAnySubstring(object.getOperand(), i));
-				Index<String> tail = iterate(object.getOperand(), depth).mapPresent(n -> n.flatten(true));
+				Index<String> tail = iterate(object.getOperand(), depth).mapPresent(n -> n.flatten(Setting.VOID_SETTING, true));
 
-				return head.productPresent(tail, (a, b) -> new Container(object, new Leaf(a + b)));
+				return head.productPresent(tail, (a, b) -> new Leaf(object, a + b));
 			}
 
 			@Override
 			public Index<Node> caseRange(Range object)
 			{
-				return Index.chars(object.getMin(), object.getMax()).mapPresent(x -> new Container(object, new Leaf(Character.toString(x))));
+				return Index.chars(object.getMin(), object.getMax()).mapPresent(x -> new Leaf(object, Character.toString(x)));
 			}
 
 			@Override
@@ -178,7 +179,7 @@ public class Iteration
 			@Override
 			public Index<Node> casePlaceholder(Placeholder object)
 			{
-				return Index.items(new Container(object, new Leaf("")));
+				return Index.items(new Leaf(object, ""));
 			}
 
 			@Override

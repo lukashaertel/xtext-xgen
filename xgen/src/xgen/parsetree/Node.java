@@ -3,6 +3,9 @@ package xgen.parsetree;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import xgen.grammar.Definition;
+import xgen.grammar.Element;
+
 /**
  * A node in a parsetree
  * 
@@ -11,6 +14,11 @@ import java.util.function.Function;
  */
 public abstract class Node
 {
+	/**
+	 * The label of the node
+	 */
+	public final Element label;
+
 	/**
 	 * <p>
 	 * The parent
@@ -24,8 +32,10 @@ public abstract class Node
 	/**
 	 * Constructs the node
 	 */
-	protected Node()
+	protected Node(Element label)
 	{
+		this.label = label;
+		
 		parent = null;
 	}
 
@@ -84,15 +94,17 @@ public abstract class Node
 	/**
 	 * Flattens the parse-tree
 	 * 
+	 * @param setting
+	 *            The setting to use
 	 * @param lexical
 	 *            True if lexical flattening should apply from this node
 	 * @return Returns the string flattened
 	 */
-	public String flatten(boolean lexical)
+	public String flatten(Setting setting, boolean lexical)
 	{
 		StringBuilder b = new StringBuilder();
 
-		flatten(b, lexical);
+		flatten(setting, b, lexical);
 
 		return b.toString();
 	}
@@ -100,10 +112,22 @@ public abstract class Node
 	/**
 	 * Flattens the parse-tree
 	 * 
+	 * @param setting
+	 *            The setting to use
 	 * @param target
 	 *            The string builder used for flattening
 	 * @param lexical
 	 *            True if lexical flattening should apply from this node
 	 */
-	public abstract void flatten(StringBuilder target, boolean lexical);
+	public abstract void flatten(Setting setting, StringBuilder target, boolean lexical);
+
+	/**
+	 * Checks if the label is a lexical definition element
+	 * 
+	 * @return True if label is a definition and the definition is lexical
+	 */
+	public boolean isLexicalDefinition()
+	{
+		return label instanceof Definition && ((Definition) label).isLexical();
+	}
 }

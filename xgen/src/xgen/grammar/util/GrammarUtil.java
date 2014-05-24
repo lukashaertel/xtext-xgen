@@ -18,6 +18,7 @@ import xgen.grammar.GrammarPackage;
 import xgen.grammar.Keyword;
 import xgen.grammar.Multiplicity;
 import xgen.grammar.NAry;
+import xgen.grammar.Prefix;
 import xgen.grammar.Terminal;
 import xgen.grammar.Unary;
 
@@ -48,39 +49,62 @@ public class GrammarUtil
 
 		return new GrammarSwitch<Construct>()
 		{
-			@Override
-			public Construct caseUnary(Unary object)
-			{
-				Unary c = EcoreUtil.copy(object);
-
-				c.setOperand(doSwitch(c.getOperand()));
-
-				return c;
-			}
-
-			@Override
-			public Construct caseNAry(NAry object)
-			{
-				NAry c = EcoreUtil.copy(object);
-
-				for (int i = 0; i < c.getOperands().size(); i++)
-					c.getOperands().set(i, doSwitch(c.getOperands().get(i)));
-
-				return c;
-			}
-
-			public Construct caseTerminal(Terminal object)
+			private Optional<Construct> tryTransform(Construct object)
 			{
 				if (s.test(object))
 				{
 					int p = a[0]++;
 
 					if (!slotted || is.contains(p))
-						return t.apply(object);
+						return Optional.of(t.apply(object));
 				}
 
-				// Delegates to default case
-				return null;
+				return Optional.empty();
+			}
+
+			@Override
+			public Construct caseUnary(Unary object)
+			{
+				// Copy input
+				Unary x = EcoreUtil.copy(object);
+
+				// Try to transform concept in whole
+				Optional<Construct> r = tryTransform(x);
+
+				// If successfull, return it
+				if (r.isPresent())
+					return r.get();
+
+				// Else go inside
+				x.setOperand(doSwitch(x.getOperand()));
+
+				return x;
+			}
+
+			@Override
+			public Construct caseNAry(NAry object)
+			{
+				// Copy input
+				NAry x = EcoreUtil.copy(object);
+
+				// Try to transform concept in whole
+				Optional<Construct> r = tryTransform(x);
+
+				// If successfull, return it
+				if (r.isPresent())
+					return r.get();
+
+				// Else go inside
+				for (int i = 0; i < x.getOperands().size(); i++)
+					x.getOperands().set(i, doSwitch(x.getOperands().get(i)));
+
+				return x;
+			}
+
+			public Construct caseTerminal(Terminal object)
+			{
+				// Delegates to default case if transformation not successfull
+				return tryTransform(object).orElse(null);
 			}
 
 			@Override

@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import xgen.grammar.Element;
+
 /**
  * Node that does not contain any more nodes
  * 
@@ -23,8 +25,10 @@ public class Leaf extends Node
 	 * @param value
 	 *            The value to use
 	 */
-	public Leaf(Object value)
+	public Leaf(Element label, Object value)
 	{
+		super(label);
+
 		this.value = value;
 	}
 
@@ -53,9 +57,13 @@ public class Leaf extends Node
 	}
 
 	@Override
-	public void flatten(StringBuilder target, boolean lexical)
+	public void flatten(Setting setting, StringBuilder target, boolean lexical)
 	{
+		setting.beforeLeaf(target, this);
+
 		target.append(value);
+
+		setting.afterLeaf(target, this);
 	}
 
 	@Override
