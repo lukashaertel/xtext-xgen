@@ -4,29 +4,28 @@
 package xgen.generator;
 
 import com.google.common.base.Objects;
-import com.google.common.collect.Lists;
-import java.util.Collections;
-import java.util.List;
 import xgen.parsetree.Leaf;
+import xgen.parsetree.Pair;
 import xgen.postprocess.TransformAll;
 
 @SuppressWarnings("all")
-public class ReplaceActionValue extends TransformAll {
-  private int i = 0;
+public class ReplaceActionValue extends TransformAll<Object,Integer,Object> {
+  protected Object finalizeCarrier(final Integer c) {
+    return c;
+  }
   
-  private List<String> j = Collections.<String>unmodifiableList(Lists.<String>newArrayList("DoStuff", "DoOtherStuff", "StopWithSomething", "ForgetSomething"));
+  protected Integer supplyCarrier(final Object s) {
+    return Integer.valueOf(0);
+  }
   
-  protected Leaf transform(final Leaf it) {
-    boolean _notEquals = (!Objects.equal(it.value, "<action value>"));
+  protected Pair<Integer,Leaf> transformOneLeaf(final Pair<Integer,Leaf> p) {
+    boolean _notEquals = (!Objects.equal(p.b.value, "<action value>"));
     if (_notEquals) {
-      return it;
+      return p;
     }
-    int _size = this.j.size();
-    int _modulo = (this.i % _size);
-    final String r = this.j.get(_modulo);
-    int _plus = (this.i + 1);
-    this.i = _plus;
-    Leaf _leaf = new Leaf(it.label, r);
-    return _leaf;
+    int _plus = ((p.a).intValue() + 1);
+    String _plus_1 = ("Action" + p.a);
+    Leaf _leaf = new Leaf(p.b.label, _plus_1);
+    return Pair.<Integer, Leaf>create(Integer.valueOf(_plus), _leaf);
   }
 }

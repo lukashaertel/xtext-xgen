@@ -38,7 +38,7 @@ public class Container extends Node
 	public Container(Element label, Node... children)
 	{
 		super(label);
-		
+
 		this.children = children;
 
 		for (Node c : children)
@@ -63,7 +63,7 @@ public class Container extends Node
 	public Node transform(boolean recursive, Function<Node, Node> f)
 	{
 		if (!recursive)
-			return f.apply(this);
+			return f.apply(this).clone();
 
 		Node[] cs = new Node[children.length];
 		for (int i = 0; i < children.length; i++)
@@ -76,7 +76,7 @@ public class Container extends Node
 	public Node transformContainer(boolean recursive, Function<Container, Node> f)
 	{
 		if (!recursive)
-			return f.apply(this);
+			return f.apply(this).clone();
 
 		Node[] cs = new Node[children.length];
 		for (int i = 0; i < children.length; i++)
@@ -89,7 +89,7 @@ public class Container extends Node
 	public Node transformLeaf(boolean recursive, Function<Leaf, Node> f)
 	{
 		if (!recursive)
-			return this;
+			return clone();
 
 		Node[] cs = new Node[children.length];
 		for (int i = 0; i < children.length; i++)
@@ -102,8 +102,20 @@ public class Container extends Node
 	public void visit(Consumer<? super Node> f)
 	{
 		f.accept(this);
+
 		for (Node c : children)
 			c.visit(f);
+	}
+
+	@Override
+	public Container clone()
+	{
+		Node[] cs = new Node[children.length];
+
+		for (int i = 0; i < children.length; i++)
+			cs[i] = children[i].clone();
+
+		return new Container(label, cs);
 	}
 
 	@Override

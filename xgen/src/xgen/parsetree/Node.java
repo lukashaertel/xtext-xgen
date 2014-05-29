@@ -92,6 +92,11 @@ public abstract class Node
 	public abstract void visit(Consumer<? super Node> f);
 
 	/**
+	 * Clones this node
+	 */
+	public abstract Node clone();
+	
+	/**
 	 * Flattens the parse-tree
 	 * 
 	 * @param setting

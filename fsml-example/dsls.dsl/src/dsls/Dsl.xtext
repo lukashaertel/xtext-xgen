@@ -9,8 +9,8 @@ FSM:
 	states+=FSMState*;
 
 /**
- * A state can be optional, has a name and is 
- * composed of multiple transitions
+ * A state can be optionally initial, has a
+ * name and is composed of multiple transitions
  */
 FSMState:
 	(initial?="initial")? 'state' name=ID
@@ -23,6 +23,6 @@ FSMState:
  * action and an optional target state
  */
 FSMTransition:
-	input=ID 
-	('/' action=ID)? 
+	input=ID
+	('/' action=ID)?
 	('->' target=[FSMState|ID])? ';';

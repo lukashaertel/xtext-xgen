@@ -34,7 +34,7 @@ import com.google.common.collect.Iterables;
 
 public class Iteration
 {
-	private static final long INNER_PER_OUTER = 100;
+	private static final long INNER_PER_OUTER = 11;
 
 	public final Grammar grammar;
 

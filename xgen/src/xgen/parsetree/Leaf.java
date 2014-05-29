@@ -35,25 +35,31 @@ public class Leaf extends Node
 	@Override
 	public Node transform(boolean recursive, Function<Node, Node> f)
 	{
-		return f.apply(this);
+		return f.apply(this).clone();
 	}
 
 	@Override
 	public Node transformContainer(boolean recursive, Function<Container, Node> f)
 	{
-		return this;
+		return clone();
 	}
 
 	@Override
 	public Node transformLeaf(boolean recursive, Function<Leaf, Node> f)
 	{
-		return f.apply(this);
+		return f.apply(this).clone();
 	}
 
 	@Override
 	public void visit(Consumer<? super Node> f)
 	{
 		f.accept(this);
+	}
+
+	@Override
+	public Leaf clone()
+	{
+		return new Leaf(label, value);
 	}
 
 	@Override

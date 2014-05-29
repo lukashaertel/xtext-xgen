@@ -2,6 +2,7 @@ package xgen.postprocess;
 
 import java.util.List;
 
+import xgen.parsetree.Pair;
 import xgen.parsetree.Container;
 import xgen.parsetree.Leaf;
 import xgen.parsetree.Node;
@@ -14,7 +15,7 @@ import com.google.common.collect.Lists;
  * @author Lukas Härtel
  *
  */
-public abstract class RemoveAll extends ProcessorOneToOne
+public abstract class RemoveAll<UIn, UOut> extends SingletonPostProcessor<UIn, UOut>
 {
 	/**
 	 * Checks if the leaf is to be removed
@@ -47,17 +48,18 @@ public abstract class RemoveAll extends ProcessorOneToOne
 		// Else remove all nodes satisfying the candidate function
 		List<Node> r = Lists.newArrayList();
 		for (int i = 0; i < n.length; i++)
-			if (n[i] instanceof Leaf && !remove((Leaf) n[i]))
+			if (n[i] instanceof Container || n[i] instanceof Leaf && !remove((Leaf) n[i]))
 				r.add(n[i]);
 
 		// Return as array
 		return r.toArray(new Node[r.size()]);
 	}
 
-	@Override
-	protected Node calculate(Node n)
-	{
-		return n.transformContainer(true, x -> new Container(x.label, removeCandidates(x.children)));
-	}
+	protected abstract Pair<UOut, Node> transformState(Pair<UIn, Node> n);
 
+	@Override
+	protected Pair<UOut, Node> calculate(Pair<UIn, Node> n)
+	{
+		return transformState(n.mapB(x -> x.transformContainer(true, c -> new Container(c.label, removeCandidates(c.children)))));
+	}
 }

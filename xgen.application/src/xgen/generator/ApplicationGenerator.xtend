@@ -7,114 +7,149 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import xgen.generate.Iteration
-import xgen.postprocess.Processor
 import java.util.Collection
 import java.util.List
 import java.util.Random
-import xgen.postprocess.TransformSome
 import xgen.postprocess.RemoveAll
 import xgen.postprocess.TransformAll
 import xgen.application.Application
 import xgen.grammar.util.GrammarConverter
 import xgen.grammar.util.GrammarUtil
-import xgen.postprocess.TransformOne
 import xgen.grammar.Reference
 import org.eclipse.emf.ecore.util.EcoreUtil
 import xgen.output.ApplicationOutput
 import static xgen.grammar.util.GrammarConstructor.*
 import xgen.parsetree.Setting
 import xgen.parsetree.Leaf
+import xgen.postprocess.ForEachBranch
+import xgen.index.Index
+import xgen.postprocess.PostProcessors
+import xgen.parsetree.Pair
+import xgen.parsetree.Node
+import java.util.Set
+import com.google.common.collect.Sets
+import java.util.Collections
+import java.util.Objects
+import java.util.ArrayList
 
-class ReplaceInitial extends TransformOne {
+class ReplaceInitial extends ForEachBranch<Object, Object, Object> {
 
-	override protected select(Leaf it) {
-		value == "<initial>"
+	override protected select(Leaf leaf) {
+		leaf.value == "<initial>"
 	}
 
-	override protected transform(Leaf it) {
-		new Leaf(label, "initial")
+	override protected finalizeCarrier(Object c) {
+		c
 	}
 
-}
-
-class RemoveRemainingInitial extends RemoveAll {
-
-	override protected remove(Leaf it) {
-		value == "<initial>"
+	override protected supplyCarrier(Object s) {
+		s
 	}
-}
 
-class ReplaceInputValue extends TransformAll {
-	var i = 0
-	var j = #["SomeInput", "MoreInput", "SlightlyDifferentInput", "EvenMore"]
-
-	override protected transform(Leaf it) {
-		if (value != "<input value>")
-			return it
-
-		val r = j.get(i % j.size)
-
-		i = i + 1
-
-		return new Leaf(label, r)
+	override protected transformOneLeaf(Pair<Object, Leaf> p) {
+		p.mapB[new Leaf(label, "initial")]
 	}
 }
 
-class ReplaceActionValue extends TransformAll {
-	var i = 0
-	var j = #["DoStuff", "DoOtherStuff", "StopWithSomething", "ForgetSomething"]
+class RemoveRemainingInitials extends RemoveAll<Object, Object> {
 
-	override protected transform(Leaf it) {
-		if (value != "<action value>")
-			return it
+	override protected remove(Leaf leaf) {
+		leaf.value == "<initial>"
+	}
 
-		val r = j.get(i % j.size)
-
-		i = i + 1
-
-		return new Leaf(label, r)
+	override protected transformState(Pair<Object, Node> n) {
+		n
 	}
 }
 
-class ReplaceStateName extends TransformAll {
-	var i = 0
-	val Collection<String> exchange
+class ReplaceInputValue extends TransformAll<Object, Integer, Object> {
 
-	new(Collection<String> exchange) {
-		this.exchange = exchange
+	override protected finalizeCarrier(Integer c) {
+		c
 	}
 
-	override protected resetOne() {
-		i = 0
-		exchange.clear
+	override protected supplyCarrier(Object s) {
+		0
 	}
 
-	override protected transform(Leaf it) {
-		if (value != "<state name>")
-			return it
+	override protected transformOneLeaf(Pair<Integer, Leaf> p) {
+		if (p.b.value != "<input value>")
+			return p
 
-		val r = "State" + i
-
-		i = i + 1
-
-		exchange += r
-		return new Leaf(label, r)
+		return Pair.create(
+			p.a + 1,
+			new Leaf(p.b.label, "Input" + p.a)
+		)
 	}
 }
 
-class ReplaceStateRef extends TransformAll {
-	val random = new Random
-	val List<String> exchange
+class ReplaceActionValue extends TransformAll<Object, Integer, Object> {
 
-	new(List<String> exchange) {
-		this.exchange = exchange
+	override protected finalizeCarrier(Integer c) {
+		c
 	}
 
-	override protected transform(Leaf it) {
-		if (value != "<state reference>")
-			return it
+	override protected supplyCarrier(Object s) {
+		0
+	}
 
-		new Leaf(label, exchange.get(random.nextInt(exchange.size)))
+	override protected transformOneLeaf(Pair<Integer, Leaf> p) {
+		if (p.b.value != "<action value>")
+			return p
+
+		return Pair.create(
+			p.a + 1,
+			new Leaf(p.b.label, "Action" + p.a)
+		)
+	}
+}
+
+class NameStates extends TransformAll<Object, Set<String>, Set<String>> {
+
+	override protected finalizeCarrier(Set<String> c) {
+		c
+	}
+
+	override protected supplyCarrier(Object s) {
+		newHashSet
+	}
+
+	override protected transformOneLeaf(Pair<Set<String>, Leaf> p) {
+		if (p.b.value != "<state name>")
+			return p
+
+		val nsn = "State" + p.a.size
+
+		return Pair.create(
+			Sets.union(p.a, Collections.singleton(nsn)),
+			new Leaf(p.b.label, nsn)
+		)
+	}
+}
+
+class UseStates extends TransformAll<Set<String>, Set<String>, Set<String>> {
+
+	override protected finalizeCarrier(Set<String> c) {
+		c
+	}
+
+	override protected supplyCarrier(Set<String> s) {
+		s
+	}
+
+	static val ran = new Random
+
+	override protected transformOneLeaf(Pair<Set<String>, Leaf> p) {
+		if (p.b.value != "<state reference>")
+			return p
+
+		val cs = new ArrayList(p.a)
+		val usn = cs.get(ran.nextInt(cs.size))
+
+		return Pair.create(
+			p.a,
+			new Leaf(p.b.label, usn)
+		)
 	}
 }
 
@@ -155,22 +190,24 @@ class ApplicationGenerator implements IGenerator {
 		// Exchange buffer object for the generated states in the replace state name PP
 		val s = newArrayList()
 
-		// Processor sequence
-		val t = Processor.compose(
-			// Replace one <initial> placeholder
-		new ReplaceInitial, 
-			
-			// Remove all remaining <initial> placeholders
-		new RemoveRemainingInitial,
-			// Replace all <input value> positions with a set of values
-			new ReplaceInputValue,
-			// Replace all <action value> positions with a set of values
-			new ReplaceActionValue,
-			// Replace state names and store the defined names in an array list
-			new ReplaceStateName(s),
-			// Replace all referenced names with the ones defined before this
-			new ReplaceStateRef(s))
+		val t = (new ReplaceInitial).andThen(new RemoveRemainingInitials).andThen(new ReplaceInputValue).andThen(
+			new ReplaceActionValue).andThen(new NameStates).andThen(new UseStates)
 
+		//		// Processor sequence
+		//		val t = PostProcessor.compose(
+		//			// Replace one <initial> placeholder
+		//		new ReplaceInitial, 
+		//			
+		//			// Remove all remaining <initial> placeholders
+		//		new RemoveRemainingInitial,
+		//			// Replace all <input value> positions with a set of values
+		//			new ReplaceInputValue,
+		//			// Replace all <action value> positions with a set of values
+		//			new ReplaceActionValue,
+		//			// Replace state names and store the defined names in an array list
+		//			new ReplaceStateName(s),
+		//			// Replace all referenced names with the ones defined before this
+		//			new ReplaceStateRef(s))
 		for (a : resource.allContents.filter(Application).toIterable) {
 
 			// Get effective grammar from application
@@ -183,7 +220,7 @@ class ApplicationGenerator implements IGenerator {
 			val x = i.iterate(g.definitions.findFirst[!lexical])
 
 			// Post-process
-			val y = t.postProcess(x)
+			val y = t.postProcess(PostProcessors.annotate(null, x))
 
 			ApplicationOutput.print("Iteration", null,
 				[ o |
@@ -192,8 +229,9 @@ class ApplicationGenerator implements IGenerator {
 					for (p : a.min .. a.max) {
 						y.get(p).ifPresent [ pt |
 							o.println("Test-data #" + p.toString);
+							o.println(Objects.toString(pt.a))
 							o.println("--------------------------------------------");
-							o.println(pt.flatten(Setting.DEFAULT_SETTING, false));
+							o.println(pt.b.flatten(Setting.DEFAULT_SETTING, false));
 							o.println();
 						]
 					}

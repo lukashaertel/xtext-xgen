@@ -8,11 +8,12 @@ Model:
 	applications+=Apply*;
 
 Apply:
-	{Application} target=[xt::Grammar|QID] '(' min=INT '..' max=INT ')'
-	('{'
-	(constructReplacements+=ConstructReplacement | ruleReplacements+=RuleReplacement |
+	{Application} 'generator' target=[xt::Grammar|QID]
+	'{'
+	(constructReplacements+=ConstructReplacement |
+	ruleReplacements+=RuleReplacement |
 	multiplicityAdjustments+=MultiplicityAdjustment)*
-	'}')?;
+	'}';
 
 ConstructReplacement:
 	'replace' selector=Construct0 (positioned?='/' position=INT)?

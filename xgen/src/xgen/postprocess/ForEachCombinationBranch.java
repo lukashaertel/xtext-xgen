@@ -1,8 +1,10 @@
 package xgen.postprocess;
 
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 import xgen.index.Index;
+import xgen.parsetree.Pair;
 import xgen.parsetree.Leaf;
 import xgen.parsetree.Node;
 
@@ -16,7 +18,7 @@ import com.google.common.collect.Sets;
  * @author Lukas Härtel
  *
  */
-public abstract class TransformSome extends ProcessorOneToMany
+public abstract class ForEachCombinationBranch<UIn, Carrier, UOut> extends BranchingPostProcessor<UIn, UOut>
 {
 	/**
 	 * Checks if the leaf is selectable
@@ -34,7 +36,11 @@ public abstract class TransformSome extends ProcessorOneToMany
 	 *            The input leaf
 	 * @return Returns the transformed leaf
 	 */
-	protected abstract Leaf transform(Leaf leaf);
+	protected abstract Pair<Carrier, Leaf> transformOneLeaf(Pair<Carrier, Leaf> p);
+
+	protected abstract Carrier supplyCarrier(UIn s);
+
+	protected abstract UOut finalizeCarrier(Carrier c);
 
 	/**
 	 * Checks if the amount of selected items is valid
@@ -49,26 +55,36 @@ public abstract class TransformSome extends ProcessorOneToMany
 	}
 
 	@Override
-	protected Index<Node> calculate(Node n)
+	protected Index<Pair<UOut, Node>> calculate(Pair<UIn, Node> n)
 	{
 		Set<Leaf> leafs = Sets.newIdentityHashSet();
 
-		n.visit(x -> {
-			if (x instanceof Leaf)
+		n.b.visit(x -> {
+			if (x instanceof Leaf && select((Leaf) x))
 				leafs.add((Leaf) x);
 		});
 
-		// Remove all leafs that are not candidates of the replacement
-		leafs.removeIf(l -> !select(l));
-
-		// Return the input if no candidate found
 		if (leafs.isEmpty())
-			return Index.items(n);
+			return Index.items(new Pair<>(finalizeCarrier(supplyCarrier(n.a)), n.b));
 
 		// Make power-set of selectable leafs
 		Set<Set<Leaf>> leafsPower = Sets.powerSet(leafs);
 
-		// Replace each leaf in the target parse-tree
-		return Index.from(Collections2.filter(leafsPower, ls -> selectAmount(ls.size()))).mapPresent(ls -> n.transformLeaf(true, c -> ls.contains(c) ? transform(c) : c));
+		return Index.from(leafsPower).mapPresent(ls -> {
+			AtomicReference<Carrier> carrier = new AtomicReference<>(supplyCarrier(n.a));
+
+			Node m = n.b.transformLeaf(true, c -> {
+				if (!ls.contains(c))
+					return c;
+
+				Pair<Carrier, Leaf> v = transformOneLeaf(new Pair<>(carrier.get(), c));
+
+				carrier.set(v.a);
+
+				return v.b;
+			});
+
+			return new Pair<>(finalizeCarrier(carrier.get()), m);
+		});
 	}
 }

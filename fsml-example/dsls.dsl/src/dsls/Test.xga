@@ -1,10 +1,10 @@
-sle.fsml.FSML(0..5)
+sle.fsml.FSML(0..20)
 {
-	// Replace the one keyword in the rule 
-	// FSMState with the one specified here
+	// Replace the one keyword in the rule  FSMState
+	// with the one specified here
 	replace "initial"{0,1} in FSMState with "<initial>"
 	
-	// Only one ID here so no problem
+	// Only one ID so no position specification
 	replace ID in FSMState with "<state name>"
 	
 	// In FSMTransition there are three ID calls,
@@ -13,11 +13,11 @@ sle.fsml.FSML(0..5)
 	replace ID/1 in FSMTransition with "<action value>"
 	replace ID/2 in FSMTransition with "<state reference>"
 	
-	// We want at least two states in the FSM, makes sense doesn't it
-	adjust multiplicity in FSM with {3}
+	// We want at least two states in the FSM
+	adjust multiplicity in FSM with {2,3}
 	
-	// Lets also have the transitions
-	adjust multiplicity in FSMState with {3}
+	// Lets also have a limited amount of transitions
+	adjust multiplicity in FSMState with {1,4}
 	
 	// Also always an action and a targeted transition
 	adjust multiplicity/0 in FSMTransition with {1, 1}
