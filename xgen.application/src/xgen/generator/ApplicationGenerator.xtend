@@ -3,155 +3,21 @@
  */
 package xgen.generator
 
+import java.util.Objects
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
+import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtext.generator.IFileSystemAccess
-import xgen.generate.Iteration
-import java.util.Collection
-import java.util.List
-import java.util.Random
-import xgen.postprocess.RemoveAll
-import xgen.postprocess.TransformAll
+import org.eclipse.xtext.generator.IGenerator
 import xgen.application.Application
+import xgen.generate.Iteration
 import xgen.grammar.util.GrammarConverter
 import xgen.grammar.util.GrammarUtil
-import xgen.grammar.Reference
-import org.eclipse.emf.ecore.util.EcoreUtil
 import xgen.output.ApplicationOutput
-import static xgen.grammar.util.GrammarConstructor.*
 import xgen.parsetree.Setting
-import xgen.parsetree.Leaf
-import xgen.postprocess.ForEachBranch
-import xgen.index.Index
 import xgen.postprocess.PostProcessors
-import xgen.parsetree.Pair
-import xgen.parsetree.Node
-import java.util.Set
-import com.google.common.collect.Sets
-import java.util.Collections
-import java.util.Objects
-import java.util.ArrayList
 
-class ReplaceInitial extends ForEachBranch<Object, Object, Object> {
-
-	override protected select(Leaf leaf) {
-		leaf.value == "<initial>"
-	}
-
-	override protected finalizeCarrier(Object c) {
-		c
-	}
-
-	override protected supplyCarrier(Object s) {
-		s
-	}
-
-	override protected transformOneLeaf(Pair<Object, Leaf> p) {
-		p.mapB[new Leaf(label, "initial")]
-	}
-}
-
-class RemoveRemainingInitials extends RemoveAll<Object, Object> {
-
-	override protected remove(Leaf leaf) {
-		leaf.value == "<initial>"
-	}
-
-	override protected transformState(Pair<Object, Node> n) {
-		n
-	}
-}
-
-class ReplaceInputValue extends TransformAll<Object, Integer, Object> {
-
-	override protected finalizeCarrier(Integer c) {
-		c
-	}
-
-	override protected supplyCarrier(Object s) {
-		0
-	}
-
-	override protected transformOneLeaf(Pair<Integer, Leaf> p) {
-		if (p.b.value != "<input value>")
-			return p
-
-		return Pair.create(
-			p.a + 1,
-			new Leaf(p.b.label, "Input" + p.a)
-		)
-	}
-}
-
-class ReplaceActionValue extends TransformAll<Object, Integer, Object> {
-
-	override protected finalizeCarrier(Integer c) {
-		c
-	}
-
-	override protected supplyCarrier(Object s) {
-		0
-	}
-
-	override protected transformOneLeaf(Pair<Integer, Leaf> p) {
-		if (p.b.value != "<action value>")
-			return p
-
-		return Pair.create(
-			p.a + 1,
-			new Leaf(p.b.label, "Action" + p.a)
-		)
-	}
-}
-
-class NameStates extends TransformAll<Object, Set<String>, Set<String>> {
-
-	override protected finalizeCarrier(Set<String> c) {
-		c
-	}
-
-	override protected supplyCarrier(Object s) {
-		newHashSet
-	}
-
-	override protected transformOneLeaf(Pair<Set<String>, Leaf> p) {
-		if (p.b.value != "<state name>")
-			return p
-
-		val nsn = "State" + p.a.size
-
-		return Pair.create(
-			Sets.union(p.a, Collections.singleton(nsn)),
-			new Leaf(p.b.label, nsn)
-		)
-	}
-}
-
-class UseStates extends TransformAll<Set<String>, Set<String>, Set<String>> {
-
-	override protected finalizeCarrier(Set<String> c) {
-		c
-	}
-
-	override protected supplyCarrier(Set<String> s) {
-		s
-	}
-
-	static val ran = new Random
-
-	override protected transformOneLeaf(Pair<Set<String>, Leaf> p) {
-		if (p.b.value != "<state reference>")
-			return p
-
-		val cs = new ArrayList(p.a)
-		val usn = cs.get(ran.nextInt(cs.size))
-
-		return Pair.create(
-			p.a,
-			new Leaf(p.b.label, usn)
-		)
-	}
-}
+import static xgen.grammar.util.GrammarConstructor.*
+import xgen.generator.pp.FSMLPP
 
 /**
  * Generates code from your model files on save.
@@ -187,27 +53,6 @@ class ApplicationGenerator implements IGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 
-		// Exchange buffer object for the generated states in the replace state name PP
-		val s = newArrayList()
-
-		val t = (new ReplaceInitial).andThen(new RemoveRemainingInitials).andThen(new ReplaceInputValue).andThen(
-			new ReplaceActionValue).andThen(new NameStates).andThen(new UseStates)
-
-		//		// Processor sequence
-		//		val t = PostProcessor.compose(
-		//			// Replace one <initial> placeholder
-		//		new ReplaceInitial, 
-		//			
-		//			// Remove all remaining <initial> placeholders
-		//		new RemoveRemainingInitial,
-		//			// Replace all <input value> positions with a set of values
-		//			new ReplaceInputValue,
-		//			// Replace all <action value> positions with a set of values
-		//			new ReplaceActionValue,
-		//			// Replace state names and store the defined names in an array list
-		//			new ReplaceStateName(s),
-		//			// Replace all referenced names with the ones defined before this
-		//			new ReplaceStateRef(s))
 		for (a : resource.allContents.filter(Application).toIterable) {
 
 			// Get effective grammar from application
@@ -220,7 +65,7 @@ class ApplicationGenerator implements IGenerator {
 			val x = i.iterate(g.definitions.findFirst[!lexical])
 
 			// Post-process
-			val y = t.postProcess(PostProcessors.annotate(null, x))
+			val y = FSMLPP.fsmlPP.postProcess(PostProcessors.annotate(null, x))
 
 			ApplicationOutput.print("Iteration", null,
 				[ o |
