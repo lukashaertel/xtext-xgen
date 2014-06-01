@@ -1,7 +1,5 @@
 package xgen.postprocess;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import xgen.parsetree.Pair;
 import xgen.parsetree.Leaf;
 import xgen.parsetree.Node;
