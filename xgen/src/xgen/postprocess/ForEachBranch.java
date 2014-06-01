@@ -17,7 +17,7 @@ import com.google.common.collect.Sets;
  * @author Lukas Härtel
  *
  */
-public abstract class ForEachBranch<UIn, Carrier, UOut> extends BranchingPostProcessor<UIn, UOut>
+public abstract class ForEachBranch<UIn, Carrier, UOut> extends OneToManyPostProcessor<UIn, UOut>
 {
 	/**
 	 * Checks if the leaf is selectable
@@ -26,7 +26,7 @@ public abstract class ForEachBranch<UIn, Carrier, UOut> extends BranchingPostPro
 	 *            The leaf to test
 	 * @return Returns true if leaf is a candidate
 	 */
-	protected abstract boolean select(Leaf leaf);
+	protected abstract boolean match(Leaf leaf);
 
 	/**
 	 * Transforms a leaf
@@ -35,7 +35,7 @@ public abstract class ForEachBranch<UIn, Carrier, UOut> extends BranchingPostPro
 	 *            The input leaf
 	 * @return Returns the transformed leaf
 	 */
-	protected abstract Pair<Carrier, Leaf> transformOneLeaf(Pair<Carrier, Leaf> p);
+	protected abstract Pair<Carrier, Leaf> build(Pair<Carrier, Leaf> p);
 
 	protected abstract Carrier supplyCarrier(UIn s);
 
@@ -47,7 +47,7 @@ public abstract class ForEachBranch<UIn, Carrier, UOut> extends BranchingPostPro
 		Set<Leaf> leafs = Sets.newIdentityHashSet();
 
 		n.b.visit(x -> {
-			if (x instanceof Leaf && select((Leaf) x))
+			if (x instanceof Leaf && match((Leaf) x))
 				leafs.add((Leaf) x);
 		});
 
@@ -61,7 +61,7 @@ public abstract class ForEachBranch<UIn, Carrier, UOut> extends BranchingPostPro
 				if (l != c)
 					return c;
 
-				Pair<Carrier, Leaf> v = transformOneLeaf(new Pair<>(carrier.get(), c));
+				Pair<Carrier, Leaf> v = build(new Pair<>(carrier.get(), c));
 
 				carrier.set(v.a);
 

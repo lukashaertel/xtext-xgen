@@ -7,7 +7,7 @@ import xgen.postprocess.RemoveAll
 
 class RemoveRemainingInitials extends RemoveAll<Object, Object> {
 
-	override protected remove(Leaf leaf) {
+	override protected match(Leaf leaf) {
 		leaf.value == "<initial>"
 	}
 

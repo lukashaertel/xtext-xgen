@@ -21,6 +21,8 @@ hs_err_pid*
 .gradle
 bin/
 tmp/
+src-gen/
+xtend-gen/
 *.tmp
 *.bak
 *.swp

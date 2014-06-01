@@ -10,7 +10,7 @@ import xgen.parsetree.Pair;
  * @author Lukas Härtel
  *
  */
-public abstract class BranchingPostProcessor<UIn, UOut> extends PostProcessor<UIn, UOut>
+public abstract class OneToManyPostProcessor<UIn, UOut> extends PostProcessor<UIn, UOut>
 {
 	/**
 	 * Transforms one node into less or more output nodes

@@ -2,10 +2,10 @@ package xgen.postprocess;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import xgen.index.Index;
 import xgen.parsetree.Pair;
 import xgen.parsetree.Leaf;
 import xgen.parsetree.Node;
+import xgen.util.Item;
 
 /**
  * Applies a transformation to all leafs in the input parse tree
@@ -13,7 +13,7 @@ import xgen.parsetree.Node;
  * @author Lukas Härtel
  *
  */
-public abstract class TransformAll<UIn, Carrier, UOut> extends SingletonPostProcessor<UIn, UOut>
+public abstract class TransformAll<UIn, Carrier, UOut> extends OneToOnePostProcessor<UIn, UOut>
 {
 
 	/**
@@ -32,17 +32,18 @@ public abstract class TransformAll<UIn, Carrier, UOut> extends SingletonPostProc
 	@Override
 	protected Pair<UOut, Node> calculate(Pair<UIn, Node> n)
 	{
-		AtomicReference<Carrier> carrier = new AtomicReference<>(supplyCarrier(n.a));
+		Item<Carrier> carrier = new Item<>();
+		carrier.item = supplyCarrier(n.a);
 
 		Node m = n.b.transformLeaf(true, c -> {
-			Pair<Carrier, Leaf> v = transformOneLeaf(new Pair<>(carrier.get(), c));
+			Pair<Carrier, Leaf> v = transformOneLeaf(new Pair<>(carrier.item, c));
 
-			carrier.set(v.a);
+			carrier.item = v.a;
 
 			return v.b;
 		});
 
-		return new Pair<>(finalizeCarrier(carrier.get()), m);
+		return new Pair<>(finalizeCarrier(carrier.item), m);
 
 	}
 }

@@ -10,7 +10,7 @@ import xgen.parsetree.Node;
  * @author Lukas Härtel
  *
  */
-public abstract class SingletonPostProcessor<UIn, UOut> extends PostProcessor<UIn, UOut>
+public abstract class OneToOnePostProcessor<UIn, UOut> extends PostProcessor<UIn, UOut>
 {
 	/**
 	 * Transforms one node into exactly one output node

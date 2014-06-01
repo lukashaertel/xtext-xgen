@@ -6,7 +6,7 @@ import xgen.postprocess.ForEachBranch
 
 class ReplaceInitial extends ForEachBranch<Object, Object, Object> {
 
-	override protected select(Leaf leaf) {
+	override protected match(Leaf leaf) {
 		leaf.value == "<initial>"
 	}
 
@@ -21,7 +21,7 @@ class ReplaceInitial extends ForEachBranch<Object, Object, Object> {
 		s
 	}
 
-	override protected transformOneLeaf(Pair<Object, Leaf> p) {
+	override protected build(Pair<Object, Leaf> p) {
 		p.mapB[new Leaf(label, "initial")]
 	}
 }

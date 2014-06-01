@@ -8,7 +8,6 @@ import xgen.parsetree.Pair;
 import xgen.parsetree.Leaf;
 import xgen.parsetree.Node;
 
-import com.google.common.collect.Collections2;
 import com.google.common.collect.Sets;
 
 /**
@@ -18,7 +17,7 @@ import com.google.common.collect.Sets;
  * @author Lukas Härtel
  *
  */
-public abstract class ForEachCombinationBranch<UIn, Carrier, UOut> extends BranchingPostProcessor<UIn, UOut>
+public abstract class ForEachCombinationBranch<UIn, Carrier, UOut> extends OneToManyPostProcessor<UIn, UOut>
 {
 	/**
 	 * Checks if the leaf is selectable
@@ -27,7 +26,7 @@ public abstract class ForEachCombinationBranch<UIn, Carrier, UOut> extends Branc
 	 *            The leaf to test
 	 * @return Returns true if leaf is a candidate
 	 */
-	protected abstract boolean select(Leaf leaf);
+	protected abstract boolean match(Leaf leaf);
 
 	/**
 	 * Transforms a leaf
@@ -36,7 +35,7 @@ public abstract class ForEachCombinationBranch<UIn, Carrier, UOut> extends Branc
 	 *            The input leaf
 	 * @return Returns the transformed leaf
 	 */
-	protected abstract Pair<Carrier, Leaf> transformOneLeaf(Pair<Carrier, Leaf> p);
+	protected abstract Pair<Carrier, Leaf> build(Pair<Carrier, Leaf> p);
 
 	protected abstract Carrier supplyCarrier(UIn s);
 
@@ -60,7 +59,7 @@ public abstract class ForEachCombinationBranch<UIn, Carrier, UOut> extends Branc
 		Set<Leaf> leafs = Sets.newIdentityHashSet();
 
 		n.b.visit(x -> {
-			if (x instanceof Leaf && select((Leaf) x))
+			if (x instanceof Leaf && match((Leaf) x))
 				leafs.add((Leaf) x);
 		});
 
@@ -77,7 +76,7 @@ public abstract class ForEachCombinationBranch<UIn, Carrier, UOut> extends Branc
 				if (!ls.contains(c))
 					return c;
 
-				Pair<Carrier, Leaf> v = transformOneLeaf(new Pair<>(carrier.get(), c));
+				Pair<Carrier, Leaf> v = build(new Pair<>(carrier.get(), c));
 
 				carrier.set(v.a);
 

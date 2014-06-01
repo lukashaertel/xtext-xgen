@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
  * @author Lukas Härtel
  *
  */
-public abstract class RemoveAll<UIn, UOut> extends SingletonPostProcessor<UIn, UOut>
+public abstract class RemoveAll<UIn, UOut> extends OneToOnePostProcessor<UIn, UOut>
 {
 	/**
 	 * Checks if the leaf is to be removed
@@ -24,7 +24,7 @@ public abstract class RemoveAll<UIn, UOut> extends SingletonPostProcessor<UIn, U
 	 *            The leaf to test
 	 * @return Returns true if leaf must be removed
 	 */
-	protected abstract boolean remove(Leaf leaf);
+	protected abstract boolean match(Leaf leaf);
 
 	/**
 	 * Utility that removes all candidates
@@ -38,7 +38,7 @@ public abstract class RemoveAll<UIn, UOut> extends SingletonPostProcessor<UIn, U
 		// First search for one node of type leaf
 		boolean l = false;
 		for (int i = 0; i < n.length && !l; i++)
-			if (n[i] instanceof Leaf && remove((Leaf) n[i]))
+			if (n[i] instanceof Leaf && match((Leaf) n[i]))
 				l = true;
 
 		// If no node is a leaf, return input unchanged
@@ -48,7 +48,7 @@ public abstract class RemoveAll<UIn, UOut> extends SingletonPostProcessor<UIn, U
 		// Else remove all nodes satisfying the candidate function
 		List<Node> r = Lists.newArrayList();
 		for (int i = 0; i < n.length; i++)
-			if (n[i] instanceof Container || n[i] instanceof Leaf && !remove((Leaf) n[i]))
+			if (n[i] instanceof Container || n[i] instanceof Leaf && !match((Leaf) n[i]))
 				r.add(n[i]);
 
 		// Return as array
