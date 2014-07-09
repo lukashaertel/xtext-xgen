@@ -71,7 +71,7 @@ class ApplicationGenerator implements IGenerator {
 				[ o |
 					o.println()
 					// Print some items
-					for (p : a.min .. a.max) {
+					for (p : 0 .. 100) {
 						y.get(p).ifPresent [ pt |
 							o.println("Test-data #" + p.toString);
 							o.println(Objects.toString(pt.a))

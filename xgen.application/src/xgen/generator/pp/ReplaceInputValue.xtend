@@ -14,7 +14,7 @@ class ReplaceInputValue extends TransformAll<Object, Integer, Object> {
 		0
 	}
 
-	override protected transformOneLeaf(Pair<Integer, Leaf> p) {
+	override protected build(Pair<Integer, Leaf> p) {
 		if (p.b.value != "<input value>")
 			return p
 

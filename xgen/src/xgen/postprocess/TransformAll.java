@@ -21,7 +21,7 @@ public abstract class TransformAll<UIn, Carrier, UOut> extends OneToOnePostProce
 	 *            The input leaf
 	 * @return Returns the transformed leaf
 	 */
-	protected abstract Pair<Carrier, Leaf> transformOneLeaf(Pair<Carrier, Leaf> p);
+	protected abstract Pair<Carrier, Leaf> build(Pair<Carrier, Leaf> p);
 
 	protected abstract Carrier supplyCarrier(UIn s);
 
@@ -34,7 +34,7 @@ public abstract class TransformAll<UIn, Carrier, UOut> extends OneToOnePostProce
 		carrier.item = supplyCarrier(n.a);
 
 		Node m = n.b.transformLeaf(true, c -> {
-			Pair<Carrier, Leaf> v = transformOneLeaf(new Pair<>(carrier.item, c));
+			Pair<Carrier, Leaf> v = build(new Pair<>(carrier.item, c));
 
 			carrier.item = v.a;
 

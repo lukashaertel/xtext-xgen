@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/xgen/Application.xtext"
+var grammarURI = "platform:/resource/xgen.application/src/xgen/Application.xtext"
 var fileExtensions = "xga"
 var projectName = "xgen.application"
 var runtimeProject = "../${projectName}"

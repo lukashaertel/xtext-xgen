@@ -17,7 +17,7 @@ class NameStates extends TransformAll<Object, Set<String>, Set<String>> {
 		newHashSet
 	}
 
-	override protected transformOneLeaf(Pair<Set<String>, Leaf> p) {
+	override protected build(Pair<Set<String>, Leaf> p) {
 		if (p.b.value != "<state name>")
 			return p
 
@@ -29,3 +29,4 @@ class NameStates extends TransformAll<Object, Set<String>, Set<String>> {
 		)
 	}
 }
+

@@ -19,7 +19,7 @@ class UseStates extends TransformAll<Set<String>, Set<String>, Set<String>> {
 
 	static val ran = new Random
 
-	override protected transformOneLeaf(Pair<Set<String>, Leaf> p) {
+	override protected build(Pair<Set<String>, Leaf> p) {
 		if (p.b.value != "<state reference>")
 			return p
 

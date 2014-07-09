@@ -32,8 +32,6 @@
     </genClasses>
     <genClasses ecoreClass="Application.ecore#//Application">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//Application/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Application/min"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Application/max"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Application/constructReplacements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Application/ruleReplacements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Application/multiplicityAdjustments"/>

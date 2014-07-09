@@ -10,18 +10,17 @@ class ReplaceInitial extends ForEachBranch<Object, Object, Object> {
 		leaf.value == "<initial>"
 	}
 
-	override protected finalizeCarrier(Object c) {
-		c
-	}
-
-	/**
-	 * s
-	 */
-	override protected supplyCarrier(Object s) {
-		s
-	}
-
 	override protected build(Pair<Object, Leaf> p) {
 		p.mapB[new Leaf(label, "initial")]
+	}
+	
+	
+
+	override protected finalizeCarrier(Object carry) {
+		carry
+	}
+
+	override protected supplyCarrier(Object state) {
+		state
 	}
 }
