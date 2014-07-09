@@ -2,8 +2,10 @@ package xgen.parsetree;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 import xgen.grammar.Element;
 
@@ -15,8 +17,7 @@ import com.google.common.collect.Iterables;
  * @author Lukas Härtel
  *
  */
-public class Container extends Node
-{
+public class Container extends Node {
 	/**
 	 * <p>
 	 * The children of this node
@@ -35,8 +36,7 @@ public class Container extends Node
 	 * @param children
 	 *            The children of this container
 	 */
-	public Container(Element label, Node... children)
-	{
+	public Container(Element label, Node... children) {
 		super(label);
 
 		this.children = children;
@@ -54,14 +54,12 @@ public class Container extends Node
 	 *            The sequence to exhaust for array creation
 	 * @return Returns a new Container
 	 */
-	public static Node fromIterable(Element label, Iterable<Node> children)
-	{
+	public static Node fromIterable(Element label, Iterable<Node> children) {
 		return new Container(label, Iterables.toArray(children, Node.class));
 	}
 
 	@Override
-	public Node transform(boolean recursive, Function<Node, Node> f)
-	{
+	public Node transform(boolean recursive, Function<Node, Node> f) {
 		if (!recursive)
 			return f.apply(this).clone();
 
@@ -73,8 +71,8 @@ public class Container extends Node
 	}
 
 	@Override
-	public Node transformContainer(boolean recursive, Function<Container, Node> f)
-	{
+	public Node transformContainer(boolean recursive,
+			Function<Container, Node> f) {
 		if (!recursive)
 			return f.apply(this).clone();
 
@@ -86,8 +84,7 @@ public class Container extends Node
 	}
 
 	@Override
-	public Node transformLeaf(boolean recursive, Function<Leaf, Node> f)
-	{
+	public Node transformLeaf(boolean recursive, Function<Leaf, Node> f) {
 		if (!recursive)
 			return clone();
 
@@ -99,8 +96,7 @@ public class Container extends Node
 	}
 
 	@Override
-	public void visit(Consumer<? super Node> f)
-	{
+	public void visit(Consumer<? super Node> f) {
 		f.accept(this);
 
 		for (Node c : children)
@@ -108,8 +104,7 @@ public class Container extends Node
 	}
 
 	@Override
-	public Container clone()
-	{
+	public Container clone() {
 		Node[] cs = new Node[children.length];
 
 		for (int i = 0; i < children.length; i++)
@@ -119,18 +114,15 @@ public class Container extends Node
 	}
 
 	@Override
-	public void flatten(Setting setting, StringBuilder target, boolean lexical)
-	{
+	public void flatten(Setting setting, StringBuilder target, boolean lexical) {
 		setting.beforeContainer(target, this);
 
 		if (lexical || isLexicalDefinition())
 			for (Node c1 : children)
 				c1.flatten(setting, target, true);
-		else
-		{
+		else {
 			boolean separate = false;
-			for (Node c : children)
-			{
+			for (Node c : children) {
 				if (separate)
 					target.append(" ");
 
@@ -144,8 +136,21 @@ public class Container extends Node
 	}
 
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return Objects.toString(label) + Arrays.toString(children);
+	}
+
+	@Override
+	public Optional<Node> find(Predicate<? super Node> f) {
+		if (f.test(this))
+			return Optional.of(this);
+
+		for (Node c : children) {
+			Optional<Node> p = c.find(f);
+			if (p.isPresent())
+				return p;
+		}
+
+		return Optional.empty();
 	}
 }

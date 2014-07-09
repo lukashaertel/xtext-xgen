@@ -1,7 +1,9 @@
 package xgen.parsetree;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 import xgen.grammar.Definition;
 import xgen.grammar.Element;
@@ -90,6 +92,14 @@ public abstract class Node
 	 *            The consumer
 	 */
 	public abstract void visit(Consumer<? super Node> f);
+	
+	/**
+	 * Visits all nodes in pre-order and returns the first one to satisfy a predicate
+	 * 
+	 * @param f
+	 *            The predicate
+	 */
+	public abstract Optional<Node> find(Predicate<? super Node> f);
 
 	/**
 	 * Clones this node

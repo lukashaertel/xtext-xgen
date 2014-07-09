@@ -17,7 +17,7 @@ import xgen.parsetree.Setting
 import xgen.postprocess.PostProcessors
 
 import static xgen.grammar.util.GrammarConstructor.*
-import xgen.generator.pp.FSMLPP
+import xgen.generator.pp.FSMLPPimport xgen.generator.pp.WhilePP
 
 /**
  * Generates code from your model files on save.
@@ -65,13 +65,13 @@ class ApplicationGenerator implements IGenerator {
 			val x = i.iterate(g.definitions.findFirst[!lexical])
 
 			// Post-process
-			val y = FSMLPP.fsmlPP.postProcess(PostProcessors.annotate(null, x))
+			val y = WhilePP.whilePP.postProcess(PostProcessors.annotate(null, x))
 
 			ApplicationOutput.print("Iteration", null,
 				[ o |
 					o.println()
 					// Print some items
-					for (p : 0 .. 100) {
+					for (p : 0 .. 200) {
 						y.get(p).ifPresent [ pt |
 							o.println("Test-data #" + p.toString);
 							o.println(Objects.toString(pt.a))
