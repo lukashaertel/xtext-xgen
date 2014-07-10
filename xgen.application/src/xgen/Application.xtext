@@ -8,7 +8,7 @@ Model:
 	applications+=Apply*;
 
 Apply:
-	{Application} 'generator' target=[xt::Grammar|QID]
+	{Application} 'generator' target=[xt::Grammar|QID] ('examples' examples+=INT+)?
 	'{'
 	(constructReplacements+=ConstructReplacement |
 	ruleReplacements+=RuleReplacement |

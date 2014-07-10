@@ -3,6 +3,10 @@
  */
 package xgen.generator
 
+import com.google.common.collect.ContiguousSet
+import com.google.common.collect.DiscreteDomain
+import com.google.common.collect.Range
+import java.math.BigDecimal
 import java.util.Objects
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.util.EcoreUtil
@@ -10,14 +14,15 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import xgen.application.Application
 import xgen.generate.Iteration
+import xgen.generator.pp.FSMLPP
 import xgen.grammar.util.GrammarConverter
 import xgen.grammar.util.GrammarUtil
 import xgen.output.ApplicationOutput
 import xgen.parsetree.Setting
 import xgen.postprocess.PostProcessors
 
+import static xgen.generator.BSU.*
 import static xgen.grammar.util.GrammarConstructor.*
-import xgen.generator.pp.FSMLPPimport xgen.generator.pp.WhilePP
 
 /**
  * Generates code from your model files on save.
@@ -25,6 +30,7 @@ import xgen.generator.pp.FSMLPPimport xgen.generator.pp.WhilePP
  * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
  */
 class ApplicationGenerator implements IGenerator {
+	val STANDART_LIMIT = 1_000_000
 
 	def getEffectiveGrammar(Application it) {
 		val g = GrammarConverter.fromXText(target)
@@ -51,35 +57,81 @@ class ApplicationGenerator implements IGenerator {
 		return g
 	}
 
+	static class TL {
+		val long start
+		var long end
+
+		new() {
+			start = System.nanoTime
+		}
+
+		def getStart() {
+			return start
+		}
+
+		def getEnd() {
+			return end
+		}
+
+		def stop() {
+			end = System.nanoTime
+		}
+
+		def duration() {
+			return (end - start) * 1e-9
+		}
+	}
+
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 
 		for (a : resource.allContents.filter(Application).toIterable) {
 
-			// Get effective grammar from application
-			val g = a.effectiveGrammar
-
-			// Make iteration from grammar
-			val i = new Iteration(g)
-
-			// Iterate the first rule
-			val x = i.iterate(g.definitions.findFirst[!lexical])
-
-			// Post-process
-			val y = WhilePP.whilePP.postProcess(PostProcessors.annotate(null, x))
-
 			ApplicationOutput.print("Iteration", null,
 				[ o |
-					o.println()
-					// Print some items
-					for (p : 0 .. 200) {
+					o.println("Beginning iteration")
+					// Get effective grammar from application
+					val g = a.effectiveGrammar
+					// Start time calculation
+					val calculation = new ApplicationGenerator.TL
+					// Make iteration from grammar
+					val i = new Iteration(g)
+					// Iterate the first rule
+					val x = i.iterate(g.definitions.findFirst[!lexical])
+					// Post-process
+					val y = FSMLPP.fsmlPP.postProcess(PostProcessors.annotate(null, x))
+					// Stop time calculation
+					calculation.stop
+					// Initialize metric store
+					val count = newArrayList(0BD)
+					val size = newArrayList(0BD)
+					// Start time construction
+					val construction = new ApplicationGenerator.TL
+					// Print items
+					for (p : ContiguousSet.create(Range.closedOpen(0L, y.bound.orElse(STANDART_LIMIT)),
+						DiscreteDomain.longs)) {
 						y.get(p).ifPresent [ pt |
-							o.println("Test-data #" + p.toString);
-							o.println(Objects.toString(pt.a))
-							o.println("--------------------------------------------");
-							o.println(pt.b.flatten(Setting.DEFAULT_SETTING, false));
-							o.println();
+							// Get flattened
+							val d = pt.b.flatten(Setting.DEFAULT_SETTING, false)
+							// Increment the metrics
+							count.set(0, count.head + 1BD)
+							size.set(0, size.head + BigDecimal.valueOf(d.bytes.length))
+							// Optionally print
+							if (a.examples.contains(p as long as int)) {
+								o.println("Test-data #" + p.toString);
+								o.println(Objects.toString(pt.a))
+								o.println("--------------------------------------------");
+								o.println(d);
+								o.println();
+							}
 						]
 					}
+					// Stop time construction
+					construction.stop
+					// Print metrics
+					o.println("Calculated (s): " + calculation.duration)
+					o.println("Constructed (s): " + construction.duration)
+					o.println("Created: " + count.head)
+					o.println("Size: " + prettySize(size.head))
 				])
 
 		}

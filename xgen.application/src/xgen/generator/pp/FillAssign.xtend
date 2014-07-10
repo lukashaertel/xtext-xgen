@@ -1,12 +1,11 @@
 package xgen.generator.pp
 
+import xgen.grammar.Definition
 import xgen.index.Index
 import xgen.parsetree.Leaf
 import xgen.parsetree.Node
 import xgen.parsetree.Pair
 import xgen.postprocess.OneToManyPostProcessor
-import xgen.grammar.Definition
-import xgen.grammar.Reference
 
 class FillAssign<T> extends OneToManyPostProcessor<T, T> {
 	def static root(Node n) {
