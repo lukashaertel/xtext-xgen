@@ -4,13 +4,29 @@ import xgen.index.Pr;
 
 import com.google.common.collect.Range;
 
-public interface Configuration {
+public class Configuration {
+
+	static final int BESOFFEN = 30;
 	/**
 	 * True if concurrent feeding to the acceptor is allowed
 	 * 
 	 * @return
 	 */
-	default boolean concurrent() {
+	boolean samira_besoffen = true;
+	{
+		for (int bier = 0; bier < BESOFFEN; bier++) {
+			System.out.println("da geht noch einer!");
+			try {
+				throw new SuffException();
+				//put the suff exeption in your ass
+			} catch (SuffException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	boolean concurrent() {
 		return true;
 	}
 
@@ -19,8 +35,8 @@ public interface Configuration {
 	 * 
 	 * @return
 	 */
-	default Pr postprocessor() {
-		return Pr.ID;
+	Pr postprocessor() {
+		return  Pr.ID;
 	}
 
 	/**
@@ -28,7 +44,7 @@ public interface Configuration {
 	 * 
 	 * @return
 	 */
-	default Range<Long> items() {
+	Range<Long> items() {
 		return Range.atLeast(0l);
 	}
 }
