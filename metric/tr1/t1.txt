@@ -1,0 +1,71 @@
+generator sle.fsml.FSML examples 10 100 1000 10000 100000
+{
+	replace "initial"{0,1} in FSMState with "<initial>"
+	
+	replace ID in FSMState with "<state name>"
+	
+	replace ID/0 in FSMTransition with "<input value>"
+	replace ID/1 in FSMTransition with "<action value>"
+	replace ID/2 in FSMTransition with "<state reference>"
+	
+	adjust multiplicity in FSM with {1,3}
+	adjust multiplicity in FSMState with {1,3}
+	adjust multiplicity/0 in FSMTransition with {1, 1}
+	adjust multiplicity/1 in FSMTransition with {1, 1}
+}
+~ 3 States with 3 respective transitions
+~ Each transition has an input and an action
+
+-------------------------------------------------------------------
+Beginning iteration
+Calculated (s): 0.09878026300000001
+Constructed (s): 1.037335742
+Created: 102
+Size: 27.4658203125 Kb
+Beginning iteration
+Test-data #10
+[Disambiguated, Unused]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Disambiguated ;
+ 
+}
+ initial state Unused 
+{
+ dequeue / construct -> Disambiguated ;
+ poll / associate -> Disambiguated ;
+ 
+}
+
+
+Test-data #100
+[Disambiguated, Unused, Complete]
+--------------------------------------------
+initial state Disambiguated 
+{
+ cancel / communicate -> Complete ;
+ dequeue / construct -> Disambiguated ;
+ poll / associate -> Complete ;
+ 
+}
+ state Unused 
+{
+ listen / pop -> Disambiguated ;
+ cast / transform -> Complete ;
+ bark / merge -> Complete ;
+ 
+}
+ state Complete 
+{
+ generate / navigate -> Unused ;
+ contradict / test -> Unused ;
+ restart / subscribe -> Complete ;
+ 
+}
+
+
+Calculated (s): 2.7384100000000004E-4
+Constructed (s): 0.8675479660000001
+Created: 102
+Size: 27.478515625 Kb

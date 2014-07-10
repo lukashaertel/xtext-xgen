@@ -1,0 +1,187 @@
+generator sle.fsml.FSML examples 10 100 1000 10000 100000
+{
+	replace "initial"{0,1} in FSMState with "<initial>"
+	
+	replace ID in FSMState with "<state name>"
+	
+	replace ID/0 in FSMTransition with "<input value>"
+	replace ID/1 in FSMTransition with "<action value>"
+	replace ID/2 in FSMTransition with "<state reference>"
+	
+	adjust multiplicity in FSM with {1,6}
+	adjust multiplicity in FSMState with {1,6}
+	adjust multiplicity/0 in FSMTransition with {1, 1}
+	adjust multiplicity/1 in FSMTransition with {1, 1}
+}
+~ 6 States with 6 respective transitions
+~ Each transition has an input and an action
+
+-------------------------------------------------------------------
+Beginning iteration
+Test-data #10
+[Disambiguated, Unused]
+--------------------------------------------
+initial state Disambiguated 
+{
+ cancel / communicate -> Unused ;
+ dequeue / construct -> Unused ;
+ poll / associate -> Disambiguated ;
+ 
+}
+ state Unused 
+{
+ listen / pop -> Unused ;
+ 
+}
+
+
+Test-data #100
+[Disambiguated, Unused, Complete]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Complete ;
+ dequeue / construct -> Complete ;
+ 
+}
+ state Unused 
+{
+ poll / associate -> Disambiguated ;
+ listen / pop -> Unused ;
+ 
+}
+ initial state Complete 
+{
+ cast / transform -> Complete ;
+ 
+}
+
+
+Test-data #1000
+[Disambiguated, Unused, Complete, Labeled]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Unused ;
+ dequeue / construct -> Unused ;
+ poll / associate -> Labeled ;
+ 
+}
+ initial state Unused 
+{
+ listen / pop -> Complete ;
+ cast / transform -> Labeled ;
+ bark / merge -> Labeled ;
+ generate / navigate -> Disambiguated ;
+ contradict / test -> Unused ;
+ restart / subscribe -> Labeled ;
+ 
+}
+ state Complete 
+{
+ start / push -> Labeled ;
+ personalize / reconcile -> Disambiguated ;
+ 
+}
+ state Labeled 
+{
+ internationalize / analyze -> Complete ;
+ 
+}
+
+
+Test-data #10000
+[Disambiguated, Unused, Complete, Labeled, Turning]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Turning ;
+ dequeue / construct -> Disambiguated ;
+ poll / associate -> Disambiguated ;
+ 
+}
+ state Unused 
+{
+ listen / pop -> Turning ;
+ cast / transform -> Complete ;
+ bark / merge -> Unused ;
+ generate / navigate -> Turning ;
+ contradict / test -> Complete ;
+ 
+}
+ state Complete 
+{
+ restart / subscribe -> Unused ;
+ start / push -> Labeled ;
+ personalize / reconcile -> Disambiguated ;
+ internationalize / analyze -> Turning ;
+ activate / clone -> Unused ;
+ 
+}
+ initial state Labeled 
+{
+ retrieve / reset -> Labeled ;
+ finalize / bid -> Complete ;
+ return / null -> Turning ;
+ null / null -> Complete ;
+ 
+}
+ state Turning 
+{
+ null / null -> Turning ;
+ 
+}
+
+
+Test-data #100000
+[Disambiguated, Unused, Complete, Labeled, Turning, Compiled]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Unused ;
+ dequeue / construct -> Disambiguated ;
+ poll / associate -> Disambiguated ;
+ listen / pop -> Compiled ;
+ 
+}
+ state Unused 
+{
+ cast / transform -> Labeled ;
+ bark / merge -> Complete ;
+ generate / navigate -> Turning ;
+ contradict / test -> Complete ;
+ 
+}
+ state Complete 
+{
+ restart / subscribe -> Unused ;
+ start / push -> Unused ;
+ personalize / reconcile -> Turning ;
+ internationalize / analyze -> Labeled ;
+ 
+}
+ initial state Labeled 
+{
+ activate / clone -> Disambiguated ;
+ 
+}
+ state Turning 
+{
+ retrieve / reset -> Unused ;
+ finalize / bid -> Labeled ;
+ 
+}
+ state Compiled 
+{
+ return / null -> Disambiguated ;
+ null / null -> Turning ;
+ 
+}
+
+
+Calculated (s): 9.330200000000001E-5
+Constructed (s): 227.42766993100003
+Created: 324726
+Size: 258.3624134063720703125 Mb
+
+~264563.111328125 Kb

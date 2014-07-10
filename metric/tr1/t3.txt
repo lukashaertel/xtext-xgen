@@ -1,0 +1,138 @@
+generator sle.fsml.FSML examples 10 100 1000 10000 100000
+{
+	replace "initial"{0,1} in FSMState with "<initial>"
+	
+	replace ID in FSMState with "<state name>"
+	
+	replace ID/0 in FSMTransition with "<input value>"
+	replace ID/1 in FSMTransition with "<action value>"
+	replace ID/2 in FSMTransition with "<state reference>"
+	
+	adjust multiplicity in FSM with {1,5}
+	adjust multiplicity in FSMState with {1,5}
+	adjust multiplicity/0 in FSMTransition with {1, 1}
+	adjust multiplicity/1 in FSMTransition with {1, 1}
+}
+~ 5 States with 5 respective transitions
+~ Each transition has an input and an action
+
+-------------------------------------------------------------------
+Beginning iteration
+Test-data #10
+[Disambiguated, Unused]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Disambiguated ;
+ dequeue / construct -> Disambiguated ;
+ poll / associate -> Disambiguated ;
+ 
+}
+ initial state Unused 
+{
+ listen / pop -> Unused ;
+ 
+}
+
+
+Test-data #100
+[Disambiguated, Unused, Complete]
+--------------------------------------------
+initial state Disambiguated 
+{
+ cancel / communicate -> Unused ;
+ 
+}
+ state Unused 
+{
+ dequeue / construct -> Complete ;
+ poll / associate -> Disambiguated ;
+ listen / pop -> Unused ;
+ cast / transform -> Unused ;
+ 
+}
+ state Complete 
+{
+ bark / merge -> Complete ;
+ 
+}
+
+
+Test-data #1000
+[Disambiguated, Unused, Complete, Labeled]
+--------------------------------------------
+initial state Disambiguated 
+{
+ cancel / communicate -> Disambiguated ;
+ dequeue / construct -> Complete ;
+ poll / associate -> Disambiguated ;
+ 
+}
+ state Unused 
+{
+ listen / pop -> Complete ;
+ cast / transform -> Unused ;
+ bark / merge -> Disambiguated ;
+ generate / navigate -> Labeled ;
+ 
+}
+ state Complete 
+{
+ contradict / test -> Disambiguated ;
+ 
+}
+ state Labeled 
+{
+ restart / subscribe -> Unused ;
+ start / push -> Unused ;
+ 
+}
+
+
+Test-data #10000
+[Disambiguated, Unused, Complete, Labeled, Turning]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Complete ;
+ dequeue / construct -> Complete ;
+ poll / associate -> Complete ;
+ listen / pop -> Disambiguated ;
+ cast / transform -> Disambiguated ;
+ 
+}
+ state Unused 
+{
+ bark / merge -> Unused ;
+ generate / navigate -> Disambiguated ;
+ contradict / test -> Labeled ;
+ 
+}
+ initial state Complete 
+{
+ restart / subscribe -> Complete ;
+ start / push -> Turning ;
+ 
+}
+ state Labeled 
+{
+ personalize / reconcile -> Disambiguated ;
+ internationalize / analyze -> Complete ;
+ 
+}
+ state Turning 
+{
+ activate / clone -> Turning ;
+ retrieve / reset -> Labeled ;
+ finalize / bid -> Turning ;
+ 
+}
+
+
+Calculated (s): 7.0443E-5
+Constructed (s): 6.441954472000001
+Created: 18555
+Size: 11,1328983306884765625 Mb
+
+
+~ 11400.087890625 Kb

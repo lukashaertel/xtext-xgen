@@ -1,0 +1,94 @@
+generator sle.fsml.FSML examples 10 100 1000 10000 100000
+{
+	replace "initial"{0,1} in FSMState with "<initial>"
+	
+	replace ID in FSMState with "<state name>"
+	
+	replace ID/0 in FSMTransition with "<input value>"
+	replace ID/1 in FSMTransition with "<action value>"
+	replace ID/2 in FSMTransition with "<state reference>"
+	
+	adjust multiplicity in FSM with {1,4}
+	adjust multiplicity in FSMState with {1,4}
+	adjust multiplicity/0 in FSMTransition with {1, 1}
+	adjust multiplicity/1 in FSMTransition with {1, 1}
+}
+~ 4 States with 4 respective transitions
+~ Each transition has an input and an action
+
+-------------------------------------------------------------------
+Beginning iteration
+Test-data #10
+[Disambiguated, Unused]
+--------------------------------------------
+initial state Disambiguated 
+{
+ cancel / communicate -> Unused ;
+ dequeue / construct -> Disambiguated ;
+ poll / associate -> Unused ;
+ listen / pop -> Unused ;
+ 
+}
+ state Unused 
+{
+ cast / transform -> Disambiguated ;
+ 
+}
+
+
+Test-data #100
+[Disambiguated, Unused, Complete]
+--------------------------------------------
+state Disambiguated 
+{
+ cancel / communicate -> Complete ;
+ dequeue / construct -> Complete ;
+ 
+}
+ state Unused 
+{
+ poll / associate -> Disambiguated ;
+ listen / pop -> Unused ;
+ 
+}
+ initial state Complete 
+{
+ cast / transform -> Disambiguated ;
+ bark / merge -> Unused ;
+ 
+}
+
+
+Test-data #1000
+[Disambiguated, Unused, Complete, Labeled]
+--------------------------------------------
+initial state Disambiguated 
+{
+ cancel / communicate -> Complete ;
+ dequeue / construct -> Complete ;
+ 
+}
+ state Unused 
+{
+ poll / associate -> Unused ;
+ 
+}
+ state Complete 
+{
+ listen / pop -> Disambiguated ;
+ 
+}
+ state Labeled 
+{
+ cast / transform -> Complete ;
+ bark / merge -> Unused ;
+ generate / navigate -> Disambiguated ;
+ contradict / test -> Disambiguated ;
+ 
+}
+
+
+Calculated (s): 8.817E-5
+Constructed (s): 0.429167895
+Created: 1252
+Size: 533.970703125 Kb

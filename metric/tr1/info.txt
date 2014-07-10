@@ -1,0 +1,11 @@
+CPU: Intel Core i7-3632QM @ 2.20 GHz
+RAM: 12,0 GB
+
+Calculated:
+	time to calculate the generation function
+Constructed:
+	total time of the process, includes time to flatten all seen items and count the bytes
+Created:
+	total number of test-items generated
+Size:
+	size of the text data generated
