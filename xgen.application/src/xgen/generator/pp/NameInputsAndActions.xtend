@@ -35,17 +35,25 @@ class NameInputsAndActions extends AssignRandom<Object> {
 		"cast",
 		"contradict",
 		"personalize",
-		"return"
+		"return",
+		"produce",
+		"retract",
+		"disclose",
+		"fill",
+		"abbreviate",
+		"drink",
+		"unbox",
+		"lead"
 	)
-	
+
 	new() {
 		super(ALL_NAMES)
 	}
-	
+
 	override hasQuality(Leaf it) {
 		return value == "<input value>" || value == "<action value>"
 	}
-	
+
 	override protected finalizeCarrier(Set<String> c) {
 		return null
 	}

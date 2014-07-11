@@ -10,7 +10,13 @@
     <genClasses ecoreClass="Application.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Model/applications"/>
     </genClasses>
-    <genClasses ecoreClass="Application.ecore#//Apply"/>
+    <genClasses ecoreClass="Application.ecore#//Apply">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Apply/ext"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/constructReplacements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/ruleReplacements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/multiplicityAdjustments"/>
+    </genClasses>
     <genClasses ecoreClass="Application.ecore#//ConstructReplacement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//ConstructReplacement/selector"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//ConstructReplacement/positioned"/>
@@ -29,13 +35,6 @@
     <genClasses ecoreClass="Application.ecore#//RuleReplacement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//RuleReplacement/target"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//RuleReplacement/replacement"/>
-    </genClasses>
-    <genClasses ecoreClass="Application.ecore#//Application">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//Application/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Application/examples"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Application/constructReplacements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Application/ruleReplacements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Application/multiplicityAdjustments"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

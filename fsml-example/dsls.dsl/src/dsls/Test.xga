@@ -1,5 +1,4 @@
-generator sle.fsml.FSML examples 10 100 1000 10000 100000
-{
+generator sle.fsml.FSML ext "fsm" {
 	replace "initial"{0,1} in FSMState with "<initial>"
 	
 	replace ID in FSMState with "<state name>"
@@ -8,8 +7,8 @@ generator sle.fsml.FSML examples 10 100 1000 10000 100000
 	replace ID/1 in FSMTransition with "<action value>"
 	replace ID/2 in FSMTransition with "<state reference>"
 	
-	adjust multiplicity in FSM with {1,6}
-	adjust multiplicity in FSMState with {1,6}
+	adjust multiplicity in FSM with {1,2}
+	adjust multiplicity in FSMState with {1,4}
 	adjust multiplicity/0 in FSMTransition with {1, 1}
 	adjust multiplicity/1 in FSMTransition with {1, 1}
 }

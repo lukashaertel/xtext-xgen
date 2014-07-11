@@ -139,6 +139,13 @@
             description="Copy the qualified name for the selected element"
             name="Copy Qualified Name">
       </command>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            defaultHandler="xgen.application.ui.HandleGenration"
+            description="Generate the test data from this configuration"
+            id="xgen.application.ui.generateTests"
+            name="Generate Tests">
+      </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
         <menuContribution
@@ -152,7 +159,17 @@
                     definitionId="xgen.Application.Editor.opened">
                 </reference>
             </visibleWhen>
-         </command>  
+         </command>
+           <command
+                 commandId="xgen.application.ui.generateTests"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                 <reference
+                       definitionId="xgen.Application.Editor.opened">
+                 </reference>
+              </visibleWhen>
+           </command>  
          </menuContribution>
          <!-- copy qualified name -->
          <menuContribution locationURI="popup:#TextEditorContext?after=copy">

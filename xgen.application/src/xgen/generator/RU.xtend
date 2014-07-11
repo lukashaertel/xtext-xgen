@@ -2,13 +2,13 @@ package xgen.generator
 
 import java.util.Random
 import com.google.common.collect.Iterables
+import java.util.Collection
 
 class RU {
-	def static <T> rof(long basedOn, Iterable<T> r) {
+	def static <T> rof(long basedOn, Collection<T> r) {
 		val ran = new Random(basedOn)
 
-		for (t : Iterables.cycle(r))
-			if (ran.nextBoolean)
-				return t;
+		val p = ran.nextInt(r.size)
+		return Iterables.get(r, p)
 	}
 }
