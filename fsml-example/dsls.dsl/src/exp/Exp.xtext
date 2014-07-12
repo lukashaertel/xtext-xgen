@@ -1,0 +1,13 @@
+grammar dsls.Exp
+
+generate exp "http://exp"
+
+Exp:
+	ExpUn ({ExpBin.l=current} '+' r=Exp)?
+;
+
+ExpUn:
+	'-' o=ExpUn | ExpLit
+;
+
+ExpLit: {ExpLit}'1';

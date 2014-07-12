@@ -146,6 +146,13 @@
             id="xgen.application.ui.generateTests"
             name="Generate Tests">
       </command>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            defaultHandler="xgen.application.ui.HandleGenration"
+            description="Generate the test data from this configuration without serializing the output"
+            id="xgen.application.ui.generateTestsDry"
+            name="Generate Tests (Dry)">
+      </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
         <menuContribution
@@ -162,6 +169,16 @@
          </command>
            <command
                  commandId="xgen.application.ui.generateTests"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                 <reference
+                       definitionId="xgen.Application.Editor.opened">
+                 </reference>
+              </visibleWhen>
+           </command>  
+           <command
+                 commandId="xgen.application.ui.generateTestsDry"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
