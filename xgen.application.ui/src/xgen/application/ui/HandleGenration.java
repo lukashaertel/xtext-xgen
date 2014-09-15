@@ -3,20 +3,12 @@ package xgen.application.ui;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.function.Function;
-import java.util.stream.Stream;
 
-import org.apache.log4j.NDC;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -33,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
@@ -42,19 +33,17 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
-import org.eclipse.xtext.util.StringInputStream;
 
 import xgen.Rewriting;
 import xgen.application.Apply;
-import xgen.application.Model;
 import xgen.generate.Iteration;
-import xgen.generator.pp.FSMLPP;
 import xgen.grammar.Definition;
 import xgen.grammar.Grammar;
 import xgen.index.Index;
 import xgen.parsetree.Node;
-import xgen.parsetree.Pair;
 import xgen.parsetree.Setting;
+import xgen.postprocess.PostProcessor;
+import xgen.postprocess.PostProcessors;
 import xgen.ui.internal.ApplicationActivator;
 
 import com.google.inject.Injector;
@@ -65,31 +54,68 @@ public class HandleGenration extends AbstractHandler {
 	protected static final long MAX_ITERATIONS = 1000;
 
 	public static Resource getXTextResource(IResource file) {
-		Injector i = ApplicationActivator.getInstance().getInjector(ApplicationActivator.XGEN_APPLICATION);
-		IResourceSetProvider resourceSetProvider = i.getInstance(IResourceSetProvider.class);
+		Injector i = ApplicationActivator.getInstance().getInjector(
+				ApplicationActivator.XGEN_APPLICATION);
+		IResourceSetProvider resourceSetProvider = i
+				.getInstance(IResourceSetProvider.class);
 
-		URI uri = URI.createURI("platform:/resource/" + file.getProject().getName() + "/"
+		URI uri = URI.createURI("platform:/resource/"
+				+ file.getProject().getName() + "/"
 				+ file.getProjectRelativePath());
 		ResourceSet set = resourceSetProvider.get(file.getProject());
 
 		return set.getResource(uri, true);
 	}
 
+	private PostProcessor<?, ?> getPostProcessor(ClassLoader current, Apply a)
+			throws CoreException {
+		// If no post-processor wanted, skip
+		if (a.getPostProcessors().isEmpty())
+			return PostProcessors.id();
+
+		try {
+			// Find the class in Source Support
+			Class<?> c = SourceSupport.getClass(current, a.getPostProcessors()
+					.get(0).getClassname());
+
+			// Find the field PP
+			Field f = c.getField("PP");
+
+			// If the field is not static
+			if ((f.getModifiers() & Modifier.STATIC) != Modifier.STATIC)
+				return PostProcessors.id();
+
+			// Return and cast
+			return (PostProcessor<?, ?>) f.get(null);
+
+		} catch (ClassNotFoundException | NoSuchFieldException
+				| SecurityException | IllegalArgumentException
+				| IllegalAccessException e) {
+			// Log for consistencies sake
+			e.printStackTrace();
+			// Return identity post-processor
+			return PostProcessors.id();
+		}
+	}
+
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbenchWindow workbenchWindow = HandlerUtil.getActiveWorkbenchWindow(event);
+		IWorkbenchWindow workbenchWindow = HandlerUtil
+				.getActiveWorkbenchWindow(event);
 		// Get editor
 		IEditorPart activeEditor = HandlerUtil.getActiveEditor(event);
 
-		// If editor is an XText editor, procede with it
+		// If editor is an XText editor, proceed with it
 		if (activeEditor instanceof XtextEditor) {
 			XtextEditor editor = (XtextEditor) activeEditor;
 
 			// If editor is not for xgen application specifications, cancel
-			if (!ApplicationActivator.XGEN_APPLICATION.equals(editor.getLanguageName()))
+			if (!ApplicationActivator.XGEN_APPLICATION.equals(editor
+					.getLanguageName()))
 				return false;
 
-			boolean dry = "xgen.application.ui.generateTestsDry".equals(event.getCommand().getId());
+			boolean dry = "xgen.application.ui.generateTestsDry".equals(event
+					.getCommand().getId());
 
 			Job job = new Job("Generating tests") {
 
@@ -118,7 +144,8 @@ public class HandleGenration extends AbstractHandler {
 						totalTime.getAndAdd(-System.nanoTime());
 
 						// Generate folder for tests
-						IFolder parentFolder = (IFolder) editor.getResource().getParent();
+						IFolder parentFolder = (IFolder) editor.getResource()
+								.getParent();
 						IFolder dataFolder = parentFolder.getFolder("data");
 						if (dataFolder.exists())
 							dataFolder.delete(IResource.NONE, null);
@@ -126,43 +153,57 @@ public class HandleGenration extends AbstractHandler {
 
 						// Iterate all models
 						for (EObject content : r.getContents())
-							if (content instanceof Model) {
-								Model model = (Model) content;
-								// Iterate all applications
-								for (Apply apply : model.getApplications()) {
+							if (content instanceof Apply) {
+								Apply apply = (Apply) content;
+								ClassLoader prv = Thread.currentThread()
+										.getContextClassLoader();
+								try {
+									PostProcessor<?, ?> pp = getPostProcessor(
+											prv, apply);
+
 									// Find an extension for the data
-									String ext = apply.getExt() != null ? apply.getExt() : "txt";
+									String ext = apply.getExt() != null ? apply
+											.getExt() : "txt";
 
 									// Get grammar
 									rewriteTime.getAndAdd(-System.nanoTime());
-									Grammar grammar = Rewriting.getEffectiveGrammar(apply);
+									Grammar grammar = Rewriting
+											.getEffectiveGrammar(apply);
 									rewriteTime.getAndAdd(System.nanoTime());
 
 									// Get first non-lexical definition
 									Definition start = null;
-									for (Definition def : grammar.getDefinitions())
+									for (Definition def : grammar
+											.getDefinitions())
 										if (start == null && !def.isLexical())
 											start = def;
 
-									// If no non-lexical go to next application
+									// If no non-lexical go to next
+									// application
 									if (start == null)
 										continue;
 
 									// Iterate the grammar
 									iterateTime.getAndAdd(-System.nanoTime());
 									Iteration iteration = new Iteration(grammar);
-									Index<Node> iterated = iteration.iterate(start);
+									Index<Node> iterated = iteration
+											.iterate(start);
 									iterateTime.getAndAdd(System.nanoTime());
 
 									// Postprocess
-									postprocessTime.getAndAdd(-System.nanoTime());
-									Index<Node> function = iterated;//FSMLPP.fsmlPP.postProcess(null, iteration.iterate(start));
-									postprocessTime.getAndAdd(System.nanoTime());
+									postprocessTime.getAndAdd(-System
+											.nanoTime());
+									Index<Node> function = pp.postProcess(null,
+											iterated);
+									postprocessTime
+											.getAndAdd(System.nanoTime());
 
 									// Build maximum for indexing
-									long d = function.getBound().orElse(MAX_ITERATIONS);
+									long d = function.getBound().orElse(
+											MAX_ITERATIONS);
 									long a = 1;
-									monitor.beginTask("Generating the data", (int) (d / a));
+									monitor.beginTask("Generating the data",
+											(int) (d / a));
 
 									// Iterate
 									for (long x = 0; x < d; x++) {
@@ -170,7 +211,8 @@ public class HandleGenration extends AbstractHandler {
 											break;
 
 										// Get node
-										Optional<Node> optNode = function.get(x);
+										Optional<Node> optNode = function
+												.get(x);
 
 										// If it exists
 										if (optNode.isPresent()) {
@@ -178,31 +220,53 @@ public class HandleGenration extends AbstractHandler {
 
 											Node node = optNode.get();
 
-											flatteningTime.getAndAdd(-System.nanoTime());
-											byte[] nodeText = node.flatten(Setting.DEFAULT_SETTING, false).getBytes();
-											flatteningTime.getAndAdd(System.nanoTime());
+											flatteningTime.getAndAdd(-System
+													.nanoTime());
+											byte[] nodeText = node.flatten(
+													Setting.DEFAULT_SETTING,
+													false).getBytes();
+											flatteningTime.getAndAdd(System
+													.nanoTime());
 
-											generatedBytes.getAndAdd(nodeText.length);
+											generatedBytes
+													.getAndAdd(nodeText.length);
 
 											if (!dry) {
-												// Make file for it and fill its
+												// Make file for it and fill
+												// its
 												// contents
-												IFile itemFile = dataFolder.getFile(x + "." + ext);
+												IFile itemFile = dataFolder
+														.getFile(x + "." + ext);
 												if (itemFile.exists())
-													itemFile.delete(IResource.NONE, null);
+													itemFile.delete(
+															IResource.NONE,
+															null);
 
-												serializationTime.getAndAdd(-System.nanoTime());
-												itemFile.create(new ByteArrayInputStream(nodeText), IResource.FORCE
-														| IResource.DERIVED, null);
-												itemFile.setCharset(USED_CHARSET, null);
-												serializationTime.getAndAdd(System.nanoTime());
+												serializationTime
+														.getAndAdd(-System
+																.nanoTime());
+												itemFile.create(
+														new ByteArrayInputStream(
+																nodeText),
+														IResource.FORCE
+																| IResource.DERIVED,
+														null);
+												itemFile.setCharset(
+														USED_CHARSET, null);
+												serializationTime
+														.getAndAdd(System
+																.nanoTime());
 											}
 										}
 
 										if (x % a == 0)
 											monitor.worked(1);
 									}
+								} finally {
+									Thread.currentThread()
+											.setContextClassLoader(prv);
 								}
+
 							}
 
 						totalTime.getAndAdd(System.nanoTime());
@@ -250,8 +314,10 @@ public class HandleGenration extends AbstractHandler {
 							metrics.append("\r\n");
 							IFile confFile = ((IFile) editor.getResource());
 
-							BufferedReader confStream = new BufferedReader(new InputStreamReader(
-									confFile.getContents(), confFile.getCharset()));
+							BufferedReader confStream = new BufferedReader(
+									new InputStreamReader(
+											confFile.getContents(),
+											confFile.getCharset()));
 
 							String line;
 							while ((line = confStream.readLine()) != null) {
@@ -265,25 +331,28 @@ public class HandleGenration extends AbstractHandler {
 						if (metricFile.exists())
 							metricFile.delete(IResource.NONE, null);
 
-						metricFile.create(new ByteArrayInputStream(metrics.toString().getBytes(USED_CHARSET)),
+						metricFile.create(new ByteArrayInputStream(metrics
+								.toString().getBytes(USED_CHARSET)),
 								IResource.FORCE | IResource.DERIVED, null);
 						metricFile.setCharset(USED_CHARSET, null);
 
 						// Try to open it
-						PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
-							@Override
-							public void run() {
-								try {
-									IDE.openEditor(workbenchWindow.getActivePage(), metricFile);
-								} catch (PartInitException ignored) {
-								}
-							};
+						PlatformUI.getWorkbench().getDisplay()
+								.asyncExec(new Runnable() {
+									@Override
+									public void run() {
+										try {
+											IDE.openEditor(workbenchWindow
+													.getActivePage(),
+													metricFile);
+										} catch (PartInitException ignored) {
+										}
+									};
 
-						});
+								});
 					} catch (IOException | CoreException e) {
 						return Status.CANCEL_STATUS;
 					}
-
 					return Status.OK_STATUS;
 
 				}

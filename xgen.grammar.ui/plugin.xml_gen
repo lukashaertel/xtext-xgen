@@ -250,7 +250,9 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="xgen.ui.GrammarExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="xgen.ui.GrammarExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="xgg"
+            >
       </participant>
    </extension>
    <extension

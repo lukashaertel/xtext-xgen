@@ -1,4 +1,6 @@
-grammar sle.fsml.FSML with org.eclipse.xtext.common.Terminals
+grammar sle.fsml.FSML
+
+import "http://www.eclipse.org/emf/2002/Ecore"
 
 generate fSML "http://www.fsml.sle/FSML"
 
@@ -8,7 +10,7 @@ generate fSML "http://www.fsml.sle/FSML"
 FSM:
 	states+=FSMState*;
 
-/**
+	/**
  * A state can be optionally initial, has a
  * name and is composed of multiple transitions
  */
@@ -18,7 +20,7 @@ FSMState:
 	transitions+=FSMTransition*
 	'}';
 
-/**
+	/**
  * A transition has an input, an optional 
  * action and an optional target state
  */
@@ -26,3 +28,6 @@ FSMTransition:
 	input=ID
 	('/' action=ID)?
 	('->' target=[FSMState|ID])? ';';
+
+terminal ID:
+	('A'..'Z' | 'a'..'z')+;

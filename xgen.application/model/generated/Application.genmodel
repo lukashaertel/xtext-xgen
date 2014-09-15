@@ -7,34 +7,32 @@
     editorPluginID="xgen.application.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/resource/org.eclipse.xtext/org/eclipse/xtext/Xtext.genmodel#//xtext platform:/resource/xgen/src/xgen/grammar/Grammar.genmodel#//grammar">
   <genPackages prefix="Application" basePackage="xgen" disposableProviderFactory="true"
       fileExtensions="xga" ecorePackage="Application.ecore#/">
-    <genClasses ecoreClass="Application.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Model/applications"/>
-    </genClasses>
     <genClasses ecoreClass="Application.ecore#//Apply">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Apply/ext"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/constructReplacements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/ruleReplacements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/multiplicityAdjustments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/postProcessors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Apply/ruleAdjustment"/>
     </genClasses>
-    <genClasses ecoreClass="Application.ecore#//ConstructReplacement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//ConstructReplacement/selector"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//ConstructReplacement/positioned"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//ConstructReplacement/position"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//ConstructReplacement/target"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//ConstructReplacement/replacement"/>
+    <genClasses ecoreClass="Application.ecore#//PostProcessor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//PostProcessor/classname"/>
     </genClasses>
-    <genClasses ecoreClass="Application.ecore#//MultiplicityAdjustment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//MultiplicityAdjustment/positioned"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//MultiplicityAdjustment/position"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//MultiplicityAdjustment/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//MultiplicityAdjustment/min"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//MultiplicityAdjustment/upperBounded"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//MultiplicityAdjustment/max"/>
+    <genClasses ecoreClass="Application.ecore#//RuleAdjustment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//RuleAdjustment/rule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//RuleAdjustment/replaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//RuleAdjustment/limits"/>
     </genClasses>
-    <genClasses ecoreClass="Application.ecore#//RuleReplacement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Application.ecore#//RuleReplacement/target"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//RuleReplacement/replacement"/>
+    <genClasses ecoreClass="Application.ecore#//Replace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Replace/selector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Replace/positioned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Replace/position"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Application.ecore#//Replace/replacement"/>
+    </genClasses>
+    <genClasses ecoreClass="Application.ecore#//Limit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Limit/positioned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Limit/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Limit/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Limit/upperBounded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Application.ecore#//Limit/max"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

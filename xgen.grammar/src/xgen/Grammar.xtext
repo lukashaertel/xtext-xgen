@@ -36,9 +36,6 @@ terminal ID:
 terminal INT returns ecore::EInt:
 	('0'..'9')+;
 
-terminal PLACEHOLDER:
-	'<' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '>' | '\\') | !('\\' | '>'))* '>';
-
 terminal STRING:
 	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | '\\') | !('\\' | '"'))* '"';
 

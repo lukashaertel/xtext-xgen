@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="application" nsURI="http://xgen/Application/1.0" nsPrefix="application">
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="applications" upperBound="-1"
-        eType="#//Apply" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Apply">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//Grammar"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ext" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constructReplacements"
-        upperBound="-1" eType="#//ConstructReplacement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleReplacements" upperBound="-1"
-        eType="#//RuleReplacement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicityAdjustments"
-        upperBound="-1" eType="#//MultiplicityAdjustment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postProcessors" upperBound="-1"
+        eType="#//PostProcessor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleAdjustment" upperBound="-1"
+        eType="#//RuleAdjustment" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructReplacement">
+  <eClassifiers xsi:type="ecore:EClass" name="PostProcessor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classname" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleAdjustment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="ecore:EClass platform:/resource/org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replaces" upperBound="-1"
+        eType="#//Replace" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="limits" upperBound="-1"
+        eType="#//Limit" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Replace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="ecore:EClass platform:/resource/xgen/src/xgen/grammar/Grammar.ecore#//Construct"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="positioned" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="replacement" eType="ecore:EClass platform:/resource/xgen/src/xgen/grammar/Grammar.ecore#//Construct"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityAdjustment">
+  <eClassifiers xsi:type="ecore:EClass" name="Limit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="positioned" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBounded" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuleReplacement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/org.eclipse.xtext/org/eclipse/xtext/Xtext.ecore#//AbstractRule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="replacement" eType="ecore:EClass platform:/resource/xgen/src/xgen/grammar/Grammar.ecore#//Construct"
-        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

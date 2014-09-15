@@ -4,30 +4,43 @@ import "http://xgen/Grammar/1.0" as xg
 import "http://www.eclipse.org/2008/Xtext" as xt
 generate application "http://xgen/Application/1.0"
 
-Model:
-	applications+=Apply*;
-
 Apply:
-	{Apply} 'generator' target=[xt::Grammar|QID] ('ext' ext=STRING)?
-	'{'
-	(constructReplacements+=ConstructReplacement |
-	ruleReplacements+=RuleReplacement |
-	multiplicityAdjustments+=MultiplicityAdjustment)*
-	'}';
+	'customize' target=[xt::Grammar|QID] ('*' '.' ext=ID)?
+	(postProcessors+=PostProcessor |
+	ruleAdjustment+=RuleAdjustment)*;
 
-ConstructReplacement:
-	'replace' selector=Construct0 (positioned?='/' position=INT)?
-	'in' target=[xt::AbstractRule]
-	'with' replacement=Construct0;
+PostProcessor:
+	'postprocessor' classname=STRING ';';
 
-MultiplicityAdjustment:
-	'adjust' 'multiplicity' (positioned?='/' position=INT)?
-	'in' target=[xt::AbstractRule]
-	'with' '{' min=INT (upperBounded?=',' max=INT)? '}';
+RuleAdjustment:
+	rule=[xt::AbstractRule] ':'
+	(replaces+=Replace | limits+=Limit)+;
 
-RuleReplacement:
-	'replace' target=[xt::AbstractRule]
-	'with' replacement=Construct0;
+Replace:
+	'replace' selector=Construct0 (positioned?='/' position=INT)? 'by' replacement=Construct0 ';';
 
+Limit:
+	'limit' ('+' | '*' | '?') (positioned?='/' position=INT)? 'to' min=INT (upperBounded?='..' max=INT)? ';';
+	//
+//	('ext' ext=STRING)? ('processor' pp=STRING)?
+//	'{'
+//	(constructReplacements+=ConstructReplacement |
+//	ruleReplacements+=RuleReplacement |
+//	multiplicityAdjustments+=MultiplicityAdjustment)*
+//	'}';
+
+//ConstructReplacement:
+//	
+//	'in' target=[xt::AbstractRule]
+//	'with' 
+
+//MultiplicityAdjustment:
+//	'adjust' 'multiplicity' 
+//	'in' target=[xt::AbstractRule]
+//	'with' '{' min=INT (upperBounded?=',' max=INT)? '}';
+//
+//RuleReplacement:
+//	'replace' target=[xt::AbstractRule]
+//	'with' replacement=Construct0;
 QID:
 	ID ('.' ID)*;

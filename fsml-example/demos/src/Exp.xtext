@@ -1,0 +1,51 @@
+grammar dsls.Exp
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+generate exp "http://exp"
+
+File:
+	d+=Def+
+;
+
+Def:
+	name=UPPER '(' ')' i=Block;
+
+Block returns Stm:
+	'{' s+=TermStm '}';
+
+TermStm returns Stm:
+	Assign | Call | Condition | Block;
+
+Assign:
+	name=LOWER '=' e=MulDiv;
+
+Call:
+	call=[Def|UPPER] '(' ')';
+
+Condition:
+	'if' '(' e=MulDiv ')' i=Block;
+
+MulDiv returns Exp:
+	AddSub ({Bin.l=current} op='*' r=AddSub | {Bin.l=current} op='/' r=AddSub)*;
+
+AddSub returns Exp:
+	TermExp ({Bin.l=current} op='+' r=TermExp | {Bin.l=current} op='-' r=TermExp)*;
+
+TermExp returns Exp:
+	Lit | Ref | '(' MulDiv ')';
+
+Lit:
+	val=NUM;
+
+Ref:
+	ref=[Assign|LOWER];
+
+terminal UPPER:
+	('A'..'Z')+;
+
+terminal LOWER:
+	('a'..'z')+;
+
+terminal NUM:
+	'1'..'9';

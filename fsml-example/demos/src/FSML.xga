@@ -1,0 +1,29 @@
+// Customized grammar and the extension for the file
+customize sle.fsml.FSML *.fsm
+
+// Post processor used after generating the skeletons
+postprocessor "FSML";
+
+FSM:
+	// Limit the number of states
+	limit * to 6..6;
+
+FSMState:
+	// Instantiate the initial keyword by post processor
+	replace "initial"{0,1} by "<initial>";
+	
+	// Instantiate the state name by post processor
+	replace ID by "<state name>";
+	
+	// Require a specific number of transitions
+	limit * to 1..3;
+	
+FSMTransition:
+	// Instantiate the input and the action by post processor
+	replace ID/0 by "<input value>";
+	replace ID/1 by "<action value>";
+	
+	// This one is important because the post processor
+	// instantiates the placeholder from the set of known
+	// state names it carries
+	replace ID/2 by "<state reference>";
