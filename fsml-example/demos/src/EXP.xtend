@@ -6,14 +6,14 @@ class EXP extends EXPConstants {
 
 	public static val PP = 
 		// Assign and use variable names randomly
-		assignRandomToLeaf(EXPConstants.VARIABLE_NAMES, "<var name>") >>
+		assignRandomToLeaf(VARIABLE_NAMES, "<var name>") >>
 		useForLeaf("<var reference>") >>
 		
 		// Forget the current state
 		dropState >>
 		
 		// Assign and use pattern names randomly
-		assignRandomToLeaf(EXPConstants.PATTERN_NAMES, "<pattern name>")>>
+		assignRandomToLeaf(PATTERN_NAMES, "<pattern name>")>>
 		useForLeaf("<pattern reference>")
 }
 
